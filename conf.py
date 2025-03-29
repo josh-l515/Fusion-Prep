@@ -32,10 +32,7 @@ html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 
 html_baseurl = "https://josh-l515.github.io/Fusion-Prep/"
-html_extra_path = ['_static']
-html_theme_options = {
-    "url_root": "/",
-}
+
 
 html_theme_options = {
     "external_links": [
