@@ -6,12 +6,18 @@
 Fusion-Prep documentation
 =========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   cv
+   classical_mechanics/index
+   classical_electrodynamics/index
+   quamtum_mechanics/index
+   statistical_physics/index
+   python/index
+   c++/index
+   linux/index
 
