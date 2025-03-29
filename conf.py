@@ -5,13 +5,12 @@
 # -- Path setup --------------------------------------------------------------
 import os
 import sys
-from pathlib import Path
 
-sys.path.append(str(Path(".").resolve()))
+sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Fusion-Prep'
+project = "J's PhysiXLab"
 copyright = '2025, Josué David Huallpa Aimituma'
 author = 'Josué David Huallpa Aimituma'
 
@@ -31,6 +30,12 @@ katex_display = [r'$$', r'$$']  # Para ecuaciones en bloque
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+
+html_baseurl = "https://josh-l515.github.io/Fusion-Prep/"
+html_extra_path = ['_static']
+html_theme_options = {
+    "url_root": "/",
+}
 
 html_theme_options = {
     "external_links": [
