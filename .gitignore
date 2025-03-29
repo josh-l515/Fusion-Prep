@@ -1,0 +1,20 @@
+# Archivos generados por Sphinx
+_build/
+doctrees/
+*.doctree
+*.log
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de compilación en C++
+*.o
+*.out
+*.exe
+
+# Archivos específicos de sistemas operativos
+.DS_Store
+Thumbs.db
+
