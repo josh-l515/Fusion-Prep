@@ -53,12 +53,12 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "X",
-            "url": "https://x.com/PyData",
+            "url": "https://x.com/DHAJosh1",
             "icon": "fa-brands fa-x-twitter",
         },
         {
             "name": "GitHub",
-            "url": "https://github.com/pydata/pydata-sphinx-theme",
+            "url": "https://github.com/josh-l515/Fusion-Prep",
             "icon": "fa-brands fa-github",
         },
   

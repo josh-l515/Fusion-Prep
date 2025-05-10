@@ -13,6 +13,7 @@ Fusion-Prep documentation
    :caption: Contents:
 
    cv
+   physics-i/index
    classical_mechanics/index
    classical_electrodynamics/index
    quamtum_mechanics/index
