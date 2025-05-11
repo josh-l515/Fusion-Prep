@@ -17,14 +17,22 @@ author = 'Josué David Huallpa Aimituma'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "nbsphinx",  'sphinxcontrib.katex']
+extensions = ["myst_parser", "nbsphinx"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-katex_inline = [r'$', r'$']  # Para ecuaciones en línea
-katex_display = [r'$$', r'$$']  # Para ecuaciones en bloque
+# katex_inline = [r'$', r'$']  # Para ecuaciones en línea
+# katex_display = [r'$$', r'$$']  # Para ecuaciones en bloque
 
+myst_enable_extensions = [
+    "colon_fence",
+    "linkify",
+    "substitution",
+    "dollarmath",  # <-- esta línea permite ecuaciones en $...$ y $$...$$
+    "attrs_block", # Activa el uso de metadata desde los archivos .md 
+    "deflist",            # Opcional, listas de definiciones
+]
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
@@ -63,7 +71,7 @@ html_theme_options = {
         },
   
     ],
-    # "use_edit_page_button": True,
+    "use_edit_page_button": True,
 
     # [left, content, right] For testing that the navbar items align properly
     "footer_start": ["copyright"],
@@ -80,4 +88,20 @@ html_theme_options = {
     # "secondary_sidebar_items": ["page-toc", "edit-this-page"],  # Elementos en la barra lateral
 }
 
+html_context = {
+    # "github_url": "https://github.com", # or your GitHub Enterprise site
+    "github_user": "josh-l515",
+    "github_repo": "Fusion-Prep",
+    "github_version": "main",
+    "doc_path": "",
+    "default_mode": "light",
+}
 
+html_sidebars = {
+    "**": [
+        "search-field.html",
+        "sidebar-nav-bs.html", 
+        # "custom-this-page.html",  # Bloque personalizado
+    ]
+}
+html_show_sourcelink = True

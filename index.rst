@@ -14,6 +14,7 @@ Fusion-Prep documentation
 
    cv
    physics-i/index
+   physics-ii/index
    classical_mechanics/index
    classical_electrodynamics/index
    quamtum_mechanics/index
