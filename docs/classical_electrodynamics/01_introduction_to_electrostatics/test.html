@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -31,8 +31,6 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -43,10 +41,9 @@
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
-    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
-    <script src="../../_static/katex_autorenderer.js?v=b5720c11"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classical_electrodynamics/01_introduction_to_electrostatics/test';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/classical_electrodynamics/01_introduction_to_electrostatics/test.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -59,7 +56,7 @@
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
@@ -139,22 +136,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
-    Classical Mechanics
-  </a>
-</li>
-
-
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
-    Classical Electrodynamics
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../quamtum_mechanics/index.html">
-    Quamtum Mechanics
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
+    Classical Mechanics
   </a>
 </li>
 
@@ -166,6 +163,20 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../index.html">
+    Classical Electrodynamics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../statistical_physics/index.html">
     Statistical Physics
@@ -255,7 +266,7 @@
           
           
           
-          <a href="https://x.com/PyData" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
             <span class="sr-only">X</span></a>
         </li>
         <li class="nav-item">
@@ -267,7 +278,7 @@
           
           
           
-          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -321,6 +332,20 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../cv.html">
     About me
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
   </a>
 </li>
 
@@ -423,7 +448,7 @@
           
           
           
-          <a href="https://x.com/PyData" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
             <span class="sr-only">X</span></a>
         </li>
         <li class="nav-item">
@@ -435,7 +460,7 @@
           
           
           
-          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -445,6 +470,22 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
         <div class="sidebar-primary-item">
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
@@ -519,55 +560,55 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="fundamentos-matematicos">
+  <section class="tex2jax_ignore mathjax_ignore" id="fundamentos-matematicos">
 <h1>Fundamentos matematicos<a class="headerlink" href="#fundamentos-matematicos" title="Link to this heading">#</a></h1>
 <section id="variedades-diferenciales">
 <h2>Variedades diferenciales<a class="headerlink" href="#variedades-diferenciales" title="Link to this heading">#</a></h2>
-<p>Una variedad diferencial $\mathcal{M}$ es una generalización matemática
+<p>Una variedad diferencial <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> es una generalización matemática
 del concepto de curvas y superficies suaves, como una esfera o un plano,
 extendida a espacios de dimensiones superiores. Formalmente, es un
 espacio topológico que, localmente, es homeomorfo al espacio euclidiano
-$\mathbb{R}^m$, donde $m$ es la dimensión de la variedad. Decir que un
-espacio es localmente homeomorfo a $\mathbb{R}^m$, significa que, en
+<span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, donde <span class="math notranslate nohighlight">\(m\)</span> es la dimensión de la variedad. Decir que un
+espacio es localmente homeomorfo a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, significa que, en
 regiones pequeñas, la variedad se comporta como el espacio euclidiano de
-dimensión $m$, aunque globalmente pueda tener una estructura más
-compleja y no ser homeomorfa a $\mathbb{R}^m$, en su totalidad.</p>
-<p>Este homeomorfismo local permite asignar a cada punto de $\mathcal{M}$
-un conjunto de $m$ números, llamados coordenadas locales. Si
-$\mathcal{M}$ no es globalmente homeomorfa a $\mathbb{R}^m$, es
+dimensión <span class="math notranslate nohighlight">\(m\)</span>, aunque globalmente pueda tener una estructura más
+compleja y no ser homeomorfa a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, en su totalidad.</p>
+<p>Este homeomorfismo local permite asignar a cada punto de <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>
+un conjunto de <span class="math notranslate nohighlight">\(m\)</span> números, llamados coordenadas locales. Si
+<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> no es globalmente homeomorfa a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, es
 necesario introducir múltiples sistemas de coordenadas locales para
 cubrirla completamente. Para que la variedad sea ademas diferencial, se
 requiere que las transiciones entre estos sistemas de coordenadas sean
 suaves (diferenciables). Esta condición es crucial, ya que permite
 extender las herramientas del cálculo diferencial e integral a estos
 espacios más generales. Estrictamente la <strong>variedad diferencial</strong>
-$\mathcal{M}$ de dimensión $m$ se define mediante las siguientes
+<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> de dimensión <span class="math notranslate nohighlight">\(m\)</span> se define mediante las siguientes
 condiciones [&#64;Nakahara2003]:</p>
 <ol class="arabic">
-<li><p><strong>Espacio topológico</strong>: $\mathcal{M}$ es un espacio topológico.</p></li>
-<li><p><strong>Atlas y cartas</strong>: $\mathcal{M}$ está equipado con una familia de
-pares ${(U_i, \phi_i)}$, donde:</p>
+<li><p><strong>Espacio topológico</strong>: <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> es un espacio topológico.</p></li>
+<li><p><strong>Atlas y cartas</strong>: <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> está equipado con una familia de
+pares <span class="math notranslate nohighlight">\(\{(U_i, \phi_i)\}\)</span>, donde:</p>
 <ul class="simple">
-<li><p>${U_i}$ es una familia de conjuntos abiertos que cubren
-$\mathcal{M}$, es decir, $\bigcup_i U_i = \mathcal{M}$.</p></li>
-<li><p>$\phi_i$ es un <strong>homeomorfismo</strong> que mapea cada $U_i$ a un
-subconjunto abierto $\tilde{U}_i$ de $\mathbb{R}^m$. Esto
-significa que $\phi_i: U_i \to \tilde{U}_i \subset \mathbb{R}^m$.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{U_i\}\)</span> es una familia de conjuntos abiertos que cubren
+<span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, es decir, <span class="math notranslate nohighlight">\(\bigcup_i U_i = \mathcal{M}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi_i\)</span> es un <strong>homeomorfismo</strong> que mapea cada <span class="math notranslate nohighlight">\(U_i\)</span> a un
+subconjunto abierto <span class="math notranslate nohighlight">\(\tilde{U}_i\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>. Esto
+significa que <span class="math notranslate nohighlight">\(\phi_i: U_i \to \tilde{U}_i \subset \mathbb{R}^m\)</span>.</p></li>
 </ul>
-<p>Cada par $(U_i, \phi_i)$ se llama una <strong>carta</strong>, y la colección
-completa ${(U_i, \phi_i)}$ se denomina un <strong>atlas</strong>.</p>
+<p>Cada par <span class="math notranslate nohighlight">\((U_i, \phi_i)\)</span> se llama una <strong>carta</strong>, y la colección
+completa <span class="math notranslate nohighlight">\(\{(U_i, \phi_i)\}\)</span> se denomina un <strong>atlas</strong>.</p>
 </li>
-<li><p><strong>Coordenadas locales</strong>: Para cada punto $p \in U_i$, el
-homeomorfismo $\phi_i$ asigna $m$ números reales
-${x^1(p), \dots, x^m(p)}$, que se conocen como las <strong>coordenadas
-locales</strong> de $p$. Estas coordenadas permiten describir localmente la
-variedad como un subconjunto abierto de $\mathbb{R}^m$.</p></li>
-<li><p><strong>Transiciones suaves</strong>: Si dos conjuntos abiertos $U_i$ y $U_j$ se
-solapan, es decir, $U_i \cap U_j \neq \emptyset$, entonces la
-función de transición $\psi_{ij} = \phi_i \circ \phi_j^{-1}$ debe
+<li><p><strong>Coordenadas locales</strong>: Para cada punto <span class="math notranslate nohighlight">\(p \in U_i\)</span>, el
+homeomorfismo <span class="math notranslate nohighlight">\(\phi_i\)</span> asigna <span class="math notranslate nohighlight">\(m\)</span> números reales
+<span class="math notranslate nohighlight">\(\{x^1(p), \dots, x^m(p)\}\)</span>, que se conocen como las <strong>coordenadas
+locales</strong> de <span class="math notranslate nohighlight">\(p\)</span>. Estas coordenadas permiten describir localmente la
+variedad como un subconjunto abierto de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p></li>
+<li><p><strong>Transiciones suaves</strong>: Si dos conjuntos abiertos <span class="math notranslate nohighlight">\(U_i\)</span> y <span class="math notranslate nohighlight">\(U_j\)</span> se
+solapan, es decir, <span class="math notranslate nohighlight">\(U_i \cap U_j \neq \emptyset\)</span>, entonces la
+función de transición <span class="math notranslate nohighlight">\(\psi_{ij} = \phi_i \circ \phi_j^{-1}\)</span> debe
 ser <strong>infinitamente diferenciable</strong> (suave). Esta función mapea las
-coordenadas de $\phi_j(U_i \cap U_j)$ a las coordenadas de
-$\phi_i(U_i \cap U_j)$, asegurando que los cambios entre sistemas de
+coordenadas de <span class="math notranslate nohighlight">\(\phi_j(U_i \cap U_j)\)</span> a las coordenadas de
+<span class="math notranslate nohighlight">\(\phi_i(U_i \cap U_j)\)</span>, asegurando que los cambios entre sistemas de
 coordenadas sean suaves.</p></li>
 </ol>
 <p>En el contexto de esta tesis, estas estructuras permiten describir de
@@ -578,20 +619,21 @@ relatividad general al incluir términos de curvatura de orden superior,
 requieren un entendimiento minucioso de la geometría diferencial para
 derivar y analizar las ecuaciones de campo.</p>
 <ul>
-<li><p><strong>Rama “menos”</strong> ($f(r)_-$): Al tomar el signo negativo se obtiene la
-rama que, en el límite $\alpha\to0$, se reduce a la solución clásica
+<li><p><strong>Rama “menos”</strong> (<span class="math notranslate nohighlight">\(f(r)_-\)</span>): Al tomar el signo negativo se obtiene la
+rama que, en el límite <span class="math notranslate nohighlight">\(\alpha\to0\)</span>, se reduce a la solución clásica
 de Schwarzschild–AdS en 5D. Es decir, al expandir en series de
-$\alpha$ se tiene</p>
-<p>$$
-f(r)_- = k + \frac{r^2}{l^2} - \frac{c_1}{r^2l^2} + \mathcal{O}(\alpha)
-$$</p>
+<span class="math notranslate nohighlight">\(\alpha\)</span> se tiene</p>
+<div class="math notranslate nohighlight">
+\[
+  f(r)_- = k + \frac{r^2}{l^2} - \frac{c_1}{r^2l^2} + \mathcal{O}(\alpha)
+  \]</div>
 <p>lo cual permite identificar la constante de integración con el
 parámetro de masa del agujero negro (redefiniendo, si conviene,
-$M=c_1/l^2$).</p>
+<span class="math notranslate nohighlight">\(M=c_1/l^2\)</span>).</p>
 </li>
-<li><p><strong>Rama “más”</strong> ($f(r)_+$): La otra posibilidad corresponde a la
+<li><p><strong>Rama “más”</strong> (<span class="math notranslate nohighlight">\(f(r)_+\)</span>): La otra posibilidad corresponde a la
 solución con el signo positivo. Esta rama no posee el límite de
-Einstein ($\alpha\to0$) y se conoce como la solución exótica. Dado que
+Einstein (<span class="math notranslate nohighlight">\(\alpha\to0\)</span>) y se conoce como la solución exótica. Dado que
 no se recupera la gravedad clásica en este límite, generalmente se
 descarta por razones de consistencia física y estabilidad.</p></li>
 </ul>
@@ -648,6 +690,22 @@ descarta por razones de consistencia física y estabilidad.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variedades-diferenciales">Variedades diferenciales</a></li>
 </ul>
   </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/classical_electrodynamics/01_introduction_to_electrostatics/test.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

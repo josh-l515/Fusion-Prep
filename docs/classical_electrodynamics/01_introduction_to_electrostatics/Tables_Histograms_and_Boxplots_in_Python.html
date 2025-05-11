@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../../" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
@@ -13,8 +13,8 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   <!--
     this give us a css class that will be invisible only if js is disabled
@@ -31,8 +31,6 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
     <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
   
   <!-- So that users can add custom icons -->
@@ -44,9 +42,6 @@
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
-    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
-    <script src="../../_static/katex_autorenderer.js?v=b5720c11"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classical_electrodynamics/01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/classical_electrodynamics/01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python.html" />
@@ -60,7 +55,7 @@
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
@@ -140,22 +135,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
-    Classical Mechanics
-  </a>
-</li>
-
-
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
-    Classical Electrodynamics
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../quamtum_mechanics/index.html">
-    Quamtum Mechanics
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
+    Classical Mechanics
   </a>
 </li>
 
@@ -167,6 +162,20 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../index.html">
+    Classical Electrodynamics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../statistical_physics/index.html">
     Statistical Physics
@@ -256,7 +265,7 @@
           
           
           
-          <a href="https://x.com/PyData" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
             <span class="sr-only">X</span></a>
         </li>
         <li class="nav-item">
@@ -268,7 +277,7 @@
           
           
           
-          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -322,6 +331,20 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../cv.html">
     About me
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
   </a>
 </li>
 
@@ -424,7 +447,7 @@
           
           
           
-          <a href="https://x.com/PyData" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
             <span class="sr-only">X</span></a>
         </li>
         <li class="nav-item">
@@ -436,7 +459,7 @@
           
           
           
-          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
@@ -446,6 +469,22 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
         <div class="sidebar-primary-item">
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
@@ -530,9 +569,9 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># We first need to import the packages that we will be using
-import seaborn as sns # For plotting
-import matplotlib.pyplot as plt # For showing plots
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first need to import the packages that we will be using</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span> <span class="c1"># For plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> <span class="c1"># For showing plots</span>
 </pre></div>
 </div>
 </div>
@@ -541,7 +580,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tips_data = sns.load_dataset(&quot;tips&quot;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -553,7 +592,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tips_data.head()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -652,7 +691,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>tips_data.describe()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -745,7 +784,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.histplot(tips_data[&quot;total_bill&quot;], kde = False).set_title(&quot;Histogram of Total Bill&quot;);
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Bill&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -760,7 +799,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.histplot(tips_data[&quot;tip&quot;], kde = False).set_title(&quot;Histogram of Total Tip&quot;);
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Tip&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -776,7 +815,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.scatterplot(x=&quot;total_bill&quot;, y=&quot;tip&quot;, data=tips_data);
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -792,7 +831,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[91]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.scatterplot(x=&quot;total_bill&quot;, y=&quot;tip&quot;, hue=&quot;sex&quot;, data=tips_data);
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -812,7 +851,7 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[92]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.boxplot(x=tips_data[&quot;total_bill&quot;]).set_title(&quot;Box plot of the Total Bill&quot;);
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Total Bill&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -828,8 +867,8 @@ import matplotlib.pyplot as plt # For showing plots
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[93]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.boxplot(x=tips_data[&quot;tip&quot;]).set_title(&quot;Box plot of the Tip&quot;)
-plt.show()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Tip&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -848,9 +887,9 @@ plt.show()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[94]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Create a boxplot and histogram of the tips grouped by smoking status
-sns.boxplot(x = tips_data[&quot;tip&quot;], y = tips_data[&quot;smoker&quot;])
-plt.show()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by smoking status</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;smoker&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -865,8 +904,8 @@ plt.show()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[95]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Create a boxplot and histogram of the tips grouped by time of day
-sns.boxplot(x = tips_data[&quot;tip&quot;], y = tips_data[&quot;time&quot;])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by time of day</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -891,9 +930,9 @@ sns.boxplot(x = tips_data[&quot;tip&quot;], y = tips_data[&quot;time&quot;])
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[96]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>g = sns.FacetGrid(tips_data, row = &quot;time&quot;)
-g = g.map(plt.hist, &quot;tip&quot;)
-plt.show()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">,</span> <span class="s2">&quot;tip&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -909,7 +948,7 @@ plt.show()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sns.boxplot(x = tips_data[&quot;tip&quot;], y = tips_data[&quot;day&quot;])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -934,9 +973,9 @@ plt.show()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>g = sns.FacetGrid(tips_data, row = &quot;day&quot;)
-g = g.map(plt.hist, &quot;tip&quot;)
-plt.show()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">,</span> <span class="s2">&quot;tip&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1005,6 +1044,22 @@ plt.show()
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Creating-histograms-and-boxplots-stratified-by-groups">Creating histograms and boxplots stratified by groups</a></li>
 </ul>
   </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/classical_electrodynamics/01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
