@@ -1,4 +1,4 @@
-# Statistical Physics
+# Stat. Physics
 
 
 by F. Mandl

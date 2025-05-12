@@ -1,2 +1,2 @@
-# Classical Mechanics
+# Clas. Mechanics
 by 

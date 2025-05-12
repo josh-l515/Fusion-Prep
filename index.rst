@@ -12,13 +12,13 @@ Fusion-Prep documentation
    :maxdepth: 2
    :caption: Contents:
 
-   cv
    physics-i/index
    physics-ii/index
+   physics-iii/index
    classical_mechanics/index
+   statistical_physics/index
    classical_electrodynamics/index
    quamtum_mechanics/index
-   statistical_physics/index
    python/index
    c++/index
    linux/index
