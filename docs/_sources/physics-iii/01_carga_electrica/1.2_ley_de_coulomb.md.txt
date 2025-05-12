@@ -1,0 +1,77 @@
+# 1.2 Ley de Coulomb
+```{sidebar} Balanza de torsión
+```{image} _static/1.2_coulomb_torsion.jpg
+:alt: Balanza de torsión de Coulomb
+:width: 200px
+:align: center
+```
+La fuerza elétrica entre las cargas:
+```{image} _static/1.2_charges.png
+:alt: Balanza de torsión de Coulomb
+:width: 250px
+:align: center
+```
+
+1. Está dirigida a lo largo de la linea que los une.
+2. Varía inversamente con el cuadrado de la distancia que separa las cargas
+3. Es proporcional al producto de las mismas.
+4. Es repulsiva si las cargas tienen el mismo signo y atractiva si las cargas tienen signos opuestos.
+
+La magnitud (siempre positiva) de dicha fuerza:
+```{math}
+:label: ley_coulomb
+F=\frac{k\,|q_1\,q_2|}{r^2} \quad (\text{N})
+```
+donde $k$ es una constante positiva determinada experimentalmente conocida como **constante de Coulomb** cuyo valor numérico:
+```{math}
+:label: cte_coulomb
+k=8,99\times 10^9\quad\left(\mathrm{\frac{Nm^2}{C^2}}\right)
+```
+asimismo esta se puede expresar en  **función de la permitividad del vacío**:
+
+```{math}
+:label: cte_couloumb_eps
+ k = \frac{1}{4 \pi \varepsilon_0}
+```
+Donde $\varepsilon_0 \approx 8.854 \times 10^{-12} \ \mathrm{C^2/(N \cdot m^2)}$ es la permitividad eléctrica del vacío.
+
+### Formulación vectorial ley de Coulomb
+```{math}
+:label: ley_coulomb
+\vec{F}=k\,\frac{|q_1\,q_2|}{r^2}\vec{e}_{\vec{r}}
+```
+## Casos
+1. Caso Unidimensional
+
+..- Repulsión
+```{image} _static/1.2_unidimensional_1.png
+:alt: Balanza de torsión de Coulomb
+:width: 400px
+:align: center
+```
+.. - Atracción
+```{image} _static/1.2_unidimensional_2.png
+:alt: Balanza de torsión de Coulomb
+:width: 400px
+:align: center
+```
+
+
+2. En el plano
+
+```{image} _static/1.2_plano.png
+:alt: Balanza de torsión de Coulomb
+:width: 400px
+:align: center
+```
+
+3. En el espacio
+
+
+```{image} _static/1.2_espacio.png
+:alt: Balanza de torsión de Coulomb
+:width: 400px
+:align: center
+```
+
+## Principio de Superposición

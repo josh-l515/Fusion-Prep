@@ -1,0 +1,1 @@
+# 8.4 Cálculo del momento de inercia de masas discretas y continuas – teorema de los ejes paralelos

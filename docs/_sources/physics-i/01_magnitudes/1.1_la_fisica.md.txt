@@ -1,0 +1,14 @@
+# 1.1 ¿Qué es la Física?
+
+La palabra *física* proviene del griego y significa "conocimiento de la naturaleza". Desde la antigüedad, el ser humano ha intentado comprender el mundo que lo rodea. En la antigua Grecia, Aristóteles propuso explicaciones basadas en la lógica más que en la experimentación, afirmando, por ejemplo, que cada sustancia se movía para alcanzar su “lugar natural”. Este enfoque dominó el pensamiento occidental durante casi dos mil años.
+
+El cambio llegó con **Galileo Galilei** en el siglo XVII, quien introdujo el método experimental para estudiar el movimiento. Su trabajo sentó las bases para que **Isaac Newton** formulara las leyes fundamentales de la mecánica, marcando el inicio de la física moderna y el fin de la física aristotélica.
+
+Durante los siglos siguientes, la física se expandió rápidamente gracias a la experimentación. Se estudiaron fenómenos térmicos, eléctricos y mecánicos, lo que llevó al desarrollo de teorías como la **termodinámica** y el **electromagnetismo**. Estos avances conforman lo que hoy llamamos *física clásica*, esencial para entender el mundo macroscópico.
+
+A finales del siglo XIX, descubrimientos como los **rayos X** y la **radiactividad** comenzaron a desafiar el marco clásico. En 1905, **Albert Einstein** propuso la **teoría de la relatividad especial** y la idea de que la luz está compuesta por paquetes discretos de energía. Estas ideas, junto con el desarrollo de la **mecánica cuántica**, revolucionaron la comprensión de la naturaleza a nivel atómico y subatómico.
+
+Este nuevo enfoque dio origen a la *física moderna*, que ha permitido describir con gran precisión el comportamiento de átomos, moléculas y partículas fundamentales. Hoy en día, la física se divide principalmente en estas dos ramas: **clásica** y **moderna**, ambas fundamentales para entender el universo.
+
+
+HOLA ESTA ES MI MODIFICACIÓN

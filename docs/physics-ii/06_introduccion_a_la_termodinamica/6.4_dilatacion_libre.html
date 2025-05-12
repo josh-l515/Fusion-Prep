@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.4 Dilatación libre &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/06_introduccion_a_la_termodinamica/6.4_dilatacion_libre';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/06_introduccion_a_la_termodinamica/6.4_dilatacion_libre.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.5 Transformación Isocórica" href="6.5_transformacion_isocorica.html" />
+    <link rel="prev" title="6.3 Transformación adiabática" href="6.3_transformacion_adiabatica.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-iii/index.html">
+    Física III
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
+    Clas. Mechanics
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../statistical_physics/index.html">
+    Stat. Physics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../classical_electrodynamics/index.html">
+    Clas. Electrodynamics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../c%2B%2B/index.html">
+    C++
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-iii/index.html">
+    Física III
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
+    Clas. Mechanics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../statistical_physics/index.html">
+    Stat. Physics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../classical_electrodynamics/index.html">
+    Clas. Electrodynamics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../c%2B%2B/index.html">
+    C++
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo I: Elasticidad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.1_solidos.html">1.1 Sólidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.2_fuerzas_elasticas.html">1.2 Fuerzas elásticas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.3_elasticidad.html">1.3 Elasticidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.4_deformacion.html">1.4 Deformación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.5_esfuerzo.html">1.5 Esfuerzo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.6_ley_de_hooke.html">1.6 Ley de Hooke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.7_deformacion_longitudinal.html">1.7 Deformación longitudinal o unilateral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.8_deformacion_multilateral.html">1.8 Deformación Multilateral o Volumétrica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.9_deformacion_cizalladura.html">1.9 Deformación por cizalladura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.10_deformacion_lateral.html">1.10 Deformación lateral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.11_torsion.html">1.11 Torsión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_elasticidad/1.12_energia_elastica.html">1.12 Energía elástica acumulada en una barra</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Movimiento Oscilatorio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.1_movimiento_periodico.html">2.1 Movimiento periódico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.2_movimiento_oscilatorio.html">2.2 Movimiento oscilatorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.3_movimiento_armonico_simple.html">2.3 Movimiento armónico simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.4_energia_almacenada_mas.html">2.4 Energía almacenada en un M.A.S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.5_pendulo_simple.html">2.5 Péndulo simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.6_pendulo_compuesto.html">2.6 Péndulo compuesto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.7_pendulo_torsion.html">2.7 Péndulo de Torsión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.8_superposicion_mas.html">2.8 Superposición de M.A.S.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.9_movimiento_oscilatorio_amortiguado.html">2.9 Movimiento oscilatorio amortiguado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_movimiento_oscilatorio/2.10_movimiento_oscilatorio_forzado.html">2.10 Movimiento oscilatorio forzado</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo III: Movimiento Ondulatorio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.1_ondas_mecanicas.html">3.1 Ondas mecánicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.2_tipos_de_ondas.html">3.2 Tipos de ondas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.3_frente_de_ondas.html">3.3 Frente de ondas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.4_ecuacion_diferencial_del_movimiento_ondulatorio.html">3.4 Ecuación diferencial del movimiento ondulatorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.5_velocidad_de_grupo.html">3.5 Velocidad de grupo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.6_ondas_transversales_en_una_cuerda.html">3.6 Ondas transversales en una cuerda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.7_ondas_longitudinales_en_una_barra.html">3.7 Ondas longitudinales en una barra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.8_ondas_longitudinales_de_presion_en_una_columna_de_gas_encerrada.html">3.8 Ondas longitudinales de presión en una columna de gas encerrada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.9_ondas_estacionarias.html">3.9 Ondas estacionarias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.10_intensidad_de_la_onda.html">3.10 Intensidad de la onda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.11_ondas_sonoras.html">3.11 Ondas sonoras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_movimiento_ondulatorio/3.12_efecto_doppler.html">3.12 Efecto Doppler</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo IV: Mecánica de Fluidos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.1_fluido.html">4.1 Fluido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.2_densidad.html">4.2 Densidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.3_peso_especifico.html">4.3 Peso específico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.4_densidad_relativa.html">4.4 Densidad relativa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.5_presion.html">4.5 Presión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.6_variacion_de_la_presion.html">4.6 Variación de la presión en un fluido en reposo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.7_equilibrio_liquidos_no_miscibles.html">4.7 Equilibrio de los líquidos no miscibles en vasos comunicantes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.8_fuerza_ejercida_pared_recipiente.html">4.8 Fuerza ejercida sobre la pared de un recipiente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.9_principio_de_pascal.html">4.9 Principio de Pascal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.10_principio_de_arquimedes.html">4.10 Principio de Arquímedes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.11_manometro.html">4.11 Manómetro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.12_fuerzas_moleculares_liquidos.html">4.12 Fuerzas moleculares en los líquidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.13_tension_superficial.html">4.13 Tensión superficial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.14_formacion_de_una_gota_liquida.html">4.14 Formación de una gota líquida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.15_formacion_de_una_burbuja_jabon.html">4.15 Formación de una burbuja de jabón</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.16_ascenso_liquidos_tubos_capilares.html">4.16 Ascenso de líquidos en tubos capilares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrostatica/4.17_aplicaciones_tension_superficial.html">4.17 Aplicaciones de la tensión superficial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.18_lineas_de_flujo.html">4.18 Líneas de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.19_principio_fundamentales.html">4.19 Principio fundamentales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.20_tipos_de_flujo.html">4.20 Tipos de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.21_ecuacion_de_continuidad.html">4.21 Ecuación de continuidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.22_ecuacion_de_bernoulli.html">4.22 Ecuación de Bernoulli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.23_teorema_de_torricelli.html">4.23 Teorema de Torricelli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.24_tubo_de_venturi.html">4.24 Tubo de venturi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.25_tubo_de_pitot.html">4.25 Tubo de Pitot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.26_flujo_de_fluidos_viscosos.html">4.26 Flujo de fluidos viscosos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.27_numero_de_reynolds.html">4.27 Número de Reynolds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_mecanica_de_fluidos/hidrodinamica/4.28_ley_de_stokes.html">4.28 Ley de Stokes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo V: Calor y Temperatura</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.1_ley_cero_termodinamica.html">5.1 Ley cero de la termodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.2_concepto_de_temperatura.html">5.2 Concepto de temperatura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.3_dilatacion_por_temperatura.html">5.3 Dilatación por temperatura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.4_dilatacion_de_liquidos.html">5.4 Dilatación de líquidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.5_calor.html">5.5 Calor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.6_cantidad_de_calor.html">5.6 Cantidad de calor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.7_calor_especifico.html">5.7 Calor específico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.8_cambios_de_estado.html">5.8 Cambios de estado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.9_propagacion_del_calor.html">5.9 Propagación del calor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_calor_y_temperatura/5.10_diferencia_entre_calor_y_trabajo.html">5.10 Diferencia entre calor y trabajo</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo VI: Introducción a la Termodinámica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="6.1_primera_ley_termodinamica.html">6.1 Primera ley de la termodinámica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.2_transformacion_isob%C3%A1rica.html">6.2 Transformación isobárica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.3_transformacion_adiabatica.html">6.3 Transformación adiabática</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6.4 Dilatación libre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.5_transformacion_isocorica.html">6.5 Transformación Isocórica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.6_teoria_cinetica_de_los_gases.html">6.6 Teoría cinética de los gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.7_ecuacion_de_estado_de_un_gas_ideal.html">6.7 Ecuación de estado de un gas ideal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.8_ley_de_dalton.html">6.8 Ley de Dalton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.9_calor_especifico_de_un_gas_ideal.html">6.9 Calor específico de un gas ideal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.10_proceso_reversible.html">6.10 Proceso reversible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.11_ciclo_de_carnot.html">6.11 Ciclo de Carnot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.12_eficiencia.html">6.12 Eficiencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.13_enunciado_de_kelvin_planck.html">6.13 Enunciado de Kelvin-Planck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.14_enunciado_de_clausius.html">6.14 Enunciado de Claussius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.15_teorema_de_carnot.html">6.15 Teorema de Carnot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.16_entropia.html">6.16 Entropía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.17_entropia_y_segunda_ley_termodinamica.html">6.17 Entropía y la segunda ley de la termodinámica</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Física II</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">6.4 Dilatación libre</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dilatacion-libre">
+<h1>6.4 Dilatación libre<a class="headerlink" href="#dilatacion-libre" title="Link to this heading">#</a></h1>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="6.3_transformacion_adiabatica.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">6.3 Transformación adiabática</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="6.5_transformacion_isocorica.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6.5 Transformación Isocórica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/physics-ii/06_introduccion_a_la_termodinamica/6.4_dilatacion_libre.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/physics-ii/06_introduccion_a_la_termodinamica/6.4_dilatacion_libre.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
