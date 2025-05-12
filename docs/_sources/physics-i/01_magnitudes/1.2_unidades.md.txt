@@ -1,1 +1,157 @@
 # 1.2 Unidades
+## 1.2.1 Magnitudes Físicas
+
+Una **magnitud física** es una propiedad de un cuerpo o fenómeno que puede medirse y expresarse numéricamente mediante una unidad. Para que algo sea considerado una magnitud física, debe cumplir con dos condiciones:
+
+1. Debe ser medible.
+2. Debe tener una unidad de medida.
+
+A continuación, se presentan ejemplos de **lo que sí** y **lo que no** son magnitudes físicas:
+
+| No es una magnitud física | Sí es una magnitud física        | Unidad (ejemplo)        |
+|---------------------------|----------------------------------|--------------------------|
+| Color                     | Longitud de onda de la luz       | nanómetro (nm)           |
+| Frío o calor (sensación)  | Temperatura                      | kelvin (K), grados °C    |
+| Tamaño (ambiguo)          | Longitud                         | metro (m)                |
+| Brillo (subjetivo)        | Intensidad luminosa              | candela (cd)             |
+| Forma (descriptiva)       | Volumen o área                   | m³, m²                   |
+
+### Medir
+
+**Medir** es comparar una magnitud física con otra de la misma especie que se toma como patrón y se llama **unidad**, con el fin de determinar cuántas veces la unidad está contenida en la magnitud medida.
+
+En forma general:
+
+```{math}
+:label: ley_coulomb
+\rm Medida=\underbrace{120}_{\rm\ magnitud}\overbrace{\rm Kg}^{\rm unidad}
+```
+### Magnitudes físicas fundamentales del SI
+Son aquellas **magnitudes físicas** que no dependen de otras para ser definidas
+
+| Magnitud              | Unidad              | Símbolo  | Ecuación dimensional|
+|-----------------------|---------------------|----------|---------------------|
+| Longitud              | metro               | m        | [L]                   |
+| Masa                  | kilogramo           | kg       | [M]                   |
+| Tiempo                | segundo             | s        | [T]                   |
+| Corriente eléctrica   | amperio             | A        | [I]                   |
+| Temperatura termodinámica | kelvin          | K        | [Θ]                   |
+| Cantidad de sustancia | mol                 | mol      | [N]                   |
+| Intensidad luminosa   | candela             | cd       | [J]                   |
+
+### Definición de las unidades fundamentales del S.I.
+El Sistema Internacional de Unidades (SI) establece una unidad básica para cada **magnitud fundamental**, que sirve como referencia para todas las demás magnitudes derivadas. Estas **unidades básicas** se definen a partir de constantes físicas universales. 
+- **Metro (m)**  
+  Es la longitud del trayecto recorrido por la luz en el vacío durante un intervalo de tiempo de 
+```{math}
+  \frac{1}{c}=\frac{1}{299\,792\,458} \ \text{segundos}.
+```
+- **Kilogramo (kg)**  
+  Es la masa igual a la de un cuerpo cuya energía equivale a una frecuencia definida mediante la constante de Planck:
+  $$
+  h = 6.626\ 070\ 15 \times 10^{-34} \ \text{J·s},
+  $$
+  fijando así el valor de esta constante y relacionando la unidad de masa con el segundo y el metro.
+
+- **Segundo (s)**  
+  Es la duración de **9 192 631 770** periodos de la radiación correspondiente a la transición entre dos niveles hiperfinos del estado fundamental del átomo de cesio-133.
+
+- **Amperio (A)**  
+  Es la corriente eléctrica que, al mantenerse en dos conductores paralelos rectilíneos e infinitamente largos separados por un metro en el vacío, produciría una fuerza de  
+  $$
+  2 \times 10^{-7} \ \text{N/m}.
+  $$  
+  Se define fijando el valor de la carga elemental:  
+  $$
+  e = 1.602\ 176\ 634 \times 10^{-19} \ \text{C}.
+  $$
+
+- **Kelvin (K)**  
+  Es la unidad de temperatura termodinámica definida fijando el valor de la constante de Boltzmann:  
+  $$
+  k = 1.380\ 649 \times 10^{-23} \ \text{J/K}.
+  $$
+
+- **Mol (mol)**  
+  Es la cantidad de sustancia que contiene exactamente  
+  $$
+  6.022\ 140\ 76 \times 10^{23}
+  $$  
+  entidades elementales (átomos, moléculas, etc.). Este número es el valor fijo del número de Avogadro.
+
+- **Candela (cd)**  
+  Es la intensidad luminosa, en una dirección dada, de una fuente que emite radiación monocromática de frecuencia  
+  $$
+  540 \times 10^{12} \ \text{Hz}
+  $$  
+  y tiene una intensidad radiante en esa dirección de  
+  $$
+  1/683 \ \text{W/sr}.
+  $$
+
+---
+### Magnitudes físicas derivadas del SI
+
+
+
+| Magnitud              | Unidad              | Símbolo  | Ecuación dimensional     |
+|-----------------------|---------------------|----------|---------------------------|
+| Superficie            | metro cuadrado      | m²       | L²                        |
+| Volumen               | metro cúbico        | m³       | L³                        |
+| Velocidad             | metro por segundo   | m/s      | LT⁻¹                      |
+| Aceleración           | metro por segundo²  | m/s²     | LT⁻²                      |
+| Fuerza                | newton              | N        | MLT⁻²                     |
+| Presión               | pascal              | Pa       | ML⁻¹T⁻²                   |
+| Energía / Trabajo     | joule               | J        | ML²T⁻²                    |
+| Potencia              | watt                | W        | ML²T⁻³                    |
+| Carga eléctrica       | coulomb             | C        | TI                        |
+| Voltaje               | volt                | V        | ML²T⁻³I⁻¹                 |
+| Resistencia eléctrica | ohmio               | Ω        | ML²T⁻³I⁻²                 |
+| Capacitancia          | faradio             | F        | M⁻¹L⁻²T⁴I²                |
+| Frecuencia            | hertz               | Hz       | T⁻¹                       |
+
+
+### Magnitudes suplementarias (históricas)
+
+Estas magnitudes fueron consideradas suplementarias en versiones anteriores del Sistema Internacional de Unidades. Actualmente se clasifican como magnitudes derivadas adimensionales.
+
+| Magnitud        | Unidad | Nombre de la unidad | Ecuación dimensional |
+|------------------|--------|----------------------|------------------------|
+| Ángulo plano     | rad    | radián               | 1                      |
+| Ángulo sólido    | sr     | estereorradián       | 1                      |
+
+
+
+## 1.2.2 Clasificación de las magnitudes físicas
+```text
+Magnitudes físicas/
+├── Por su Origen/
+│   ├── Mag. Fundamentales/        # No dependen de otras magnitudes
+│   └── Mag. Derivadas/            # Definidas a partir de las fundamentales
+│
+└── Por su Naturaleza/
+    ├── Mag. Ecalares/            # Solo tienen magnitud
+    └── Mag. Vectoriales/         # Tienen magnitud, dirección y sentido
+```
+## 1.2.3 Conversión de unidades 
+
+La conversión de unidades permite expresar una magnitud medida en una unidad en términos de otra unidad del mismo tipo. Esto se logra mediante el uso de un **factor de conversión**, que es una fracción igual a 1 formada por dos cantidades equivalentes expresadas en distintas unidades.
+
+Por ejemplo, si sabemos que:
+```{math}
+1 \text{ mi} = 1{,}609 \text{ km}
+```
+Entonces podemos formar el siguiente factor de conversión:
+```{math}
+\frac{1 \text{ mi}}{1{,}609 \text{ km}} = 1
+```
+Este factor se puede multiplicar por cualquier valor en kilómetros para obtener su equivalente en millas. Por ejemplo, si una distancia es de 240 km:
+```{math}
+240 \text{ km} \times \frac{1 \text{ mi}}{1{,}609 \text{ km}} = 149 \text{ mi}
+```
+Este método es general y puede aplicarse a cualquier conversión de unidades siempre que se conozca la relación entre ellas.
+
+## 1.2.4 Ejercicios
+1. Si un vehículo viaja a 90 $\mathrm{km/h}$, ¿a cuánto equivale su velocidad expresada en metros por segundo y en millas por hora?
+
+2. El diamante tallado más grande del mundo es la Primera Estrella de África. Su volumen es de 1.84 pulgadas cúbicas. ¿Cuál será su volumen en centímetros cúbicos? ¿Y en metros cúbicos?

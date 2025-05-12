@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.1 (93de688d07, 2025-03-30)"
+   sodipodi:docname="esquemas.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.1365809"
+     inkscape:cx="465.43099"
+     inkscape:cy="313.66002"
+     inkscape:window-width="954"
+     inkscape:window-height="1052"
+     inkscape:window-x="2"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path2" />
+    </marker>
+    <rect
+       x="555.4964"
+       y="343.65455"
+       width="59.315717"
+       height="68.73091"
+       id="rect16" />
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path2-8" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444444px;text-align:start;writing-mode:tb-rl;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="113.59431"
+       y="76.97509"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke-width:0.465;font-size:5.64444444px;writing-mode:tb-rl"
+         x="113.59431"
+         y="76.97509" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:start;writing-mode:tb-rl;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.465"
+       x="-41.628025"
+       y="-110.76603"
+       id="text2"
+       transform="scale(-1)"
+       inkscape:export-filename="1.1_met_cientifico.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';writing-mode:tb-rl;fill:#000000;fill-opacity:1;stroke-width:0.465"
+         x="-41.628025"
+         y="-110.76603">Met. Cientifico</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="69.003563"
+       y="51.316723"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="writing-mode:lr-tb;stroke-width:0.465"
+         x="69.003563"
+         y="51.316723">Observación</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="64.021355"
+       y="71.245544"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.465"
+         x="64.021355"
+         y="71.245544">Experimentacion</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:none;stroke:#000000;stroke-width:0.465"
+       x="87.471367"
+       y="89.430611"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="text-align:center;text-anchor:middle;stroke-width:0.465"
+         x="87.471367"
+         y="89.430611">Hípotesis</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.465"
+         x="87.471367"
+         y="96.48616"
+         id="tspan6">(Leyes Empíricas)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="69.501778"
+       y="116.33453"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.465"
+         x="69.501778"
+         y="116.33453">Leyes físicas</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="137.5089"
+       y="71.494659"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.465"
+         x="137.5089"
+         y="71.494659">Mediciones</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="199.28824"
+       y="71.992889"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="stroke-width:0.465"
+         x="199.28824"
+         y="71.992889">Errores</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.58611px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="135.76512"
+       y="87.437721"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="135.76512"
+         y="87.437721">Compara dos</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="135.76512"
+         y="93.170357"
+         id="tspan11">magnitudes de </tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="135.76512"
+         y="98.903"
+         id="tspan12">la misma</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="135.76512"
+         y="104.63564"
+         id="tspan13">especie</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.58611px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="189.07474"
+       y="86.441277"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="189.07474"
+         y="86.441277">Patrón estandar</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.58611px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.465"
+       x="188.57652"
+       y="105.37366"
+       id="text15"><tspan
+         sodipodi:role="line"
+         id="tspan15"
+         style="font-size:4.58611px;stroke-width:0.465"
+         x="188.57652"
+         y="105.37366">Magnitud desconocida</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text16"
+       style="fill:none;text-orientation:auto;stroke-width:1.75748031;stroke:#000000;font-size:21.33333333px;text-align:center;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect16)" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.471444;stroke-dasharray:none"
+       id="rect17-3"
+       width="55.894268"
+       height="12.299962"
+       x="59.404922"
+       y="63.118347" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.57643;stroke-dasharray:none"
+       id="rect17-3-3"
+       width="55.78928"
+       height="18.422735"
+       x="59.674038"
+       y="81.861877" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.48975;stroke-dasharray:none"
+       id="rect17-3-3-6"
+       width="55.875961"
+       height="13.278098"
+       x="60.343998"
+       y="107.71828" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.471444;stroke-dasharray:none"
+       id="rect17-3-1"
+       width="55.894268"
+       height="12.299962"
+       x="59.370895"
+       y="42.859959" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.538024;stroke-dasharray:none"
+       id="rect17-3-1-5"
+       width="14.724486"
+       height="60.809895"
+       x="34.19762"
+       y="53.793751" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.402518;stroke-dasharray:none"
+       id="rect17"
+       width="40.518353"
+       height="12.368888"
+       x="131.61244"
+       y="63.083885" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.340629;stroke-dasharray:none"
+       id="rect18"
+       width="28.872055"
+       height="12.430777"
+       x="195.35374"
+       y="63.05294" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.564999;stroke-dasharray:none;marker-end:url(#ArrowWideRounded)"
+       d="m 174.37722,94.41281 11.9573,-8.718862"
+       id="path18" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.865;stroke-dasharray:none;marker-end:url(#ArrowWideRounded-2)"
+       d="m 86.100459,55.361561 0.05387,7.200672"
+       id="path18-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.564999;stroke-dasharray:none;marker-end:url(#ArrowWideRounded)"
+       d="m 174.37722,94.402646 11.9573,8.718864"
+       id="path19" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.865;stroke-dasharray:none;marker-end:url(#ArrowWideRounded-2)"
+       d="m 86.100459,75.276362 0.05387,6.322078"
+       id="path20"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.865;stroke-dasharray:none;marker-end:url(#ArrowWideRounded-2)"
+       d="m 86.100459,100.46273 0.05387,6.32208"
+       id="path21"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.865;stroke-dasharray:none;marker-end:url(#ArrowWideRounded-2)"
+       d="m 115.60808,69.855799 15.30326,-0.05387"
+       id="path22"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.865;stroke-dasharray:none;marker-end:url(#ArrowWideRounded-2)"
+       d="m 172.22859,69.855799 22.52726,-0.05387"
+       id="path23"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
