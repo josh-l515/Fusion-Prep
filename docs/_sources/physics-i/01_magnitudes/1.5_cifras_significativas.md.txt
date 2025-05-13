@@ -1,1 +1,233 @@
-# 1.5 Cifras Significativas
+# 1.5 Incertidumbre en la Medida y cifras significativas.
+## 1.5.1 Exactitud y precisión
+- **Exactitud**: Es el grado de proximidad entre el valor medido y el valor verdadero o aceptado. Una medición es más exacta si se acerca al valor real.
+
+- **Precisión**: Es la consistencia de los resultados al repetir la medición. Una medición es precisa si al repetirla varias veces se obtienen resultados similares.
+
+
+```{figure} _static/exactitud_precision2.jpg
+:alt: 
+:width: 800px
+:align: center
+
+**Figura:** Casos respecto de la precisión y exactitud en una medida.
+```
+
+## 1.5.2 Errores en la medida:
+En cualquier medición física, por precisa que sea, **nunca se obtiene el valor verdadero exacto** de una magnitud. Siempre existe una discrepancia entre el valor medido y el valor real. Esta discrepancia se denomina **error**, y su análisis es fundamental para interpretar correctamente los resultados experimentales, evaluar la confiabilidad de los instrumentos utilizados y estimar la calidad de los datos obtenidos.
+
+### Tipos de Errores:
+1. **Errores Sistemáticos:**
+
+    Son errores que se repiten de manera consistente en todas las mediciones bajo las mismas condiciones. Desplazan todos los resultados en una misma dirección (por exceso o por defecto) y provienen de causas identificables.
+
+    **Fuentes comunes:**
+
+    - **Instrumentales:** instrumento mal calibrado, desgaste mecánico.
+    - **Ambientales:** temperatura, presión o humedad constantes que afectan la medición.
+    - **Metodológicos:** procedimientos inadecuados o errores de paralaje.
+
+    > Estos errores pueden reducirse o corregirse mediante calibración, ajustes en el entorno o mejoras en el método.
+
+
+2. **Errores Aleatorios:**
+
+    Surgen de pequeñas variaciones impredecibles en el sistema de medición. Afectan de forma diferente cada intento de medición, incluso si se repite bajo las mismas condiciones.
+
+    **Causas posibles:**
+
+    - Inestabilidad del entorno (vibraciones, corrientes de aire).
+    - Limitaciones de los sentidos humanos.
+    - Ruido electrónico en aparatos digitales.
+
+    > No pueden eliminarse, pero sí reducirse con un mayor número de mediciones y análisis estadístico.
+
+### Cuantificación de errores
+
+Para expresar correctamente los resultados experimentales, es necesario acompañarlos de una estimación cuantitativa del error:
+
+- **Error absoluto ($\Delta x$):**  
+  Diferencia entre el valor medido $x_{medido}$ y el valor real $x_{real}$ (si se conoce).  
+  
+   ```{math} 
+  \Delta x = |x_{\text{medido}} - x_{\text{real}}|
+   ```
+- **Error relativo ($\varepsilon_r$):**  
+  Permite comparar la magnitud del error absoluto con el valor medido, se define como el cociente de estos.
+   ```{math} 
+    \varepsilon_r = \frac{\Delta x}{x_{\text{real}}}
+   ```
+- **Error relativo procentual ($\varepsilon_\%$):**  
+  Corresponde al error relativo expresado en porcentaje
+   ```{math} 
+    \varepsilon_\% = \varepsilon_r\times 100\%  
+  ```
+- **Desviación estándar ($\sigma$):**  
+  Útil para mediciones repetidas, estima la dispersión de los valores respecto a la media.  
+   ```{math} 
+   \sigma = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x_i - \bar{x})^2}
+  ```
+
+Finalmente el resultado de la medida debe expresarce: 
+   ```{math} 
+  x = \bar{x} \pm \Delta x
+  ```
+#### Ejemplo de aplicación
+##### Caso 1: Una sola medición
+> **Supuestos:**  
+> - **Valor real:** 50.0 cm  
+> - **Valor medido:** 49.7 cm  
+>   
+> **Cálculos:**
+> ```{math}
+> \Delta L = |L_{\text{medido}} - L_{\text{real}}| = |49.7 - 50.0| = 0.3 \, \text{cm}
+> ```
+>
+> ```{math}
+> \varepsilon = \frac{\Delta L}{L_{\text{real}}} = \frac{0.3}{50.0} = 0.006
+> ```
+>
+> ```{math}
+> \varepsilon_{\%} = \varepsilon \times 100 = 0.6\%
+> ```
+##### Caso 2: Diez mediciones
+> **Supuestos**
+> - **Valor real conocido:** 50.0 cm  
+> - **Valores medidos (cm):**
+> ```{math}
+> \{49.6,\ 49.8,\ 50.0,\ 50.1,\ 49.9,\ 49.7,\ 49.8,\ 50.2,\ 49.9,\ 50.0\}
+> ```
+> **Cálculos**
+> ```{math}
+> \bar{L} = \frac{1}{10} \sum_{i=1}^{10} L_i = \frac{499.0}{10} = 49.90 \, \text{cm}
+> ```
+> ```{math}
+> \Delta L = |\bar{L} - L_{\text{real}}| = |49.90 - 50.0| = 0.10 \, \text{cm}
+> ```
+> ```{math}
+> \varepsilon = \frac{0.10}{50.0} = 0.002
+> ```
+> ```{math}
+> \varepsilon_{\%} = 0.002 \times 100 = 0.2\%
+> ```
+> ```{math}
+> \sigma = \sqrt{ \frac{1}{n-1} \sum_{i=1}^{n}(x_i - \bar{x})^2 } \approx 0.183 \, \text{cm}
+> ```
+> **Resultado final reportado:**
+> ```{math}
+> L = \bar{L} \pm \sigma = 49.90 \pm 0.18 \, \text{cm}
+> ```
+
+## 1.5.2 Cifras Significativas
+Las cifras significativas son los dígitos de un número que aportan información sobre su precisión medida o calculada. Indican cuán confiables son los datos numéricos y nos ayudan a evitar falsas apariencias de exactitud.
+
+Las cifras significativas:
+- Reflejan la precisión del instrumento de medida o del proceso de cálculo.
+- Evitan errores por exceso de precisión artificial.
+- Permiten que los resultados sean coherentes con los datos utilizados.
+- Son esenciales al reportar, redondear y propagar errores.
+
+**Ejemplos**
+
+### Reglas.
+1. **¿Qué cifras se consideran significativas?**
+
+   Las cifras significativas se determinan con base en las siguientes reglas:
+
+   1.1. **Todos los dígitos distintos de cero son significativos.**  
+        Ejemplo: `123` tiene **3 cifras significativas**.
+
+   1.2. **Los ceros entre dígitos significativos también lo son.**  
+        Ejemplo: `1023` tiene **4 cifras significativas**.
+
+   1.3. **Los ceros a la izquierda (antes del primer dígito distinto de cero) no son significativos.**  
+        Se usan solo para ubicar el punto decimal.  
+        Ejemplo: `0.0045` tiene **2 cifras significativas** (`4` y `5`).
+
+   1.4. **Los ceros a la derecha de un número con punto decimal son significativos.**  
+        Ejemplo: `2.300` tiene **4 cifras significativas**.
+
+   1.5. **Los ceros a la derecha de un número entero sin punto decimal pueden no ser significativos.**  
+        En este caso, se recomienda utilizar notación científica para evitar ambigüedad.  
+        Ejemplo:  
+        - `1500` puede tener **2, 3 o 4 cifras significativas** según el contexto.  
+        - `1.50 × 10³` tiene exactamente **3 cifras significativas**.
+
+
+
+
+
+
+
+1. **Multiplicación / División**
+ > *"El número de cifras significativas del resultado de una multiplicación o división no debe ser mayor que el menor número de cifras significativas de cualesquiera de los factores."*
+2. Adición / Sustracción
+El resultado de la suma o resta de dos números carece de cifras significativas más allá de la última cifra decimal en que ambos números originales tienen cifras significativa
+
+
+
+
+## 1.5.3 Estimación de la incertidumbre según el tipo de instrumento
+
+### 1. Instrumentos analógicos
+
+Los instrumentos analógicos (como reglas, vernier manuales, termómetros de mercurio) requieren que el observador realice una **estimación visual** entre las divisiones marcadas. 
+
+Por convención, la incertidumbre se toma como:
+
+```
+± (1/2) × la menor división del instrumento
+```
+
+**Ejemplo**:  
+Una regla milimetrada tiene divisiones cada 0.1 cm.  
+Si se mide una longitud de `1.5 cm`, la incertidumbre se estima como:
+
+```
+± (0.1 cm / 2) = ± 0.05 cm
+```
+
+Esto representa la incertidumbre debido a la estimación visual entre marcas.
+
+---
+
+### 2. Instrumentos digitales
+
+Los instrumentos digitales (como balanzas electrónicas, vernier digitales, multímetros) **no requieren estimación visual**: el número aparece directamente en pantalla.
+
+En este caso, por convención, la incertidumbre se toma como:
+
+```
+± 1 unidad del último dígito mostrado
+```
+
+**Ejemplo**:  
+Un vernier digital muestra `1.500 cm`.  
+El último dígito está en las milésimas de centímetro, por lo tanto la incertidumbre es:
+
+```
+± 0.001 cm
+```
+
+Esto refleja que el instrumento no permite estimar más allá del último dígito.
+
+---
+
+### Comparación entre instrumentos
+
+| Tipo de instrumento | Ejemplo              | División mínima | ¿Se estima entre marcas? | Incertidumbre típica       |
+|---------------------|----------------------|-----------------|---------------------------|----------------------------|
+| Analógico           | Regla, vernier manual| 0.1 cm          | Sí                        | ±0.05 cm                   |
+| Digital             | Vernier digital      | 0.001 cm        | No                        | ±0.001 cm                  |
+
+---
+
+### Conclusión
+
+La forma de determinar la incertidumbre depende del tipo de instrumento utilizado:
+
+- En **instrumentos analógicos**, se estima visualmente entre marcas, y se considera la mitad de la menor división como incertidumbre.
+- En **instrumentos digitales**, se toma una unidad del último dígito mostrado como incertidumbre.
+
+> Esto afecta directamente las cifras significativas y cómo deben reportarse las mediciones en un contexto científico o técnico.
+

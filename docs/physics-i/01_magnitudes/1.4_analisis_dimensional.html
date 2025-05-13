@@ -42,11 +42,13 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.4_analisis_dimensional';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.4_analisis_dimensional.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.5 Cifras Significativas" href="1.5_cifras_significativas.html" />
+    <link rel="next" title="1.5 Incertidumbre en la Medida y cifras significativas." href="1.5_cifras_significativas.html" />
     <link rel="prev" title="1.3 Conversión de Unidades" href="1.3_conversion_de_unidades.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -494,8 +496,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1.2_unidades.html">1.2 Unidades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.3_conversion_de_unidades.html">1.3 Conversión de Unidades</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1.4 Análisis Dimensional</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.5_cifras_significativas.html">1.5 Cifras Significativas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.6_incertidumbre_en_la_medida.html">1.6 Incertidumbre en la medida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.5_cifras_significativas.html">1.5 Incertidumbre en la Medida y cifras significativas.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Vectores</span></p>
 <ul class="nav bd-sidenav">
@@ -621,6 +622,91 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analisis-dimensional">
 <h1>1.4 Análisis Dimensional<a class="headerlink" href="#analisis-dimensional" title="Link to this heading">#</a></h1>
+<p>Es el estudio de las ecuaciones dimesionales.</p>
+<section id="ecuaciones-dimesionales">
+<h2>1.4.1 Ecuaciones dimesionales<a class="headerlink" href="#ecuaciones-dimesionales" title="Link to this heading">#</a></h2>
+<p>Son expresiones de tipo algebráicas, que relacionan las magnitudes fundamentales con las magnitudes derivadas.</p>
+<ul class="simple">
+<li><p>Se expresan en términos de magnitudes físicas, y no en términos de unidades.</p></li>
+<li><p>La representación  de la ecuación dimensional de una magnitud derivada se encierra entre corchetes.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[[v]=\rm LT^{-1}\]</div>
+<ul class="simple">
+<li><p>Puede suceder que dos magnitudes derivadas tengan la misma ecuacion dimensional.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\rm Trabajo: \,[W]=\rm MLT^{-2}; \quad \rm Energía Cinética: \ [K]=\rm MLT^{-2}\]</div>
+<p>Las ecuaciones dimesionales nos sirven para:</p>
+<ol class="arabic simple">
+<li><p>Verificar la coherencia de las fórmulas físicas.</p></li>
+<li><p>Hallar la ecuación empírica de algún fenómeno físico.</p></li>
+<li><p>Convertir unidades entre diferentes sistemas de medición.</p></li>
+<li><p>Analizar fenómenos físicos sin necesidad de cálculos numéricos</p></li>
+</ol>
+</section>
+<section id="principio-de-homogeneidad-dimensional">
+<h2>1.4.2 Principio de homogeneidad dimensional<a class="headerlink" href="#principio-de-homogeneidad-dimensional" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><em>“Todos los términos de las ecuaciones físicas deben tener las mismas dimensiones.”</em></p>
+</div></blockquote>
+<p>Otra forma de definirla: “Los dos o mas miembros que forman una igualdad deben presentar siempre la misma ecuación dimensional”, “Sólo se pueden sumar o restar cantidades de la misma especie.”</p>
+<p><strong>Ejemplo</strong>: MRUV</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x&amp;=x_0+v_0t+at^2\\
+[x]&amp;=[x_0]+[v_0t]+[at^2]\\
+\rm L &amp;= \rm L + LT^{-1}T + LT^{-2}T^2\\
+\rm L&amp;= \rm L + L + L\\
+\rm  L&amp;=\rm L\end{split}\]</div>
+<section id="propiedades">
+<h3>Propiedades:<a class="headerlink" href="#propiedades" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Dimensión de cualquier número es uno.</p>
+<div class="math notranslate nohighlight">
+\[[3] = 1, \quad [0.025] = 1, \quad \left[ \frac{5}{7} \right] = 1, \quad [\sqrt{8}] = 1\]</div>
+</li>
+<li><p>Dimensión de cualquier función trigonométrica es uno.</p>
+<div class="math notranslate nohighlight">
+\[[\sin 30^\circ] = [\tan 3x] = [\csc^3 20^\circ] = [\cos^3 2y] = 1\]</div>
+</li>
+<li><p>Dimensión de cualquier función logarítmica es uno.</p>
+<div class="math notranslate nohighlight">
+\[[\log 300] = [(\ln 57.3)^2] = [\log 1] = 1\]</div>
+</li>
+<li><p>Dimensión de cualquier función exponencial es uno.</p>
+<div class="math notranslate nohighlight">
+\[[e^{-0.5}] = [2^{4.37}] = [10^{200}] = 1\]</div>
+</li>
+<li><p>Dimensión de cualquier constante adimensional es uno.</p>
+<div class="math notranslate nohighlight">
+\[[e] = [\pi] = 1\]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\( x = x_0 \pm y_0 \)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[[x] = [x_0] \pm [y_0]\]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\( x = y z r \)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[[x] = [y][z][r]\]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\( x = \frac{y}{z} \)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[[x] = \frac{[y]}{[z]}\]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\( x = y^n \)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[[x] = [y]^n\]</div>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\( x = a y^m \)</span>, (<span class="math notranslate nohighlight">\(a\)</span> es una constante) entonces:</p>
+<div class="math notranslate nohighlight">
+\[[x] = [y]^m\]</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="problemas-de-aplicacion">
+<h2>1.4.3 Problemas de aplicación:<a class="headerlink" href="#problemas-de-aplicacion" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
 
@@ -647,7 +733,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.5 Cifras Significativas</p>
+        <p class="prev-next-title">1.5 Incertidumbre en la Medida y cifras significativas.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -661,6 +747,23 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-dimesionales">1.4.1 Ecuaciones dimesionales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-homogeneidad-dimensional">1.4.2 Principio de homogeneidad dimensional</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades">Propiedades:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-de-aplicacion">1.4.3 Problemas de aplicación:</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

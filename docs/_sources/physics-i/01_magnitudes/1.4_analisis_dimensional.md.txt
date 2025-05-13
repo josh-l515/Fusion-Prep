@@ -1,1 +1,78 @@
 # 1.4 Análisis Dimensional
+Es el estudio de las ecuaciones dimesionales.
+## 1.4.1 Ecuaciones dimesionales
+Son expresiones de tipo algebráicas, que relacionan las magnitudes fundamentales con las magnitudes derivadas.
+
+- Se expresan en términos de magnitudes físicas, y no en términos de unidades.
+- La representación  de la ecuación dimensional de una magnitud derivada se encierra entre corchetes.
+```{math}
+[v]=\rm LT^{-1}
+```
+- Puede suceder que dos magnitudes derivadas tengan la misma ecuacion dimensional. 
+```{math}
+\rm Trabajo: \,[W]=\rm MLT^{-2}; \quad \rm Energía Cinética: \ [K]=\rm MLT^{-2}
+```
+Las ecuaciones dimesionales nos sirven para:
+1. Verificar la coherencia de las fórmulas físicas.
+2. Hallar la ecuación empírica de algún fenómeno físico.
+3. Convertir unidades entre diferentes sistemas de medición.
+4. Analizar fenómenos físicos sin necesidad de cálculos numéricos
+
+## 1.4.2 Principio de homogeneidad dimensional
+> *“Todos los términos de las ecuaciones físicas deben tener las mismas dimensiones.”*
+
+
+Otra forma de definirla: "Los dos o mas miembros que forman una igualdad deben presentar siempre la misma ecuación dimensional", "Sólo se pueden sumar o restar cantidades de la misma especie."
+
+**Ejemplo**: MRUV
+```{math}
+x&=x_0+v_0t+at^2\\
+[x]&=[x_0]+[v_0t]+[at^2]\\
+\rm L &= \rm L + LT^{-1}T + LT^{-2}T^2\\
+\rm L&= \rm L + L + L\\
+\rm  L&=\rm L
+```
+### Propiedades:
+1. Dimensión de cualquier número es uno.  
+   ```{math}
+   [3] = 1, \quad [0.025] = 1, \quad \left[ \frac{5}{7} \right] = 1, \quad [\sqrt{8}] = 1
+   ```
+
+2. Dimensión de cualquier función trigonométrica es uno.  
+   ```{math}
+   [\sin 30^\circ] = [\tan 3x] = [\csc^3 20^\circ] = [\cos^3 2y] = 1
+   ```
+3. Dimensión de cualquier función logarítmica es uno.  
+   ```{math}
+   [\log 300] = [(\ln 57.3)^2] = [\log 1] = 1
+   ```
+4. Dimensión de cualquier función exponencial es uno.  
+   ```{math}
+   [e^{-0.5}] = [2^{4.37}] = [10^{200}] = 1
+   ```
+5. Dimensión de cualquier constante adimensional es uno.  
+   ```{math}
+   [e] = [\pi] = 1
+   ```
+6. Si $ x = x_0 \pm y_0 $, entonces:
+   ```{math}
+   [x] = [x_0] \pm [y_0]
+   ```
+7. Si $ x = y z r $, entonces:
+   ```{math}
+   [x] = [y][z][r]
+   ```
+8. Si $ x = \frac{y}{z} $, entonces:
+   ```{math}
+   [x] = \frac{[y]}{[z]}
+   ```
+9. Si $ x = y^n $, entonces:
+   ```{math}
+   [x] = [y]^n
+   ```
+10. Si $ x = a y^m $, ($a$ es una constante) entonces:
+    ```{math}
+    [x] = [y]^m
+    ```
+## 1.4.3 Problemas de aplicación:
+

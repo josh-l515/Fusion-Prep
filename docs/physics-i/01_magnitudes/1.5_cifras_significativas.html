@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.5 Cifras Significativas &#8212; J&#39;s PhysiXLab  documentation</title>
+    <title>1.5 Incertidumbre en la Medida y cifras significativas. &#8212; J&#39;s PhysiXLab  documentation</title>
   
   
   
@@ -42,11 +42,13 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.5_cifras_significativas';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.5_cifras_significativas.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.6 Incertidumbre en la medida" href="1.6_incertidumbre_en_la_medida.html" />
+    <link rel="next" title="2.1 Magnitudes escalares" href="../02_vectores/2.1_magnitudes_escalaras.html" />
     <link rel="prev" title="1.4 Análisis Dimensional" href="1.4_analisis_dimensional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -494,8 +496,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1.2_unidades.html">1.2 Unidades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.3_conversion_de_unidades.html">1.3 Conversión de Unidades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.4_analisis_dimensional.html">1.4 Análisis Dimensional</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.5 Cifras Significativas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.6_incertidumbre_en_la_medida.html">1.6 Incertidumbre en la medida</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.5 Incertidumbre en la Medida y cifras significativas.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Vectores</span></p>
 <ul class="nav bd-sidenav">
@@ -602,7 +603,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Física I</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.5 Cifras Significativas</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.5 Incertidumbre en la Medida y cifras significativas.</span></li>
   </ul>
 </nav>
 </div>
@@ -619,8 +620,247 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cifras-significativas">
-<h1>1.5 Cifras Significativas<a class="headerlink" href="#cifras-significativas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="incertidumbre-en-la-medida-y-cifras-significativas">
+<h1>1.5 Incertidumbre en la Medida y cifras significativas.<a class="headerlink" href="#incertidumbre-en-la-medida-y-cifras-significativas" title="Link to this heading">#</a></h1>
+<section id="exactitud-y-precision">
+<h2>1.5.1 Exactitud y precisión<a class="headerlink" href="#exactitud-y-precision" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Exactitud</strong>: Es el grado de proximidad entre el valor medido y el valor verdadero o aceptado. Una medición es más exacta si se acerca al valor real.</p></li>
+<li><p><strong>Precisión</strong>: Es la consistencia de los resultados al repetir la medición. Una medición es precisa si al repetirla varias veces se obtienen resultados similares.</p></li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/exactitud_precision2.jpg"><img alt="" src="../../_images/exactitud_precision2.jpg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figura:</strong> Casos respecto de la precisión y exactitud en una medida.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="errores-en-la-medida">
+<h2>1.5.2 Errores en la medida:<a class="headerlink" href="#errores-en-la-medida" title="Link to this heading">#</a></h2>
+<p>En cualquier medición física, por precisa que sea, <strong>nunca se obtiene el valor verdadero exacto</strong> de una magnitud. Siempre existe una discrepancia entre el valor medido y el valor real. Esta discrepancia se denomina <strong>error</strong>, y su análisis es fundamental para interpretar correctamente los resultados experimentales, evaluar la confiabilidad de los instrumentos utilizados y estimar la calidad de los datos obtenidos.</p>
+<section id="tipos-de-errores">
+<h3>Tipos de Errores:<a class="headerlink" href="#tipos-de-errores" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Errores Sistemáticos:</strong></p>
+<p>Son errores que se repiten de manera consistente en todas las mediciones bajo las mismas condiciones. Desplazan todos los resultados en una misma dirección (por exceso o por defecto) y provienen de causas identificables.</p>
+<p><strong>Fuentes comunes:</strong></p>
+<ul class="simple">
+<li><p><strong>Instrumentales:</strong> instrumento mal calibrado, desgaste mecánico.</p></li>
+<li><p><strong>Ambientales:</strong> temperatura, presión o humedad constantes que afectan la medición.</p></li>
+<li><p><strong>Metodológicos:</strong> procedimientos inadecuados o errores de paralaje.</p></li>
+</ul>
+<blockquote>
+<div><p>Estos errores pueden reducirse o corregirse mediante calibración, ajustes en el entorno o mejoras en el método.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Errores Aleatorios:</strong></p>
+<p>Surgen de pequeñas variaciones impredecibles en el sistema de medición. Afectan de forma diferente cada intento de medición, incluso si se repite bajo las mismas condiciones.</p>
+<p><strong>Causas posibles:</strong></p>
+<ul class="simple">
+<li><p>Inestabilidad del entorno (vibraciones, corrientes de aire).</p></li>
+<li><p>Limitaciones de los sentidos humanos.</p></li>
+<li><p>Ruido electrónico en aparatos digitales.</p></li>
+</ul>
+<blockquote>
+<div><p>No pueden eliminarse, pero sí reducirse con un mayor número de mediciones y análisis estadístico.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="cuantificacion-de-errores">
+<h3>Cuantificación de errores<a class="headerlink" href="#cuantificacion-de-errores" title="Link to this heading">#</a></h3>
+<p>Para expresar correctamente los resultados experimentales, es necesario acompañarlos de una estimación cuantitativa del error:</p>
+<ul>
+<li><p><strong>Error absoluto (<span class="math notranslate nohighlight">\(\Delta x\)</span>):</strong><br />
+Diferencia entre el valor medido <span class="math notranslate nohighlight">\(x_{medido}\)</span> y el valor real <span class="math notranslate nohighlight">\(x_{real}\)</span> (si se conoce).</p>
+<div class="math notranslate nohighlight">
+\[\Delta x = |x_{\text{medido}} - x_{\text{real}}|\]</div>
+</li>
+<li><p><strong>Error relativo (<span class="math notranslate nohighlight">\(\varepsilon_r\)</span>):</strong><br />
+Permite comparar la magnitud del error absoluto con el valor medido, se define como el cociente de estos.</p>
+<div class="math notranslate nohighlight">
+\[ \varepsilon_r = \frac{\Delta x}{x_{\text{real}}}\]</div>
+</li>
+<li><p><strong>Error relativo procentual (<span class="math notranslate nohighlight">\(\varepsilon_\%\)</span>):</strong><br />
+Corresponde al error relativo expresado en porcentaje</p>
+<div class="math notranslate nohighlight">
+\[ \varepsilon_\% = \varepsilon_r\times 100\%  \]</div>
+</li>
+<li><p><strong>Desviación estándar (<span class="math notranslate nohighlight">\(\sigma\)</span>):</strong><br />
+Útil para mediciones repetidas, estima la dispersión de los valores respecto a la media.</p>
+<div class="math notranslate nohighlight">
+\[\sigma = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x_i - \bar{x})^2}\]</div>
+</li>
+</ul>
+<p>Finalmente el resultado de la medida debe expresarce:</p>
+<div class="math notranslate nohighlight">
+\[x = \bar{x} \pm \Delta x\]</div>
+<section id="ejemplo-de-aplicacion">
+<h4>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Link to this heading">#</a></h4>
+<section id="caso-1-una-sola-medicion">
+<h5>Caso 1: Una sola medición<a class="headerlink" href="#caso-1-una-sola-medicion" title="Link to this heading">#</a></h5>
+<blockquote>
+<div><p><strong>Supuestos:</strong></p>
+<ul class="simple">
+<li><p><strong>Valor real:</strong> 50.0 cm</p></li>
+<li><p><strong>Valor medido:</strong> 49.7 cm</p></li>
+</ul>
+<p><strong>Cálculos:</strong></p>
+<div class="math notranslate nohighlight">
+\[\Delta L = |L_{\text{medido}} - L_{\text{real}}| = |49.7 - 50.0| = 0.3 \, \text{cm}\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon = \frac{\Delta L}{L_{\text{real}}} = \frac{0.3}{50.0} = 0.006\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon_{\%} = \varepsilon \times 100 = 0.6\%\]</div>
+</div></blockquote>
+</section>
+<section id="caso-2-diez-mediciones">
+<h5>Caso 2: Diez mediciones<a class="headerlink" href="#caso-2-diez-mediciones" title="Link to this heading">#</a></h5>
+<blockquote>
+<div><p><strong>Supuestos</strong></p>
+<ul class="simple">
+<li><p><strong>Valor real conocido:</strong> 50.0 cm</p></li>
+<li><p><strong>Valores medidos (cm):</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\{49.6,\ 49.8,\ 50.0,\ 50.1,\ 49.9,\ 49.7,\ 49.8,\ 50.2,\ 49.9,\ 50.0\}\]</div>
+<p><strong>Cálculos</strong></p>
+<div class="math notranslate nohighlight">
+\[\bar{L} = \frac{1}{10} \sum_{i=1}^{10} L_i = \frac{499.0}{10} = 49.90 \, \text{cm}\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta L = |\bar{L} - L_{\text{real}}| = |49.90 - 50.0| = 0.10 \, \text{cm}\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon = \frac{0.10}{50.0} = 0.002\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon_{\%} = 0.002 \times 100 = 0.2\%\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma = \sqrt{ \frac{1}{n-1} \sum_{i=1}^{n}(x_i - \bar{x})^2 } \approx 0.183 \, \text{cm}\]</div>
+<p><strong>Resultado final reportado:</strong></p>
+<div class="math notranslate nohighlight">
+\[L = \bar{L} \pm \sigma = 49.90 \pm 0.18 \, \text{cm}\]</div>
+</div></blockquote>
+</section>
+</section>
+</section>
+</section>
+<section id="cifras-significativas">
+<h2>1.5.2 Cifras Significativas<a class="headerlink" href="#cifras-significativas" title="Link to this heading">#</a></h2>
+<p>Las cifras significativas son los dígitos de un número que aportan información sobre su precisión medida o calculada. Indican cuán confiables son los datos numéricos y nos ayudan a evitar falsas apariencias de exactitud.</p>
+<p>Las cifras significativas:</p>
+<ul class="simple">
+<li><p>Reflejan la precisión del instrumento de medida o del proceso de cálculo.</p></li>
+<li><p>Evitan errores por exceso de precisión artificial.</p></li>
+<li><p>Permiten que los resultados sean coherentes con los datos utilizados.</p></li>
+<li><p>Son esenciales al reportar, redondear y propagar errores.</p></li>
+</ul>
+<p><strong>Ejemplos</strong></p>
+<section id="reglas">
+<h3>Reglas.<a class="headerlink" href="#reglas" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>¿Qué cifras se consideran significativas?</strong></p>
+<p>Las cifras significativas se determinan con base en las siguientes reglas:</p>
+<p>1.1. <strong>Todos los dígitos distintos de cero son significativos.</strong><br />
+Ejemplo: <code class="docutils literal notranslate"><span class="pre">123</span></code> tiene <strong>3 cifras significativas</strong>.</p>
+<p>1.2. <strong>Los ceros entre dígitos significativos también lo son.</strong><br />
+Ejemplo: <code class="docutils literal notranslate"><span class="pre">1023</span></code> tiene <strong>4 cifras significativas</strong>.</p>
+<p>1.3. <strong>Los ceros a la izquierda (antes del primer dígito distinto de cero) no son significativos.</strong><br />
+Se usan solo para ubicar el punto decimal.<br />
+Ejemplo: <code class="docutils literal notranslate"><span class="pre">0.0045</span></code> tiene <strong>2 cifras significativas</strong> (<code class="docutils literal notranslate"><span class="pre">4</span></code> y <code class="docutils literal notranslate"><span class="pre">5</span></code>).</p>
+<p>1.4. <strong>Los ceros a la derecha de un número con punto decimal son significativos.</strong><br />
+Ejemplo: <code class="docutils literal notranslate"><span class="pre">2.300</span></code> tiene <strong>4 cifras significativas</strong>.</p>
+<p>1.5. <strong>Los ceros a la derecha de un número entero sin punto decimal pueden no ser significativos.</strong><br />
+En este caso, se recomienda utilizar notación científica para evitar ambigüedad.<br />
+Ejemplo:<br />
+- <code class="docutils literal notranslate"><span class="pre">1500</span></code> puede tener <strong>2, 3 o 4 cifras significativas</strong> según el contexto.<br />
+- <code class="docutils literal notranslate"><span class="pre">1.50</span> <span class="pre">×</span> <span class="pre">10³</span></code> tiene exactamente <strong>3 cifras significativas</strong>.</p>
+</li>
+<li><p><strong>Multiplicación / División</strong></p></li>
+</ol>
+<blockquote>
+<div><p><em>“El número de cifras significativas del resultado de una multiplicación o división no debe ser mayor que el menor número de cifras significativas de cualesquiera de los factores.”</em></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Adición / Sustracción
+El resultado de la suma o resta de dos números carece de cifras significativas más allá de la última cifra decimal en que ambos números originales tienen cifras significativa</p></li>
+</ol>
+</section>
+</section>
+<section id="estimacion-de-la-incertidumbre-segun-el-tipo-de-instrumento">
+<h2>1.5.3 Estimación de la incertidumbre según el tipo de instrumento<a class="headerlink" href="#estimacion-de-la-incertidumbre-segun-el-tipo-de-instrumento" title="Link to this heading">#</a></h2>
+<section id="instrumentos-analogicos">
+<h3>1. Instrumentos analógicos<a class="headerlink" href="#instrumentos-analogicos" title="Link to this heading">#</a></h3>
+<p>Los instrumentos analógicos (como reglas, vernier manuales, termómetros de mercurio) requieren que el observador realice una <strong>estimación visual</strong> entre las divisiones marcadas.</p>
+<p>Por convención, la incertidumbre se toma como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>± (1/2) × la menor división del instrumento
+</pre></div>
+</div>
+<p><strong>Ejemplo</strong>:<br />
+Una regla milimetrada tiene divisiones cada 0.1 cm.<br />
+Si se mide una longitud de <code class="docutils literal notranslate"><span class="pre">1.5</span> <span class="pre">cm</span></code>, la incertidumbre se estima como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>± (0.1 cm / 2) = ± 0.05 cm
+</pre></div>
+</div>
+<p>Esto representa la incertidumbre debido a la estimación visual entre marcas.</p>
+</section>
+<hr class="docutils" />
+<section id="instrumentos-digitales">
+<h3>2. Instrumentos digitales<a class="headerlink" href="#instrumentos-digitales" title="Link to this heading">#</a></h3>
+<p>Los instrumentos digitales (como balanzas electrónicas, vernier digitales, multímetros) <strong>no requieren estimación visual</strong>: el número aparece directamente en pantalla.</p>
+<p>En este caso, por convención, la incertidumbre se toma como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>± 1 unidad del último dígito mostrado
+</pre></div>
+</div>
+<p><strong>Ejemplo</strong>:<br />
+Un vernier digital muestra <code class="docutils literal notranslate"><span class="pre">1.500</span> <span class="pre">cm</span></code>.<br />
+El último dígito está en las milésimas de centímetro, por lo tanto la incertidumbre es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>± 0.001 cm
+</pre></div>
+</div>
+<p>Esto refleja que el instrumento no permite estimar más allá del último dígito.</p>
+</section>
+<hr class="docutils" />
+<section id="comparacion-entre-instrumentos">
+<h3>Comparación entre instrumentos<a class="headerlink" href="#comparacion-entre-instrumentos" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo de instrumento</p></th>
+<th class="head"><p>Ejemplo</p></th>
+<th class="head"><p>División mínima</p></th>
+<th class="head"><p>¿Se estima entre marcas?</p></th>
+<th class="head"><p>Incertidumbre típica</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Analógico</p></td>
+<td><p>Regla, vernier manual</p></td>
+<td><p>0.1 cm</p></td>
+<td><p>Sí</p></td>
+<td><p>±0.05 cm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Digital</p></td>
+<td><p>Vernier digital</p></td>
+<td><p>0.001 cm</p></td>
+<td><p>No</p></td>
+<td><p>±0.001 cm</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h3>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>La forma de determinar la incertidumbre depende del tipo de instrumento utilizado:</p>
+<ul class="simple">
+<li><p>En <strong>instrumentos analógicos</strong>, se estima visualmente entre marcas, y se considera la mitad de la menor división como incertidumbre.</p></li>
+<li><p>En <strong>instrumentos digitales</strong>, se toma una unidad del último dígito mostrado como incertidumbre.</p></li>
+</ul>
+<blockquote>
+<div><p>Esto afecta directamente las cifras significativas y cómo deben reportarse las mediciones en un contexto científico o técnico.</p>
+</div></blockquote>
+</section>
+</section>
 </section>
 
 
@@ -643,11 +883,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="1.6_incertidumbre_en_la_medida.html"
+       href="../02_vectores/2.1_magnitudes_escalaras.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.6 Incertidumbre en la medida</p>
+        <p class="prev-next-title">2.1 Magnitudes escalares</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -661,6 +901,41 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exactitud-y-precision">1.5.1 Exactitud y precisión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-en-la-medida">1.5.2 Errores en la medida:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-errores">Tipos de Errores:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantificacion-de-errores">Cuantificación de errores</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion">Ejemplo de aplicación</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-1-una-sola-medicion">Caso 1: Una sola medición</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-2-diez-mediciones">Caso 2: Diez mediciones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cifras-significativas">1.5.2 Cifras Significativas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reglas">Reglas.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimacion-de-la-incertidumbre-segun-el-tipo-de-instrumento">1.5.3 Estimación de la incertidumbre según el tipo de instrumento</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentos-analogicos">1. Instrumentos analógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentos-digitales">2. Instrumentos digitales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-entre-instrumentos">Comparación entre instrumentos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

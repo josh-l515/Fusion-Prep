@@ -42,6 +42,8 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.3_conversion_de_unidades';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.3_conversion_de_unidades.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -494,8 +496,7 @@
 <li class="toctree-l1"><a class="reference internal" href="1.2_unidades.html">1.2 Unidades</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1.3 Conversión de Unidades</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.4_analisis_dimensional.html">1.4 Análisis Dimensional</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.5_cifras_significativas.html">1.5 Cifras Significativas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.6_incertidumbre_en_la_medida.html">1.6 Incertidumbre en la medida</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.5_cifras_significativas.html">1.5 Incertidumbre en la Medida y cifras significativas.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Vectores</span></p>
 <ul class="nav bd-sidenav">
@@ -621,6 +622,57 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conversion-de-unidades">
 <h1>1.3 Conversión de Unidades<a class="headerlink" href="#conversion-de-unidades" title="Link to this heading">#</a></h1>
+<p>La conversión de unidades permite expresar una magnitud medida en una unidad en términos de otra unidad del mismo tipo. Esto se logra mediante el uso de un <strong>factor de conversión</strong>, que es una fracción igual a 1 formada por dos cantidades equivalentes expresadas en distintas unidades.</p>
+<p>Por ejemplo, si sabemos que:</p>
+<div class="math notranslate nohighlight">
+\[1 \text{ mi} = 1{,}609 \text{ km}\]</div>
+<p>Entonces podemos formar el siguiente factor de conversión:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1 \text{ mi}}{1{,}609 \text{ km}} = 1\]</div>
+<p>Este factor se puede multiplicar por cualquier valor en kilómetros para obtener su equivalente en millas. Por ejemplo, si una distancia es de 240 km:</p>
+<div class="math notranslate nohighlight">
+\[240 \text{ km} \times \frac{1 \text{ mi}}{1{,}609 \text{ km}} = 149 \text{ mi}\]</div>
+<p>Este método es general y puede aplicarse a cualquier conversión de unidades siempre que se conozca la relación entre ellas.</p>
+<section id="factores-de-conversion">
+<h2>1.3.1 Factores de conversión<a class="headerlink" href="#factores-de-conversion" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../../_images/1.3_factores_conversion.png"><img alt="Mapa de la Física" class="align-center" src="../../_images/1.3_factores_conversion.png" style="width: 800px;" />
+</a>
+</section>
+<section id="problemas-propuestos">
+<h2>1.3.2 Problemas propuestos<a class="headerlink" href="#problemas-propuestos" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Si un vehículo viaja a 90 <span class="math notranslate nohighlight">\(\mathrm{km/h}\)</span>, ¿a cuánto equivale su velocidad expresada en metros por segundo y en millas por hora?</p></li>
+<li><p>El diamante tallado más grande del mundo es la Primera Estrella de África. Su volumen es de 1.84 pulgadas cúbicas. ¿Cuál será su volumen en centímetros cúbicos? ¿Y en metros cúbicos?</p></li>
+<li><p>La velocidad del sonido en el aire es 343 m/s. ¿Cuál es la velocidad de un avión supersónico que se mueve con una velocidad Mach 2? Dar la respuesta en kilómetros por hora y millas por hora. Usar la relación:</p>
+<div class="math notranslate nohighlight">
+\[M = \frac{v}{v_s}\]</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span>: número Mach.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span>: velocidad del objeto en movimiento.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_s\)</span>: velocidad del sonido en el medio físico.</p></li>
+</ul>
+</li>
+<li><p>Un jugador de baloncesto tiene una altura de 6 ft y 10.5 in. ¿Cuál es su altura en centímetros?</p></li>
+<li><p>Una milla cuadrada tiene 640 acres. ¿Cuántos metros cuadrados tiene un acre?</p></li>
+<li><p>Un cilindro circular recto tiene un diámetro de 6.8 in y una altura de 2 ft. ¿Cuál es el volumen del cilindro? en:</p>
+<ul class="simple">
+<li><p>Pies cúbicos</p></li>
+<li><p>Metros cúbicos</p></li>
+<li><p>Litros</p></li>
+</ul>
+</li>
+<li><p>Según la etiqueta de un frasco de aderezo para ensalada, el volumen del contenido es 0.473 litros (L). Use sólo las conversiones <span class="math notranslate nohighlight">\(1 \,\rm L=1,000 \, \rm cm^3\)</span> y <span class="math notranslate nohighlight">\(1\, \rm in= 2.54 \, \rm cm\)</span> para expresar dicho volumen en pulgadas cúbicas.</p></li>
+<li><p>¿Cuántos años más viejo será usted dentro de 1 mil millones de segundos? (Suponga que un año tiene <span class="math notranslate nohighlight">\(365\)</span> días.)</p></li>
+<li><p>Cierto automóvil híbrido que consume poco combustible tiene un rendimiento de gasolina de <span class="math notranslate nohighlight">\(55.0 \, \rm mpg\)</span> (millas por galón).</p>
+<ul class="simple">
+<li><p>Si usted va manejando dicho auto en Europa y quiere comparar su rendimiento con el de otros automóviles europeos, exprese tal rendimiento en <span class="math notranslate nohighlight">\(\rm km/L\)</span>.</p></li>
+<li><p>¿Si el depósito de gasolina de este automóvil tiene una capacidad de <span class="math notranslate nohighlight">\(45 \, \rm L\)</span>, cuántas veces deberá llenar el depósito de gasolina para conducir <span class="math notranslate nohighlight">\(1500 \, \rm km\)</span>?</p></li>
+</ul>
+</li>
+<li><p>En el otoño de 2002, un grupo de científicos de Los Alamos National Laboratory determinó que la masa crítica del neptunio 237 es de unos <span class="math notranslate nohighlight">\(60 \, \rm kg\)</span>. La masa crítica de un material fisionable es la cantidad mínima que debe juntarse para iniciar una reacción en cadena. Este elemento tiene una densidad de <span class="math notranslate nohighlight">\(19.5 \, \rm g/cm^3\)</span>. ¿Cuál será el radio de una esfera de este material que tiene dicha masa crítica?</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -661,6 +713,19 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factores-de-conversion">1.3.1 Factores de conversión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-propuestos">1.3.2 Problemas propuestos</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
