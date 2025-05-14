@@ -1,1 +1,32 @@
 # 1.6 Ley de Hooke
+## Problemas Propuestos.
+1. El músculo bíceps del brazo derecho de cierta persona tiene un área máxima de su sección de $12\, \rm cm^2=1.2\times 10^{-3} \rm m^2$. ¿Cuál es el esfuerzo  del musculo si ejerce una fuerza de 300 N?
+2. Un alambre de 1.5 m de largo tiene una sección recta de área $2.4 \, \rm mm^2$. Cuelga verticalmente y se estira 0,32 mm cuando se le ata en su extremo inferior un bloque de 10 kg. Hallar:
+   - (a) el esfuerzo 
+   - (b) la deformación unitaria
+   - (c) el módulo de Young para este alambre
+3. Se cuelga una bola de 50 kg de un alambre de acero de 5 m de longitud y 2 mm de radio. ¿Cuánto se alargará el alambre? (Módulo de young para el acero, $E=2.0\times10^{11}\, \rm Pa$)
+4. Un alambre de acero de 0,6 mm de diámetro y 1,2 m de longitud soporta una masa de 4 kg. ¿Cuál será el alargamiento del alambre bajo esta carga?
+5. La resistencia a la tracción de un alambre de cobre es aproximadamente de $3\times10^8 N/m^2$. 
+    - (a) ¿Cuál es la carga máxima que puede colgarse de un alambre de cobre de $0,42\, \rm mm$? 
+    - (b) ¿Si se cuelga la mitad de esta carga máxima del alambre de cobre, en qué porcentaje se alargará su longitud?
+
+6. En un trabajo de verano para una compañía de ingeniería, usted recibe el encargo de comprobar la seguridad de un ascensor en un nuevo edificio de oficinas. El ascensor puede llevar una carga máxima de 1000 kg (incluyendo su propia masa), y está suspendido de un cable de acero de 3,0 cm de diámetro y 300 m de longitud cuando está del todo desenrollado. El cable, dentro de las normas de seguridad, puede estirarse como máximo 3 cm. Su trabajo consiste en determinar si el ascensor, tal como se ha diseñado, es seguro o no, teniendo en cuenta que la aceleración máxima del sistema es de $1.5 \rm m/s^2$.
+
+7. Mientras los pies de un corredor tocan el suelo, una fuerza de cizalladura actúa sobre la suela de su zapato de 8 mm de espesor según se indica en la figura. Si la fuerza de 25 N se distribuye a lo largo de un área de $15 \, \rm cm^2$, calcular el ángulo $\theta$ de cizalladura, sabiendo que el módulo de cizalladura de la suela es de $1.9 \times 10^5 \rm N/m^2$.
+    ```{figure} _static/ejercicios_img.png
+    :alt: Comportamiento térmico
+    :width: 300px
+    :align: center
+    
+    **Figura:** Diagrama ejercicio 07.
+    ```
+8. Un alambre de acero de longitud 1.5 m y diámetro 1 mm se suelda a un alambre de aluminio de dimensiones idénticas para formar un alambre de 3,0 m. ¿Cuál es el cambio en la longitud del alambre compuesto cuando soporta una masa de 5 kg? (Despreciar los efectos de las masas de los alambres cuando cambian de longitud.)
+9. Dos fuerzas iguales en módulo pero con direcciones propuestas se aplican en ambos extremos de un alambre largo de longitud $ L$ y sección transversal $A$. Demostrar que si el alambre se considera como un muelle, la constante de fuerza $ k$ viene dada por 
+    $k=\frac{A\gamma}{L}$
+    y la energía almacenada en el alambre 
+    $U=\frac{1}{2}F\Delta L$
+    donde $\gamma$ es el módulo de Young y $\Delta L$ el incremento de longitud del alambre.
+10.  La cuerda $\rm E$ de acero de un violín está sometida a una tensión de $53\, \rm N$. El diámetro de la cuerda es $0,20\, \rm mm$ y su longitud tensada es $35.0\, \rm cm$. Determinar:
+    - (a) la longitud sin tensar de esta cuerda
+    - (b) el trabajo necesario para tensar la cuerda.
