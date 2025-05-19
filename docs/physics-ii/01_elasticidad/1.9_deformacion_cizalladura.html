@@ -42,6 +42,8 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/01_elasticidad/1.9_deformacion_cizalladura';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/01_elasticidad/1.9_deformacion_cizalladura.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -656,6 +658,68 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deformacion-por-cizalladura">
 <h1>1.9 Deformación por cizalladura<a class="headerlink" href="#deformacion-por-cizalladura" title="Link to this heading">#</a></h1>
+<section id="modulo-de-rigidez">
+<h2>1.9.1 Módulo de rigidez<a class="headerlink" href="#modulo-de-rigidez" title="Link to this heading">#</a></h2>
+<p>Esta deformación se produce cuando se aplican fuerzas opuestas a dos caras contrarias de un cuerpo tangentes a su superficie, produciendose un desplazamiento de planos paralelos en la dirección de la fuerza. En este caso se define el módulo de rigidez.</p>
+<div class="math notranslate nohighlight" id="equation-modulo-rigidez">
+<span class="eqno">(76)<a class="headerlink" href="#equation-modulo-rigidez" title="Link to this equation">#</a></span>\[\eta=\frac{\rm Esfuerzo\, cortante}{\rm Deformación\, cortante}\]</div>
+<p>la fig. <a class="reference internal" href="#fig-deformacion-cizalladura"><span class="std std-numref">Fig. 9</span></a>, muestra este tipo de deformación</p>
+<figure class="align-center" id="fig-deformacion-cizalladura">
+<a class="reference internal image-reference" href="../../_images/fig_deformacion_cizalladura.png"><img alt="Deformacion por cizalladura" src="../../_images/fig_deformacion_cizalladura.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text"><strong>Figura:</strong> Elasticidad de forma</span><a class="headerlink" href="#fig-deformacion-cizalladura" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>de fig. <a class="reference internal" href="#fig-deformacion-cizalladura"><span class="std std-numref">Fig. 9</span></a>, se tiene</p>
+<div class="math notranslate nohighlight" id="equation-deformacion-cortante">
+<span class="eqno">(77)<a class="headerlink" href="#equation-deformacion-cortante" title="Link to this equation">#</a></span>\[\tan\phi=\frac{\Delta y}{L_0}\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta y\)</span>: Corrimiento</p></li>
+<li><p><span class="math notranslate nohighlight">\(L_0\)</span>: Distancia entre dos caras</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span>: ángulo de corte o cizalladura.</p></li>
+</ul>
+<p>La <strong>deformacion cortante</strong> se define como <span class="math notranslate nohighlight">\(\Phi=\tan\phi\)</span>, esto es:</p>
+<div class="math notranslate nohighlight" id="equation-deformacion-cortante-2">
+<span class="eqno">(79)<a class="headerlink" href="#equation-deformacion-cortante-2" title="Link to this equation">#</a></span>\[\Phi=\frac{\Delta y}{L_0}\]</div>
+<p>en analogía a la deformación volumétrica, se define el <strong>esfuerzo cortante <span class="math notranslate nohighlight">\(\sigma_T\)</span></strong> producto de fuerzas tangentes <span class="math notranslate nohighlight">\(F_T\)</span> o paralelas a la superficie <span class="math notranslate nohighlight">\(S\)</span> (cara superiordel paralelepipedo)</p>
+<div class="math notranslate nohighlight" id="equation-deformacion-cortante-2">
+<span class="eqno">(79)<a class="headerlink" href="#equation-deformacion-cortante-2" title="Link to this equation">#</a></span>\[\sigma_T=\frac{F_T}{S}\]</div>
+<p>por tanto, conforme a <a class="reference internal" href="#equation-modulo-rigidez">(76)</a>, el <strong>Módulo de rigidez</strong> queda definida:</p>
+<div class="math notranslate nohighlight" id="equation-modulo-rigidez-1">
+<span class="eqno">(80)<a class="headerlink" href="#equation-modulo-rigidez-1" title="Link to this equation">#</a></span>\[\eta=\frac{\sigma_T}{\Phi}=\frac{F_T/S}{\Delta_y/L_0}=\frac{FL_0}{S\Delta_y}\]</div>
+<p>finalmente la <strong>Ley de Hooke para deformaciones por cizalladura</strong> en función de <a class="reference internal" href="#equation-modulo-rigidez-1">(80)</a>, es:</p>
+<div class="math notranslate nohighlight" id="equation-ley-hooke-cizalladura">
+<span class="eqno">(81)<a class="headerlink" href="#equation-ley-hooke-cizalladura" title="Link to this equation">#</a></span>\[\sigma_T=\eta\Phi\]</div>
+</section>
+<section id="ejercicios-de-aplicacion">
+<h2>1.9.2 Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Mientras los pies de un corredor tocan el suelo, una fuerza de cizalladura actúa sobre la suela de su zapato de 8 mm de espesor según se indica en la figura. Si la fuerza de 25 N se distribuye a lo largo de un área de <span class="math notranslate nohighlight">\(15 \, \rm cm^2\)</span>, calcular el ángulo <span class="math notranslate nohighlight">\(\theta\)</span> de cizalladura, sabiendo que el módulo de cizalladura de la suela es de <span class="math notranslate nohighlight">\(1.9 \times 10^5 \rm N/m^2\)</span>.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/ejercicios_img.png"><img alt="Comportamiento térmico" src="../../_images/ejercicios_img.png" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text"><strong>Figura:</strong> Diagrama ejercicio 07.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>A dos caras opuestas de un bloque cúbico de acero de <span class="math notranslate nohighlight">\(25\, \rm cm\)</span> de lado, se aplican  fuerzas tangentes opuestas de <span class="math notranslate nohighlight">\(200\, \rm Kgf\)</span> cada una. Hallar</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> El ángulo de cizalladura (Resp. <span class="math notranslate nohighlight">\(\phi= 3.8\times 10^{-7}\, \rm rad\)</span>)</p></li>
+<li><p><strong>(b)</strong> El corrimiento (Resp. <span class="math notranslate nohighlight">\(\Delta y =0.9\times 10^{-5}\, \rm cm\)</span>)</p></li>
+</ul>
+<p>El módulo de rigidez del acero es <span class="math notranslate nohighlight">\(8.4\times10^5\, \rm Kgf/cm^2\)</span></p>
+</li>
+<li><p>Una placa cuadrada de acero mide <span class="math notranslate nohighlight">\(10.0\, \rm cm\)</span> por lado y tiene un espesor de <span class="math notranslate nohighlight">\(0.500\,\rm cm\)</span>.</p>
+<ul class="simple">
+<li><p><strong>(a)</strong> Calcule la deformación por corte que se produce al aplicarse a cada uno de los cuatro lados una fuerza de <span class="math notranslate nohighlight">\(9\times10^5\,\rm N\)</span> paralela a cada lado.</p></li>
+<li><p><strong>(b)</strong> Determine el desplazamiento <span class="math notranslate nohighlight">\(x\)</span> en centímetros.</p></li>
+</ul>
+</li>
+</ol>
+</section>
 </section>
 
 
@@ -696,6 +760,19 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-de-rigidez">1.9.1 Módulo de rigidez</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.9.2 Ejercicios de Aplicación</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

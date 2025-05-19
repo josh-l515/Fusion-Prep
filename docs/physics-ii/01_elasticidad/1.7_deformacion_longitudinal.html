@@ -42,6 +42,8 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/01_elasticidad/1.7_deformacion_longitudinal';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/01_elasticidad/1.7_deformacion_longitudinal.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -656,6 +658,74 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deformacion-longitudinal-o-unilateral">
 <h1>1.7 Deformación longitudinal o unilateral<a class="headerlink" href="#deformacion-longitudinal-o-unilateral" title="Link to this heading">#</a></h1>
+<p>Para el caso de deformaciones longitudinales, se define el Módulo de Young <span class="math notranslate nohighlight">\((\rm E)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-physics-ii-01-elasticidad-1-7-deformacion-longitudinal-0">
+<span class="eqno">(65)<a class="headerlink" href="#equation-physics-ii-01-elasticidad-1-7-deformacion-longitudinal-0" title="Link to this equation">#</a></span>\[E=\frac{\rm Esfuerzo\, por\, tracción\, o \,compresión}{\rm Deformación\, unitaria\, longitudinal}\]</div>
+<p>En de (), y ()</p>
+<div class="math notranslate nohighlight" id="equation-ley-de-hooke-modulo-de-young">
+<span class="eqno">(66)<a class="headerlink" href="#equation-ley-de-hooke-modulo-de-young" title="Link to this equation">#</a></span>\[E=\frac{\sigma}{\Delta_L}=\frac{F/S}{\Delta L/L_0}=\frac{FL_0}{S\Delta L}\]</div>
+<p>El módulo de Young <strong>describe qué tan resistente es un material a deformarse elásticamente</strong> (sin romperse ni deformarse permanentemente) cuando se le aplica un esfuerzo (por tracción o compresión), no existe cambio de forma <a class="reference internal" href="#fig-modulo-young"><span class="std std-numref">Fig. 6</span></a></p>
+<figure class="align-center" id="fig-modulo-young">
+<a class="reference internal image-reference" href="../../_images/fig_modulo_young.png"><img alt="Modulo de Young" src="../../_images/fig_modulo_young.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text"><strong>Figura:</strong> Deformación longitudinal por tracción.</span><a class="headerlink" href="#fig-modulo-young" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="relacion-entre-e-y-k">
+<h2>Relación entre <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(k\)</span><a class="headerlink" href="#relacion-entre-e-y-k" title="Link to this heading">#</a></h2>
+<p>De <a class="reference internal" href="#equation-ley-de-hooke-modulo-de-young">(66)</a>, se tiene:</p>
+<div class="math notranslate nohighlight" id="equation-modulo-young-e-k">
+<span class="eqno">(67)<a class="headerlink" href="#equation-modulo-young-e-k" title="Link to this equation">#</a></span>\[F=\frac{ES\Delta L}{L_0}\]</div>
+<p>siendo <span class="math notranslate nohighlight">\(F\)</span> la fuerza de tracción o compresión aplicada, igualando <a class="reference internal" href="1.6_ley_de_hooke.html#equation-ley-de-hooke-resortes">(64)</a> y <a class="reference internal" href="#equation-modulo-young-e-k">(67)</a></p>
+<div class="math notranslate nohighlight" id="equation-modulo-young-e-k-1">
+<span class="eqno">(68)<a class="headerlink" href="#equation-modulo-young-e-k-1" title="Link to this equation">#</a></span>\[\begin{split}k\Delta L&amp;=\frac{ES\Delta L}{L_0}\\
+k&amp;=\frac{ES}{L_0}\end{split}\]</div>
+<p>Por tanto, la ley de Hooke, expresada en función del modulo de Young <span class="math notranslate nohighlight">\(E\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-ley-de-hooke-e">
+<span class="eqno">(69)<a class="headerlink" href="#equation-ley-de-hooke-e" title="Link to this equation">#</a></span>\[\begin{split}F &amp;=\frac{ES}{L_0}\Delta L\\
+\frac{F}{S}&amp;=E\frac{\Delta L}{L_0}\\
+\sigma&amp;=E\Delta_L\end{split}\]</div>
+<p>nuevamente  <a class="reference internal" href="#equation-ley-de-hooke-e">(69)</a> corresponde a la <strong>Ley de Hooke para sólidos generales</strong>, siendo la relación tambien una función lineal, válida dentro de la región eslatica de la fig <a class="reference internal" href="#fig-hooke-e"><span class="std std-numref">Fig. 7</span></a></p>
+<figure class="align-center" id="fig-hooke-e">
+<a class="reference internal image-reference" href="../../_images/fig_hooke_E.png"><img alt="Ley de Hooke en función del Modulo de Young" src="../../_images/fig_hooke_E.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text"><strong>Figura:</strong> Ley de Hooke en función del Modulo de Young</span><a class="headerlink" href="#fig-hooke-e" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="problemas-propuestos">
+<h2>Problemas Propuestos.<a class="headerlink" href="#problemas-propuestos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>El músculo bíceps del brazo derecho de cierta persona tiene un área máxima de su sección de <span class="math notranslate nohighlight">\(12\, \rm cm^2=1.2\times 10^{-3} \rm m^2\)</span>. ¿Cuál es el esfuerzo  del musculo si ejerce una fuerza de 300 N?</p></li>
+<li><p>Un alambre de 1.5 m de largo tiene una sección recta de área <span class="math notranslate nohighlight">\(2.4 \, \rm mm^2\)</span>. Cuelga verticalmente y se estira 0,32 mm cuando se le ata en su extremo inferior un bloque de 10 kg. Hallar:</p>
+<ul class="simple">
+<li><p>(a) el esfuerzo</p></li>
+<li><p>(b) la deformación unitaria</p></li>
+<li><p>(c) el módulo de Young para este alambre</p></li>
+</ul>
+</li>
+<li><p>Se cuelga una bola de 50 kg de un alambre de acero de 5 m de longitud y 2 mm de radio. ¿Cuánto se alargará el alambre? (Módulo de young para el acero, <span class="math notranslate nohighlight">\(E=2.0\times10^{11}\, \rm Pa\)</span>)</p></li>
+<li><p>Un alambre de acero de 0,6 mm de diámetro y 1,2 m de longitud soporta una masa de 4 kg. ¿Cuál será el alargamiento del alambre bajo esta carga?</p></li>
+<li><p>La resistencia a la tracción de un alambre de cobre es aproximadamente de <span class="math notranslate nohighlight">\(3\times10^8 N/m^2\)</span>.</p>
+<ul class="simple">
+<li><p>(a) ¿Cuál es la carga máxima que puede colgarse de un alambre de cobre de <span class="math notranslate nohighlight">\(0,42\, \rm mm\)</span>?</p></li>
+<li><p>(b) ¿Si se cuelga la mitad de esta carga máxima del alambre de cobre, en qué porcentaje se alargará su longitud?</p></li>
+</ul>
+</li>
+<li><p>En un trabajo de verano para una compañía de ingeniería, usted recibe el encargo de comprobar la seguridad de un ascensor en un nuevo edificio de oficinas. El ascensor puede llevar una carga máxima de 1000 kg (incluyendo su propia masa), y está suspendido de un cable de acero de 3,0 cm de diámetro y 300 m de longitud cuando está del todo desenrollado. El cable, dentro de las normas de seguridad, puede estirarse como máximo 3 cm. Su trabajo consiste en determinar si el ascensor, tal como se ha diseñado, es seguro o no, teniendo en cuenta que la aceleración máxima del sistema es de <span class="math notranslate nohighlight">\(1.5 \rm m/s^2\)</span>.</p></li>
+<li><p>Un alambre de acero de longitud 1.5 m y diámetro 1 mm se suelda a un alambre de aluminio de dimensiones idénticas para formar un alambre de 3,0 m. ¿Cuál es el cambio en la longitud del alambre compuesto cuando soporta una masa de 5 kg? (Despreciar los efectos de las masas de los alambres cuando cambian de longitud.)</p></li>
+<li><p>Al tensar un alambre de cobre, cuya seccipon transversal tenía <span class="math notranslate nohighlight">\(1.5 \rm mm^2\)</span> de área, se observó que el comienzo de la deformación permanente correspondía a la carga de <span class="math notranslate nohighlight">\(4.5 Kgf\)</span>. ¿Cuál es el límite de elasticidad del material de que esta hecho el alambre? (Resp. <span class="math notranslate nohighlight">\(2.94\times 10^7 \, \rm N/m^2\)</span>).</p></li>
+<li><p>Del tejado de una casa cuelga un alambre de acero de <span class="math notranslate nohighlight">\(40\, \rm m\)</span> de longitud y <span class="math notranslate nohighlight">\(2\, \rm mm\)</span> de diámetro. El límite de elasticidad del acero es <span class="math notranslate nohighlight">\(2.94\times10^8\, \rm N/m^2\)</span></p>
+<ul class="simple">
+<li><p>(a) ¿Qué carga máxima se puede colgar de este alambre sin que llegue a romperse?</p></li>
+<li><p>(b) ¿Cuánto se alargará este alambre si de él se cuelga un hombre que pesa <span class="math notranslate nohighlight">\(70\, \rm Kg\)</span>?</p></li>
+<li><p>(c) ¿Se notará alargamiento permanente cuando el hombre antedicho suelte el alambre?.</p></li>
+</ul>
+</li>
+</ol>
+</section>
 </section>
 
 
@@ -696,6 +766,19 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-e-y-k">Relación entre <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(k\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-propuestos">Problemas Propuestos.</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

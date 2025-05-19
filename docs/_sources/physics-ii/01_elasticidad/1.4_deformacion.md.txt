@@ -1,1 +1,28 @@
 # 1.4 Deformación
+
+Son todas las variaciones que se producen en la longitud ($\Delta L$), superficie ($\Delta S$), volumen ($\Delta V$) y forma de un cuerpo sometido a una fuerza externa.
+```{figure} _static/elasticidad.png
+:alt: Comportamiento térmico
+:width: 800px
+:align: center
+
+**Figura:** (a) Barra sólida sometida a fuerzas deformadoras $F$ que actúan en sus extremos (b) Variación de la energía potencial elástica de la red producto de fuerzas de compresión y tracción.
+```
+
+## 1.4.1 Deformación Unitaria
+Es la relación entre la deformación ($\Delta L$, $\Delta S$, $\Delta V$) y su dimension inicial ($L_0$, $S_0$, $V_0$). Para cada caso, se tiene:
+
+```{math}
+:label: 1
+\Delta_L=\frac{\Delta L}{L_0}
+```
+```{math}
+:label: 2
+\Delta_S=\frac{\Delta S}{S_0}
+```
+```{math}
+:label: 3
+\Delta_V=\frac{\Delta V}{V_0}
+```
+
+

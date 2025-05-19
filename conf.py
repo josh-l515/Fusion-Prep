@@ -33,6 +33,9 @@ myst_enable_extensions = [
     "attrs_block", # Activa el uso de metadata desde los archivos .md 
     "deflist",            # Opcional, listas de definiciones
 ]
+
+math_number_all = True  # Numera todas las ecuaciones con etiqueta
+numfig = True           # Para referencias como figuras, tablas, ecuaciones, etc.
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 

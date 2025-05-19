@@ -1,3 +1,7 @@
+```{raw} latex
+\setcounter{equation}{0}
+```
+
 # 1.1 Sólidos
 
 Se llaman asi a los objetos que tienen **forma** y **volumen definidos**. A diferencia de los líquidos y gases, las partículas en un sólido están fuertemente unidas entre sí, lo que les permite resistir deformaciones y mantener su estructura. Esta rigidez estructural es la base del estudio de la **elasticidad**, que analiza cómo los sólidos responden a fuerzas externas mediante deformaciones reversibles.
@@ -29,67 +33,5 @@ Al calentar un sólido:
 - **Amorfo (Curva C):**  
   No tiene un punto de fusión definido. Se ablanda progresivamente en un rango de temperaturas.
 
-## 1.1.1 Fuerzas Elásticas
-Se presenta cuando la distancia entre los átomos ha variado, si se acercan entonces ha habido una fuerza de **compresión**, si se alejan, entonces está presente una fuerza de tracción. 
-
-
-```{figure} _static/grafico_2.png
-:alt: Comportamiento térmico
-:width: 600px
-:align: center
-
-**Figura:** (a) Estructura cristalina cubica simple. (b) Variación de la energía potencial elástica de la red producto de fuerzas de compresión y tracción.
-```
-### Elasticidad
-Se llama así a la propiedad que tienen los cuerpos, de recuperar su forma y dimensiones originales cuando la fuerza aplicada cesa de actuar. Las deformaciones son reversibles y el trabajo realizado por la fuerza se transforma en **Energía potencial de Deformación**
-
-### Plasticidad
-Propiedad de aquellos cuerpos que al cesar las fuerzas que actuan sobre si, este no recuperasu forma o dimensiones originales, parcial o totalmente. Las deformaciones son irreversibles y parte del trabajo realizado por las fuerzas se transforma en calor.
-
-
-## 1.1.2 Deformación
-Son todas las variaciones que se producen en la longitud ($\Delta L$), superficie ($\Delta S$), volumen ($\Delta V$) y forma de un cuerpo sometido a una fuerza externa.
-```{figure} _static/elasticidad.png
-:alt: Comportamiento térmico
-:width: 800px
-:align: center
-
-**Figura:** (a) Barra sólida sometida a fuerzas deformadoras $F$ que actúan en sus extremos (b) Variación de la energía potencial elástica de la red producto de fuerzas de compresión y tracción.
-```
-
-### Deformación Unitaria
-Es la relación entre la deformación ($\Delta L$, $\Delta S$, $\Delta V$) y su dimension inicial ($L_0$, $S_0$, $V_0$). Para cada caso, se tiene:
-
-```{math}
-:label: 1
-\Delta_L=\frac{\Delta L}{L_0}
-```
-```{math}
-:label: 2
-\Delta_S=\frac{\Delta S}{S_0}
-```
-```{math}
-:label: 3
-\Delta_V=\frac{\Delta V}{V_0}
-```
-
-## 1.2.3 Esfuerzo (Tensión)
-Se define como la relación entre las fuerzas (tracción o compresión) entre el área de la sección transversal del sólido a deformar. 
-
-```{math}
-:label: 4
-\sigma=\frac{F}{A}
-```
-donde:
-- $F$: fuerza aplicada (Puede ser normal, tangencial o mixta)
-- $A$: área sobre la que actúa
-
-## 1.1.4 Ley de Hooke
-```{figure} _static/limite_elastico.png
-:alt: Comportamiento térmico
-:width: 400px
-:align: center
-
-**Figura:** Tensión en función de la deformación. Hasta el punto A, la deformación es proporcional a la tensión. El punto B, límite elástico, es el punto a partir del cual la barra no recuperará su longitud original cuando se suprima la tensión. En el punto C, la barra se rompe.```
 
 
