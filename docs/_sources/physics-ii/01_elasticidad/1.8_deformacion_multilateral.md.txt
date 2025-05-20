@@ -53,7 +53,7 @@ Cuando se aplica una **presión negativa** $P < 0$:
 Por tanto, **la fórmula sigue funcionando correctamente**, esto tiene sentido **matemático**, aunque en la práctica los materiales no siempre resisten bien la tracción (hidrostática) y pueden fracturarse.
 
 ## 1.8.3 Ejercicios de Aplicación:
-1. ¿Cuál es la presión necesaria para comprimir un cubo de hule al $90\%$? de su volumen original?. Compara esta presión con la presión atmosférica. La compresibilidad del hule es de $40\times 10^{-11}\, \rm m^2/N$. (Resp. $2.8\times10^8\, \rm N/m^2$)
+1. ¿Cuál es la presión necesaria para comprimir un cubo de hule al $90\%$? de su volumen original?. Compara esta presión con la presión atmosférica. La compresibilidad del hule es de $40\times 10^{-11}\, \rm m^2/N$. (Resp. $2.5\times10^8\, \rm N/m^2$)
 2. Una prensa hidráulica contiene $0.25\, \rm m^3$ ($250\,\rm L$) de aceite. 
     - **(a)** Calcule la disminución de volumen del aceite cuando se somete a un aumento de presión $\Delta p = 1.6 \times 10^7 \,\rm Pa$ (unas $160 \, \rm atm$). El módulo de volumen del aceite es $B=5.0 \times 10^9\,\rm Pa$ (unas $5.0\times10^{4}\,\rm  atm$) y su compresibilidad es $\chi = 20 \times 10^{-6} \, \rm atm^{-1}$. (Resp. $-8\times 10^{-4}\,\rm m^3$).
     - **(b)** El cambio porcentual  de volumen (Resp. $-0.32\%$)
