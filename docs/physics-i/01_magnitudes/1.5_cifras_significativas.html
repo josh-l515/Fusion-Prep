@@ -628,11 +628,11 @@
 <li><p><strong>Exactitud</strong>: Es el grado de proximidad entre el valor medido y el valor verdadero o aceptado. Una medición es más exacta si se acerca al valor real.</p></li>
 <li><p><strong>Precisión</strong>: Es la consistencia de los resultados al repetir la medición. Una medición es precisa si al repetirla varias veces se obtienen resultados similares.</p></li>
 </ul>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/exactitud_precision2.jpg"><img alt="" src="../../_images/exactitud_precision2.jpg" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Figura:</strong> Casos respecto de la precisión y exactitud en una medida.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Figura:</strong> Casos respecto de la precisión y exactitud en una medida.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -804,74 +804,139 @@
 <h2>1.5.6 Incertidumbre Absoluta y Relativa<a class="headerlink" href="#incertidumbre-absoluta-y-relativa" title="Link to this heading">#</a></h2>
 <p>Cualquiera que sea el medio por el que hayamos realizado una medición (directa o indirecta), el resultado final deberá ser un intervalo que representa, hasta donde nuestra capacidad lo garantice, los limites dentro de los que se encuentra el valor deseado.</p>
 <ul>
-<li><p><strong>Error absoluto (<span class="math notranslate nohighlight">\(\Delta x\)</span>):</strong><br />
-Diferencia entre el valor medido <span class="math notranslate nohighlight">\(x_{medido}\)</span> y el valor real <span class="math notranslate nohighlight">\(x_{real}\)</span> (si se conoce).</p>
+<li><p><strong>Error absoluto (<span class="math notranslate nohighlight">\(\delta x\)</span>):</strong><br />
+Corresponde al intervalo en que la lectura es incierta.</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-2">
-<span class="eqno">(46)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-2" title="Link to this equation">#</a></span>\[\Delta x = |x_{\text{medido}} - x_{\text{real}}|\]</div>
+<span class="eqno">(46)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-2" title="Link to this equation">#</a></span>\[x = x_0 \pm\delta x \]</div>
+<p><span class="math notranslate nohighlight">\(\delta x\)</span> es la incertidumbre absoluta, toma como origen la incertidumbre del instrumento o la diferencia de los valores extremos medidos en los que se cree se encuentra el valor real de la medición</p>
 </li>
-<li><p><strong>Error relativo (<span class="math notranslate nohighlight">\(\varepsilon_r\)</span>):</strong><br />
-Permite comparar la magnitud del error absoluto con el valor medido, se define como el cociente de estos.</p>
+<li><p><strong>Incertidumbre relativa (<span class="math notranslate nohighlight">\(\varepsilon_x\)</span>):</strong><br />
+Permite comparar la magnitud de la incertidumbre absoluta  con el valor medido, se define como el cociente de estos.</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-3">
-<span class="eqno">(47)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-3" title="Link to this equation">#</a></span>\[ \varepsilon_r = \frac{\Delta x}{x_{\text{real}}}\]</div>
+<span class="eqno">(47)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-3" title="Link to this equation">#</a></span>\[ \varepsilon_x = \frac{\delta x}{x_0}\]</div>
 </li>
-<li><p><strong>Error relativo procentual (<span class="math notranslate nohighlight">\(\varepsilon_\%\)</span>):</strong><br />
+<li><p><strong>Error relativo procentual (<span class="math notranslate nohighlight">\(\varepsilon_{x\%}\)</span>):</strong><br />
 Corresponde al error relativo expresado en porcentaje</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-4">
-<span class="eqno">(48)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-4" title="Link to this equation">#</a></span>\[ \varepsilon_\% = \varepsilon_r\times 100\%  \]</div>
-</li>
-<li><p><strong>Desviación estándar (<span class="math notranslate nohighlight">\(\sigma\)</span>):</strong><br />
-Útil para mediciones repetidas, estima la dispersión de los valores respecto a la media.</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-5">
-<span class="eqno">(49)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-5" title="Link to this equation">#</a></span>\[\sigma = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x_i - \bar{x})^2}\]</div>
+<span class="eqno">(48)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-4" title="Link to this equation">#</a></span>\[ \varepsilon_{x\%} = \varepsilon_x\times 100\%  \]</div>
 </li>
 </ul>
-<p>Finalmente el resultado de la medida debe expresarce:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-6">
-<span class="eqno">(50)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-6" title="Link to this equation">#</a></span>\[x = \bar{x} \pm \Delta x\]</div>
-<section id="ejemplo-de-aplicacion">
-<h3>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Link to this heading">#</a></h3>
-<section id="caso-1-una-sola-medicion">
-<h4>Caso 1: Una sola medición<a class="headerlink" href="#caso-1-una-sola-medicion" title="Link to this heading">#</a></h4>
-<blockquote>
-<div><p><strong>Supuestos:</strong></p>
-<ul class="simple">
-<li><p><strong>Valor real:</strong> 50.0 cm</p></li>
-<li><p><strong>Valor medido:</strong> 49.7 cm</p></li>
-</ul>
-<p><strong>Cálculos:</strong></p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-7">
-<span class="eqno">(51)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-7" title="Link to this equation">#</a></span>\[\Delta L = |L_{\text{medido}} - L_{\text{real}}| = |49.7 - 50.0| = 0.3 \, \text{cm}\]</div>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-8">
-<span class="eqno">(52)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-8" title="Link to this equation">#</a></span>\[\varepsilon = \frac{\Delta L}{L_{\text{real}}} = \frac{0.3}{50.0} = 0.006\]</div>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-9">
-<span class="eqno">(53)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-9" title="Link to this equation">#</a></span>\[\varepsilon_{\%} = \varepsilon \times 100 = 0.6\%\]</div>
-</div></blockquote>
 </section>
-<section id="caso-2-diez-mediciones">
-<h4>Caso 2: Diez mediciones<a class="headerlink" href="#caso-2-diez-mediciones" title="Link to this heading">#</a></h4>
-<blockquote>
-<div><p><strong>Supuestos</strong></p>
-<ul class="simple">
-<li><p><strong>Valor real conocido:</strong> 50.0 cm</p></li>
-<li><p><strong>Valores medidos (cm):</strong></p></li>
-</ul>
+<section id="incertidumbre-en-cantidades-calculadas">
+<h2>1.5.7 Incertidumbre en cantidades calculadas<a class="headerlink" href="#incertidumbre-en-cantidades-calculadas" title="Link to this heading">#</a></h2>
+</section>
+<section id="incertidumbre-en-funciones-de-dos-o-mas-variables">
+<h2>1.5.9 Incertidumbre en funciones de dos o mas variables<a class="headerlink" href="#incertidumbre-en-funciones-de-dos-o-mas-variables" title="Link to this heading">#</a></h2>
+<section id="suma-de-dos-o-mas-variables">
+<h3>Suma de dos o mas variables<a class="headerlink" href="#suma-de-dos-o-mas-variables" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-5">
+<span class="eqno">(49)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-5" title="Link to this equation">#</a></span>\[  z=x+y\]</div>
+<p>en función de los valores medidos</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-6">
+<span class="eqno">(50)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-6" title="Link to this equation">#</a></span>\[  (z_0+\delta z)=(x_0+\delta z)+(y_0+\delta z)\]</div>
+<p>El valor máximo de <span class="math notranslate nohighlight">\(\delta z\)</span> se obtiene escogiendo signos semejantes todo el tiempo. (Suposición pesimista de que el error es el intervalo mas grande)</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-7">
+<span class="eqno">(51)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-7" title="Link to this equation">#</a></span>\[  z_0=x_0+y_0\]</div>
+<p>se obtiene:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-8">
+<span class="eqno">(52)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-8" title="Link to this equation">#</a></span>\[  \delta z=\delta x+\delta y\]</div>
+</section>
+<section id="diferencia-de-dos-variables">
+<h3>Diferencia de dos variables<a class="headerlink" href="#diferencia-de-dos-variables" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-9">
+<span class="eqno">(53)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-9" title="Link to this equation">#</a></span>\[  z=x-y\]</div>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-10">
-<span class="eqno">(54)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-10" title="Link to this equation">#</a></span>\[\{49.6,\ 49.8,\ 50.0,\ 50.1,\ 49.9,\ 49.7,\ 49.8,\ 50.2,\ 49.9,\ 50.0\}\]</div>
-<p><strong>Cálculos</strong></p>
+<span class="eqno">(54)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-10" title="Link to this equation">#</a></span>\[  (z_0\pm\delta z)=(x_0\pm\delta z)-(y_0\pm\delta z)\]</div>
+<p>tomamos siempre el valor máximo para la incertidumbre por tanto escogemos <span class="math notranslate nohighlight">\((-)\)</span> para <span class="math notranslate nohighlight">\(\delta y\)</span></p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-11">
-<span class="eqno">(55)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-11" title="Link to this equation">#</a></span>\[\bar{L} = \frac{1}{10} \sum_{i=1}^{10} L_i = \frac{499.0}{10} = 49.90 \, \text{cm}\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-11" title="Link to this equation">#</a></span>\[  z_0=x_0-y_0\]</div>
+<p>se obtiene:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-12">
-<span class="eqno">(56)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-12" title="Link to this equation">#</a></span>\[\Delta L = |\bar{L} - L_{\text{real}}| = |49.90 - 50.0| = 0.10 \, \text{cm}\]</div>
+<span class="eqno">(56)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-12" title="Link to this equation">#</a></span>\[  \delta z=\delta x+\delta y\]</div>
+<p>Cuando se miden dos valores muy cercanos y luego se calcula su diferencia, la incertidumbre relativa puede volverse muy grande, afectando la validez del resultado. Esto puede pasar desapercibido y llevar a errores graves. Por ejemplo, no tendría sentido medir la longitud de un cuaderno midiendo desde un punto lejano y restando. Sin embargo, en la práctica, a veces se obtienen diferencias mediante dos mediciones separadas (como con termómetros o relojes), lo cual puede ser problemático. Por eso, toda medición que implique diferencias debe hacerse con especial cuidado. La mejor forma de evitar errores es medir directamente la diferencia, en lugar de calcularla restando dos valores grandes.</p>
+<section id="ejemplo">
+<h4>Ejemplo:<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h4>
+</section>
+</section>
+<section id="metodo-general-para-la-incertidumbre-en-funciones-de-dos-o-mas-variables">
+<h3>Método general para la incertidumbre en funciones de dos o mas variables<a class="headerlink" href="#metodo-general-para-la-incertidumbre-en-funciones-de-dos-o-mas-variables" title="Link to this heading">#</a></h3>
+<p>El cálculo diferencial puede ofrecer una simplificación considerable a este tratamiento. Es claro que si tenemos:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-13">
-<span class="eqno">(57)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-13" title="Link to this equation">#</a></span>\[\varepsilon = \frac{0.10}{50.0} = 0.002\]</div>
+<span class="eqno">(57)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-13" title="Link to this equation">#</a></span>\[  z=f(x,y)\]</div>
+<p>la cantidad apropiada para calcular <span class="math notranslate nohighlight">\(\delta z\)</span> es la diferencial total <span class="math notranslate nohighlight">\(dz\)</span>, que esta dada por:</p>
+<div class="math notranslate nohighlight" id="equation-incertidumbre-producto">
+<span class="eqno">(58)<a class="headerlink" href="#equation-incertidumbre-producto" title="Link to this equation">#</a></span>\[  dz=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy\]</div>
+<p>tomaremos esta diferencial y la trataremos como una diferencia finita <span class="math notranslate nohighlight">\(\delta z\)</span> la cual se puede calcular a partir de las incertidumbres <span class="math notranslate nohighlight">\(\delta x\)</span> y <span class="math notranslate nohighlight">\(\delta y\)</span></p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-14">
-<span class="eqno">(58)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-14" title="Link to this equation">#</a></span>\[\varepsilon_{\%} = 0.002 \times 100 = 0.2\%\]</div>
+<span class="eqno">(59)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-14" title="Link to this equation">#</a></span>\[  \delta z=\frac{\partial f}{\partial x}\delta x+\frac{\partial f}{\partial y}\delta y\]</div>
+<p>y las derivada <span class="math notranslate nohighlight">\(\displaystyle{\frac{\partial f}{\partial x}}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle{\frac{\partial f}{\partial y}}\)</span>  normalmente se calcularán con los valores <span class="math notranslate nohighlight">\(x_0\)</span> y <span class="math notranslate nohighlight">\(y_0\)</span> para los que se necesita <span class="math notranslate nohighlight">\(\delta z\)</span>.</p>
+<section id="a-producto-de-dos-o-mas-variables">
+<h4>a) Producto de dos o mas variables<a class="headerlink" href="#a-producto-de-dos-o-mas-variables" title="Link to this heading">#</a></h4>
+<p>supongamos que</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-15">
-<span class="eqno">(59)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-15" title="Link to this equation">#</a></span>\[\sigma = \sqrt{ \frac{1}{n-1} \sum_{i=1}^{n}(x_i - \bar{x})^2 } \approx 0.183 \, \text{cm}\]</div>
-<p><strong>Resultado final reportado:</strong></p>
+<span class="eqno">(60)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-15" title="Link to this equation">#</a></span>\[  z=xy \]</div>
+<p>para usar <a class="reference internal" href="#equation-incertidumbre-producto">(58)</a> necesitamos los valores de <span class="math notranslate nohighlight">\(\displaystyle{\frac{\partial f}{\partial x}}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle{\frac{\partial f}{\partial y}}\)</span>, estos son:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-16">
-<span class="eqno">(60)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-16" title="Link to this equation">#</a></span>\[L = \bar{L} \pm \sigma = 49.90 \pm 0.18 \, \text{cm}\]</div>
+<span class="eqno">(61)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-16" title="Link to this equation">#</a></span>\[  \frac{\partial f}{\partial x}=y,\quad\frac{\partial f}{\partial y}=x\]</div>
+<p>por tanto</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-17">
+<span class="eqno">(62)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-17" title="Link to this equation">#</a></span>\[  \delta z=y\delta x+ x\delta y\]</div>
+<p>en funcion de los valores medidos:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-18">
+<span class="eqno">(63)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-18" title="Link to this equation">#</a></span>\[  \delta z=y_0\delta x+ x_0\delta y\]</div>
+<p>La significación de este resultado se ve con mas claridad cuando se convierte a la incertidumbre relativa</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-19">
+<span class="eqno">(64)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-19" title="Link to this equation">#</a></span>\[\begin{split}  \frac{\delta z}{z_0}&amp;=\frac{y_0\delta x+ x_0\delta y}{z_0}\\
+  \frac{\delta z}{z_0}&amp;=\frac{\delta x}{x_0}+ \frac{\delta y}{y_0}\end{split}\]</div>
+<p>Así pues, cuando la cantidad deseada es el producto de dos variables, la incertidumbre relativa es la suma de las incertidumbres relativas de las componentes.</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-20">
+<span class="eqno">(65)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-20" title="Link to this equation">#</a></span>\[  \varepsilon_z=\varepsilon_x+\varepsilon_y\]</div>
+</section>
+<section id="b-producto-de-dos-o-mas-variables-elevadas-a-una-potencia">
+<h4>b) Producto de dos o mas variables elevadas a una potencia<a class="headerlink" href="#b-producto-de-dos-o-mas-variables-elevadas-a-una-potencia" title="Link to this heading">#</a></h4>
+<p>El caso mas general de una función compuesta, que se encuentra muy comunmente en física, implica un producto algebráico que tiene componentes elevadas a diferentes potencias.</p>
+<p>Sea</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-21">
+<span class="eqno">(66)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-21" title="Link to this equation">#</a></span>\[  z=x^ay^b \]</div>
+<p>don de <span class="math notranslate nohighlight">\(a, b\)</span> pueden der valores enteras o fraccionarias. En este caso la formulación se simplifica de manera significativa tomando los logaritmos de ambos lados antes de diferenciar.</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-22">
+<span class="eqno">(67)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-22" title="Link to this equation">#</a></span>\[  \ln{z}=a\ln{x}+b\ln{y}\]</div>
+<p>en donde, diferenciando implícitamente</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-23">
+<span class="eqno">(68)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-23" title="Link to this equation">#</a></span>\[  z(t), \quad x(t), \quad y(t)\]</div>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-24">
+<span class="eqno">(69)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-24" title="Link to this equation">#</a></span>\[\begin{split}  \frac{d}{dt}\ln{z}&amp;= \frac{d}{dt}(a\ln{x}+b\ln{y})\\
+  \frac{1}{z} \frac{dz}{dt}&amp;=a \frac{1}{x} \frac{dx}{dt}+b \frac{1}{y} \frac{dy}{dt}\end{split}\]</div>
+<p>se obtiene:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-25">
+<span class="eqno">(70)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-25" title="Link to this equation">#</a></span>\[  \frac{dz}{z}=a \frac{dx}{x}+b \frac{dy}{y}\]</div>
+<p>como es de costumbre, tomamos las diferenciales como diferencias finitas</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-26">
+<span class="eqno">(71)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-26" title="Link to this equation">#</a></span>\[  \frac{\delta z}{z}=a \frac{\delta x}{x}+b \frac{\delta y}{y}\]</div>
+<p>Nótese que este procedimiento da la incertidumbre relativa de forma directa, lo cual con frecuencia es conveniente</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-27">
+<span class="eqno">(72)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-27" title="Link to this equation">#</a></span>\[  \varepsilon_z=a\varepsilon_x+b\varepsilon_y\]</div>
+<section id="id1">
+<h5>EJEMPLO:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
+<p>Calcular la expresión para determinar la incertidumbre relativa para:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-28">
+<span class="eqno">(73)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-28" title="Link to this equation">#</a></span>\[  z^2=xy\]</div>
+</section>
+</section>
+<section id="c-cocientes">
+<h4>c) Cocientes<a class="headerlink" href="#c-cocientes" title="Link to this heading">#</a></h4>
+<p>Estos se pueden tratar como productos, en los cuales algunas de las potencias son negativas. Como antes, el valor máximo de <span class="math notranslate nohighlight">\(\delta z\)</span> se obtendrá despreciando los signos negativos de la diferencial y combinando todos los términos en forma aditiva.</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-29">
+<span class="eqno">(74)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-29" title="Link to this equation">#</a></span>\[  z=\frac{x}{y}=xy^{-1}\]</div>
+<blockquote>
+<div><p>Para todo otro tipo de funciones, es conveniente diferenciar de forma implícita.</p>
 </div></blockquote>
+<section id="id2">
+<h5>EJEMPLO:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h5>
+<p>Consideremos la ecuacion de la distancia focal para lentes delgadas:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-30">
+<span class="eqno">(75)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-30" title="Link to this equation">#</a></span>\[  \frac{1}{f}=\frac{1}{o}+ \frac{1}{i}\]</div>
+</section>
 </section>
 </section>
 </section>
@@ -885,37 +950,95 @@ Corresponde al error relativo expresado en porcentaje</p>
 <li><p>Permiten que los resultados sean coherentes con los datos utilizados.</p></li>
 <li><p>Son esenciales al reportar, redondear y propagar errores.</p></li>
 </ul>
-<p><strong>Ejemplos</strong></p>
 <section id="reglas">
 <h3>Reglas.<a class="headerlink" href="#reglas" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>¿Qué cifras se consideran significativas?</strong></p>
 <p>Las cifras significativas se determinan con base en las siguientes reglas:</p>
-<p>1.1. <strong>Todos los dígitos distintos de cero son significativos.</strong><br />
-Ejemplo: <code class="docutils literal notranslate"><span class="pre">123</span></code> tiene <strong>3 cifras significativas</strong>.</p>
-<p>1.2. <strong>Los ceros entre dígitos significativos también lo son.</strong><br />
-Ejemplo: <code class="docutils literal notranslate"><span class="pre">1023</span></code> tiene <strong>4 cifras significativas</strong>.</p>
-<p>1.3. <strong>Los ceros a la izquierda (antes del primer dígito distinto de cero) no son significativos.</strong><br />
-Se usan solo para ubicar el punto decimal.<br />
-Ejemplo: <code class="docutils literal notranslate"><span class="pre">0.0045</span></code> tiene <strong>2 cifras significativas</strong> (<code class="docutils literal notranslate"><span class="pre">4</span></code> y <code class="docutils literal notranslate"><span class="pre">5</span></code>).</p>
-<p>1.4. <strong>Los ceros a la derecha de un número con punto decimal son significativos.</strong><br />
-Ejemplo: <code class="docutils literal notranslate"><span class="pre">2.300</span></code> tiene <strong>4 cifras significativas</strong>.</p>
-<p>1.5. <strong>Los ceros a la derecha de un número entero sin punto decimal pueden no ser significativos.</strong><br />
-En este caso, se recomienda utilizar notación científica para evitar ambigüedad.<br />
-Ejemplo:<br />
-- <code class="docutils literal notranslate"><span class="pre">1500</span></code> puede tener <strong>2, 3 o 4 cifras significativas</strong> según el contexto.<br />
-- <code class="docutils literal notranslate"><span class="pre">1.50</span> <span class="pre">×</span> <span class="pre">10³</span></code> tiene exactamente <strong>3 cifras significativas</strong>.</p>
-</li>
-<li><p><strong>Multiplicación / División</strong></p></li>
+<ol class="arabic simple">
+<li><p><strong>Todos los dígitos distintos de cero son significativos.</strong></p></li>
 </ol>
-<blockquote>
-<div><p><em>“El número de cifras significativas del resultado de una multiplicación o división no debe ser mayor que el menor número de cifras significativas de cualesquiera de los factores.”</em></p>
-</div></blockquote>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-31">
+<span class="eqno">(76)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-31" title="Link to this equation">#</a></span>\[123,\quad \rm (3\, C.S)  \]</div>
 <ol class="arabic simple" start="2">
-<li><p>Adición / Sustracción
-El resultado de la suma o resta de dos números carece de cifras significativas más allá de la última cifra decimal en que ambos números originales tienen cifras significativa</p></li>
+<li><p><strong>Los ceros entre dígitos significativos también lo son.</strong></p></li>
 </ol>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-32">
+<span class="eqno">(77)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-32" title="Link to this equation">#</a></span>\[1023,\quad \rm (4\, C.S)  \]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Los ceros a la izquierda (antes del primer dígito distinto de cero) no son significativos.</strong> Se usan solo para ubicar el punto decimal.</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-33">
+<span class="eqno">(78)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-33" title="Link to this equation">#</a></span>\[0.0045,\quad \rm (2\, , 4\, y\, 5\, C.S)  \]</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Los ceros a la derecha de un número con punto decimal son significativos.</strong></p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-34">
+<span class="eqno">(79)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-34" title="Link to this equation">#</a></span>\[2.300,\quad \rm (4\, C.S)  \]</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Los ceros a la derecha de un número entero sin punto decimal pueden no ser significativos.</strong>  En este caso, se recomienda utilizar notación científica para evitar ambigüedad.</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-35">
+<span class="eqno">(80)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-35" title="Link to this equation">#</a></span>\[1500,\quad \rm (2\, , 3\, y \, 4\, C.S)  \]</div>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-36">
+<span class="eqno">(81)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-36" title="Link to this equation">#</a></span>\[1.50\times 10^{3},\quad \rm (3\, C.S)  \]</div>
+<blockquote>
+<div><p><strong>Multiplicación / División:</strong> <em>“El número de cifras significativas del resultado de una multiplicación o división no debe ser mayor que el menor número de cifras significativas de cualesquiera de los factores.”</em></p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Adición / Sustracción:</strong> El resultado de la suma o resta de dos números carece de cifras significativas más allá de la última cifra decimal en que ambos números originales tienen cifras significativa</p>
+</div></blockquote>
 </section>
+</section>
+<section id="ejercicios-de-aplicacion">
+<h2>1.5.10 Ejercicios de aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Al usar un metro de madera para medir la longitud de mi escritorio. Estoy seguro de que es no menos de <span class="math notranslate nohighlight">\(142.3\,\rm cm\)</span> y no más de <span class="math notranslate nohighlight">\(142.6\)</span>. Enuncie esta medición como un valor central <span class="math notranslate nohighlight">\(\pm\)</span> incertidumbre. ¿Cuál es la incertidumbre relativa de la medición?</p></li>
+<li><p>Al leer un voltímetro y un amperímetro de aguja y escala, y evalúo visualmente el margen de incertidumbre. Estoy seguro de que la lectura del amperímetro está entre <span class="math notranslate nohighlight">\(1.24\)</span> y <span class="math notranslate nohighlight">\(1.25\,\rm A\)</span>, y la del voltímetro entre <span class="math notranslate nohighlight">\(3.2\)</span> y <span class="math notranslate nohighlight">\(3.4\,\rm V\)</span>. Exprese cada medida como un valor central incertidumbre, y evalúe la incertidumbre relativa de cada medición.</p></li>
+<li><p>Un reloj digital da una lectura de la hora de <span class="math notranslate nohighlight">\(09:46\)</span>. ¿Cuál es la incertidumbre absoluta de la medida?</p></li>
+<li><p>Si se puede leer un metro de madera con una incertidumbre absoluta de <span class="math notranslate nohighlight">\(\pm1\,\rm mm\)</span>, ¿cuál es la distancia más corta que puedo medir para que la incertidumbre relativa no exceda el</p>
+<ul class="simple">
+<li><p><em>a)</em> <span class="math notranslate nohighlight">\(1\%\)</span></p></li>
+<li><p><strong>b)</strong> <span class="math notranslate nohighlight">\(5\%\)</span></p></li>
+</ul>
+</li>
+<li><p>Al usar un termómetro graduado en <span class="math notranslate nohighlight">\(1/5\)</span> grado Celsius para medir la temperatura del aire exterior. Medida con una aproximación de <span class="math notranslate nohighlight">\(1/5\)</span> de grado, la temperatura de ayer fue de <span class="math notranslate nohighlight">\(22.4^\circ\)</span>, y la de hoy es de <span class="math notranslate nohighlight">\(24.8^\circ\)</span> Celsius. ¿Cuál es la incertidumbre relativa en la diferencia de temperaturas entre ayer y hoy?</p></li>
+<li><p>El reloj del laboratorio tiene un segundero que se mueve por pasos de un segundo. Lo uso para medir un cierto intervalo de tiempo. Al principio del intervalo marcaba las 09:15:22 (horas: minutos:segundos), y al final las 09:18:16. ¿Cuál es la incerti- dumbre relativa del intervalo medido?</p></li>
+<li><p>En el escritorio mencionado en el problema 1, se mide el ancho, y se esta seguro de que la medida cae en <span class="math notranslate nohighlight">\(78.2\)</span> y <span class="math notranslate nohighlight">\(78.4\, \rm cm \)</span> ¿Cuál es la incertidumbre absoluta en el área calculada de la cubierta del escritorio?</p></li>
+<li><p>Al medir la resistencia de un resistor, la lectura del voltímetro era de <span class="math notranslate nohighlight">\(15.2\pm 0.2 V\)</span>, y la lectura del amperímetro era de <span class="math notranslate nohighlight">\(2.6 \pm 0.1\, \rm A\)</span>. ¿Cuál es la incertidumbre absoluta de la resistencia calculada usando la ecuación?</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-37">
+<span class="eqno">(82)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-37" title="Link to this equation">#</a></span>\[R=\frac{V}{I}\]</div>
+</li>
+<li><p>Un péndulo simple se usa para medir la aceleración de la gravedad, usando:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-38">
+<span class="eqno">(83)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-38" title="Link to this equation">#</a></span>\[T=2\pi\sqrt{\frac{l}{g}}\]</div>
+<p>El periodo <span class="math notranslate nohighlight">\(T\)</span> medido fue de <span class="math notranslate nohighlight">\(1.24\pm 0.002\,\rm s\)</span> y la longitud de <span class="math notranslate nohighlight">\(0.381\pm0.002\,\rm m\)</span>. ¿Cuál es el valor resultante de <span class="math notranslate nohighlight">\(g\)</span> con su incertidumbre absoluta y relativa?</p>
+</li>
+<li><p>Un experimento para medir la densidad <span class="math notranslate nohighlight">\(\rho\)</span> de un objeto cilíndrico utiliza la ecuación</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-39">
+<span class="eqno">(84)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-39" title="Link to this equation">#</a></span>\[\rho=\frac{m}{\pi r^2 l}\]</div>
+<p>done:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m=0.029\pm0.005\,\rm kg\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r=8.2\pm0.1\,\rm mm\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l=15.4\pm0.1\,\rm mm\)</span></p></li>
+</ul>
+<p>¿Cuál es la incertidumbre absoluta y relativa del valor calculado de la densidad?</p>
+</li>
+<li><p>La distancia focal, <span class="math notranslate nohighlight">\(f\)</span> de un lente delgado se va a medir usando la ecuación</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-40">
+<span class="eqno">(85)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-40" title="Link to this equation">#</a></span>\[\frac{1}{f}=\frac{1}{o}+\frac{1}{i}\]</div>
+<p>done:</p>
+<ul class="simple">
+<li><p>La distancia al objeto <span class="math notranslate nohighlight">\(o=0.154\pm0.002\,\rm m\)</span></p></li>
+<li><p>Distancia a la imagen <span class="math notranslate nohighlight">\(i=0.382\pm0.002\,\rm m\)</span></p></li>
+</ul>
+<p>¿Cuál es el valor calculado de la distancia focal, su incertidumbre absoluta y su incertidumbre relativa?</p>
+</li>
+<li><p>Una regilla de difracción se usa para medir la longitud de onda de la luz, usando la ecuación</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-5-cifras-significativas-41">
+<span class="eqno">(86)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-5-cifras-significativas-41" title="Link to this equation">#</a></span>\[\lambda=d\sin{\theta}\]</div>
+<p>El valor medido de <span class="math notranslate nohighlight">\(\theta\)</span> es de <span class="math notranslate nohighlight">\(13^\circ 34'\pm 2'\)</span>. Suponiendo que el valor de <span class="math notranslate nohighlight">\(d=1420\times 10^{-9}\,\rm m\)</span> y que se puede ingnorar su incertidumbre, ¿Cuál es la incertidumbre absoluta y relativa en el valor de <span class="math notranslate nohighlight">\(\lambda\)</span>?</p>
+</li>
+</ol>
 </section>
 </section>
 
@@ -971,10 +1094,24 @@ El resultado de la suma o resta de dos números carece de cifras significativas 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentos-de-medicion">1.5.3 Instrumentos de medición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-medicion">1.5.4 Tipos de medición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-errores">1.5.5 Tipos de Errores:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-absoluta-y-relativa">1.5.6 Incertidumbre Absoluta y Relativa</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion">Ejemplo de aplicación</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-1-una-sola-medicion">Caso 1: Una sola medición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-2-diez-mediciones">Caso 2: Diez mediciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-absoluta-y-relativa">1.5.6 Incertidumbre Absoluta y Relativa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-en-cantidades-calculadas">1.5.7 Incertidumbre en cantidades calculadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-en-funciones-de-dos-o-mas-variables">1.5.9 Incertidumbre en funciones de dos o mas variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-dos-o-mas-variables">Suma de dos o mas variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencia-de-dos-variables">Diferencia de dos variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">Ejemplo:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-general-para-la-incertidumbre-en-funciones-de-dos-o-mas-variables">Método general para la incertidumbre en funciones de dos o mas variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-producto-de-dos-o-mas-variables">a) Producto de dos o mas variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-producto-de-dos-o-mas-variables-elevadas-a-una-potencia">b) Producto de dos o mas variables elevadas a una potencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">EJEMPLO:</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-cocientes">c) Cocientes</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">EJEMPLO:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -983,6 +1120,7 @@ El resultado de la suma o resta de dos números carece de cifras significativas 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reglas">Reglas.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.5.10 Ejercicios de aplicación</a></li>
 </ul>
   </nav></div>
 
