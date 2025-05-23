@@ -20,6 +20,7 @@ Notas de clase del Curso de Física II: Fundamentos de oscilaciones, ondas y mec
    01_elasticidad/1.10_deformacion_lateral
    01_elasticidad/1.11_torsion
    01_elasticidad/1.12_energia_elastica
+   01_elasticidad/1.13_ley_de_hooke_generalizada
 
 .. toctree::
    :maxdepth: 2

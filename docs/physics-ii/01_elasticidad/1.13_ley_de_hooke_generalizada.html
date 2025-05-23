@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.12 Energía elástica acumulada en una barra &#8212; J&#39;s PhysiXLab  documentation</title>
+    <title>1.13 Deformación Volumétrica: Ley de Hooke generalizada &#8212; J&#39;s PhysiXLab  documentation</title>
   
   
   
@@ -44,12 +44,12 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/01_elasticidad/1.12_energia_elastica';</script>
-    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/01_elasticidad/1.12_energia_elastica.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/01_elasticidad/1.13_ley_de_hooke_generalizada';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/01_elasticidad/1.13_ley_de_hooke_generalizada.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.13 Deformación Volumétrica: Ley de Hooke generalizada" href="1.13_ley_de_hooke_generalizada.html" />
-    <link rel="prev" title="1.11 Torsión" href="1.11_torsion.html" />
+    <link rel="next" title="2.1 Movimiento periódico" href="../02_movimiento_oscilatorio/2.1_movimiento_periodico.html" />
+    <link rel="prev" title="1.12 Energía elástica acumulada en una barra" href="1.12_energia_elastica.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -503,8 +503,8 @@
 <li class="toctree-l1"><a class="reference internal" href="1.9_deformacion_cizalladura.html">1.9 Deformación por cizalladura</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.10_deformacion_lateral.html">1.10 Deformación lateral</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.11_torsion.html">1.11 Torsión</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.12 Energía elástica acumulada en una barra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1.13_ley_de_hooke_generalizada.html">1.13 Deformación Volumétrica: Ley de Hooke generalizada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.12_energia_elastica.html">1.12 Energía elástica acumulada en una barra</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.13 Deformación Volumétrica: Ley de Hooke generalizada</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Movimiento Oscilatorio</span></p>
 <ul class="nav bd-sidenav">
@@ -640,7 +640,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Física II</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.12 Energía elástica acumulada en una barra</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.13 Deformación Volumétrica: Ley de Hooke generalizada</span></li>
   </ul>
 </nav>
 </div>
@@ -657,25 +657,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="energia-elastica-acumulada-en-una-barra">
-<h1>1.12 Energía elástica acumulada en una barra<a class="headerlink" href="#energia-elastica-acumulada-en-una-barra" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deformacion-volumetrica-ley-de-hooke-generalizada">
+<h1>1.13 Deformación Volumétrica: Ley de Hooke generalizada<a class="headerlink" href="#deformacion-volumetrica-ley-de-hooke-generalizada" title="Link to this heading">#</a></h1>
 <section id="ejercicios-de-aplicacion">
-<h2>1.12. Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Un alambre uniforme esta fijo en su extremo superior y tiene un peso atado en el otro extremo. Si la energía de Deformación por unidad de volumen es <span class="math notranslate nohighlight">\(2\times10^4\,\rm ergios/cm^3\)</span> y el incremento de la longitud por unidad de longitud es <span class="math notranslate nohighlight">\(2\times 10^{-4}\)</span></p>
-<ul class="simple">
-<li><p><strong>a)</strong> Halle el módulo de Young (Resp. <span class="math notranslate nohighlight">\(E=10^{12}\, \rm dinas/cm^2\)</span>)</p></li>
-<li><p><strong>b)</strong> El esfuerzo (Resp. <span class="math notranslate nohighlight">\(\sigma=2\times 10^{8}\, \rm dinas/cm^2\)</span>)</p></li>
-</ul>
-</li>
-<li><p>Dos fuerzas iguales en módulo pero con direcciones propuestas se aplican en ambos extremos de un alambre largo de longitud <span class="math notranslate nohighlight">\( L\)</span> y sección transversal <span class="math notranslate nohighlight">\(A\)</span>. Demostrar que si el alambre se considera como un muelle, la constante de fuerza <span class="math notranslate nohighlight">\( k\)</span> viene dada por
-<span class="math notranslate nohighlight">\(k=\frac{A\gamma}{L}\)</span>
-y la energía almacenada en el alambre
-<span class="math notranslate nohighlight">\(U=\frac{1}{2}F\Delta L\)</span>
-donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el módulo de Young y <span class="math notranslate nohighlight">\(\Delta L\)</span> el incremento de longitud del alambre.</p></li>
-<li><p>La cuerda <span class="math notranslate nohighlight">\(\rm E\)</span> de acero de un violín está sometida a una tensión de <span class="math notranslate nohighlight">\(53\, \rm N\)</span>. El diámetro de la cuerda es <span class="math notranslate nohighlight">\(0,20\, \rm mm\)</span> y su longitud tensada es <span class="math notranslate nohighlight">\(35.0\, \rm cm\)</span>. Determinar:
-- (a) la longitud sin tensar de esta cuerda
-- (b) el trabajo necesario para tensar la cuerda.</p></li>
+<h2>1.13.2 Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="2">
+<li><p>Se aplican fuerzas de compresión a dos caras opuestas de un bloque rectangular de volumen <span class="math notranslate nohighlight">\(V_0=a_0b_0c_0\)</span>. La disminución relativa del volumen es <span class="math notranslate nohighlight">\(0.0004\)</span> y la disminución relativa de la longitud del bloque es de 0.02. Hallar <span class="math notranslate nohighlight">\(\mu\)</span>. (Resp. <span class="math notranslate nohighlight">\(\mu=0.49\)</span>)</p></li>
+<li><p>Sobre una superficie horizontal se puso un cilindro de <span class="math notranslate nohighlight">\(Cu\)</span>macizo de longitud <span class="math notranslate nohighlight">\(65\,\rm cm\)</span> y desde arriba se le aplicó una fuerza de compresión vertical <span class="math notranslate nohighlight">\(10^3 \, \rm N\)</span>, distribuida uniformemente por su extremo. ¿En cuantos <span class="math notranslate nohighlight">\(\rm mm^3\)</span> cambió en este caso el volumen del cilindro? <span class="math notranslate nohighlight">\(\mu=0.34\)</span>, <span class="math notranslate nohighlight">\(E=11.8\times 10^{10}\, \rm N/m^2\)</span> (Resp. <span class="math notranslate nohighlight">\(1.7\, \rm mm^3\)</span>)</p></li>
+<li><p>Una barra de acero cuadrada de <span class="math notranslate nohighlight">\(5\,\rm cm\)</span> de lado y longitud de <span class="math notranslate nohighlight">\(1\, \rm m\)</span> está sometida a una fuerza de tracción axial de <span class="math notranslate nohighlight">\(10 000 \, \rm Kg\)</span>. Hallar la contracción lateral debida a esta carga, si <span class="math notranslate nohighlight">\(E=2\times10^6 \,\rm Kg/cm^2\)</span> y <span class="math notranslate nohighlight">\(\mu=0.25\)</span> (Resp. <span class="math notranslate nohighlight">\(\Delta a = 2.5\times10^{-4}\, \rm cm\)</span>)</p></li>
 </ol>
 </section>
 </section>
@@ -691,20 +680,20 @@ donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el módulo
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1.11_torsion.html"
+       href="1.12_energia_elastica.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1.11 Torsión</p>
+        <p class="prev-next-title">1.12 Energía elástica acumulada en una barra</p>
       </div>
     </a>
     <a class="right-next"
-       href="1.13_ley_de_hooke_generalizada.html"
+       href="../02_movimiento_oscilatorio/2.1_movimiento_periodico.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.13 Deformación Volumétrica: Ley de Hooke generalizada</p>
+        <p class="prev-next-title">2.1 Movimiento periódico</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -727,7 +716,7 @@ donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el módulo
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.12. Ejercicios de Aplicación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.13.2 Ejercicios de Aplicación</a></li>
 </ul>
   </nav></div>
 
@@ -735,7 +724,7 @@ donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el módulo
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/physics-ii/01_elasticidad/1.12_energia_elastica.md">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/physics-ii/01_elasticidad/1.13_ley_de_hooke_generalizada.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -751,7 +740,7 @@ donde <span class="math notranslate nohighlight">\(\gamma\)</span> es el módulo
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/physics-ii/01_elasticidad/1.12_energia_elastica.md.txt"
+      <li><a href="../../_sources/physics-ii/01_elasticidad/1.13_ley_de_hooke_generalizada.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
