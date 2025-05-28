@@ -12,7 +12,11 @@ Notas de clase del Curso de Física I
    01_magnitudes/1.2_unidades
    01_magnitudes/1.3_conversion_de_unidades
    01_magnitudes/1.4_analisis_dimensional
-   01_magnitudes/1.5_cifras_significativas
+   01_magnitudes/1.5_cifras_significativas   
+   01_magnitudes/1.6_tratamiento_estadistico_de_mediciones
+   01_magnitudes/1.7_desviacion_estandar_de_cantidades_calculadas
+   01_magnitudes/1.8_distribucion_de_gauss
+   01_magnitudes/1.9_principio_de_minimos_cuadrados
 
 .. toctree::
    :maxdepth: 2

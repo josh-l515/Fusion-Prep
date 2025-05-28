@@ -1,0 +1,9 @@
+# 1.9 Principio de Mínimos Cuadrados
+
+```{figure} _static/minimos_cuadrados_lineal.png
+:alt: errores aleatorios
+:width: 800px
+:align: center
+:name: minimos_cuadrados_lineal
+Esquematización de los errores aleatorios en el cálculo de la aceleración de la gravedad.
+```
