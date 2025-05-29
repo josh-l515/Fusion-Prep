@@ -1,1 +1,15 @@
 # 1.6 Tratamiento estadístico de las medidas
+Supongamos que hemos hecho una serie de $N$ mediciones
+```{math}
+x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N
+```
+en general diferentes, cuyos valores fueron determinados con un mismo instrumento de medida,
+```{math}
+\{x_i, \delta x\}
+```
+siendo $\delta x$ la incertidumbre absoluta de todas las medidas $x_i$ proveniente de la resolución del intrumento utilizado, cuyos valores no son necesariamente conocidos. 
+
+Sábemos ademas que la magnitud dada puede tener en realidad un sólo valor numérico. ¿Cómo podemos volcar la información de esos $N$ números hacia uno solo?, ¿Qué podemos adaptar como el **valor mas probable** de la magnitud?
+
+## 1.6.1 Media aritmética
+Sea $\bar{x}$ el número que adoptamos como **valor mas probable**
