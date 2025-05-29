@@ -626,6 +626,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tratamiento-estadistico-de-las-medidas">
 <h1>1.6 Tratamiento estadístico de las medidas<a class="headerlink" href="#tratamiento-estadistico-de-las-medidas" title="Link to this heading">#</a></h1>
+<section id="para-n-mediciones">
+<h2>1.6.1 Para <span class="math notranslate nohighlight">\(N\)</span> Mediciones<a class="headerlink" href="#para-n-mediciones" title="Link to this heading">#</a></h2>
 <p>Supongamos que hemos hecho una serie de <span class="math notranslate nohighlight">\(N\)</span> mediciones</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-0">
 <span class="eqno">(87)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-0" title="Link to this equation">#</a></span>\[x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N\]</div>
@@ -635,8 +637,77 @@
 <p>siendo <span class="math notranslate nohighlight">\(\delta x\)</span> la incertidumbre absoluta de todas las medidas <span class="math notranslate nohighlight">\(x_i\)</span> proveniente de la resolución del intrumento utilizado, cuyos valores no son necesariamente conocidos.</p>
 <p>Sábemos ademas que la magnitud dada puede tener en realidad un sólo valor numérico. ¿Cómo podemos volcar la información de esos <span class="math notranslate nohighlight">\(N\)</span> números hacia uno solo?, ¿Qué podemos adaptar como el <strong>valor mas probable</strong> de la magnitud?</p>
 <section id="media-aritmetica">
-<h2>1.6.1 Media aritmética<a class="headerlink" href="#media-aritmetica" title="Link to this heading">#</a></h2>
+<h3>1.6.1.1 Media aritmética<a class="headerlink" href="#media-aritmetica" title="Link to this heading">#</a></h3>
 <p>Sea <span class="math notranslate nohighlight">\(\bar{x}\)</span> el número que adoptamos como <strong>valor mas probable</strong></p>
+</section>
+<section id="varianza">
+<h3>1.6.1.2 Varianza<a class="headerlink" href="#varianza" title="Link to this heading">#</a></h3>
+</section>
+<section id="desviacion-estandar">
+<h3>1.6.1.3 Desviación estándar<a class="headerlink" href="#desviacion-estandar" title="Link to this heading">#</a></h3>
+</section>
+<section id="incertidumbre-relativa-de-la-desviacion">
+<h3>1.6.1.4 Incertidumbre relativa de la Desviación<a class="headerlink" href="#incertidumbre-relativa-de-la-desviacion" title="Link to this heading">#</a></h3>
+<p>La cantidad</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-2">
+<span class="eqno">(89)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-2" title="Link to this equation">#</a></span>\[\eta=\frac{\sigma}{{\bar{x}}}\]</div>
+<p>se llama incertidumbre o desviación relativa de cada medición, su valor porcentual es análogo a la incertidumbre relativa porcentual</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-3">
+<span class="eqno">(90)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-3" title="Link to this equation">#</a></span>\[\eta_{\%}=\frac{\sigma}{{\bar{x}}}\times 100\%\]</div>
+<p>Obsérvese que el error relativo, que no tiene dimensiones, es una cantidad que nos representa la forma numérica más intuitiva posible del concepto de “error” o dispersión.</p>
+</section>
+<section id="poblacion-y-muestra">
+<h3>1.6.1.5 Población y muestra<a class="headerlink" href="#poblacion-y-muestra" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="para-nm-mediciones">
+<h2>1.6.2 Para <span class="math notranslate nohighlight">\(NM\)</span> mediciones<a class="headerlink" href="#para-nm-mediciones" title="Link to this heading">#</a></h2>
+<section id="promedio-ponderado">
+<h3>1.6.2.1 Promedio ponderado<a class="headerlink" href="#promedio-ponderado" title="Link to this heading">#</a></h3>
+<p>Supongamos que hemos obtenido un promedio <span class="math notranslate nohighlight">\(\bar{x}\)</span> de una serie de mediciones</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-4">
+<span class="eqno">(91)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-4" title="Link to this equation">#</a></span>\[x_1, \dotsb, x_N\]</div>
+<p>Hagamos ahora otra serie de <span class="math notranslate nohighlight">\(N\)</span> mediciones en las mismas condiciones que la anterior, obteniendo los valores</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-5">
+<span class="eqno">(92)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-5" title="Link to this equation">#</a></span>\[x'_1, \dotsb, x'_N\]</div>
+<p>el promedio <span class="math notranslate nohighlight">\(\bar{x}'\)</span> no tiene porque coincidir con el de la primera, esto es:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-6">
+<span class="eqno">(93)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-6" title="Link to this equation">#</a></span>\[\bar{x}\neq\bar{x}'\]</div>
+<p>Tampoco las desviaciones estándar <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\sigma'\)</span> serán idénticas aunque su orden de magnitud siempre será el mismo</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-7">
+<span class="eqno">(94)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-7" title="Link to this equation">#</a></span>\[\sigma\neq\sigma'\]</div>
+<p>En general los promedios</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-8">
+<span class="eqno">(95)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-8" title="Link to this equation">#</a></span>\[\bar{x}, \bar{x}',\bar{x}'',\dotsb,\bar{x}^k,\dotsb, \bar{x}^M\]</div>
+<p>obtenidos a través de <span class="math notranslate nohighlight">\(M\)</span> series de mediciones con <span class="math notranslate nohighlight">\(N\)</span> valores cada una, fluctuarán alrededor de un promedio general, o <strong>“promedio de los promedios”</strong>, de valor</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-9">
+<span class="eqno">(96)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-9" title="Link to this equation">#</a></span>\[\begin{split}\bar{\bar{x}}&amp;=\displaystyle{\frac{\sum\limits_{k=1}^{M} \bar{x}^k}{M}}\\
+&amp;=\displaystyle{\frac{\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}'}{N}}+\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}''}{N}}+\dotsb+\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}^M}{N}}}{M}}\\
+&amp;=\frac{\sum\limits_{l=1}^{NM} \displaystyle{\frac{\bar{x_l}}{N}}}{NM}\end{split}\]</div>
+</section>
+<section id="dispersion-estandar-de-cada-promedio">
+<h3>1.6.2.2 Dispersión estándar de cada Promedio<a class="headerlink" href="#dispersion-estandar-de-cada-promedio" title="Link to this heading">#</a></h3>
+<p>La dispersión de esos promedios, considerados como datos individuales de una serie de valores, será:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-10">
+<span class="eqno">(97)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-10" title="Link to this equation">#</a></span>\[\xi=\sqrt{\displaystyle{\frac{\sum\limits_k^M\left(\bar{\bar{x}}-\bar{x^k}\right)^2}{M}}}\]</div>
+<p>Ésta es la <strong>dispersión estándar de cada promedio</strong> de las <span class="math notranslate nohighlight">\(M\)</span> series de mediciones. Se puede demostrar que para los casos de errores casuales de medición esta dispersión o error estándar vale</p>
+<div class="math notranslate nohighlight" id="equation-eq-xi">
+<span class="eqno">(98)<a class="headerlink" href="#equation-eq-xi" title="Link to this equation">#</a></span>\[\xi=\sqrt{\displaystyle{\frac{\nu}{N}}}=\frac{\sigma}{\sqrt{N}}\]</div>
+<p>Esta relación es en realidad aproximada, pero se convierte en igualdad para <span class="math notranslate nohighlight">\(N\)</span> suficientemente grande. <span class="math notranslate nohighlight">\(\sigma\)</span> es la dispersión estándar en una de las <span class="math notranslate nohighlight">\(M\)</span> series de mediciones.</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\xi\)</span> en <a class="reference internal" href="#equation-eq-xi">(98)</a> permite predecir la fluctuación del promedio de una serie de <span class="math notranslate nohighlight">\(N\)</span> mediciones, sin necesidad de volver a realizar más series de mediciones.</p>
+</div></blockquote>
+</section>
+<section id="incertidumbre-relativa-del-promedio">
+<h3>1.6.2.3 Incertidumbre relativa del Promedio<a class="headerlink" href="#incertidumbre-relativa-del-promedio" title="Link to this heading">#</a></h3>
+<p>La cantidad</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-11">
+<span class="eqno">(99)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-11" title="Link to this equation">#</a></span>\[\theta=\frac{\xi}{\bar{x}}\]</div>
+<p>se llama <strong>incertidumbre relativo del promedio</strong> y,</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-12">
+<span class="eqno">(100)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-6-tratamiento-estadistico-de-mediciones-12" title="Link to this equation">#</a></span>\[\theta_{\%}=\frac{\xi}{\bar{x}}\times 100\%\]</div>
+<p>se llama incertidumbre porcentual del promedio.</p>
+</section>
 </section>
 </section>
 
@@ -687,7 +758,20 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#media-aritmetica">1.6.1 Media aritmética</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-n-mediciones">1.6.1 Para <span class="math notranslate nohighlight">\(N\)</span> Mediciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-aritmetica">1.6.1.1 Media aritmética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">1.6.1.2 Varianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desviacion-estandar">1.6.1.3 Desviación estándar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-relativa-de-la-desviacion">1.6.1.4 Incertidumbre relativa de la Desviación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poblacion-y-muestra">1.6.1.5 Población y muestra</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-nm-mediciones">1.6.2 Para <span class="math notranslate nohighlight">\(NM\)</span> mediciones</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promedio-ponderado">1.6.2.1 Promedio ponderado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion-estandar-de-cada-promedio">1.6.2.2 Dispersión estándar de cada Promedio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incertidumbre-relativa-del-promedio">1.6.2.3 Incertidumbre relativa del Promedio</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

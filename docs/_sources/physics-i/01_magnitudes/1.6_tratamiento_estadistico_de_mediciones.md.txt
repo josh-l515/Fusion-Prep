@@ -1,4 +1,5 @@
 # 1.6 Tratamiento estadístico de las medidas
+## 1.6.1 Para $N$ Mediciones
 Supongamos que hemos hecho una serie de $N$ mediciones
 ```{math}
 x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N
@@ -11,5 +12,71 @@ siendo $\delta x$ la incertidumbre absoluta de todas las medidas $x_i$ provenien
 
 Sábemos ademas que la magnitud dada puede tener en realidad un sólo valor numérico. ¿Cómo podemos volcar la información de esos $N$ números hacia uno solo?, ¿Qué podemos adaptar como el **valor mas probable** de la magnitud?
 
-## 1.6.1 Media aritmética
+### 1.6.1.1 Media aritmética
 Sea $\bar{x}$ el número que adoptamos como **valor mas probable**
+### 1.6.1.2 Varianza
+### 1.6.1.3 Desviación estándar
+### 1.6.1.4 Incertidumbre relativa de la Desviación
+La cantidad 
+```{math}
+\eta=\frac{\sigma}{{\bar{x}}}
+```
+se llama incertidumbre o desviación relativa de cada medición, su valor porcentual es análogo a la incertidumbre relativa porcentual
+```{math}
+\eta_{\%}=\frac{\sigma}{{\bar{x}}}\times 100\%
+```
+Obsérvese que el error relativo, que no tiene dimensiones, es una cantidad que nos representa la forma numérica más intuitiva posible del concepto de "error" o dispersión. 
+### 1.6.1.5 Población y muestra
+## 1.6.2 Para $NM$ mediciones
+### 1.6.2.1 Promedio ponderado
+Supongamos que hemos obtenido un promedio $\bar{x}$ de una serie de mediciones 
+```{math}
+x_1, \dotsb, x_N
+```
+Hagamos ahora otra serie de $N$ mediciones en las mismas condiciones que la anterior, obteniendo los valores
+```{math}
+x'_1, \dotsb, x'_N
+```
+el promedio $\bar{x}'$ no tiene porque coincidir con el de la primera, esto es:
+```{math}
+\bar{x}\neq\bar{x}'
+```
+Tampoco las desviaciones estándar $\sigma$ y $\sigma'$ serán idénticas aunque su orden de magnitud siempre será el mismo
+```{math}
+\sigma\neq\sigma'
+```
+En general los promedios 
+```{math}
+\bar{x}, \bar{x}',\bar{x}'',\dotsb,\bar{x}^k,\dotsb, \bar{x}^M
+```
+obtenidos a través de $M$ series de mediciones con $N$ valores cada una, fluctuarán alrededor de un promedio general, o **"promedio de los promedios"**, de valor 
+```{math}
+\bar{\bar{x}}&=\displaystyle{\frac{\sum\limits_{k=1}^{M} \bar{x}^k}{M}}\\
+&=\displaystyle{\frac{\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}'}{N}}+\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}''}{N}}+\dotsb+\sum\limits_{i=1}^{N} \displaystyle{\frac{\bar{x_i}^M}{N}}}{M}}\\
+&=\frac{\sum\limits_{l=1}^{NM} \displaystyle{\frac{\bar{x_l}}{N}}}{NM}
+```
+
+### 1.6.2.2 Dispersión estándar de cada Promedio
+La dispersión de esos promedios, considerados como datos individuales de una serie de valores, será:
+```{math}
+\xi=\sqrt{\displaystyle{\frac{\sum\limits_k^M\left(\bar{\bar{x}}-\bar{x^k}\right)^2}{M}}}
+```
+Ésta es la **dispersión estándar de cada promedio** de las $M$ series de mediciones. Se puede demostrar que para los casos de errores casuales de medición esta dispersión o error estándar vale
+
+```{math}
+:label: eq_xi
+\xi=\sqrt{\displaystyle{\frac{\nu}{N}}}=\frac{\sigma}{\sqrt{N}}
+```
+Esta relación es en realidad aproximada, pero se convierte en igualdad para $N$ suficientemente grande. $\sigma$ es la dispersión estándar en una de las $M$ series de mediciones.
+
+> $\xi$ en {eq}`eq_xi` permite predecir la fluctuación del promedio de una serie de $N$ mediciones, sin necesidad de volver a realizar más series de mediciones.
+### 1.6.2.3 Incertidumbre relativa del Promedio
+La cantidad
+```{math}
+\theta=\frac{\xi}{\bar{x}}
+```
+se llama **incertidumbre relativo del promedio** y,
+```{math}
+\theta_{\%}=\frac{\xi}{\bar{x}}\times 100\%
+```
+se llama incertidumbre porcentual del promedio. 

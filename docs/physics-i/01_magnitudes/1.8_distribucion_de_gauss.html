@@ -628,7 +628,7 @@
 <h1>1.8 Distribución de Gauss<a class="headerlink" href="#distribucion-de-gauss" title="Link to this heading">#</a></h1>
 <p>Consideremos de nuevo la serie de resultados de medición</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0">
-<span class="eqno">(89)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0" title="Link to this equation">#</a></span>\[x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N\]</div>
+<span class="eqno">(101)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0" title="Link to this equation">#</a></span>\[x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N\]</div>
 <p>estos números están distribuidos alrededor del promedio <span class="math notranslate nohighlight">\(\bar{x}\)</span>. Observaremos en <a class="reference internal" href="#fig-gauss-01"><span class="std std-numref">Fig. 8</span></a> que hay valores que están cerca del promedio; otros, menores en número, estarán lejos.</p>
 <figure class="align-center" id="fig-gauss-01">
 <a class="reference internal image-reference" href="../../_images/fig_gauss_01.png"><img alt="distribución de mediciones normal" src="../../_images/fig_gauss_01.png" style="width: 700px;" />
@@ -652,10 +652,10 @@
 <p>Cuanto más grande sea la estadística, o sea <span class="math notranslate nohighlight">\(N\)</span>, más pequeños podemos hacer los intervalos <span class="math notranslate nohighlight">\(\Delta x\)</span> sin por ello perder la chance de tener un número suficientemente grande <span class="math notranslate nohighlight">\(\Delta n\)</span> de datos en cada intervalo.</p>
 <p>Sea <span class="math notranslate nohighlight">\(\Delta n\)</span> el número de valores numéricos de nuestra serie de mediciones, que caen en un determinado intervalo, entre <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(x + \Delta x\)</span>. Se comprueba experimentalmente que ese número depende del valor de <span class="math notranslate nohighlight">\(x\)</span> y de la longitud del intervalo <span class="math notranslate nohighlight">\(\Delta x\)</span> en la forma aproximada:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1">
-<span class="eqno">(90)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1" title="Link to this equation">#</a></span>\[\Delta n \approx \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\Delta x\]</div>
+<span class="eqno">(102)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1" title="Link to this equation">#</a></span>\[\Delta n \approx \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\Delta x\]</div>
 <p>La aproximación es tanto mejor cuanto mayor sea <span class="math notranslate nohighlight">\(N\)</span> y cuanto más pequeño sea <span class="math notranslate nohighlight">\(\Delta x\)</span>. La relación se transforma en igualdad para diferenciales <span class="math notranslate nohighlight">\(dn\)</span> y <span class="math notranslate nohighlight">\(dx\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2">
-<span class="eqno">(91)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2" title="Link to this equation">#</a></span>\[\lim_{\Delta x\to 0}\frac{\Delta n}{\Delta x} =\frac{dn}{dx}= \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\]</div>
+<span class="eqno">(103)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2" title="Link to this equation">#</a></span>\[\lim_{\Delta x\to 0}\frac{\Delta n}{\Delta x} =\frac{dn}{dx}= \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\]</div>
 <p>donde:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle{\frac{dn}{dx}}\)</span>: se conoce como densidad de oservaciones, es decir representa el número de observaciones cuyos valores estan comprendidos entre <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(x+dx\)</span>.</p></li>
@@ -681,29 +681,29 @@
 <h2>1.8.1 Número de observaciones<a class="headerlink" href="#numero-de-observaciones" title="Link to this heading">#</a></h2>
 <p>La superficie total subtendida por la curva de Gauss, es:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3">
-<span class="eqno">(92)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3" title="Link to this equation">#</a></span>\[\begin{split}\int_{\infty}^\infty dn&amp;=\int_{-\infty}^\infty \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
+<span class="eqno">(104)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3" title="Link to this equation">#</a></span>\[\begin{split}\int_{\infty}^\infty dn&amp;=\int_{-\infty}^\infty \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
 &amp;=\frac{N}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\frac{dx}{\sigma}\\
 &amp;=\frac{N}{\sqrt{2\pi}}\sqrt{2\pi}\\
 &amp;=N\end{split}\]</div>
 <p>EL cual corresponde al número total de observaciones. Esta es precisamente la razón por la cual se coloca el factor <span class="math notranslate nohighlight">\(\sqrt{2\pi}\)</span> en el denominador.</p>
 <p>Integremos ahora sobre cierto intervalo respecto a <span class="math notranslate nohighlight">\(x\)</span>, la integral:</p>
 <div class="math notranslate nohighlight" id="equation-eq-numero-observaciones">
-<span class="eqno">(93)<a class="headerlink" href="#equation-eq-numero-observaciones" title="Link to this equation">#</a></span>\[\begin{split}\int_{x_1}^{x_2} dn&amp;=\int_{x_1}^{x_2} \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
+<span class="eqno">(105)<a class="headerlink" href="#equation-eq-numero-observaciones" title="Link to this equation">#</a></span>\[\begin{split}\int_{x_1}^{x_2} dn&amp;=\int_{x_1}^{x_2} \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
 &amp;=\int_{x_1}^{x_2} \frac{dN}{dx}dx\\
 &amp;=\Delta N\end{split}\]</div>
 <p>será el número de observaciones <span class="math notranslate nohighlight">\(\Delta N\)</span> comprendidas entre <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span>.  Esta integral no puede resolverse de forma analítica, su valor debe buscarse en tablas provenientes de un cálculo numérico.</p>
 </section>
 <section id="probabilidad-de-observacion">
 <h2>1.8.2 Probabilidad de observación<a class="headerlink" href="#probabilidad-de-observacion" title="Link to this heading">#</a></h2>
-<p>Si ahora dividimos <a class="reference internal" href="#equation-eq-numero-observaciones">(93)</a>, por el número total de observaciones <span class="math notranslate nohighlight">\(N\)</span>,</p>
+<p>Si ahora dividimos <a class="reference internal" href="#equation-eq-numero-observaciones">(105)</a>, por el número total de observaciones <span class="math notranslate nohighlight">\(N\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4">
-<span class="eqno">(94)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4" title="Link to this equation">#</a></span>\[\frac{\Delta N}{N}= \frac{1}{\sigma \sqrt{2\pi}}\int_{x_1}^{x_2}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\]</div>
+<span class="eqno">(106)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4" title="Link to this equation">#</a></span>\[\frac{\Delta N}{N}= \frac{1}{\sigma \sqrt{2\pi}}\int_{x_1}^{x_2}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\]</div>
 <p>obtenemos lo que se llama la probabilidad de que una observación dada esté comprendida en el intervalo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, así podemos decir que:</p>
 <ul>
 <li><p>La probabilidad de encontrar un dato entre <span class="math notranslate nohighlight">\(-\infty\)</span> y <span class="math notranslate nohighlight">\(+\infty\)</span> es 1 o sea <span class="math notranslate nohighlight">\(100\%\)</span> certeza.</p></li>
 <li><p>La probabilidad de encontrar un dato fuera del intervalo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, será</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5">
-<span class="eqno">(95)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5" title="Link to this equation">#</a></span>\[1-\frac{\Delta N}{N}\]</div>
+<span class="eqno">(107)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5" title="Link to this equation">#</a></span>\[1-\frac{\Delta N}{N}\]</div>
 </li>
 </ul>
 <blockquote>
@@ -714,7 +714,7 @@
 <h2>1.8.3 Tabla de la distribución normal<a class="headerlink" href="#tabla-de-la-distribucion-normal" title="Link to this heading">#</a></h2>
 <p>Veamos las probabilidades para algunos intervalos “prototipo” dentro de las mediciones experimentalmente. La probabilidad de que el valor de una medición (no el valor verdadero) caiga entre:</p>
 <div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6">
-<span class="eqno">(96)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6" title="Link to this equation">#</a></span>\[\begin{split}\bar{x}\pm\sigma&amp; \to  68.3\%\\
+<span class="eqno">(108)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6" title="Link to this equation">#</a></span>\[\begin{split}\bar{x}\pm\sigma&amp; \to  68.3\%\\
 \bar{x}\pm2\sigma&amp; \to 95.4\%\\
 \bar{x}\pm3\sigma&amp; \to 99.7\%\\
 \bar{x}\pm4\sigma&amp; \to 99.994\%\\
@@ -725,6 +725,30 @@
 </section>
 <section id="ejercicios-de-aplicacion">
 <h2>1.8.4 Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>De los siguientes datos medidos en laboratorio</p>
+<figure class="align-center" id="fig-errores-sistematicos">
+<a class="reference internal image-reference" href="../../_images/tabla_ejercicio.png"><img alt="errores sistematicos" src="../../_images/tabla_ejercicio.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Datos experimentales ejercicio 01</span><a class="headerlink" href="#fig-errores-sistematicos" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Calcular:</p>
+<ul>
+<li><p>La media aritmética, la desviación estándar de cada una de las medidas y la incertidumbre de la media (promedio).</p></li>
+<li><p>Reporta el resultado final en el formato:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7">
+<span class="eqno">(109)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_{\bar{t}} \quad [\text{°C}]\]</div>
+</li>
+<li><p>Elabora un <strong>histograma</strong> con los <span class="math notranslate nohighlight">\(20\)</span> valores de temperatura.</p></li>
+<li><p>Superpón (en la misma gráfica) una <strong>curva gaussiana teórica</strong> con media <span class="math notranslate nohighlight">\(\bar{t}\)</span> y desviación estándar  <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+<li><p>Asumiendo una <strong>distribución normal</strong>, calcula la <strong>probabilidad de que una futura medida de temperatura se encuentre entre 99.5 °C y 100.5 °C</strong>.</p></li>
+<li><p>Estima la <strong>probabilidad de que el valor real de la temperatura esté dentro del intervalo <span class="math notranslate nohighlight">\(\bar{t} \pm \Delta \bar{t}\)</span></strong>.</p></li>
+<li><p>¿A qué nivel de confianza corresponde aproximadamente este intervalo si se asume distribución normal?</p></li>
+</ul>
+</li>
+</ol>
 </section>
 </section>
 

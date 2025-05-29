@@ -102,3 +102,26 @@ Estas cifras se obtienen de tablas de la función de densidad acumulada de la di
 
 
 ## 1.8.4 Ejercicios de Aplicación
+
+1. De los siguientes datos medidos en laboratorio
+
+    ```{figure} _static/tabla_ejercicio.png
+    :alt: errores sistematicos
+    :width: 600px
+    :align: center
+    :name: fig_errores_sistematicos
+    Datos experimentales ejercicio 01
+    ```
+
+    Calcular:
+      - La media aritmética, la desviación estándar de cada una de las medidas y la incertidumbre de la media (promedio).
+      -  Reporta el resultado final en el formato:
+          ```{math}
+          t=\bar{t} \pm \xi_{\bar{t}} \quad [\text{°C}]
+          ```
+      - Elabora un **histograma** con los $20$ valores de temperatura.
+      - Superpón (en la misma gráfica) una **curva gaussiana teórica** con media $\bar{t}$ y desviación estándar  $\sigma$
+      - Asumiendo una **distribución normal**, calcula la **probabilidad de que una futura medida de temperatura se encuentre entre 99.5 °C y 100.5 °C**.
+      - Estima la **probabilidad de que el valor real de la temperatura esté dentro del intervalo $\bar{t} \pm \Delta \bar{t}$**. 
+      - ¿A qué nivel de confianza corresponde aproximadamente este intervalo si se asume distribución normal?
+
