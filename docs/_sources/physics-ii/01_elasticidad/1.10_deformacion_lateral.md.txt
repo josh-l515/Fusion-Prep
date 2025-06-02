@@ -2,12 +2,12 @@
 Cuando un cuerpo se deforma longitudinalmente,se observa que lateralmente sufre una contracción. Para medirla, se usa el coeficiente de Poisson $(\mu)$
 ```{math}
 :label: coeficiente_poisson
-\mu=\frac{\rm Contracción\, lateral\, relativa}{\rm Alargamiento\, longitudinal\, relativo}
+\mu=-\frac{\rm Contracción\, lateral\, relativa}{\rm Alargamiento\, longitudinal\, relativo}
 ```
 Para el caso de un cilindro de radio $r_0$ y longitud $L_0$, las variaciones en sus dimensiones son $\Delta r$ y $\Delta L$, entonces el coeficiente de poisson {eq}`coeficiente_poisson`, se expresa:
 ```{math}
 :label: coeficiente_poisson_1
-\mu=\frac{\Delta r/r_0}{\Delta L/L_0}
+\mu=-\frac{\Delta r/r_0}{\Delta L/L_0}
 ```
 donde $0.25<\mu<0.5$ y $\mu=0$ para cuerpos porosos.
 ```{figure} _static/fig_coef_poisson.png

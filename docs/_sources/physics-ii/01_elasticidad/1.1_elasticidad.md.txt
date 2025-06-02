@@ -1,0 +1,57 @@
+```{raw} latex
+\setcounter{equation}{0}
+```
+# 1.1 Sólidos - Elasticidad 
+
+## 1.1.1 Sólidos
+
+Se llaman asi a los objetos que tienen **forma** y **volumen definidos**. A diferencia de los líquidos y gases, las partículas en un sólido están fuertemente unidas entre sí, lo que les permite resistir deformaciones y mantener su estructura. Esta rigidez estructural es la base del estudio de la **elasticidad**, que analiza cómo los sólidos responden a fuerzas externas mediante deformaciones reversibles.
+```{image} _static/diferencia.png
+:alt: Mapa de la Física
+:width: 600px
+:align: center
+```
+
+### Sólidos cristalinos 
+Son materiales cuyos átomos, iones o moléculas están ordenados en un patrón repetitivo y regular que se extiende en las tres dimensiones del espacio. Este orden les confiere formas geométricas definidas y propiedades físicas anisotrópicas.
+### Sólidos amorfos
+Son materiales cuyos componentes carecen de un orden estructural a largo alcance. No presentan una disposición regular de las partículas, lo que da lugar a propiedades isotrópicas y formas externas sin estructura definida.
+
+### Comportamiento térmico de sólidos cristalinos y amorfos
+Al calentar un sólido:
+
+```{figure} _static/grafico.png
+:alt: Comportamiento térmico
+:width: 300px
+:align: center
+
+**Figura:** Comportamiento térmico de sólidos cristalinos y amorfos.
+```
+
+- **Cristalino (Curva A):**  
+  Presenta un punto de fusión definido. Al llegar a esta temperatura, la fusión ocurre a temperatura constante, lo que se refleja como una recta sin pendiente en el gráfico.
+
+- **Amorfo (Curva C):**  
+  No tiene un punto de fusión definido. Se ablanda progresivamente en un rango de temperaturas.
+
+## 1.1.2 Fuerzas elásticas
+Se presenta cuando la distancia entre los átomos ha variado, si se acercan entonces ha habido una fuerza de **compresión**, si se alejan, entonces está presente una fuerza de tracción. 
+
+
+```{figure} _static/grafico_2.png
+:alt: Comportamiento térmico
+:width: 600px
+:align: center
+
+**Figura:** (a) Estructura cristalina cubica simple. (b) Variación de la energía potencial elástica de la red producto de fuerzas de compresión y tracción.
+```
+
+
+## 1.1.3 Elasticidad
+
+### Elasticidad
+Se llama así a la propiedad que tienen los cuerpos, de recuperar su forma y dimensiones originales cuando la fuerza aplicada cesa de actuar. Las deformaciones son reversibles y el trabajo realizado por la fuerza se transforma en **Energía potencial de Deformación**
+
+### Plasticidad
+Propiedad de aquellos cuerpos que al cesar las fuerzas que actuan sobre si, este no recuperasu forma o dimensiones originales, parcial o totalmente. Las deformaciones son irreversibles y parte del trabajo realizado por las fuerzas se transforma en calor.
+

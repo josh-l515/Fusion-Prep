@@ -1,4 +1,72 @@
 # 1.13 Deformación Volumétrica: Ley de Hooke generalizada
+Se tiene un sólido de lados $L_x$, $L_y$, $L_z$; sobre el cual actúan los esfuerzos $\sigma_x$, $\sigma_y$, $\sigma_z$; que dan lugar a tracciones (positivo) y compresiones (negativa).
+```{figure} _static/fig_hooke_generalizada.png
+:alt: Ley de hooke generalizada
+:width: 500px
+:align: center
+:name: fig_hooke_generalizada
+Deformación volumétrica debido a esfuerzos normales a los lados del cubo.
+```
+Evaluemos el caso de deformación por tracción, esto es, los esfuerzos individuales generan deformaciones longitudinales positivas y deformaciones laterales en los ejes restantes al del eje en el cual sucede el alargamiento.
+## Deformación sobre el eje $x$
+Debido al esfuerzo $\sigma_x$, el cuerpo se deformará a lo largo del eje $x$ (alargamiento) y se contraerá lateralmente a lo largo de los ejes $z$ e $y$, esto es:
+```{figure} _static/fig_deformacion_longitudinal_x.png
+:alt: Deformacion longitudinal sobre x, lateral sobre z e y
+:width: 800px
+:align: center
+:name: fig_deformacion_longitudinal_x
+Deformación longitudinal sobre $x$, deformación lateral sobre $z$ e $y$
+```
+de la fig. {numref}`fig_deformacion_longitudinal_x` expresemos las deformaciones longitudinales $\Delta x$, $\Delta y$, $\Delta z$ en función de las deformaciones unitarias correspondientes:
+```{math}
+:label: hooke_generalizada_1
+\Delta_x&=\frac{\Delta x}{L_x}\\
+\Delta_y&=\frac{\Delta y}{L_y}\\
+\Delta_z&=\frac{\Delta z}{L_z}
+```
+queda encontrar las relaciones {eq}`hooke_generalizada_1` en función del módulo de Young {eq}`ley_de_hooke_modulo_de_young` y el coeficiente de Poisson {eq}`coeficiente_poisson_1` para cada deformación unitaria, esto es:
+```{math}
+:label: hooke_generalizada_2
+\rm en\, x:\quad\sigma_x &=E\Delta_x\quad \Rightarrow\quad\Delta_x=\frac{\sigma_x}{E}\\
+\rm en\, y:\quad\mu&=-\frac{\Delta y /L_y}{\Delta x/L_x} \Rightarrow\quad\mu=-\frac{\Delta_y}{\Delta_x}\Rightarrow\quad\Delta_y=-\mu\Delta_x\Rightarrow\quad\Delta_y=-\mu\frac{\sigma_x}{E}\\
+\rm en\, z:\quad \mu&=-\frac{\Delta z /L_z}{\Delta x/L_x} \Rightarrow\quad\mu=-\frac{\Delta_z}{\Delta_x}\Rightarrow\quad\Delta_z=-\mu\Delta_x\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_x}{E}\\
+```
+
+## Deformación sobre el eje $y$
+Nuevamente debido al esfuerzo $\sigma_y$, el cuerpo se deformará longitudinalmente a lo largo del eje $y$ (alargamiento) y se contraerá lateralmente a lo largo de los ejes $x$ y $z$, esto es:
+```{figure} _static/fig_deformacion_longitudinal_y.png
+:alt: Deformacion longitudinal sobre x, lateral sobre z e y
+:width: 800px
+:align: center
+:name: fig_deformacion_longitudinal_y
+Deformación longitudinal sobre $y$, deformación lateral sobre $x$ y $z$
+```
+queda encontrar en analogía a {eq}`hooke_generalizada_2` las relaciones {eq}`hooke_generalizada_1` en función del módulo de Young {eq}`ley_de_hooke_modulo_de_young` para la deformación longitudinal en $y$, y los coeficientes de Poisson {eq}`coeficiente_poisson_1` para las contracciones laterales en $x$ y $z$, esto es:
+```{math}
+:label: hooke_generalizada_2
+\rm en\, y:\quad\sigma_y &=E\Delta_y\quad \Rightarrow\quad\Delta_y=\frac{\sigma_y}{E}\\
+\rm en\, x:\quad\mu&=-\frac{\Delta x /L_x}{\Delta y/L_y} \Rightarrow\quad\mu=-\frac{\Delta_x}{\Delta_y}\Rightarrow\quad\Delta_x=-\mu\Delta_y\Rightarrow\quad\Delta_x=-\mu\frac{\sigma_y}{E}\\
+\rm en\, z:\quad \mu&=-\frac{\Delta z /L_z}{\Delta y/L_y} \Rightarrow\quad\mu=-\frac{\Delta_z}{\Delta_y}\Rightarrow\quad\Delta_z=-\mu\Delta_y\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_y}{E}\\
+```
+
+
+## Deformación sobre el eje $z$
+Debido al esfuerzo $\sigma_z$, el cuerpo se deformará a lo largo del eje $z$ (alargamiento) y se contraerá lateralmente a lo largo de los ejes $x$ e $y$, esto es:
+```{figure} _static/fig_deformacion_longitudinal_z.png
+:alt: Deformacion longitudinal sobre x, lateral sobre z e y
+:width: 800px
+:align: center
+:name: fig_deformacion_longitudinal_z
+Deformación longitudinal sobre $z$, deformación lateral sobre $x$ e $y$
+```
+queda encontrar en analogía a {eq}`hooke_generalizada_2` las relaciones {eq}`hooke_generalizada_1` en función del módulo de Young {eq}`ley_de_hooke_modulo_de_young` para la deformación longitudinal en $z$, y los coeficientes de Poisson {eq}`coeficiente_poisson_1` para las contracciones laterales en $x$ e $y$, esto es:
+```{math}
+:label: hooke_generalizada_2
+\rm en\, z:\quad\sigma_z &=E\Delta_z\quad \Rightarrow\quad\Delta_z=\frac{\sigma_z}{E}\\
+\rm en\, x:\quad\mu&=-\frac{\Delta x /L_x}{\Delta z/L_z} \Rightarrow\quad\mu=-\frac{\Delta_x}{\Delta_z}\Rightarrow\quad\Delta_x=-\mu\Delta_z\Rightarrow\quad\Delta_x=-\mu\frac{\sigma_z}{E}\\
+\rm en\, y:\quad \mu&=-\frac{\Delta y /L_y}{\Delta z/L_z} \Rightarrow\quad\mu=-\frac{\Delta_y}{\Delta_z}\Rightarrow\quad\Delta_y=-\mu\Delta_z\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_z}{E}
+```
+
 
 ## 1.13.2 Ejercicios de Aplicación
 

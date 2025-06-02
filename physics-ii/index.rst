@@ -8,34 +8,29 @@ Notas de clase del Curso de Física II: Fundamentos de oscilaciones, ondas y mec
    :maxdepth: 2
    :caption: Capítulo I: Elasticidad
 
-   01_elasticidad/1.1_solidos
-   01_elasticidad/1.2_fuerzas_elasticas
-   01_elasticidad/1.3_elasticidad
-   01_elasticidad/1.4_deformacion
-   01_elasticidad/1.5_esfuerzo
-   01_elasticidad/1.6_ley_de_hooke
-   01_elasticidad/1.7_deformacion_longitudinal
-   01_elasticidad/1.8_deformacion_multilateral
-   01_elasticidad/1.9_deformacion_cizalladura
-   01_elasticidad/1.10_deformacion_lateral
-   01_elasticidad/1.11_torsion
-   01_elasticidad/1.12_energia_elastica
-   01_elasticidad/1.13_ley_de_hooke_generalizada
+   01_elasticidad/1.1_elasticidad
+   01_elasticidad/1.2_deformacion
+   01_elasticidad/1.3_ley_de_hooke
+   01_elasticidad/1.4_deformacion_longitudinal
+   01_elasticidad/1.5_deformacion_multilateral
+   01_elasticidad/1.6_deformacion_cizalladura
+   01_elasticidad/1.7_deformacion_lateral
+   01_elasticidad/1.8_torsion
+   01_elasticidad/1.9_energia_elastica
+   01_elasticidad/1.10_ley_de_hooke_generalizada
 
 .. toctree::
    :maxdepth: 2
    :caption: Capítulo II: Movimiento Oscilatorio
 
-   02_movimiento_oscilatorio/2.1_movimiento_periodico
-   02_movimiento_oscilatorio/2.2_movimiento_oscilatorio
-   02_movimiento_oscilatorio/2.3_movimiento_armonico_simple
-   02_movimiento_oscilatorio/2.4_energia_almacenada_mas
-   02_movimiento_oscilatorio/2.5_pendulo_simple
-   02_movimiento_oscilatorio/2.6_pendulo_compuesto
-   02_movimiento_oscilatorio/2.7_pendulo_torsion
-   02_movimiento_oscilatorio/2.8_superposicion_mas
-   02_movimiento_oscilatorio/2.9_movimiento_oscilatorio_amortiguado
-   02_movimiento_oscilatorio/2.10_movimiento_oscilatorio_forzado
+   02_movimiento_oscilatorio/2.1_movimiento_armonico_simple
+   02_movimiento_oscilatorio/2.2_energia_almacenada_mas
+   02_movimiento_oscilatorio/2.3_pendulo_simple
+   02_movimiento_oscilatorio/2.4_pendulo_compuesto
+   02_movimiento_oscilatorio/2.5_pendulo_torsion
+   02_movimiento_oscilatorio/2.6_superposicion_mas
+   02_movimiento_oscilatorio/2.7_movimiento_oscilatorio_amortiguado
+   02_movimiento_oscilatorio/2.8_movimiento_oscilatorio_forzado
 
 .. toctree::
    :maxdepth: 2

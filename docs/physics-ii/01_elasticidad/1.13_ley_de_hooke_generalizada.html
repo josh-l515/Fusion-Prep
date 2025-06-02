@@ -659,6 +659,68 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deformacion-volumetrica-ley-de-hooke-generalizada">
 <h1>1.13 Deformación Volumétrica: Ley de Hooke generalizada<a class="headerlink" href="#deformacion-volumetrica-ley-de-hooke-generalizada" title="Link to this heading">#</a></h1>
+<p>Se tiene un sólido de lados <span class="math notranslate nohighlight">\(L_x\)</span>, <span class="math notranslate nohighlight">\(L_y\)</span>, <span class="math notranslate nohighlight">\(L_z\)</span>; sobre el cual actúan los esfuerzos <span class="math notranslate nohighlight">\(\sigma_x\)</span>, <span class="math notranslate nohighlight">\(\sigma_y\)</span>, <span class="math notranslate nohighlight">\(\sigma_z\)</span>; que dan lugar a tracciones (positivo) y compresiones (negativa).</p>
+<figure class="align-center" id="fig-hooke-generalizada">
+<a class="reference internal image-reference" href="../../_images/fig_hooke_generalizada.png"><img alt="Ley de hooke generalizada" src="../../_images/fig_hooke_generalizada.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Deformación volumétrica debido a esfuerzos normales a los lados del cubo.</span><a class="headerlink" href="#fig-hooke-generalizada" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Evaluemos el caso de deformación por tracción, esto es, los esfuerzos individuales generan deformaciones longitudinales positivas y deformaciones laterales en los ejes restantes al del eje en el cual sucede el alargamiento.</p>
+<section id="deformacion-sobre-el-eje-x">
+<h2>Deformación sobre el eje <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#deformacion-sobre-el-eje-x" title="Link to this heading">#</a></h2>
+<p>Debido al esfuerzo <span class="math notranslate nohighlight">\(\sigma_x\)</span>, el cuerpo se deformará a lo largo del eje <span class="math notranslate nohighlight">\(x\)</span> (alargamiento) y se contraerá lateralmente a lo largo de los ejes <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, esto es:</p>
+<figure class="align-center" id="fig-deformacion-longitudinal-x">
+<a class="reference internal image-reference" href="../../_images/fig_deformacion_longitudinal_x.png"><img alt="Deformacion longitudinal sobre x, lateral sobre z e y" src="../../_images/fig_deformacion_longitudinal_x.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Deformación longitudinal sobre <span class="math notranslate nohighlight">\(x\)</span>, deformación lateral sobre <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(y\)</span></span><a class="headerlink" href="#fig-deformacion-longitudinal-x" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>de la fig. <a class="reference internal" href="#fig-deformacion-longitudinal-x"><span class="std std-numref">Fig. 28</span></a> expresemos las deformaciones longitudinales <span class="math notranslate nohighlight">\(\Delta x\)</span>, <span class="math notranslate nohighlight">\(\Delta y\)</span>, <span class="math notranslate nohighlight">\(\Delta z\)</span> en función de las deformaciones unitarias correspondientes:</p>
+<div class="math notranslate nohighlight" id="equation-hooke-generalizada-1">
+<span class="eqno">(145)<a class="headerlink" href="#equation-hooke-generalizada-1" title="Link to this equation">#</a></span>\[\begin{split}\Delta_x&amp;=\frac{\Delta x}{L_x}\\
+\Delta_y&amp;=\frac{\Delta y}{L_y}\\
+\Delta_z&amp;=\frac{\Delta z}{L_z}\end{split}\]</div>
+<p>queda encontrar las relaciones <a class="reference internal" href="#equation-hooke-generalizada-1">(145)</a> en función del módulo de Young <a class="reference internal" href="1.7_deformacion_longitudinal.html#equation-ley-de-hooke-modulo-de-young">(117)</a> y el coeficiente de Poisson <a class="reference internal" href="1.10_deformacion_lateral.html#equation-coeficiente-poisson-1">(134)</a> para cada deformación unitaria, esto es:</p>
+<div class="math notranslate nohighlight" id="equation-hooke-generalizada-2">
+<span class="eqno">(148)<a class="headerlink" href="#equation-hooke-generalizada-2" title="Link to this equation">#</a></span>\[\begin{split}\rm en\, x:\quad\sigma_x &amp;=E\Delta_x\quad \Rightarrow\quad\Delta_x=\frac{\sigma_x}{E}\\
+\rm en\, y:\quad\mu&amp;=-\frac{\Delta y /L_y}{\Delta x/L_x} \Rightarrow\quad\mu=-\frac{\Delta_y}{\Delta_x}\Rightarrow\quad\Delta_y=-\mu\Delta_x\Rightarrow\quad\Delta_y=-\mu\frac{\sigma_x}{E}\\
+\rm en\, z:\quad \mu&amp;=-\frac{\Delta z /L_z}{\Delta x/L_x} \Rightarrow\quad\mu=-\frac{\Delta_z}{\Delta_x}\Rightarrow\quad\Delta_z=-\mu\Delta_x\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_x}{E}\\\end{split}\]</div>
+</section>
+<section id="deformacion-sobre-el-eje-y">
+<h2>Deformación sobre el eje <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#deformacion-sobre-el-eje-y" title="Link to this heading">#</a></h2>
+<p>Nuevamente debido al esfuerzo <span class="math notranslate nohighlight">\(\sigma_y\)</span>, el cuerpo se deformará longitudinalmente a lo largo del eje <span class="math notranslate nohighlight">\(y\)</span> (alargamiento) y se contraerá lateralmente a lo largo de los ejes <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span>, esto es:</p>
+<figure class="align-center" id="fig-deformacion-longitudinal-y">
+<a class="reference internal image-reference" href="../../_images/fig_deformacion_longitudinal_y.png"><img alt="Deformacion longitudinal sobre x, lateral sobre z e y" src="../../_images/fig_deformacion_longitudinal_y.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Deformación longitudinal sobre <span class="math notranslate nohighlight">\(y\)</span>, deformación lateral sobre <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span></span><a class="headerlink" href="#fig-deformacion-longitudinal-y" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>queda encontrar en analogía a <a class="reference internal" href="#equation-hooke-generalizada-2">(148)</a> las relaciones <a class="reference internal" href="#equation-hooke-generalizada-1">(145)</a> en función del módulo de Young <a class="reference internal" href="1.7_deformacion_longitudinal.html#equation-ley-de-hooke-modulo-de-young">(117)</a> para la deformación longitudinal en <span class="math notranslate nohighlight">\(y\)</span>, y los coeficientes de Poisson <a class="reference internal" href="1.10_deformacion_lateral.html#equation-coeficiente-poisson-1">(134)</a> para las contracciones laterales en <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(z\)</span>, esto es:</p>
+<div class="math notranslate nohighlight" id="equation-hooke-generalizada-2">
+<span class="eqno">(148)<a class="headerlink" href="#equation-hooke-generalizada-2" title="Link to this equation">#</a></span>\[\begin{split}\rm en\, y:\quad\sigma_y &amp;=E\Delta_y\quad \Rightarrow\quad\Delta_y=\frac{\sigma_y}{E}\\
+\rm en\, x:\quad\mu&amp;=-\frac{\Delta x /L_x}{\Delta y/L_y} \Rightarrow\quad\mu=-\frac{\Delta_x}{\Delta_y}\Rightarrow\quad\Delta_x=-\mu\Delta_y\Rightarrow\quad\Delta_x=-\mu\frac{\sigma_y}{E}\\
+\rm en\, z:\quad \mu&amp;=-\frac{\Delta z /L_z}{\Delta y/L_y} \Rightarrow\quad\mu=-\frac{\Delta_z}{\Delta_y}\Rightarrow\quad\Delta_z=-\mu\Delta_y\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_y}{E}\\\end{split}\]</div>
+</section>
+<section id="deformacion-sobre-el-eje-z">
+<h2>Deformación sobre el eje <span class="math notranslate nohighlight">\(z\)</span><a class="headerlink" href="#deformacion-sobre-el-eje-z" title="Link to this heading">#</a></h2>
+<p>Debido al esfuerzo <span class="math notranslate nohighlight">\(\sigma_z\)</span>, el cuerpo se deformará a lo largo del eje <span class="math notranslate nohighlight">\(z\)</span> (alargamiento) y se contraerá lateralmente a lo largo de los ejes <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, esto es:</p>
+<figure class="align-center" id="fig-deformacion-longitudinal-z">
+<a class="reference internal image-reference" href="../../_images/fig_deformacion_longitudinal_z.png"><img alt="Deformacion longitudinal sobre x, lateral sobre z e y" src="../../_images/fig_deformacion_longitudinal_z.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Deformación longitudinal sobre <span class="math notranslate nohighlight">\(z\)</span>, deformación lateral sobre <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span></span><a class="headerlink" href="#fig-deformacion-longitudinal-z" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>queda encontrar en analogía a <a class="reference internal" href="#equation-hooke-generalizada-2">(148)</a> las relaciones <a class="reference internal" href="#equation-hooke-generalizada-1">(145)</a> en función del módulo de Young <a class="reference internal" href="1.7_deformacion_longitudinal.html#equation-ley-de-hooke-modulo-de-young">(117)</a> para la deformación longitudinal en <span class="math notranslate nohighlight">\(z\)</span>, y los coeficientes de Poisson <a class="reference internal" href="1.10_deformacion_lateral.html#equation-coeficiente-poisson-1">(134)</a> para las contracciones laterales en <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, esto es:</p>
+<div class="math notranslate nohighlight" id="equation-hooke-generalizada-2">
+<span class="eqno">(148)<a class="headerlink" href="#equation-hooke-generalizada-2" title="Link to this equation">#</a></span>\[\begin{split}\rm en\, z:\quad\sigma_z &amp;=E\Delta_z\quad \Rightarrow\quad\Delta_z=\frac{\sigma_z}{E}\\
+\rm en\, x:\quad\mu&amp;=-\frac{\Delta x /L_x}{\Delta z/L_z} \Rightarrow\quad\mu=-\frac{\Delta_x}{\Delta_z}\Rightarrow\quad\Delta_x=-\mu\Delta_z\Rightarrow\quad\Delta_x=-\mu\frac{\sigma_z}{E}\\
+\rm en\, y:\quad \mu&amp;=-\frac{\Delta y /L_y}{\Delta z/L_z} \Rightarrow\quad\mu=-\frac{\Delta_y}{\Delta_z}\Rightarrow\quad\Delta_y=-\mu\Delta_z\Rightarrow\quad\Delta_z=-\mu\frac{\sigma_z}{E}\end{split}\]</div>
+</section>
 <section id="ejercicios-de-aplicacion">
 <h2>1.13.2 Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="2">
@@ -716,6 +778,9 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deformacion-sobre-el-eje-x">Deformación sobre el eje <span class="math notranslate nohighlight">\(x\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deformacion-sobre-el-eje-y">Deformación sobre el eje <span class="math notranslate nohighlight">\(y\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deformacion-sobre-el-eje-z">Deformación sobre el eje <span class="math notranslate nohighlight">\(z\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.13.2 Ejercicios de Aplicación</a></li>
 </ul>
   </nav></div>

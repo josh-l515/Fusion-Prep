@@ -2,11 +2,11 @@
 Se define como la relación entre las fuerzas (tracción o compresión) entre el área de la sección transversal del sólido a deformar. 
 
 ```{math}
-:label: 4
-\sigma=\frac{F}{A}
+:label: esfuerzo
+\sigma=\frac{F}{S}
 ```
 donde:
 - $F$: fuerza aplicada (Puede ser normal, tangencial o mixta)
-- $A$: área sobre la que actúa
+- $S$: área sobre la que actúa
 
 

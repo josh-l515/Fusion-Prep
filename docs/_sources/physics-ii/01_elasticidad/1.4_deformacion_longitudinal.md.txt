@@ -1,0 +1,65 @@
+# 1.4 Deformación longitudinal o unilateral
+Para el caso de deformaciones longitudinales, se define el Módulo de Young $(\rm E)$
+```{math}
+E=\frac{\rm Esfuerzo\, por\, tracción\, o \,compresión}{\rm Deformación\, unitaria\, longitudinal}
+```
+En de (), y ()
+```{math}
+:label: ley_de_hooke_modulo_de_young
+E=\frac{\sigma}{\Delta_L}=\frac{F/S}{\Delta L/L_0}=\frac{FL_0}{S\Delta L}
+```
+El módulo de Young **describe qué tan resistente es un material a deformarse elásticamente** (sin romperse ni deformarse permanentemente) cuando se le aplica un esfuerzo (por tracción o compresión), no existe cambio de forma {numref}```fig_modulo_young```
+```{figure} _static/fig_modulo_young.png
+:alt: Modulo de Young
+:width: 400px
+:align: center
+:name: fig_modulo_young
+**Figura:** Deformación longitudinal por tracción.
+```
+## 1.4.1 Relación entre $E$ y $k$
+De {eq}`ley_de_hooke_modulo_de_young`, se tiene:
+```{math}
+:label: modulo_young_E_k
+F=\frac{ES\Delta L}{L_0}
+```
+siendo $F$ la fuerza de tracción o compresión aplicada, igualando {eq}`ley_de_hooke_resortes` y {eq}`modulo_young_E_k`
+```{math}
+:label: modulo_young_E_k_1
+k\Delta L&=\frac{ES\Delta L}{L_0}\\
+k&=\frac{ES}{L_0}
+```
+Por tanto, la ley de Hooke, expresada en función del modulo de Young $E$:
+```{math}
+:label: ley_de_hooke_E
+F &=\frac{ES}{L_0}\Delta L\\
+\frac{F}{S}&=E\frac{\Delta L}{L_0}\\
+\sigma&=E\Delta_L
+```
+nuevamente  {eq}`ley_de_hooke_E` corresponde a la **Ley de Hooke para sólidos generales**, siendo la relación tambien una función lineal, válida dentro de la región eslatica de la fig {numref}`fig_hooke_E` 
+```{figure} _static/fig_hooke_E.png
+:alt: Ley de Hooke en función del Modulo de Young
+:width: 400px
+:align: center
+:name: fig_hooke_E
+**Figura:** Ley de Hooke en función del Modulo de Young
+```
+
+## 1.4.2 Problemas Propuestos.
+1. El músculo bíceps del brazo derecho de cierta persona tiene un área máxima de su sección de $12\, \rm cm^2=1.2\times 10^{-3} \rm m^2$. ¿Cuál es el esfuerzo  del musculo si ejerce una fuerza de 300 N?
+2. Un alambre de 1.5 m de largo tiene una sección recta de área $2.4 \, \rm mm^2$. Cuelga verticalmente y se estira 0,32 mm cuando se le ata en su extremo inferior un bloque de 10 kg. Hallar:
+   - (a) el esfuerzo 
+   - (b) la deformación unitaria
+   - (c) el módulo de Young para este alambre
+3. Se cuelga una bola de 50 kg de un alambre de acero de 5 m de longitud y 2 mm de radio. ¿Cuánto se alargará el alambre? (Módulo de young para el acero, $E=2.0\times10^{11}\, \rm Pa$)
+4. Un alambre de acero de 0,6 mm de diámetro y 1,2 m de longitud soporta una masa de 4 kg. ¿Cuál será el alargamiento del alambre bajo esta carga?
+5. La resistencia a la tracción de un alambre de cobre es aproximadamente de $3\times10^8 N/m^2$. 
+    - (a) ¿Cuál es la carga máxima que puede colgarse de un alambre de cobre de $0,42\, \rm mm$? 
+    - (b) ¿Si se cuelga la mitad de esta carga máxima del alambre de cobre, en qué porcentaje se alargará su longitud?
+
+6. En un trabajo de verano para una compañía de ingeniería, usted recibe el encargo de comprobar la seguridad de un ascensor en un nuevo edificio de oficinas. El ascensor puede llevar una carga máxima de 1000 kg (incluyendo su propia masa), y está suspendido de un cable de acero de 3,0 cm de diámetro y 300 m de longitud cuando está del todo desenrollado. El cable, dentro de las normas de seguridad, puede estirarse como máximo 3 cm. Su trabajo consiste en determinar si el ascensor, tal como se ha diseñado, es seguro o no, teniendo en cuenta que la aceleración máxima del sistema es de $1.5 \rm m/s^2$.
+7. Un alambre de acero de longitud 1.5 m y diámetro 1 mm se suelda a un alambre de aluminio de dimensiones idénticas para formar un alambre de 3,0 m. ¿Cuál es el cambio en la longitud del alambre compuesto cuando soporta una masa de 5 kg? (Despreciar los efectos de las masas de los alambres cuando cambian de longitud.)
+8. Al tensar un alambre de cobre, cuya seccipon transversal tenía $1.5 \rm mm^2$ de área, se observó que el comienzo de la deformación permanente correspondía a la carga de $4.5 Kgf$. ¿Cuál es el límite de elasticidad del material de que esta hecho el alambre? (Resp. $2.94\times 10^7 \, \rm N/m^2$).
+9. Del tejado de una casa cuelga un alambre de acero de $40\, \rm m$ de longitud y $2\, \rm mm$ de diámetro. El límite de elasticidad del acero es $2.94\times10^8\, \rm N/m^2$
+    - (a) ¿Qué carga máxima se puede colgar de este alambre sin que llegue a romperse?
+    - (b) ¿Cuánto se alargará este alambre si de él se cuelga un hombre que pesa $70\, \rm Kg$?
+    - (c) ¿Se notará alargamiento permanente cuando el hombre antedicho suelte el alambre?.
