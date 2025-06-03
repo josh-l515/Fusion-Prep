@@ -721,8 +721,55 @@
 \bar{x}\pm5\sigma&amp; \to 99.99994\%
 \end{split}\]</div>
 <p>Estas cifras se obtienen de tablas de la función de densidad acumulada de la distribución normal estándar</p>
-<iframe src="_static/tabla_z.pdf" width="100%" height="600px"></iframe>
+<figure class="align-center" id="fig-tabla-z">
+<a class="reference internal image-reference" href="../../_images/tablaNormal.png"><img alt="Tabla z" src="../../_images/tablaNormal.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Tabla z de probabilidad distribución normal</span><a class="headerlink" href="#fig-tabla-z" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="que-es-la-variable-z">
+<h3>¿Qué es la variable <span class="math notranslate nohighlight">\(z\)</span>?<a class="headerlink" href="#que-es-la-variable-z" title="Link to this heading">#</a></h3>
+<p>La variable <span class="math notranslate nohighlight">\(z\)</span> se llama <strong>variable aleatoria estándar normal</strong> y se define como:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7">
+<span class="eqno">(109)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7" title="Link to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma}\]</div>
+<p><span class="math notranslate nohighlight">\(z\)</span> es una <strong>transformación lineal</strong> que convierte cualquier variable aleatoria <span class="math notranslate nohighlight">\(x\)</span>, con distribución normal de media <span class="math notranslate nohighlight">\(\mu\)</span> y desviación estándar <span class="math notranslate nohighlight">\(\sigma\)</span>, en una variable con:</p>
+<ul class="simple">
+<li><p>Media <span class="math notranslate nohighlight">\( \mu=0\)</span></p></li>
+<li><p>Desviación estándar <span class="math notranslate nohighlight">\(\sigma=1\)</span></p></li>
+</ul>
+<p>Esta transformación se llama <strong>normalización</strong> o <strong>estandarización</strong>. Para demostrar esto, partamos de la distribución normal definida por su función de densidad de probabilidad:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8">
+<span class="eqno">(110)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8" title="Link to this equation">#</a></span>\[f_X(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{\displaystyle{-\frac{(x-\mu)^2}{2\sigma^2}}}\]</div>
+<p>Cuando hacemos el cambio de variable:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9">
+<span class="eqno">(111)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9" title="Link to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma} \quad \text{es decir,} \quad x = \mu + \sigma z\]</div>
+<p>Usamos la fórmula para el cambio de variable en distribuciones continuas:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10">
+<span class="eqno">(112)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10" title="Link to this equation">#</a></span>\[f_Z(z) = f_X(x) \cdot \left| \frac{dx}{dz} \right|\]</div>
+<p>Dado que:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11">
+<span class="eqno">(113)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11" title="Link to this equation">#</a></span>\[\frac{dx}{dz} = \sigma\]</div>
+<p>Entonces:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12">
+<span class="eqno">(114)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12" title="Link to this equation">#</a></span>\[f_Z(z) = f_X(\mu + \sigma z) \cdot \sigma\]</div>
+<p>Sustituyendo <span class="math notranslate nohighlight">\(f_X\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13">
+<span class="eqno">(115)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13" title="Link to this equation">#</a></span>\[\begin{split}f_Z(z) &amp;= \frac{1}{\sigma \sqrt{2\pi}} e^{-\displaystyle{\frac{(\mu + \sigma z - \mu)^2}{2\sigma^2}}} \cdot \sigma\\
+&amp;= \frac{1}{\sqrt{2\pi}}e^{-\displaystyle{\frac{z^2}{2}}}\end{split}\]</div>
 </section>
+<section id="resultado">
+<h3>Resultado:<a class="headerlink" href="#resultado" title="Link to this heading">#</a></h3>
+<p>Finalmente, los valores de la función de densidad cuya variable <span class="math notranslate nohighlight">\(z\)</span> aparece en la tabla de probabilidad acumulada, es</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14">
+<span class="eqno">(116)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14" title="Link to this equation">#</a></span>\[f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{\displaystyle{-\frac{z^2}{2}}}\]</div>
+<p>Es decir,  esta es la <strong>distribución normal estándar</strong>, con media <span class="math notranslate nohighlight">\(\mu=0\)</span> y desviación estándar <span class="math notranslate nohighlight">\(\sigma=1\)</span>.</p>
+<blockquote>
+<div><p>Como existen infinitas distribuciones normales (cada una con distintos valores de <span class="math notranslate nohighlight">\(\mu\)</span> y <span class="math notranslate nohighlight">\(\sigma\)</span>), sería poco práctico tener una tabla para cada caso. La estandarización permite usar una <strong>única tabla</strong> para consultar probabilidades o percentiles, como la <strong>tabla <span class="math notranslate nohighlight">\(z\)</span></strong>. Gracias a esta transformación, cualquier valor de <span class="math notranslate nohighlight">\(x\)</span> en una normal puede expresarse como un valor de <span class="math notranslate nohighlight">\(z\)</span>. Así podemos consultar probabilidades acumuladas de forma directa.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
 <section id="ejercicios-de-aplicacion">
 <h2>1.8.4 Ejercicios de Aplicación<a class="headerlink" href="#ejercicios-de-aplicacion" title="Link to this heading">#</a></h2>
 <ol class="arabic">
@@ -731,21 +778,30 @@
 <a class="reference internal image-reference" href="../../_images/tabla_ejercicio.png"><img alt="errores sistematicos" src="../../_images/tabla_ejercicio.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Datos experimentales ejercicio 01</span><a class="headerlink" href="#fig-errores-sistematicos" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Datos experimentales ejercicio 01</span><a class="headerlink" href="#fig-errores-sistematicos" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Calcular:</p>
 <ul>
-<li><p>La media aritmética, la desviación estándar de cada una de las medidas y la incertidumbre de la media (promedio).</p></li>
-<li><p>Reporta el resultado final en el formato:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7">
-<span class="eqno">(109)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_{\bar{t}} \quad [\text{°C}]\]</div>
+<li><p>La media aritmética <span class="math notranslate nohighlight">\(\bar{t}\)</span>, la desviación estándar <span class="math notranslate nohighlight">\(\sigma\)</span> de cada una de las medidas y la incertidumbre estandar o típica <span class="math notranslate nohighlight">\(\xi\)</span>.</p></li>
+<li><p>Reporta el resultado final en el formato (Considerando la incertidumbre tipo A):</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15">
+<span class="eqno">(117)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_A \quad [^\circ\text{C}]\]</div>
+</li>
+<li><p>Considera que las mediciones se realizaron con un termómetro digital cuya resolución minima fue de <span class="math notranslate nohighlight">\(\delta_t=\xi_B= 0.01\, ^\circ\rm C\)</span>, reporta el resultado final, considerando la incertidumbre tipo B (<span class="math notranslate nohighlight">\(\xi_B\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16">
+<span class="eqno">(118)<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_{\rm total} \quad [^\circ\text{C}]\]</div>
 </li>
 <li><p>Elabora un <strong>histograma</strong> con los <span class="math notranslate nohighlight">\(20\)</span> valores de temperatura.</p></li>
 <li><p>Superpón (en la misma gráfica) una <strong>curva gaussiana teórica</strong> con media <span class="math notranslate nohighlight">\(\bar{t}\)</span> y desviación estándar  <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
-<li><p>Asumiendo una <strong>distribución normal</strong>, calcula la <strong>probabilidad de que una futura medida de temperatura se encuentre entre 99.5 °C y 100.5 °C</strong>.</p></li>
-<li><p>Estima la <strong>probabilidad de que el valor real de la temperatura esté dentro del intervalo <span class="math notranslate nohighlight">\(\bar{t} \pm \Delta \bar{t}\)</span></strong>.</p></li>
-<li><p>¿A qué nivel de confianza corresponde aproximadamente este intervalo si se asume distribución normal?</p></li>
+<li><p>Asumiendo una <strong>distribución normal</strong>, calcula  La probabilidad de que una futura medida de temperatura:</p>
+<ul class="simple">
+<li><p>sea menor a <span class="math notranslate nohighlight">\(97.5 ^\circ\rm C \)</span></p></li>
+<li><p>sea menor a <span class="math notranslate nohighlight">\(100.0 ^\circ\rm C\)</span></p></li>
+<li><p>se encuentre entre <span class="math notranslate nohighlight">\(99.5 ^\circ\rm C\)</span> y <span class="math notranslate nohighlight">\(100.5 ^\circ\rm C\)</span></p></li>
+<li><p>sea mayor a <span class="math notranslate nohighlight">\(98.00 ^\circ\rm C\)</span></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -801,7 +857,11 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-observaciones">1.8.1 Número de observaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-de-observacion">1.8.2 Probabilidad de observación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-la-distribucion-normal">1.8.3 Tabla de la distribución normal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-la-distribucion-normal">1.8.3 Tabla de la distribución normal</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-variable-z">¿Qué es la variable <span class="math notranslate nohighlight">\(z\)</span>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado">Resultado:</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-de-aplicacion">1.8.4 Ejercicios de Aplicación</a></li>
 </ul>
   </nav></div>
