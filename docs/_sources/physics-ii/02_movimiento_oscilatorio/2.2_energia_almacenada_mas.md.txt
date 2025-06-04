@@ -1,1 +1,7 @@
 # 2.2 Energía almacenada en un M.A.S
+## 2.2.1 Gráficas de energía del M.A.S 
+## 2.2.2 Ejercicios de aplicación
+1. Un objeto de $3\,\rm kg$ ligado a un muelle oscila con una amplitud de $4\,\rm cm$ y un periodo de $2\,\rm s$.  
+      - (a) ¿Cuál es la energía total? (Res. $2.4\times 10^{-2}\, \rm J$)
+      - (b) ¿Cuál es el módulo máximo de la velocidad del objeto? (Res. $\ 0.13\, \rm m/s$)
+      - (c) ¿En qué posición $x_1$ el módulo de velocidad es igual a la mitad de su valor máximo? (Res. $\pm 3.5\, \rm cm$)
