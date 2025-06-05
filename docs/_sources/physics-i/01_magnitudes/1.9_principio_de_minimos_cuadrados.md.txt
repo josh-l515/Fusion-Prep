@@ -11,3 +11,21 @@ Comencemos por el caso más simple: supongamos que dos magnitudes x e y estén v
 :name: minimos_cuadrados_lineal
 Esquematización de los errores aleatorios en el cálculo de la aceleración de la gravedad.
 ```
+## 1.9.2 Ajuste polinomial de segundo grado
+## 1.9.3 Ajuste polinomial generál
+## 1.9.4 Linealización de funciones
+## 1.9.5 Problemas de aplicación
+1. La ecuación del periodo del pendulo simple es una función potencial, la cual queda descrita por:
+      ```{math}
+        T=2\pi\sqrt{\frac{l}{g}}
+      ```
+    Experimentalmente, se tomaron las medidas del periodo en función de la longitud de la cuerda
+```{figure} _static/fig_ejercicio_minimos_cuadrados.png
+:alt: errores aleatorios
+:width: 800px
+:align: center
+:name: minimos_cuadrados_lineal
+Esquematización de los errores aleatorios en el cálculo de la aceleración de la gravedad.
+```
+Calcular la aceleración de la gravedad, a traves de un análisis de minimos cuadrados, encontrar la recta que mejor reduzca las variaciones de la medidas.
+
