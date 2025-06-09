@@ -22,7 +22,7 @@ Esquematización de los errores aleatorios en el cálculo de la aceleración de 
     Experimentalmente, se tomaron las medidas del periodo en función de la longitud de la cuerda
 ```{figure} _static/fig_ejercicio_minimos_cuadrados.png
 :alt: errores aleatorios
-:width: 800px
+:width: 200px
 :align: center
 :name: minimos_cuadrados_lineal
 Esquematización de los errores aleatorios en el cálculo de la aceleración de la gravedad.

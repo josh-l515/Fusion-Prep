@@ -1,1 +1,3 @@
 # 2.3 Péndulo simple
+## Ejercicios de Aplicación:
+1. Calcule el periodo y la frecuencia de un péndulo simple de $1.000\,\rm m$ de longitud en un lugar donde $g =9.800\,\rm m/s^2$.

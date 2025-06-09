@@ -2,6 +2,16 @@
 ## 2.2.1 Gráficas de energía del M.A.S 
 ## 2.2.2 Ejercicios de aplicación
 1. Un objeto de $3\,\rm kg$ ligado a un muelle oscila con una amplitud de $4\,\rm cm$ y un periodo de $2\,\rm s$.  
-      - (a) ¿Cuál es la energía total? (Res. $2.4\times 10^{-2}\, \rm J$)
-      - (b) ¿Cuál es el módulo máximo de la velocidad del objeto? (Res. $\ 0.13\, \rm m/s$)
-      - (c) ¿En qué posición $x_1$ el módulo de velocidad es igual a la mitad de su valor máximo? (Res. $\pm 3.5\, \rm cm$)
+      - **(a)** ¿Cuál es la energía total? (Res. $2.4\times 10^{-2}\, \rm J$)
+      - **(b)** ¿Cuál es el módulo máximo de la velocidad del objeto? (Res. $\ 0.13\, \rm m/s$)
+      - **(c)** ¿En qué posición $x_1$ el módulo de velocidad es igual a la mitad de su valor máximo? (Res. $\pm 3.5\, \rm cm$)
+2. Un resorte se monta horizontalmente con su extremo izquierdo fijo, $k=200\,\rm N/m$, $m= 0.50\,\rm kg$ y la masa oscilante se suelta del reposo en $x=0.020\,\rm m$.
+      - **(a)** Calcule las velocidades máxima y mínima que alcanza el cuerpo al oscilar. (Res. $\pm0.40\, \rm m/s$)
+      - **(b)** Calcule la aceleración máxima. (Res. $\pm8.0\, \rm m/s^2$)
+      - **(c)** Determine la velocidad y la aceleración cuando el cuerpo se ha movido a la mitad del camino hacia el centro desde su posición inicial. (Res. $ -0.35\,\rm  m/s, -4.0  \rm m/s^2$)
+      - **(d)** Determine las energías total, potencial y cinética en esta posición.(Res. $ E=0.04\,\rm J, K=0.03  \rm J, U=0.01\,\rm J$)
+3. Un cubo de $0,500\,\rm kg$ conectado a un muelle ligero cuya constante de fuerza es $20,0\,\rm N/m$ oscila sobre una pista horizontal sin rozamiento. 
+      - **(a)** Calcular la energía total del sistema y la velocidad máxima del cubo si la amplitud del movimiento es de $3,00\,\rm cm$. (Res. $E=9\times 10^{-3}\, \rm J, v_{max}=0.190\, \rm m/s$)
+      - **(b)** ¿Cuál es la velocidad del cubo cuando el desplazamiento es de $2,00\,\rm cm$? (Res. $\pm0.1410\, \rm m/s$)
+
+      - **(c)** Calcula las energías cinética y potencial del sistema cuando el desplazamiento es de $2,00\,\rm cm$. (Res. $K=5\times 10^{-3}\, \rm J, U=4\times 10^{-3}\, \rm J$)
