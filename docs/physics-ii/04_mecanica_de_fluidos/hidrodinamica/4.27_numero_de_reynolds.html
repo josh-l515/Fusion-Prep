@@ -31,6 +31,7 @@
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
   
   <!-- So that users can add custom icons -->
   <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,6 +42,8 @@
     <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-ii/04_mecanica_de_fluidos/hidrodinamica/4.27_numero_de_reynolds';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-ii/04_mecanica_de_fluidos/hidrodinamica/4.27_numero_de_reynolds.html" />
@@ -199,6 +202,13 @@
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../linux/index.html">
     Linux
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../android-studio/index.html">
+    Android Apps
   </a>
 </li>
 
@@ -398,6 +408,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://pydata.org">
     PyData Website
   </a>
@@ -490,32 +507,27 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo I: Elasticidad</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.1_solidos.html">1.1 Sólidos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.2_fuerzas_elasticas.html">1.2 Fuerzas elásticas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.3_elasticidad.html">1.3 Elasticidad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.4_deformacion.html">1.4 Deformación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.5_esfuerzo.html">1.5 Esfuerzo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.6_ley_de_hooke.html">1.6 Ley de Hooke</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.7_deformacion_longitudinal.html">1.7 Deformación longitudinal o unilateral</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.8_deformacion_multilateral.html">1.8 Deformación Multilateral o Volumétrica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.9_deformacion_cizalladura.html">1.9 Deformación por cizalladura</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.10_deformacion_lateral.html">1.10 Deformación lateral</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.11_torsion.html">1.11 Torsión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.12_energia_elastica.html">1.12 Energía elástica acumulada en una barra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.13_ley_de_hooke_generalizada.html">1.13 Deformación Volumétrica: Ley de Hooke generalizada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.1_elasticidad.html">1.1 Sólidos - Elasticidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.2_deformacion.html">1.2 Deformación - Esfuerzo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.3_ley_de_hooke.html">1.3 Ley de Hooke</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.4_deformacion_longitudinal.html">1.4 Deformación longitudinal o unilateral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.5_deformacion_multilateral.html">1.5 Deformación Multilateral o Volumétrica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.6_deformacion_cizalladura.html">1.6 Deformación por cizalladura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.7_deformacion_lateral.html">1.7 Deformación lateral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.8_torsion.html">1.8 Torsión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.9_energia_elastica.html">1.9 Energía elástica acumulada en una barra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_elasticidad/1.10_ley_de_hooke_generalizada.html">1.10 Deformación Volumétrica: Ley de Hooke generalizada</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo II: Movimiento Oscilatorio</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.1_movimiento_periodico.html">2.1 Movimiento periódico</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.2_movimiento_oscilatorio.html">2.2 Movimiento oscilatorio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.3_movimiento_armonico_simple.html">2.3 Movimiento armónico simple</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.4_energia_almacenada_mas.html">2.4 Energía almacenada en un M.A.S</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.5_pendulo_simple.html">2.5 Péndulo simple</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.6_pendulo_compuesto.html">2.6 Péndulo compuesto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.7_pendulo_torsion.html">2.7 Péndulo de Torsión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.8_superposicion_mas.html">2.8 Superposición de M.A.S.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.9_movimiento_oscilatorio_amortiguado.html">2.9 Movimiento oscilatorio amortiguado</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.10_movimiento_oscilatorio_forzado.html">2.10 Movimiento oscilatorio forzado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.1_movimiento_armonico_simple.html">2.1 Movimiento armónico simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.2_energia_almacenada_mas.html">2.2 Energía almacenada en un M.A.S</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.3_pendulo_simple.html">2.3 Péndulo simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.4_pendulo_compuesto.html">2.4 Péndulo compuesto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.5_pendulo_torsion.html">2.5 Péndulo de Torsión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.6_superposicion_mas.html">2.6 Superposición de M.A.S.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.7_movimiento_oscilatorio_amortiguado.html">2.7 Movimiento oscilatorio amortiguado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_movimiento_oscilatorio/2.8_movimiento_oscilatorio_forzado.html">2.8 Movimiento oscilatorio forzado</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Capítulo III: Movimiento Ondulatorio</span></p>
 <ul class="nav bd-sidenav">

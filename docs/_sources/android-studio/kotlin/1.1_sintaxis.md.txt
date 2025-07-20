@@ -1,0 +1,35 @@
+# 1.1 kotlin
+## Variables
+The way Strings and Integers are defined:
+```kotlin 
+fun main(){
+    // Define a variable as String var for dynamic variables
+    var userName: String = "David"
+    userName = "Josh"
+    // Val for static variables, variable type can be omitted
+    val userSurname = "Huallpa"
+    var age:Int=20
+    // var type is redundant, so we delete it
+    age=24
+    println("Hola $userName $userSurname!, you are $age")
+}
+```
+For Integers, there are limiting values that can be used
+```kotlin 
+// There exist a min and a max value that can be storage as Integer
+// To use a greater number, we need to use other datatype
+fun main(){
+    val minInteger = Int.MIN_VALUE
+    val maxInteger = Int.MAX_VALUE
+    println("Integer min value admitted: $minInteger")
+    println("Integer max value admitted: $maxInteger")
+}
+```
+output
+```console 
+Integer min value admitted: -2147483648
+Integer max value admitted: 2147483647
+
+Process finished with exit code 0
+```
+

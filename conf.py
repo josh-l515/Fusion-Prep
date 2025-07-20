@@ -17,7 +17,9 @@ author = 'Josué David Huallpa Aimituma'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", "nbsphinx"]
+extensions = ["myst_parser", 
+              "nbsphinx", 
+              'sphinx_copybutton',]  # esta es la extensión para el botón de copiar]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

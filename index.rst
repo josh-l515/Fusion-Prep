@@ -22,4 +22,5 @@ Fusion-Prep documentation
    python/index
    c++/index
    linux/index
+   android-studio/index
 

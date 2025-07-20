@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>C++ &#8212; J&#39;s PhysiXLab  documentation</title>
+    <title>Android Apps &#8212; J&#39;s PhysiXLab  documentation</title>
   
   
   
@@ -31,6 +31,7 @@
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,12 +42,14 @@
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'c++/index';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/index.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linux" href="../linux/index.html" />
+    <link rel="next" title="1.1 Basic window template" href="OpenGL/01_Hellow_Window.html" />
     <link rel="prev" title="Python" href="../python/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,7 +194,7 @@
 
 <li class=" current active">
   <a class="nav-link dropdown-item nav-internal" href="#">
-    C++
+    Android Apps
   </a>
 </li>
 
@@ -199,6 +202,13 @@
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../linux/index.html">
     Linux
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../android-studio/index.html">
+    Android Apps
   </a>
 </li>
 
@@ -385,7 +395,7 @@
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
-    C++
+    Android Apps
   </a>
 </li>
 
@@ -393,6 +403,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../linux/index.html">
     Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../android-studio/index.html">
+    Android Apps
   </a>
 </li>
 
@@ -488,7 +505,11 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OpenGL/01_Hellow_Window.html">1.1 Basic window template</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -527,7 +548,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">C++</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Android Apps</span></li>
   </ul>
 </nav>
 </div>
@@ -544,8 +565,17 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="c">
-<h1>C++<a class="headerlink" href="#c" title="Link to this heading">#</a></h1>
+  <section id="android-apps">
+<h1>Android Apps<a class="headerlink" href="#android-apps" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="OpenGL/01_Hellow_Window.html">1.1 Basic window template</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OpenGL/01_Hellow_Window.html#hello-window-with-glfw-and-glad">Hello Window with GLFW and GLAD</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -568,11 +598,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../linux/index.html"
+       href="OpenGL/01_Hellow_Window.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linux</p>
+        <p class="prev-next-title">1.1 Basic window template</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -591,7 +621,7 @@
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/index.md">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/index.rst">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -607,7 +637,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/c++/index.md.txt"
+      <li><a href="../_sources/c++/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
