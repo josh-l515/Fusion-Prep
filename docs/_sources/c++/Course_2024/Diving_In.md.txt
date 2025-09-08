@@ -1,0 +1,16 @@
+#  1.0 Getting started
+
+## 1.1 Printing on console
+
+```{code-block} cpp
+#include <iostream>
+
+int main() {
+  std::cout << "Hello World!" << std::endl;
+  std::cout << "Hello Arh Linux" << std::endl;
+  std::cout << "Hello dwm" << std::endl;
+  std::cout << "Hello Josh" << std::endl;
+  std::cout << "Hello David" << std::endl;
+  return 0;
+}
+
