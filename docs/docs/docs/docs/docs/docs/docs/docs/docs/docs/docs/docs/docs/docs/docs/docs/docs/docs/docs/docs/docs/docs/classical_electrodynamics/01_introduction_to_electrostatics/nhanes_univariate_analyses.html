@@ -1,0 +1,1266 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../../../../../../../../../../../../../../../../../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Univariate data analyses - NHANES case study &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../../../../../../../../../../../../../../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../../../../../../../../../../../../../../../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../../../../../../../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../../../../../../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../../../../../../../../../../../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../../../../../../../../../../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../../../../../../../../../../../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../../../../../../../../../../../../../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/classical_electrodynamics/01_introduction_to_electrostatics/nhanes_univariate_analyses';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/classical_electrodynamics/01_introduction_to_electrostatics/nhanes_univariate_analyses.html" />
+    <link rel="index" title="Index" href="../../../../../../../../../../../../../../../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../../../../../../../../../../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../../../../../../../../../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../../../../../../../../../../../../../../../../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../tics/index.html">
+    TICs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-iii/index.html">
+    Física III
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../classical_mechanics/index.html">
+    Clas. Mechanics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../statistical_physics/index.html">
+    Stat. Physics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../classical_electrodynamics/index.html">
+    Clas. Electrodynamics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../c%2B%2B/index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../tics/index.html">
+    TICs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-i/index.html">
+    Física I
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../physics-iii/index.html">
+    Física III
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../classical_mechanics/index.html">
+    Clas. Mechanics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../statistical_physics/index.html">
+    Stat. Physics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../classical_electrodynamics/index.html">
+    Clas. Electrodynamics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../quamtum_mechanics/index.html">
+    Quamtum Mechanics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../c%2B%2B/index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../../../../../../../../../../../../../../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../../../../../../../../../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../../../../../../../../../../../../../../../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Univariate data analyses - NHANES case study</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="Univariate-data-analyses---NHANES-case-study">
+<h1>Univariate data analyses - NHANES case study<a class="headerlink" href="#Univariate-data-analyses---NHANES-case-study" title="Link to this heading">#</a></h1>
+<p>Here we will demonstrate how to use Python and <a class="reference external" href="https://pandas.pydata.org/">Pandas</a> to perform some basic analyses with univariate data, using the 2015-2016 wave of the <a class="reference external" href="https://www.cdc.gov/nchs/nhanes/index.htm">NHANES</a> cross-sectional study to illustrate the techniques.</p>
+<p>The following import statements make the libraries that we will need available. Note that in a Jupyter notebook, you should generally use the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> directive so that any plots that you generate are shown in the notebook. This directive is omitted when running a script outside of the Jupyter environment.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<p>Next we will load the NHANES data from a file into a Pandas dataframe.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;nhanes_2015_2016.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="Frequency-tables">
+<h2>Frequency tables<a class="headerlink" href="#Frequency-tables" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">value_counts</a> method can be used to determine the number of times that each distinct value of a variable occurs in a data set. In statistical terminology, this is the “frequency distribution” of the variable. Below we show the frequency distribution of the <a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/DEMO_I.htm#DMDEDUC2">DMDEDUC2</a> variable, which is a variable that reflects a person’s level of
+educational attainment. The <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> method produces a table with two columns. The first column contains all distinct observed values for the variable. The second column contains the number of times that each of these values occurs. Note that the table returned by <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> is actually a Pandas data frame, so can be further processed using any Pandas methods for working with data frames.</p>
+<p>The numbers 1, 2, 3, 4, 5, 9 seen below are integer codes for the 6 possible non-missing values of the DMDEDUC2 variable. The meaning of these codes is given in the NHANES codebook located <a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/DEMO_I.htm#DMDEDUC2">here</a>, and will be discussed further below. This table shows, for example, that 1621 people in the data file have DMDEDUC=4, which indicates that the person has completed some college, but has not graduated with a four-year degree.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4.0    1621
+5.0    1366
+3.0    1186
+1.0     655
+2.0     643
+9.0       3
+Name: DMDEDUC2, dtype: int64
+</pre></div></div>
+</div>
+<p>Note that the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html">value_counts</a> method excludes missing values. We confirm this below by adding up the number of observations with a DMDEDUC2 value equal to 1, 2, 3, 4, 5, or 9 (there are 5474 such rows), and comparing this to the total number of rows in the data set, which is 5735. This tells us that there are 5735 - 5474 = 261 missing values for this variable (other variables may have different numbers of missing
+values).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1621</span> <span class="o">+</span> <span class="mi">1366</span> <span class="o">+</span> <span class="mi">1186</span> <span class="o">+</span> <span class="mi">655</span> <span class="o">+</span> <span class="mi">643</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Manually sum the frequencies</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5474
+5474
+(5735, 28)
+</pre></div></div>
+</div>
+<p>Another way to obtain this result is to locate all the null (missing) values in the data set using the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.isnull.html">isnull</a> Pandas function, and count the number of such locations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+261
+</pre></div></div>
+</div>
+<p>In some cases it is useful to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.replace.html">replace</a> integer codes with a text label that reflects the code’s meaning. Below we create a new variable called ‘DMDEDUC2x’ that is recoded with text labels, then we generate its frequency distribution.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;DMDEDUC2x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&lt;9&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;9-11&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;HS/GED&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Some college/AA&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot;College&quot;</span><span class="p">,</span>
+                                       <span class="mi">7</span><span class="p">:</span> <span class="s2">&quot;Refused&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s2">&quot;Don&#39;t know&quot;</span><span class="p">})</span>
+<span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2x</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Some college/AA    1621
+College            1366
+HS/GED             1186
+&lt;9                  655
+9-11                643
+Don&#39;t know            3
+Name: DMDEDUC2x, dtype: int64
+</pre></div></div>
+</div>
+<p>We will also want to have a relabeled version of the gender variable, so we will construct that now as well. We will follow a convention here of appending an ‘x’ to the end of a categorical variable’s name when it has been recoded from numeric to string (text) values.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;RIAGENDRx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">RIAGENDR</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Female&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<p>For many purposes it is more relevant to consider the proportion of the sample with each of the possible category values, rather than the number of people in each category. We can do this as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2x</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># x is just a name to hold this value temporarily</span>
+<span class="n">x</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Some college/AA    0.296127
+College            0.249543
+HS/GED             0.216661
+&lt;9                 0.119657
+9-11               0.117464
+Don&#39;t know         0.000548
+Name: DMDEDUC2x, dtype: float64
+</pre></div></div>
+</div>
+<p>According to the results above, 12% of the people who have a non-missing education value have completed less than 9 years of formal education.</p>
+<p>In some cases we will want to treat the missing response category as another category of observed response, rather than ignoring it when creating summaries. Below we create a new category called “Missing”, and assign all missing values to it usig <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/missing_data.html#filling-missing-values-fillna">fillna</a>. Then we recalculate the frequency distribution. We see that 4.6% of the responses are missing.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;DMDEDUC2x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;Missing&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2x</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Some college/AA    0.282650
+College            0.238187
+HS/GED             0.206800
+&lt;9                 0.114211
+9-11               0.112119
+Missing            0.045510
+Don&#39;t know         0.000523
+Name: DMDEDUC2x, dtype: float64
+</pre></div></div>
+</div>
+</section>
+<section id="Numerical-summaries">
+<h2>Numerical summaries<a class="headerlink" href="#Numerical-summaries" title="Link to this heading">#</a></h2>
+<p>A quick way to get a set of numerical summaries for a quantitative variable is with the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/basics.html#summarizing-data-describe">describe</a> data frame method. Below we demonstrate how to do this using the body weight variable (<a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BMX_I.htm#BMXWT">BMXWT</a>). As with many surveys, some data values are missing, so we explicitly drop the missing cases using the
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/missing_data.html#dropping-axis-labels-with-missing-data-dropna">dropna</a> method before generating the summaries.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;BMXWT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+count    5666.000000
+mean       81.342676
+std        21.764409
+min        32.400000
+25%        65.900000
+50%        78.200000
+75%        92.700000
+max       198.900000
+Name: BMXWT, dtype: float64
+</pre></div></div>
+</div>
+<p>It’s also possible to calculate individual summary statistics from one column of a data set. This can be done using Pandas methods, or with numpy functions:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="s2">&quot;BMXWT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># Extract all non-missing values of BMXWT into a variable called &#39;x&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># Pandas method</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># Numpy function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>  <span class="c1"># 50th percentile, same as the median</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span>  <span class="c1"># 75th percentile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">))</span> <span class="c1"># Pandas method for quantiles, equivalent to 75th percentile</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+81.34267560889509
+81.34267560889509
+78.2
+78.2
+92.7
+92.7
+</pre></div></div>
+</div>
+<p>Next we look at frequencies for a systolic blood pressure measurement (<a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BPX_I.htm#BPXSY1">BPXSY1</a>). “BPX” here is the NHANES prefix for blood pressure measurements, “SY” stands for “systolic” blood pressure (blood pressure at the peak of a heartbeat cycle), and “1” indicates that this is the first of three systolic blood presure measurements taken on a subject.</p>
+<p>A person is generally considered to have pre-hypertension when their systolic blood pressure is between 120 and 139, or their diastolic blood pressure is between 80 and 89. Considering only the systolic condition, we can calculate the proprotion of the NHANES sample who would be considered to have pre-hypertension.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY1</span> <span class="o">&gt;=</span> <span class="mi">120</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY1</span> <span class="o">&lt;=</span> <span class="mi">139</span><span class="p">))</span>  <span class="c1"># &quot;&amp;&quot; means &quot;and&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.366870095902354
+</pre></div></div>
+</div>
+<p>Next we calculate the propotion of NHANES subjects who are pre-hypertensive based on diastolic blood pressure.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">da</span><span class="o">.</span><span class="n">BPXDI1</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXDI2</span> <span class="o">&lt;=</span> <span class="mi">89</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.14803836094158676
+</pre></div></div>
+</div>
+<p>Finally we calculate the proportion of NHANES subjects who are pre-hypertensive based on either systolic or diastolic blood pressure. Since some people are pre-hypertensive under both criteria, the proportion below is less than the sum of the two proportions calculated above. The combined systolic and diastolic condition for pre-hypertension is somewhat complex, so below we construct temporary variables ‘a’ and ‘b’ that hold the systolic and diastolic pre-hypertensive status separately, then
+combine them with a “logical or” to obtain the final status for each subject.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY1</span> <span class="o">&gt;=</span> <span class="mi">120</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY2</span> <span class="o">&lt;=</span> <span class="mi">139</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXDI1</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXDI2</span> <span class="o">&lt;=</span> <span class="mi">89</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">))</span>  <span class="c1"># &quot;|&quot; means &quot;or&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.43975588491717527
+</pre></div></div>
+</div>
+<p>Blood pressure measurements are affected by a phenomenon called “white coat hypertension”, in which a subject’s bood pressure may be slightly elevated if they are nervous when interacting with health care providers. Typically this effect subsides if the blood pressure is measured several times in sequence. In NHANES, both systolic and diastolic blood pressure are meausred three times for each subject (e.g. <a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BPX_I.htm#BPXSY2">BPXSY2</a> is the second
+measurement of systolic blood pressure). We can calculate the extent to which white coat anxiety is present in the NHANES data by looking a the mean difference between the first two systolic or diastolic blood pressure measurements.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY1</span> <span class="o">-</span> <span class="n">da</span><span class="o">.</span><span class="n">BPXSY2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXDI1</span> <span class="o">-</span> <span class="n">da</span><span class="o">.</span><span class="n">BPXDI2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.6749860309182343
+0.3490407897187558
+</pre></div></div>
+</div>
+<p>These mean differences are positive – the first systolic blood pressure measurement is around 0.67 mm Hg greater than the second systolic blood pressure measurement, and the first diastolic blood pressure measurement is around 0.35 mm Hg greater than the second diastolic blood pressure measurement. This is consistent with the presence of “white coat hypertension”.</p>
+</section>
+<section id="Graphical-summaries">
+<h2>Graphical summaries<a class="headerlink" href="#Graphical-summaries" title="Link to this heading">#</a></h2>
+<p>Quantitative variables can be effectively summarized graphically. Below we see the distribution of body weight (in Kg), shown as a histogram. The distribution is evidently right-skewed.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BMXWT</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;seaborn.axisgrid.FacetGrid at 0x14ac97f085e0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_34_1.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_34_1.png" />
+</div>
+</div>
+<p>Next we look at the histogram of systolic blood pressure measurements. You can see that there is a tendency for the measurements to be rounded to the nearest 5 or 10 units.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">BPXSY1</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;seaborn.axisgrid.FacetGrid at 0x14ac9752b550&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_36_1.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_36_1.png" />
+</div>
+</div>
+<p>To compare several distributions, we can use side-by-side boxplots. Below we compare the distributions of the first and second systolic blood pressure measurements (<a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BPX_I.htm#BPXSY1">BPXSY1</a>, BPXSY2), and the first and second diastolic blood pressure measurements (<a class="reference external" href="https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/BPX_I.htm#BPXDI1">BPXDI1</a>, BPXDI2). As expected, diastolic measurements are substantially lower than systolic measurements. Above we saw that
+the second blood pressure reading on a subject tended on average to be slightly lower than the first measurement. This difference was less than 1 mm/Hg, so is not visible in the “marginal” distributions shown below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bp</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">da</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;BPXSY1&quot;</span><span class="p">,</span> <span class="s2">&quot;BPXSY2&quot;</span><span class="p">,</span> <span class="s2">&quot;BPXDI1&quot;</span><span class="p">,</span> <span class="s2">&quot;BPXDI2&quot;</span><span class="p">]])</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Blood pressure in mm/Hg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_38_0.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_38_0.png" />
+</div>
+</div>
+</section>
+<section id="Stratification">
+<h2>Stratification<a class="headerlink" href="#Stratification" title="Link to this heading">#</a></h2>
+<p>One of the most effective ways to get more information out of a dataset is to divide it into smaller, more uniform subsets, and analyze each of these “strata” on its own. We can then formally or informally compare the findings in the different strata. When working with human subjects, it is very common to stratify on demographic factors such as age, sex, and race.</p>
+<p>To illustrate this technique, consider blood pressure, which is a value that tends to increase with age. To see this trend in the NHANES data, we can <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.cut.html">partition</a> the data into age strata, and construct side-by-side boxplots of the systolic blood pressure (SBP) distribution within each stratum. Since age is a quantitative variable, we need to create a series of “bins” of similar SBP values in order to stratify the data.
+Each box in the figure below is a summary of univariate data within a specific population stratum (here defined by age).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;agegrp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">RIDAGEYR</span><span class="p">,</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span> <span class="c1"># Create age strata based on these cut points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Make the figure wider than default (12cm wide by 5cm tall)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;agegrp&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;BPXSY1&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">da</span><span class="p">)</span>  <span class="c1"># Make boxplot of BPXSY1 stratified by age group</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;AxesSubplot:xlabel=&#39;agegrp&#39;, ylabel=&#39;BPXSY1&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_40_1.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_40_1.png" />
+</div>
+</div>
+<p>The plot above clearly shows the tendency of systolic blood pressure to increase with age. Taking this a step further, it is also the case that blood pressure tends to differ between women and men. While we could simply make two side-by-side boxplots to illustrate this contrast, it would be a bit odd to ignore age after already having established that it is strongly associated with blood pressure. Therefore, we will doubly stratify the data by gender and age.</p>
+<p>We see from the figure below that within each gender, older people tend to have higher blood pressure than younger people. However within an age band, the relationship between gender and systolic blood pressure is somewhat complex – in younger people, men have substantially higher blood pressures than women of the same age. However for people older than 50, this relationship becomes much weaker, and among people older than 70 it appears to reverse. It is also notable that the variation of these
+distributions, reflected in the height of each box in the boxplot, increases with age.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;agegrp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">RIDAGEYR</span><span class="p">,</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;agegrp&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;BPXSY1&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;RIAGENDRx&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">da</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;AxesSubplot:xlabel=&#39;agegrp&#39;, ylabel=&#39;BPXSY1&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_42_1.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_42_1.png" />
+</div>
+</div>
+<p>When stratifying on two factors (here age and gender), we can group the boxes first by age, and within age bands by gender, as above, or we can do the opposite – group first by gender, and then within gender group by age bands. Each approach highlights a different aspect of the data.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="p">[</span><span class="s2">&quot;agegrp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">RIDAGEYR</span><span class="p">,</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;RIAGENDRx&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;BPXSY1&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;agegrp&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">da</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;AxesSubplot:xlabel=&#39;RIAGENDRx&#39;, ylabel=&#39;BPXSY1&#39;&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_44_1.png" src="../../../../../../../../../../../../../../../../../../../../../../../_images/docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_docs_classical_electrodynamics_01_introduction_to_electrostatics_nhanes_univariate_analyses_44_1.png" />
+</div>
+</div>
+<p>Stratification can also be useful when working with categorical variables. Below we look at the frequency distribution of educational attainment (“DMDEDUC2”) within 10-year age bands. While “some college” is the most common response in all age bands, up to around age 60 the second most common response is “college” (i.e. the person graduated from college with a four-year degree). However for people over 50, there are as many or more people with only high school or general equivalency diplomas
+(HS/GED) than there are college graduates.</p>
+<p><strong>Note on causality and confounding:</strong> An important role of statistics is to aid researchers in identifying causes underlying observed differences. Here we have seen differences in both blood pressure and educational attainment based on age. It is plausible that aging directly causes blood pressure to increase. But in the case of educational attainment, this is actually a “birth cohort effect”. NHANES is a cross sectional survey (all data for one wave were collected at a single point in time).
+People who were, say, 65 in 2015 (when these data were collected), were college-aged around 1970, while people who were in their 20’s in 2015 were college-aged in around 2010 or later. Over the last few decades, it has become much more common for people to at least begin a college degree than it was in the past. Therefore, younger people as a group have higher educational attainment than older people as a group. As these young people grow older, the cross sectional relationship between age and
+educational attainment will change.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;agegrp&quot;</span><span class="p">)[</span><span class="s2">&quot;DMDEDUC2x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+agegrp    DMDEDUC2x
+(18, 30]  Some college/AA    364
+          College            278
+          HS/GED             237
+          Missing            128
+          9-11                99
+          &lt;9                  47
+(30, 40]  Some college/AA    282
+          College            264
+          HS/GED             182
+          9-11               111
+          &lt;9                  93
+(40, 50]  Some college/AA    262
+          College            260
+          HS/GED             171
+          9-11               112
+          &lt;9                  98
+(50, 60]  Some college/AA    258
+          College            220
+          HS/GED             220
+          9-11               122
+          &lt;9                 104
+(60, 70]  Some college/AA    238
+          HS/GED             192
+          College            188
+          &lt;9                 149
+          9-11               111
+(70, 80]  Some college/AA    217
+          HS/GED             184
+          &lt;9                 164
+          College            156
+          9-11                88
+          Don&#39;t know           3
+Name: DMDEDUC2x, dtype: int64
+</pre></div></div>
+</div>
+<p>We can also stratify jointly by age and gender to explore how educational attainment varies by both of these factors simultaneously. In doing this, it is easier to interpret the results if we <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-by-stacking-and-unstacking">pivot</a> the education levels into the columns, and normalize the counts so that they sum to 1. After doing this, the results can be interpreted as proportions or probabilities. One notable observation from
+this table is that for people up to age around 60, women are more likely to have graduated from college than men, but for people over aged 60, this relationship reverses.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">da</span><span class="o">.</span><span class="n">DMDEDUC2x</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;Don&#39;t know&quot;</span><span class="p">,</span> <span class="s2">&quot;Missing&quot;</span><span class="p">]),</span> <span class="p">:]</span>  <span class="c1"># Eliminate rare/missing values</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;agegrp&quot;</span><span class="p">,</span> <span class="s2">&quot;RIAGENDRx&quot;</span><span class="p">])[</span><span class="s2">&quot;DMDEDUC2x&quot;</span><span class="p">]</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c1"># Restructure the results from &#39;long&#39; to &#39;wide&#39;</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Normalize within each stratum to get proportions</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dx</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">float_format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.3f</span><span class="s2">&quot;</span><span class="p">))</span>  <span class="c1"># Limit display to 3 decimal places</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+DMDEDUC2x           9-11    &lt;9  College  HS/GED  Some college/AA
+agegrp   RIAGENDRx
+(18, 30] Female    0.080 0.049    0.282   0.215            0.374
+         Male      0.117 0.042    0.258   0.250            0.333
+(30, 40] Female    0.089 0.097    0.314   0.165            0.335
+         Male      0.151 0.103    0.251   0.227            0.269
+(40, 50] Female    0.110 0.106    0.299   0.173            0.313
+         Male      0.142 0.112    0.274   0.209            0.262
+(50, 60] Female    0.117 0.102    0.245   0.234            0.302
+         Male      0.148 0.123    0.231   0.242            0.256
+(60, 70] Female    0.118 0.188    0.195   0.206            0.293
+         Male      0.135 0.151    0.233   0.231            0.249
+(70, 80] Female    0.105 0.225    0.149   0.240            0.281
+         Male      0.113 0.180    0.237   0.215            0.255
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Frequency-tables">Frequency tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Numerical-summaries">Numerical summaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Graphical-summaries">Graphical summaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Stratification">Stratification</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/classical_electrodynamics/01_introduction_to_electrostatics/nhanes_univariate_analyses.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../../../../../../../../../../../../../../../_sources/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/docs/classical_electrodynamics/01_introduction_to_electrostatics/nhanes_univariate_analyses.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../../../../../../../../../../../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../../../../../../../../../../../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
