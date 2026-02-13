@@ -320,3 +320,70 @@ By default, C++ treats decimal literals like `3.14` as `double`. Use `f` to make
   } 
 ```
 
+## 1.2.5 Boolean Type (`bool`)
+
+C++ provides the `bool` type to represent **logical values**. A boolean can hold only two states:
+
+- `true`
+- `false`
+
+Internally, `bool` is typically stored in **1 byte (8 bits)**, although the C++ standard only guarantees that it can represent `true` and `false` (the exact size is implementation-defined).
+
+Booleans are commonly used in:
+- Conditions (`if`, `while`, `for`)
+- Flags (on/off, enabled/disabled, valid/invalid)
+- Logical expressions and comparisons
+
+**Key Points**
+
+- You can compare explicitly: `if (red_light == true)`
+- Prefer using the value directly: `if (red_light)`
+- When printed with `std::cout`, booleans show:
+  - `0` for `false`
+  - `1` for `true`
+- Using `std::boolalpha` makes the output **human-readable**: `true` / `false`
+
+```{code-block} cpp
+#include <iostream>
+
+// Boolean values typically occupy 1 byte (8 bits) in memory
+
+int main() {
+  // Declare and initialize boolean variables
+  bool red_light{true};
+  bool green_light{false};
+
+  // Explicit comparison with true (works, but is usually unnecessary)
+  if (red_light == true) {
+    std::cout << "Stop!" << std::endl;
+  } else {
+    std::cout << "Go through!" << std::endl;
+  }
+
+  // Preferred style: use the boolean directly in the condition
+  if (red_light) {
+    std::cout << "The light is RED" << std::endl;
+  } else {
+    std::cout << "The light is GREEN" << std::endl;
+  }
+
+  // Check how much memory a boolean uses
+  std::cout << "sizeof(bool): " << sizeof(bool) << " byte(s)" << std::endl;
+
+  // By default, booleans are printed as integers:
+  // false -> 0, true -> 1
+  std::cout << std::endl;
+  std::cout << "Default output:" << std::endl;
+  std::cout << "red_light: " << red_light << std::endl;
+  std::cout << "green_light: " << green_light << std::endl;
+
+  // Make boolean output more readable
+  std::cout << std::boolalpha;
+  std::cout << std::endl;
+  std::cout << "With std::boolalpha:" << std::endl;
+  std::cout << "red_light: " << red_light << std::endl;
+  std::cout << "green_light: " << green_light << std::endl;
+
+  return 0;
+}
+
