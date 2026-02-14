@@ -1064,7 +1064,59 @@
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;green_light: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">green_light</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="character-type-char">
+<h2>1.2.6 Character Type (<code class="docutils literal notranslate"><span class="pre">char</span></code>)<a class="headerlink" href="#character-type-char" title="Link to this heading">#</a></h2>
+<p>In C++, the <code class="docutils literal notranslate"><span class="pre">char</span></code> type is used to store <strong>single characters</strong> such as letters, digits, or symbols. Character literals are written using <strong>single quotes</strong>, for example <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'z'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'+'</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> typically occupies <strong>1 byte (8 bits)</strong> in memory, which allows it to represent <strong>256 different values</strong> (from 0 to 255). In practice, <code class="docutils literal notranslate"><span class="pre">char</span></code> is often used to store <strong>ASCII codes</strong>, where each number corresponds to a specific character (e.g., <code class="docutils literal notranslate"><span class="pre">65</span></code> → <code class="docutils literal notranslate"><span class="pre">'A'</span></code>).</p>
+<p><strong>Key Points</strong></p>
+<ul class="simple">
+<li><p>Character literals use <strong>single quotes</strong>: <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, <code class="docutils literal notranslate"><span class="pre">'0'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code> usually takes <strong>1 byte</strong> of memory</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> is essentially a <strong>small integer type</strong> interpreted as a character</p></li>
+<li><p>You can cast a <code class="docutils literal notranslate"><span class="pre">char</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code> to see its numeric (ASCII) value</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="c1">// Characters must be written using single quotes: &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, etc.</span>
+<span class="c1">// A char typically occupies 1 byte (8 bits) in memory.</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Declare and initialize character variables</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">character1</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">character2</span><span class="p">{</span><span class="sc">&#39;r&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">character3</span><span class="p">{</span><span class="sc">&#39;r&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">character4</span><span class="p">{</span><span class="sc">&#39;o&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">character5</span><span class="p">{</span><span class="sc">&#39;w&#39;</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Print each character</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">character1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">character2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">character3</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">character4</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">character5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Check how much memory a char uses</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(char): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; byte(s)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// One byte = 8 bits -&gt; 2^8 = 256 possible values (0 to 255)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// A char can also be initialized with an integer (ASCII code)</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mi">65</span><span class="p">};</span><span class="w">  </span><span class="c1">// ASCII code for &#39;A&#39;</span>
+
+<span class="w">  </span><span class="c1">// When printed as a char, it shows the corresponding character</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// prints: A</span>
+
+<span class="w">  </span><span class="c1">// Cast to int to see the numeric value stored in the char</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value (int): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints: 65</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+<span class="o">|</span>
 </pre></div>
 </div>
 </section>
@@ -1122,6 +1174,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-modifiers">1.2.3 Integers Modifiers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-numbers">1.2.4 Fractional Numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-type-bool">1.2.5 Boolean Type (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-type-char">1.2.6 Character Type (<code class="docutils literal notranslate"><span class="pre">char</span></code>)</a></li>
 </ul>
   </nav></div>
 
