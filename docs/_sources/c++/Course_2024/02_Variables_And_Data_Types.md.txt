@@ -440,7 +440,7 @@ int main() {
   std::cout << "value (int): " << static_cast<int>(value) << std::endl; // prints: 65
 
   return 0;
-}````
+}```
 
 
 ## 1.2.7 Type Deduction with `auto`
