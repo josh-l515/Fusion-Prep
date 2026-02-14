@@ -487,3 +487,60 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+## 1.2.8 Variable Assignment and Reassignment
+
+In C++, a variable can be **declared and initialized**, and later its value can be **modified (reassigned)**.
+
+Initialization happens when the variable is created.  
+Assignment happens after the variable already exists.
+
+**Key Points**
+
+- Initialization uses `{}` (brace initialization)  
+- Assignment uses the `=` operator after declaration  
+- Variables can change value during execution  
+- Assigning a negative value to an `unsigned` type causes **wraparound (underflow)**  
+
+```{code-block} cpp
+#include <ios>
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+  int var1{123}; // Declare and initialize
+
+  std::cout << "-------- ints ----------" << std::endl;
+  std::cout << "var1: " << var1 << std::endl;
+
+  var1 = 55; // assign
+  std::cout << "var1: " << var1 << std::endl;
+
+  double var2{123.12}; // Declare and initialize
+
+  std::cout << "------- doubles --------" << std::endl;
+  std::cout << "var2: " << var2 << std::endl;
+
+  var2 = 55.01; // assign
+  std::cout << "var2: " << var2 << std::endl;
+
+  bool var3{true}; // Declare and initialize
+
+  std::cout << "------ booleans --------" << std::endl;
+  std::cout << std::boolalpha;
+  std::cout << "var3: " << var3 << std::endl;
+
+  var3 = false; // assign
+  std::cout << "var3: " << var3 << std::endl;
+
+  auto var4{134u}; // Declare and initialize (unsigned int)
+
+  std::cout << "-------- auto ----------" << std::endl;
+  std::cout << "var4: " << var4 << std::endl;
+
+  // Assigning a negative value to an unsigned variable causes wraparound
+  // (underflow)
+  var4 = -23; // assign
+  std::cout << "var4: " << var4 << std::endl;
+
+  return 0;
+}
+```
