@@ -1115,29 +1115,27 @@
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value (int): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// prints: 65</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span><span class="err">```</span>
-
-
-<span class="cp">## 1.2.7 Type Deduction with `auto`</span>
-
-<span class="n">In</span><span class="w"> </span><span class="n">C</span><span class="o">++</span><span class="w"> </span><span class="p">(</span><span class="n">since</span><span class="w"> </span><span class="n">C</span><span class="o">++</span><span class="mi">11</span><span class="p">),</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="k">auto</span><span class="err">`</span><span class="w"> </span><span class="n">keyword</span><span class="w"> </span><span class="n">allows</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">compiler</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">**</span><span class="n">automatically</span><span class="w"> </span><span class="n">deduce</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">type</span><span class="o">**</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">initializer</span><span class="p">.</span>
-
-<span class="n">Instead</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">explicitly</span><span class="w"> </span><span class="n">writing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="p">(</span><span class="err">`</span><span class="kt">int</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="kt">double</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.),</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">compiler</span><span class="w"> </span><span class="n">determines</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">compile</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">value</span><span class="p">.</span>
-
-<span class="o">**</span><span class="n">Key</span><span class="w"> </span><span class="n">Points</span><span class="o">**</span>
-
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="k">auto</span><span class="err">`</span><span class="w"> </span><span class="k">requires</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">initializer</span><span class="w">  </span>
-<span class="o">-</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">deduced</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">depends</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">literal</span><span class="w"> </span><span class="n">used</span><span class="w">  </span>
-<span class="o">-</span><span class="w"> </span><span class="n">Decimal</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="err">`</span><span class="kt">double</span><span class="err">`</span><span class="w">  </span>
-<span class="o">-</span><span class="w"> </span><span class="n">Suffixes</span><span class="w"> </span><span class="p">(</span><span class="err">`</span><span class="n">f</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="n">l</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="n">u</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="n">ll</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.)</span><span class="w"> </span><span class="n">modify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">deduced</span><span class="w"> </span><span class="n">type</span><span class="w">  </span>
-<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="k">sizeof</span><span class="p">()</span><span class="err">`</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">verify</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">resulting</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">size</span><span class="w">  </span>
-
-<span class="err">```</span><span class="p">{</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">}</span><span class="w"> </span><span class="n">cpp</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="type-deduction-with-auto">
+<h2>1.2.7 Type Deduction with <code class="docutils literal notranslate"><span class="pre">auto</span></code><a class="headerlink" href="#type-deduction-with-auto" title="Link to this heading">#</a></h2>
+<p>In C++ (since C++11), the <code class="docutils literal notranslate"><span class="pre">auto</span></code> keyword allows the compiler to <strong>automatically deduce the type</strong> of a variable from its initializer.</p>
+<p>Instead of explicitly writing the type (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc.), the compiler determines it at compile time based on the assigned value.</p>
+<p><strong>Key Points</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span></code> requires an initializer</p></li>
+<li><p>The deduced type depends on the literal used</p></li>
+<li><p>Decimal numbers default to <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
+<li><p>Suffixes (<code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">ll</span></code>, etc.) modify the deduced type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizeof()</span></code> can be used to verify the resulting type size</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="c1">// use auto to let the compiler guess the variable type</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">var1</span><span class="p">{</span><span class="mi">12</span><span class="p">};</span><span class="w">      </span><span class="c1">// int</span>
 <span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">var2</span><span class="p">{</span><span class="mf">13.4</span><span class="p">};</span><span class="w">    </span><span class="c1">// double</span>
 <span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">var3</span><span class="p">{</span><span class="mf">14.0f</span><span class="p">};</span><span class="w">   </span><span class="c1">// float</span>
@@ -1219,6 +1217,58 @@ Assignment happens after the variable already exists.</p>
 </pre></div>
 </div>
 </section>
+<section id="arithmetic-operators">
+<h2>1.2.9 Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h2>
+<p>C++ provides basic arithmetic operators to perform mathematical operations on numeric types such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc.</p>
+<p><strong>Main Arithmetic Operators</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> → Addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> → Subtraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> → Multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> → Division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> → Modulus (remainder of integer division)</p></li>
+</ul>
+<p><strong>Key Points</strong></p>
+<ul class="simple">
+<li><p>When both operands are integers, division performs <strong>integer division</strong> (fractional part is discarded).</p></li>
+<li><p>The modulus operator <code class="docutils literal notranslate"><span class="pre">%</span></code> works only with <strong>integer types</strong>.</p></li>
+<li><p>The result type depends on the operand types.</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Addition</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="p">{</span><span class="mi">11</span><span class="p">};</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">  </span><span class="c1">// 2 + 11</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Subtraction</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 - 2</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">      </span><span class="c1">// 2 - 11 (negative result)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Multiplication</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 * 2</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Division (integer division: no decimals kept)</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 / 2 = 5 (not 5.5)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Modulus (remainder after division)</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 % 2 = 1</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -1274,7 +1324,9 @@ Assignment happens after the variable already exists.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-numbers">1.2.4 Fractional Numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-type-bool">1.2.5 Boolean Type (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-type-char">1.2.6 Character Type (<code class="docutils literal notranslate"><span class="pre">char</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-deduction-with-auto">1.2.7 Type Deduction with <code class="docutils literal notranslate"><span class="pre">auto</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment-and-reassignment">1.2.8 Variable Assignment and Reassignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">1.2.9 Arithmetic Operators</a></li>
 </ul>
   </nav></div>
 
