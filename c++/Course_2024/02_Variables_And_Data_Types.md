@@ -385,5 +385,60 @@ int main() {
   std::cout << "green_light: " << green_light << std::endl;
 
   return 0;
-}
+} 
+```
 
+
+## 1.2.6 Character Type (`char`)
+
+In C++, the `char` type is used to store **single characters** such as letters, digits, or symbols. Character literals are written using **single quotes**, for example `'A'`, `'z'`, or `'+'`.
+
+A `char` typically occupies **1 byte (8 bits)** in memory, which allows it to represent **256 different values** (from 0 to 255). In practice, `char` is often used to store **ASCII codes**, where each number corresponds to a specific character (e.g., `65` → `'A'`).
+
+**Key Points**
+
+- Character literals use **single quotes**: `'a'`, `'Z'`, `'0'`
+- `char` usually takes **1 byte** of memory
+- A `char` is essentially a **small integer type** interpreted as a character
+- You can cast a `char` to `int` to see its numeric (ASCII) value
+
+
+```{code-block} cpp
+#include <iostream>
+
+// Characters must be written using single quotes: 'a', 'b', 'c', etc.
+// A char typically occupies 1 byte (8 bits) in memory.
+
+int main() {
+  // Declare and initialize character variables
+  char character1{'a'};
+  char character2{'r'};
+  char character3{'r'};
+  char character4{'o'};
+  char character5{'w'};
+
+  // Print each character
+  std::cout << character1 << std::endl;
+  std::cout << character2 << std::endl;
+  std::cout << character3 << std::endl;
+  std::cout << character4 << std::endl;
+  std::cout << character5 << std::endl;
+
+  // Check how much memory a char uses
+  std::cout << "sizeof(char): " << sizeof(char) << " byte(s)" << std::endl;
+
+  // One byte = 8 bits -> 2^8 = 256 possible values (0 to 255)
+  std::cout << std::endl;
+
+  // A char can also be initialized with an integer (ASCII code)
+  char value{65};  // ASCII code for 'A'
+
+  // When printed as a char, it shows the corresponding character
+  std::cout << "value: " << value << std::endl;  // prints: A
+
+  // Cast to int to see the numeric value stored in the char
+  std::cout << "value (int): " << static_cast<int>(value) << std::endl; // prints: 65
+
+  return 0;
+}
+|
