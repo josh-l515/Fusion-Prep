@@ -440,5 +440,50 @@ int main() {
   std::cout << "value (int): " << static_cast<int>(value) << std::endl; // prints: 65
 
   return 0;
+}````
+
+
+## 1.2.7 Type Deduction with `auto`
+
+In C++ (since C++11), the `auto` keyword allows the compiler to **automatically deduce the type** of a variable from its initializer.
+
+Instead of explicitly writing the type (`int`, `double`, etc.), the compiler determines it at compile time based on the assigned value.
+
+**Key Points**
+
+- `auto` requires an initializer  
+- The deduced type depends on the literal used  
+- Decimal numbers default to `double`  
+- Suffixes (`f`, `l`, `u`, `ll`, etc.) modify the deduced type  
+- `sizeof()` can be used to verify the resulting type size  
+
+```{code-block} cpp
+#include <iostream>
+
+// use auto to let the compiler guess the variable type
+
+int main(int argc, char *argv[]) {
+  auto var1{12};      // int
+  auto var2{13.4};    // double
+  auto var3{14.0f};   // float
+  auto var4{15.0l};   // long double
+  auto var5{'i'};     // char
+
+  // integer literal suffixes
+  auto var6{123u};    // unsigned int
+  auto var7{123ul};   // unsigned long
+  auto var8{123ll};   // long long
+
+  std::cout << "var1 occupies: " << sizeof(var1) << " bytes" << std::endl;
+  std::cout << "var2 occupies: " << sizeof(var2) << " bytes" << std::endl;
+  std::cout << "var3 occupies: " << sizeof(var3) << " bytes" << std::endl;
+  std::cout << "var4 occupies: " << sizeof(var4) << " bytes" << std::endl;
+  std::cout << "var5 occupies: " << sizeof(var5) << " bytes" << std::endl;
+  std::cout << "var6 occupies: " << sizeof(var6) << " bytes" << std::endl;
+  std::cout << "var7 occupies: " << sizeof(var7) << " bytes" << std::endl;
+  std::cout << "var8 occupies: " << sizeof(var8) << " bytes" << std::endl;
+
+  return 0;
 }
-|
+```
+
