@@ -7,6 +7,7 @@ C++ 2024 Course
 
    Course_2024/01_Diving_In.md
    Course_2024/02_Variables_And_Data_Types.md
+   Course_2024/03_Operation_on_Data.md
 
 
 .. toctree::

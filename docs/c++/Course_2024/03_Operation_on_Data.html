@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.1 Basic window template &#8212; J&#39;s PhysiXLab  documentation</title>
+    <title>1.3 Operation on data &#8212; J&#39;s PhysiXLab  documentation</title>
   
   
   
@@ -45,12 +45,12 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'c++/OpenGL/01_Hellow_Window';</script>
-    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/OpenGL/01_Hellow_Window.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'c++/Course_2024/03_Operation_on_Data';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/Course_2024/03_Operation_on_Data.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Linux" href="../../linux/index.html" />
-    <link rel="prev" title="1.3 Operation on data" href="../Course_2024/03_Operation_on_Data.html" />
+    <link rel="next" title="1.1 Basic window template" href="../OpenGL/01_Hellow_Window.html" />
+    <link rel="prev" title="1.2 Variables And Data Types" href="02_Variables_And_Data_Types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -520,14 +520,14 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 01: C++ 2024 Course</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Course_2024/01_Diving_In.html">1.1 Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_2024/02_Variables_And_Data_Types.html">1.2 Variables And Data Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Course_2024/03_Operation_on_Data.html">1.3 Operation on data</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Diving_In.html">1.1 Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Variables_And_Data_Types.html">1.2 Variables And Data Types</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.3 Operation on data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.1 Basic window template</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../OpenGL/01_Hellow_Window.html">1.1 Basic window template</a></li>
 </ul>
 </div>
 </nav></div>
@@ -571,7 +571,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">C++ 2024 Course</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.1 Basic window template</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.3 Operation on data</span></li>
   </ul>
 </nav>
 </div>
@@ -588,104 +588,56 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basic-window-template">
-<h1>1.1 Basic window template<a class="headerlink" href="#basic-window-template" title="Link to this heading">#</a></h1>
-<section id="hello-window-with-glfw-and-glad">
-<h2>Hello Window with GLFW and GLAD<a class="headerlink" href="#hello-window-with-glfw-and-glad" title="Link to this heading">#</a></h2>
-<p>Example of how to create a basic OpenGL application using <strong>GLFW</strong> for window management and <strong>GLAD</strong> for loading OpenGL function pointers. The code sets up an OpenGL context, creates a transparent window, and runs a simple render loop that clears the screen with a custom background color.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="n">cpp</span>
-<span class="c1">// clang-format off</span>
-<span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">glad</span><span class="o">/</span><span class="n">glad</span><span class="p">.</span><span class="na">h</span><span class="o">&gt;</span>
-<span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GLFW</span><span class="o">/</span><span class="n">glfw3</span><span class="p">.</span><span class="na">h</span><span class="o">&gt;</span>
-<span class="c1">// clang-format on</span>
-<span class="err">#</span><span class="n">include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">iostream</span><span class="o">&gt;</span>
-<span class="c1">// Include GLAD before GLFW to load all OpenGL function pointers</span>
-<span class="c1">// Include GLFW for creating windows and handling user input</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="operation-on-data">
+<h1>1.3 Operation on data<a class="headerlink" href="#operation-on-data" title="Link to this heading">#</a></h1>
+<section id="arithmetic-operators">
+<h2>1.3.1 Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h2>
+<p>C++ provides basic arithmetic operators to perform mathematical operations on numeric types such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc.</p>
+<p><strong>Main Arithmetic Operators</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> → Addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> → Subtraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> → Multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> → Division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> → Modulus (remainder of integer division)</p></li>
+</ul>
+<p><strong>Key Points</strong></p>
+<ul class="simple">
+<li><p>When both operands are integers, division performs <strong>integer division</strong> (fractional part is discarded).</p></li>
+<li><p>The modulus operator <code class="docutils literal notranslate"><span class="pre">%</span></code> works only with <strong>integer types</strong>.</p></li>
+<li><p>The result type depends on the operand types.</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
-<span class="c1">// Callback function for when the window is resized</span>
-<span class="n">void</span><span class="w"> </span><span class="n">framebuffer_size_callback</span><span class="p">(</span><span class="n">GLFWwindow</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
 
-<span class="c1">// Handles keyboard input (e.g., ESC to close)</span>
-<span class="n">void</span><span class="w"> </span><span class="n">processInput</span><span class="p">(</span><span class="n">GLFWwindow</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Addition</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="p">{</span><span class="mi">11</span><span class="p">};</span>
 
-<span class="c1">// Window dimensions</span>
-<span class="n">const</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">SCR_WIDTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">800</span><span class="p">;</span>
-<span class="n">const</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">SCR_HEIGHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">600</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">  </span><span class="c1">// 2 + 11</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="n">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Initialize GLFW library</span>
-<span class="w">  </span><span class="n">glfwInit</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// Subtraction</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 - 2</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// Set the OpenGL version to 3.3</span>
-<span class="w">  </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_CONTEXT_VERSION_MAJOR</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
-<span class="w">  </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_CONTEXT_VERSION_MINOR</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">      </span><span class="c1">// 2 - 11 (negative result)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// Use the core profile (modern OpenGL, no legacy functions)</span>
-<span class="w">  </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_OPENGL_PROFILE</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_OPENGL_CORE_PROFILE</span><span class="p">);</span>
-<span class="w">  </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_TRANSPARENT_FRAMEBUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_TRUE</span><span class="p">);</span><span class="w"> </span><span class="c1">// &lt;-- transparencia</span>
+<span class="w">  </span><span class="c1">// Multiplication</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 * 2</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="err">#</span><span class="n">ifdef</span><span class="w"> </span><span class="n">__APPLE__</span>
-<span class="w">  </span><span class="c1">// On macOS, this is required for forward compatibility</span>
-<span class="w">  </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_OPENGL_FORWARD_COMPAT</span><span class="p">,</span><span class="w"> </span><span class="n">GL_TRUE</span><span class="p">);</span>
-<span class="err">#</span><span class="n">endif</span>
+<span class="w">  </span><span class="c1">// Division (integer division: no decimals kept)</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 / 2 = 5 (not 5.5)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// Create a windowed mode window and OpenGL context</span>
-<span class="w">  </span><span class="n">GLFWwindow</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="w"> </span><span class="o">=</span>
-<span class="w">      </span><span class="n">glfwCreateWindow</span><span class="p">(</span><span class="n">SCR_WIDTH</span><span class="p">,</span><span class="w"> </span><span class="n">SCR_HEIGHT</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;JoshOpenGL&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">NULL</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Modulus (remainder after division)</span>
+<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 % 2 = 1</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// Check if window creation succeeded</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to create GLFW window&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">glfwTerminate</span><span class="p">();</span><span class="w"> </span><span class="c1">// Clean up and exit</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="c1">// Make the window the current OpenGL context</span>
-<span class="w">  </span><span class="n">glfwMakeContextCurrent</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Register callback function to adjust viewport when window is resized</span>
-<span class="w">  </span><span class="n">glfwSetFramebufferSizeCallback</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">framebuffer_size_callback</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Initialize GLAD to load OpenGL function pointers</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">gladLoadGLLoader</span><span class="p">((</span><span class="n">GLADloadproc</span><span class="p">)</span><span class="n">glfwGetProcAddress</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to initialize GLAD&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="c1">// -----------------------------</span>
-<span class="w">  </span><span class="c1">// Render loop (keeps running until the window should close)</span>
-<span class="w">  </span><span class="c1">// -----------------------------</span>
-<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">glfwWindowShouldClose</span><span class="p">(</span><span class="n">window</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Handle input (e.g., check for ESC key)</span>
-<span class="w">    </span><span class="n">processInput</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Set the background color and clear the color buffer</span>
-<span class="w">    </span><span class="n">glClearColor</span><span class="p">(</span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">0.0f</span><span class="p">,</span><span class="w"> </span><span class="m">0.8f</span><span class="p">);</span><span class="w"> </span><span class="c1">// RGB + Alpha</span>
-<span class="w">    </span><span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span><span class="w">         </span><span class="c1">// Clear the screen with the color</span>
-
-<span class="w">    </span><span class="c1">// Swap front and back buffers (double buffering)</span>
-<span class="w">    </span><span class="n">glfwSwapBuffers</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Poll for and process events (keyboard, mouse, etc.)</span>
-<span class="w">    </span><span class="n">glfwPollEvents</span><span class="p">();</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="c1">// Clean up and close the application</span>
-<span class="w">  </span><span class="n">glfwTerminate</span><span class="p">();</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Handle user input: ESC key will close the window</span>
-<span class="n">void</span><span class="w"> </span><span class="n">processInput</span><span class="p">(</span><span class="n">GLFWwindow</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Check if the ESC key is pressed</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">glfwGetKey</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_KEY_ESCAPE</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GLFW_PRESS</span><span class="p">)</span>
-<span class="w">    </span><span class="n">glfwSetWindowShouldClose</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Signal to close the window</span>
-<span class="p">}</span>
-
-<span class="c1">// Callback function: executes when the window is resized</span>
-<span class="n">void</span><span class="w"> </span><span class="n">framebuffer_size_callback</span><span class="p">(</span><span class="n">GLFWwindow</span><span class="w"> </span><span class="o">*</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Adjust the OpenGL viewport to the new window size</span>
-<span class="w">  </span><span class="n">glViewport</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -703,20 +655,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Course_2024/03_Operation_on_Data.html"
+       href="02_Variables_And_Data_Types.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1.3 Operation on data</p>
+        <p class="prev-next-title">1.2 Variables And Data Types</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../linux/index.html"
+       href="../OpenGL/01_Hellow_Window.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linux</p>
+        <p class="prev-next-title">1.1 Basic window template</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -739,7 +691,7 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-window-with-glfw-and-glad">Hello Window with GLFW and GLAD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">1.3.1 Arithmetic Operators</a></li>
 </ul>
   </nav></div>
 
@@ -747,7 +699,7 @@
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/OpenGL/01_Hellow_Window.md">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/Course_2024/03_Operation_on_Data.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -763,7 +715,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/c++/OpenGL/01_Hellow_Window.md.txt"
+      <li><a href="../../_sources/c++/Course_2024/03_Operation_on_Data.md.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

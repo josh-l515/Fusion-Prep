@@ -51,7 +51,7 @@
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/Course_2024/02_Variables_And_Data_Types.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.1 Basic window template" href="../OpenGL/01_Hellow_Window.html" />
+    <link rel="next" title="1.3 Operation on data" href="03_Operation_on_Data.html" />
     <link rel="prev" title="1.1 Getting started" href="01_Diving_In.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -525,6 +525,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Diving_In.html">1.1 Getting started</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1.2 Variables And Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Operation_on_Data.html">1.3 Operation on data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
 <ul class="nav bd-sidenav">
@@ -1217,58 +1218,6 @@ Assignment happens after the variable already exists.</p>
 </pre></div>
 </div>
 </section>
-<section id="arithmetic-operators">
-<h2>1.2.9 Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h2>
-<p>C++ provides basic arithmetic operators to perform mathematical operations on numeric types such as <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, etc.</p>
-<p><strong>Main Arithmetic Operators</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> → Addition</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> → Subtraction</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> → Multiplication</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> → Division</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> → Modulus (remainder of integer division)</p></li>
-</ul>
-<p><strong>Key Points</strong></p>
-<ul class="simple">
-<li><p>When both operands are integers, division performs <strong>integer division</strong> (fractional part is discarded).</p></li>
-<li><p>The modulus operator <code class="docutils literal notranslate"><span class="pre">%</span></code> works only with <strong>integer types</strong>.</p></li>
-<li><p>The result type depends on the operand types.</p></li>
-</ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">  </span><span class="c1">// Addition</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="p">{</span><span class="mi">11</span><span class="p">};</span>
-
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">  </span><span class="c1">// 2 + 11</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// Subtraction</span>
-<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 - 2</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">number2</span><span class="p">;</span><span class="w">      </span><span class="c1">// 2 - 11 (negative result)</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// Multiplication</span>
-<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 * 2</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// Division (integer division: no decimals kept)</span>
-<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 / 2 = 5 (not 5.5)</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="c1">// Modulus (remainder after division)</span>
-<span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">number1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 11 % 2 = 1</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
@@ -1291,11 +1240,11 @@ Assignment happens after the variable already exists.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../OpenGL/01_Hellow_Window.html"
+       href="03_Operation_on_Data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.1 Basic window template</p>
+        <p class="prev-next-title">1.3 Operation on data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1326,7 +1275,6 @@ Assignment happens after the variable already exists.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-type-char">1.2.6 Character Type (<code class="docutils literal notranslate"><span class="pre">char</span></code>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-deduction-with-auto">1.2.7 Type Deduction with <code class="docutils literal notranslate"><span class="pre">auto</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment-and-reassignment">1.2.8 Variable Assignment and Reassignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">1.2.9 Arithmetic Operators</a></li>
 </ul>
   </nav></div>
 
