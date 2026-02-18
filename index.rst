@@ -13,13 +13,13 @@ Fusion-Prep documentation
    :caption: Contents:
 
    tics/index
-   physics-i/index
-   physics-ii/index
-   physics-iii/index
-   classical_mechanics/index
-   statistical_physics/index
-   classical_electrodynamics/index
-   quamtum_mechanics/index
+   .. physics-i/index
+   .. physics-ii/index
+   .. physics-iii/index
+   .. classical_mechanics/index
+   .. statistical_physics/index
+   .. classical_electrodynamics/index
+   .. quamtum_mechanics/index
    python/index
    c++/index
    linux/index

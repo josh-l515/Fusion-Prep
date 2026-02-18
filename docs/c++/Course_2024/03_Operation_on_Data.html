@@ -137,22 +137,22 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-i/index.html">
-    Física I
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
-    Física II
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-iii/index.html">
-    Física III
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
   </a>
 </li>
 
@@ -164,55 +164,6 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../classical_mechanics/index.html">
-    Clas. Mechanics
-  </a>
-</li>
-
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../statistical_physics/index.html">
-    Stat. Physics
-  </a>
-</li>
-
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../classical_electrodynamics/index.html">
-    Clas. Electrodynamics
-  </a>
-</li>
-
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../quamtum_mechanics/index.html">
-    Quamtum Mechanics
-  </a>
-</li>
-
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../python/index.html">
-    Python
-  </a>
-</li>
-
-
-<li class=" current active">
-  <a class="nav-link dropdown-item nav-internal" href="../index.html">
-    C++ 2024 Course
-  </a>
-</li>
-
-
-<li class=" ">
-  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
-    Linux
-  </a>
-</li>
-
-
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
     Android Apps
@@ -347,55 +298,6 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tics/index.html">
     TICs
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-i/index.html">
-    Física I
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
-    Física II
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../physics-iii/index.html">
-    Física III
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../classical_mechanics/index.html">
-    Clas. Mechanics
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../statistical_physics/index.html">
-    Stat. Physics
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../classical_electrodynamics/index.html">
-    Clas. Electrodynamics
-  </a>
-</li>
-
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../quamtum_mechanics/index.html">
-    Quamtum Mechanics
   </a>
 </li>
 
@@ -720,64 +622,55 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<!---->
-<!-- ## 1.3.3 Compound Assignment Operators -->
-<!---->
-<!-- Compound assignment operators combine an arithmetic operation with assignment. -->
-<!---->
-<!---->
-<!-- Instead of writing: -->
-<!---->
-<!-- ```{code-block} cpp -->
-<!-- value = value + 5; -->
-<!-- ``` -->
-<!---->
-<!-- You can write: -->
-<!---->
-<!-- ```{code-block} cpp -->
-<!-- value += 5; -->
-<!-- ``` -->
-<!---->
-<!---->
-<!-- **Main Compound Operators** -->
-<!---->
-<!-- - `+=` → Addition assignment   -->
-<!-- - `-=` → Subtraction assignment   -->
-<!-- - `*=` → Multiplication assignment   -->
-<!-- - `/=` → Division assignment   -->
-<!-- - `%=` → Modulus assignment   -->
-<!---->
-<!-- **Key Point** -->
-<!---->
-<!-- These operators modify the variable **in place** and are more concise than writing the full expression. -->
-<!---->
-<!-- ```{code-block} cpp -->
-<!-- #include <iostream> -->
-<!---->
-<!-- // Compound Operators -->
-<!-- int main(int argc, char *argv[]) { -->
-<!---->
-<!--   int value{45}; -->
-<!--   std::cout << "value: " << value << std::endl; -->
-<!---->
-<!--   value += 5;   // value = value + 5 -->
-<!--   std::cout << "value after += 5: " << value << std::endl; // 50 -->
-<!---->
-<!--   value -= 5;   // value = value - 5 -->
-<!--   std::cout << "value after -= 5: " << value << std::endl; // 45 -->
-<!---->
-<!--   value *= 2;   // value = value * 2 -->
-<!--   std::cout << "value after *= 2: " << value << std::endl; // 90 -->
-<!---->
-<!--   value /= 3;   // value = value / 3 (integer division) -->
-<!--   std::cout << "value after /= 3: " << value << std::endl; // 30 -->
-<!---->
-<!--   value %= 11;  // value = value % 11 (remainder) -->
-<!--   std::cout << "value after %= 11: " << value << std::endl; // 8 -->
-<!---->
-<!--   return 0; -->
-<!-- } -->
-<!-- ``` -->
+</section>
+<section id="compound-assignment-operators">
+<h2>1.3.3 Compound Assignment Operators<a class="headerlink" href="#compound-assignment-operators" title="Link to this heading">#</a></h2>
+<p>Compound assignment operators combine an arithmetic operation with assignment.</p>
+<p>Instead of writing:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You can write:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Main Compound Operators</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+=</span></code> → Addition assignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-=</span></code> → Subtraction assignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*=</span></code> → Multiplication assignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/=</span></code> → Division assignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%=</span></code> → Modulus assignment</p></li>
+</ul>
+<p><strong>Key Point</strong></p>
+<p>These operators modify the variable <strong>in place</strong> and are more concise than writing the full expression.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="c1">// Compound Operators</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mi">45</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// value = value + 5</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value after += 5: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 50</span>
+
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// value = value - 5</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value after -= 5: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 45</span>
+
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">// value = value * 2</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value after *= 2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 90</span>
+
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// value = value / 3 (integer division)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value after /= 3: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 30</span>
+
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span><span class="w">  </span><span class="c1">// value = value % 11 (remainder)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value after %= 11: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -830,6 +723,7 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">1.3.1 Arithmetic Operators</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#increment-and-decrement-operators">1.3.2 Increment and Decrement Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-assignment-operators">1.3.3 Compound Assignment Operators</a></li>
 </ul>
   </nav></div>
 
