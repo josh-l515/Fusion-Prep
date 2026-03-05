@@ -12,7 +12,7 @@ Fusion-Prep documentation
    :maxdepth: 2
    :caption: Contents:
 
-   tics/index
+   .. tics/index
    .. physics-i/index
    .. physics-ii/index
    .. physics-iii/index
