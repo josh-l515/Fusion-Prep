@@ -1,0 +1,1107 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.6 Arrays &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'c++/Course_2024/06_Arrays';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/Course_2024/06_Arrays.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.7 Pointers" href="07_Pointers.html" />
+    <link rel="prev" title="1.5 Loops" href="05_Loops.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 01: C++ 2024 Course</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Diving_In.html">1.1 Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Variables_And_Data_Types.html">1.2 Variables And Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Operation_on_Data.html">1.3 Operation on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Flow_Control.html">1.4 Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Loops.html">1.5 Loops</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.6 Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Pointers.html">1.7 Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_References.html">1.8 References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Functions.html">1.9 Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Returning_from_Functions.html">1.10 Function Parameters, Return Types, and Overloading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Lambda_Functions.html">1.11 Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_Functions_Templates.html">1.12 Functions Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Concepts.html">1.13 Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Classes.html">1.14 Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../OpenGL/01_Hellow_Window.html">1.1 Basic window template</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">C++ 2024 Course</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.6 Arrays</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="arrays">
+<h1>1.6 Arrays<a class="headerlink" href="#arrays" title="Link to this heading">#</a></h1>
+<section id="declaring-arrays">
+<h2>1.6.1 Declaring Arrays<a class="headerlink" href="#declaring-arrays" title="Link to this heading">#</a></h2>
+<p>An <strong>array</strong> is a collection of elements of the same type stored in <strong>contiguous memory locations</strong>.<br />
+Arrays allow storing multiple values under a single variable name and accessing them using an <strong>index</strong>.</p>
+<p>In C++, array indexing <strong>starts at <code class="docutils literal notranslate"><span class="pre">0</span></code></strong>, meaning the first element is accessed with index <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">array_name</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This array can store <strong>10 integers</strong>.</p></li>
+<li><p>If an array is declared <strong>without initialization</strong>, its elements contain <strong>uninitialized (junk) data</strong>.</p></li>
+<li><p>Array elements are accessed using the <strong>index operator <code class="docutils literal notranslate"><span class="pre">[]</span></code></strong>.</p></li>
+<li><p>The last valid index is <strong>size - 1</strong>.</p></li>
+</ul>
+<section id="accessing-array-elements">
+<h3>Accessing Array Elements<a class="headerlink" href="#accessing-array-elements" title="Link to this heading">#</a></h3>
+<p>Array elements can be <strong>read or written</strong> using their index.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">23</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Arrays are commonly accessed using <strong>loops</strong>, especially <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="initialization-at-declaration">
+<h3>Initialization at Declaration<a class="headerlink" href="#initialization-at-declaration" title="Link to this heading">#</a></h3>
+<p>Arrays can be initialized <strong>when they are declared</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">]{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Each value is assigned sequentially to the array elements.</p></li>
+</ul>
+</section>
+<section id="partial-initialization">
+<h3>Partial Initialization<a class="headerlink" href="#partial-initialization" title="Link to this heading">#</a></h3>
+<p>If fewer elements are provided than the declared array size, the remaining elements are <strong>automatically initialized to <code class="docutils literal notranslate"><span class="pre">0</span></code></strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The first elements receive the provided values.</p></li>
+<li><p>The rest are initialized to <strong>0.0</strong>.</p></li>
+</ul>
+</section>
+<section id="omitting-the-array-size">
+<h3>Omitting the Array Size<a class="headerlink" href="#omitting-the-array-size" title="Link to this heading">#</a></h3>
+<p>If values are provided, the compiler can <strong>deduce the array size automatically</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The array size becomes <strong>5</strong>.</p></li>
+</ul>
+</section>
+<section id="range-based-for-loop">
+<h3>Range-Based For Loop<a class="headerlink" href="#range-based-for-loop" title="Link to this heading">#</a></h3>
+<p>C++ provides a <strong>range-based for loop</strong> to simplify iteration over arrays.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span></code> lets the compiler <strong>deduce the variable type automatically</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> receives each element of the array.</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Declare an array of ints</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Junk data</span>
+
+<span class="w">  </span><span class="c1">// Read Data</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[0]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Read data with for loop</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Write Data manually</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span>
+<span class="w">  </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
+<span class="w">  </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">23</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Read data with for loop</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Write data with a for loop</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">k</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Declare and initialize at the same time</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">]{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">l</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;b[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// If you don&#39;t initialize all the elements, the remaining are set to 0</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w"> </span><span class="mf">4.1</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">l</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Omit the size of the array at declaration</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Range-based loop</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Sum elements of an array</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="getting-the-size-of-an-array">
+<h2>1.6.2 Getting the Size of an Array<a class="headerlink" href="#getting-the-size-of-an-array" title="Link to this heading">#</a></h2>
+<p>When working with arrays, it is often necessary to know <strong>how many elements the array contains</strong>.<br />
+Modern C++ provides a convenient way to obtain the size of an array using <strong><code class="docutils literal notranslate"><span class="pre">std::size()</span></code></strong>, introduced in <strong>C++17</strong>.</p>
+<p><strong>Using <code class="docutils literal notranslate"><span class="pre">std::size()</span></code> (C++17 and later)</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]{</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">COUNT</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">)};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::size()</span></code> returns the <strong>number of elements</strong> in the array.</p></li>
+<li><p>It is defined in the <strong><code class="docutils literal notranslate"><span class="pre">&lt;iterator&gt;</span></code></strong> header.</p></li>
+<li><p>This is the <strong>recommended and safest approach in modern C++</strong>.</p></li>
+</ul>
+<section id="before-c-17">
+<h3>Before C++17<a class="headerlink" href="#before-c-17" title="Link to this heading">#</a></h3>
+<p>Before <code class="docutils literal notranslate"><span class="pre">std::size()</span></code> was introduced, programmers commonly calculated the array size using the <strong><code class="docutils literal notranslate"><span class="pre">sizeof</span></code> operator</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sizeof(array)</span></code> returns the <strong>total size in bytes of the entire array</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sizeof(array[0])</span></code> returns the <strong>size of a single element</strong>.</p></li>
+<li><p>Dividing both values gives the <strong>number of elements in the array</strong>.</p></li>
+</ul>
+</section>
+<section id="range-based-loop-alternative">
+<h3>Range-Based Loop Alternative<a class="headerlink" href="#range-based-loop-alternative" title="Link to this heading">#</a></h3>
+<p>A <strong>range-based for loop</strong> can iterate through all elements without needing the array size.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This approach is <strong>cleaner and safer</strong>.</p></li>
+<li><p>However, the <strong>index is not available</strong>, which may be necessary in some situations.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]{</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Modern approach (C++17)</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">COUNT</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">)};</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COUNT</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Before C++17</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size_of(a[]): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size_of(a[0]): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">COUNT1</span><span class="p">{</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])};</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COUNT1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Range-based loop (no index available)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.........&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="character-arrays-and-c-strings">
+<h2>1.6.3 Character Arrays and C-Strings<a class="headerlink" href="#character-arrays-and-c-strings" title="Link to this heading">#</a></h2>
+<p>A <strong>character array</strong> is an array whose elements are of type <code class="docutils literal notranslate"><span class="pre">char</span></code>.<br />
+Character arrays are commonly used to represent <strong>text</strong> in C and early C++ programs.</p>
+<p>However, for a character array to behave like a <strong>string</strong>, it must be <strong>null terminated</strong>.</p>
+<p>A <strong>null-terminated string</strong> ends with a special character:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="sc">&#39;\0&#39;</span>
+</pre></div>
+</div>
+<p>This character tells the program <strong>where the string ends</strong>.</p>
+<section id="character-array-without-null-terminator">
+<h3>Character Array Without Null Terminator<a class="headerlink" href="#character-array-without-null-terminator" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;O&#39;</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This is <strong>not a proper string</strong>.</p></li>
+<li><p>It is simply an array of characters.</p></li>
+<li><p>When printed character-by-character it works, but printing it as a string may lead to <strong>garbage output</strong>.</p></li>
+</ul>
+</section>
+<section id="modifying-characters">
+<h3>Modifying Characters<a class="headerlink" href="#modifying-characters" title="Link to this heading">#</a></h3>
+<p>Individual characters in the array can be modified using their index.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="c-strings-null-terminated-character-arrays">
+<h3>C-Strings (Null-Terminated Character Arrays)<a class="headerlink" href="#c-strings-null-terminated-character-arrays" title="Link to this heading">#</a></h3>
+<p>If the array ends with <code class="docutils literal notranslate"><span class="pre">'\0'</span></code>, it becomes a <strong>C-String</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="sc">&#39;O&#39;</span><span class="p">,</span><span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">'\0'</span></code> marks the <strong>end of the string</strong>.</p></li>
+<li><p>Now it can safely be printed with <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>.</p></li>
+</ul>
+</section>
+<section id="automatic-null-terminator">
+<h3>Automatic Null Terminator<a class="headerlink" href="#automatic-null-terminator" title="Link to this heading">#</a></h3>
+<p>Another common technique is declaring an array <strong>with extra space</strong>, allowing the compiler to insert the null character automatically.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">6</span><span class="p">]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The last element is automatically set to <code class="docutils literal notranslate"><span class="pre">'\0'</span></code>.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Character Array Without Null Terminator<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">d</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This array <strong>does not contain <code class="docutils literal notranslate"><span class="pre">'\0'</span></code></strong>.</p></li>
+<li><p>Printing it as a string may produce <strong>unexpected output</strong>.</p></li>
+</ul>
+</section>
+<section id="string-literals">
+<h3>String Literals<a class="headerlink" href="#string-literals" title="Link to this heading">#</a></h3>
+<p>When a string literal is assigned to a character array, the compiler <strong>automatically adds the null terminator</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">e</span><span class="p">[]{</span><span class="s">&quot;HELLO&quot;</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>Memory layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="n">E</span> <span class="n">L</span> <span class="n">L</span> <span class="n">O</span> \<span class="mi">0</span>
+</pre></div>
+</div>
+<p>Even though the string has <strong>5 visible characters</strong>, the array size becomes <strong>6 bytes</strong> because of the null terminator.</p>
+</section>
+<section id="printing-non-character-arrays">
+<h3>Printing Non-Character Arrays<a class="headerlink" href="#printing-non-character-arrays" title="Link to this heading">#</a></h3>
+<p>Arrays of other types <strong>cannot be printed directly</strong> using <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This prints a <strong>memory address (pointer)</strong> rather than the array elements.</p>
+<p>To print elements correctly, a <strong>loop must be used</strong>.</p>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;O&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">COUNT</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">)};</span>
+
+<span class="w">  </span><span class="c1">// Print characters one by one</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COUNT</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Modifying characters</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COUNT</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Null terminated string</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Compiler adds the null terminator automatically</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">6</span><span class="p">]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;c : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(c) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Not a C-string (no null character)</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">d</span><span class="p">[]{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;d : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(d) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// String literal (automatically null terminated)</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">e</span><span class="p">[]{</span><span class="s">&quot;HELLO&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;e : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(e): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Non-character arrays can&#39;t be printed directly</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;f: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="array-bounds-and-out-of-bounds-access">
+<h2>1.6.4 Array Bounds and Out-of-Bounds Access<a class="headerlink" href="#array-bounds-and-out-of-bounds-access" title="Link to this heading">#</a></h2>
+<p>When working with arrays in C++, it is <strong>very important to respect the valid index range</strong> of the array.</p>
+<p>If an array has <code class="docutils literal notranslate"><span class="pre">N</span></code> elements, the <strong>valid indexes are</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">...</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Accessing an index outside this range is called <strong>out-of-bounds access</strong>.</p>
+<p>This behavior leads to <strong>undefined behavior</strong>, which means the program may:</p>
+<ul class="simple">
+<li><p>read <strong>garbage data</strong></p></li>
+<li><p><strong>corrupt memory</strong></p></li>
+<li><p><strong>crash</strong></p></li>
+<li><p>appear to work sometimes but fail later</p></li>
+</ul>
+<section id="reading-beyond-array-bounds">
+<h3>Reading Beyond Array Bounds<a class="headerlink" href="#reading-beyond-array-bounds" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If the array contains only 10 elements, index <code class="docutils literal notranslate"><span class="pre">12</span></code> refers to <strong>memory that does not belong to the array</strong>.</p>
+<p>Possible consequences:</p>
+<ul class="simple">
+<li><p>random values (garbage data)</p></li>
+<li><p>unpredictable program behavior</p></li>
+<li><p>segmentation faults</p></li>
+</ul>
+</section>
+<section id="writing-beyond-array-bounds">
+<h3>Writing Beyond Array Bounds<a class="headerlink" href="#writing-beyond-array-bounds" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="p">[</span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This is <strong>even more dangerous</strong> because it modifies memory that <strong>the program does not own</strong>.</p>
+<p>This may:</p>
+<ul class="simple">
+<li><p>corrupt other variables</p></li>
+<li><p>corrupt the program stack</p></li>
+<li><p>corrupt data used elsewhere in the program</p></li>
+<li><p>cause crashes later in execution</p></li>
+</ul>
+<p>The compiler usually <strong>does not prevent this</strong>, because standard C++ arrays <strong>do not perform bounds checking</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">numbers</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Read beyond bounds : Will read garbage or crash your program</span>
+<span class="w">  </span><span class="c1">// std::cout &lt;&lt; &quot;numbers[12] : &quot; &lt;&lt; numbers[12] &lt;&lt; std::endl;</span>
+
+<span class="w">  </span><span class="c1">// Write beyond bounds. The compiler allows it. But you don&#39;t own</span>
+<span class="w">  </span><span class="c1">// the memory at index 12, so other programs may modify it and your</span>
+<span class="w">  </span><span class="c1">// program may read bogus data at a later time. Or you can even</span>
+<span class="w">  </span><span class="c1">// corrupt data used by other parts of your program</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numbers[120] : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">120</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">numbers</span><span class="p">[</span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;numbers[129] : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Program ending....&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_Loops.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.5 Loops</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_Pointers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.7 Pointers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-arrays">1.6.1 Declaring Arrays</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-array-elements">Accessing Array Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-at-declaration">Initialization at Declaration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-initialization">Partial Initialization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#omitting-the-array-size">Omitting the Array Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-for-loop">Range-Based For Loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-size-of-an-array">1.6.2 Getting the Size of an Array</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#before-c-17">Before C++17</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-based-loop-alternative">Range-Based Loop Alternative</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-arrays-and-c-strings">1.6.3 Character Arrays and C-Strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-array-without-null-terminator">Character Array Without Null Terminator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-characters">Modifying Characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-strings-null-terminated-character-arrays">C-Strings (Null-Terminated Character Arrays)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-null-terminator">Automatic Null Terminator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Character Array Without Null Terminator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-literals">String Literals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-non-character-arrays">Printing Non-Character Arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-bounds-and-out-of-bounds-access">1.6.4 Array Bounds and Out-of-Bounds Access</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-beyond-array-bounds">Reading Beyond Array Bounds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-beyond-array-bounds">Writing Beyond Array Bounds</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/Course_2024/06_Arrays.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/c++/Course_2024/06_Arrays.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

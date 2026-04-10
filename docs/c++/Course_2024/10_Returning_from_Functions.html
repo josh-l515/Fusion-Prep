@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.10 Function Parameters, Return Types, and Overloading &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'c++/Course_2024/10_Returning_from_Functions';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/Course_2024/10_Returning_from_Functions.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.11 Lambda Functions" href="11_Lambda_Functions.html" />
+    <link rel="prev" title="1.9 Functions" href="09_Functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 01: C++ 2024 Course</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Diving_In.html">1.1 Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Variables_And_Data_Types.html">1.2 Variables And Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Operation_on_Data.html">1.3 Operation on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Flow_Control.html">1.4 Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Loops.html">1.5 Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Arrays.html">1.6 Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Pointers.html">1.7 Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_References.html">1.8 References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Functions.html">1.9 Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.10 Function Parameters, Return Types, and Overloading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Lambda_Functions.html">1.11 Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_Functions_Templates.html">1.12 Functions Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Concepts.html">1.13 Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Classes.html">1.14 Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../OpenGL/01_Hellow_Window.html">1.1 Basic window template</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">C++ 2024 Course</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.10 Function Parameters, Return Types, and Overloading</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="function-parameters-return-types-and-overloading">
+<h1>1.10 Function Parameters, Return Types, and Overloading<a class="headerlink" href="#function-parameters-return-types-and-overloading" title="Link to this heading">#</a></h1>
+<section id="input-and-output-parameters">
+<h2>1.10.1 Input and Output Parameters<a class="headerlink" href="#input-and-output-parameters" title="Link to this heading">#</a></h2>
+<p>A function can receive input values through regular parameters and return a result through an output parameter.</p>
+<p>An output parameter is usually passed by reference or by pointer so that the function can modify a variable declared in the caller.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">input_type</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output_type</span><span class="o">&amp;</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">input_type</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output_type</span><span class="o">*</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Input parameters provide the data needed by the function.</p></li>
+<li><p>Output parameters store the result produced by the function.</p></li>
+<li><p>Output parameters are commonly passed by reference or pointer.</p></li>
+<li><p>The caller must provide a valid variable to store the result.</p></li>
+</ul>
+<p>Using a reference as an output parameter:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">max_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The function compares <code class="docutils literal notranslate"><span class="pre">input1</span></code> and <code class="docutils literal notranslate"><span class="pre">input2</span></code> and stores the largest value in <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input1</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">output</span></code> is a reference, assigning to it modifies the variable passed by the caller.</p>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="n">max_int</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>After the call:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="w">    </span><span class="c1">// 20</span>
+</pre></div>
+</div>
+<p>A pointer can also be used as an output parameter:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">max_double</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">input2</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case, the caller passes the address of the variable where the result should be stored.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="n">max_double</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span><span class="w"> </span><span class="mf">20.5</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Inside the function, the pointer must be dereferenced to write the result:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The following example shows both approaches:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">max_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">output</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input2</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">max_double</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">input2</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">output</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input2</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">out_int</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">in1</span><span class="p">{</span><span class="mi">45</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">in2</span><span class="p">{</span><span class="mi">723</span><span class="p">};</span>
+<span class="w">  </span><span class="n">max_int</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="n">in2</span><span class="p">,</span><span class="w"> </span><span class="n">out_int</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;max_int : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">out_int</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">out_double</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">in_double1</span><span class="p">{</span><span class="mf">45.8</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">in_double2</span><span class="p">{</span><span class="mf">76.9</span><span class="p">};</span>
+<span class="w">  </span><span class="n">max_double</span><span class="p">(</span><span class="n">in_double1</span><span class="p">,</span><span class="w"> </span><span class="n">in_double2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">out_double</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;max_double : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">out_double</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Typical output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>max_int : 723
+max_double : 76.9
+</pre></div>
+</div>
+<p>References are usually preferred for output parameters because they are easier to use and do not require explicit dereferencing.</p>
+<p>Pointers are useful when the output parameter may be optional or allowed to be <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>.</p>
+</section>
+<section id="returning-by-value">
+<h2>1.10.2 Returning by Value<a class="headerlink" href="#returning-by-value" title="Link to this heading">#</a></h2>
+<p>A function can return a value directly. In this case, the returned value is copied from the function to the caller.</p>
+<p><strong>Syntax</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The function creates a local variable.</p></li>
+<li><p>The local variable is returned to the caller.</p></li>
+<li><p>The caller receives its own copy of the returned value.</p></li>
+<li><p>The local variable inside the function is destroyed when the function ends.</p></li>
+<li><p>The returned object and the variable in the caller have different memory addresses.</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, <code class="docutils literal notranslate"><span class="pre">result</span></code> is a local variable inside the function. After <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">result;</span></code>, its value is copied to the variable that receives the return value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>After the call:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">total</span><span class="w">    </span><span class="c1">// 30</span>
+</pre></div>
+</div>
+<p>Although <code class="docutils literal notranslate"><span class="pre">result</span></code> and <code class="docutils literal notranslate"><span class="pre">total</span></code> contain the same value, they are different variables stored at different memory addresses.</p>
+<p>The same idea applies to objects such as <code class="docutils literal notranslate"><span class="pre">std::string</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">add_strings</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The function returns a copy of <code class="docutils literal notranslate"><span class="pre">result</span></code>, which is then stored in the caller.</p>
+<p>The following example shows that the address of the local variable inside the function is different from the address of the variable that receives the returned value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;In : &amp;result(int) :  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">add_strings</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">str2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;In : &amp;result(std::string) :  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">15</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">9</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Out : &amp;result(int) :  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">in_str1</span><span class="p">{</span><span class="s">&quot;Hello&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">in_str2</span><span class="p">{</span><span class="s">&quot; World!&quot;</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">result_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_strings</span><span class="p">(</span><span class="n">in_str1</span><span class="p">,</span><span class="w"> </span><span class="n">in_str2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Out : &amp;result_str(std::string) :  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result_str</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;result_str : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result_str</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Typical output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>In : &amp;result(int) :  0x61fefc
+Out : &amp;result(int) :  0x61ff08
+result : 24
+
+In : &amp;result(std::string) :  0x61feb0
+Out : &amp;result_str(std::string) :  0x61ff20
+result_str : Hello World!
+</pre></div>
+</div>
+<p>The addresses are different because the variables inside the functions are local variables, while <code class="docutils literal notranslate"><span class="pre">result</span></code> and <code class="docutils literal notranslate"><span class="pre">result_str</span></code> in <code class="docutils literal notranslate"><span class="pre">main</span></code> are separate objects.</p>
+<p>Modern C++ compilers often optimize the copy through Return Value Optimization (RVO) or move semantics, but conceptually the function still returns by value.</p>
+</section>
+<section id="returning-by-reference">
+<h2>1.10.3 Returning by Reference<a class="headerlink" href="#returning-by-reference" title="Link to this heading">#</a></h2>
+<p>A function may return a reference instead of a value.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="o">&amp;</span><span class="w"> </span><span class="n">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When a function returns a reference, no copy is made. The caller receives another name for an existing variable.</p>
+<p>This is efficient because the returned object is not copied, but it is only safe if the reference refers to an object that still exists after the function returns.</p>
+<section id="safe-case-returning-a-reference-to-an-existing-object">
+<h3>Safe Case: Returning a Reference to an Existing Object<a class="headerlink" href="#safe-case-returning-a-reference-to-an-existing-object" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">max_return_reference</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are references to variables declared in <code class="docutils literal notranslate"><span class="pre">main</span></code>. Since those variables still exist after the function ends, returning one of them is safe.</p>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">14</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">9</span><span class="p">};</span>
+
+<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_return_reference</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">x</span></code> is larger, <code class="docutils literal notranslate"><span class="pre">ref_max</span></code> becomes another name for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ref_max</span><span class="o">++</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This modifies <code class="docutils literal notranslate"><span class="pre">x</span></code> directly.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x = 15
+ref_max = 15
+</pre></div>
+</div>
+<p>The following code demonstrates this behavior:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">14</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">9</span><span class="p">};</span>
+
+<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_return_reference</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_return_reference</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref_max : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ref_max</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;val : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">ref_max</span><span class="o">++</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref_max : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ref_max</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 15</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;val : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">         </span><span class="c1">// 14</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">             </span><span class="c1">// 15</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref_max</span></code> is a reference to <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code> is only a copy of the returned value</p></li>
+<li><p>Changing <code class="docutils literal notranslate"><span class="pre">ref_max</span></code> changes <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Changing <code class="docutils literal notranslate"><span class="pre">val</span></code> would not affect <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dangerous-case-returning-a-reference-to-a-local-variable">
+<h3>Dangerous Case: Returning a Reference to a Local Variable<a class="headerlink" href="#dangerous-case-returning-a-reference-to-a-local-variable" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is wrong.</p>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> is a local variable created inside the function. It is destroyed when the function ends.</p>
+<p>After the function returns, the reference points to memory that no longer belongs to a valid variable. This is called a dangling reference.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>At this point, <code class="docutils literal notranslate"><span class="pre">result</span></code> refers to invalid memory. Using it produces undefined behavior.</p>
+<p>The program may:</p>
+<ul class="simple">
+<li><p>Print a strange number</p></li>
+<li><p>Crash</p></li>
+<li><p>Seem to work sometimes</p></li>
+<li><p>Behave differently each time</p></li>
+</ul>
+<p>This function should instead return by value:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="dangerous-case-returning-a-reference-to-parameters-passed-by-value">
+<h3>Dangerous Case: Returning a Reference to Parameters Passed by Value<a class="headerlink" href="#dangerous-case-returning-a-reference-to-parameters-passed-by-value" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">max_input_by_value</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is also wrong.</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are passed by value, so they are local copies created inside the function.</p>
+<p>Even though they come from <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, inside the function they are completely different variables with different addresses.</p>
+<p>When the function ends, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are destroyed.</p>
+<p>Returning a reference to either of them creates another dangling reference.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_input_by_value</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> now refers to memory that is no longer valid.</p>
+<p>A useful way to think about it is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x ----&gt; copied into local a
+y ----&gt; copied into local b
+return a or b
+a and b destroyed
+reference now points to destroyed memory
+</pre></div>
+</div>
+<p>Therefore:</p>
+<ul class="simple">
+<li><p>Safe: return references to objects that exist outside the function</p></li>
+<li><p>Unsafe: return references to local variables</p></li>
+<li><p>Unsafe: return references to parameters passed by value</p></li>
+</ul>
+<p>A safe version is:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">max_input_by_reference</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>because <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are references to variables that continue to exist after the function returns.</p>
+</section>
+</section>
+<section id="function-overloading">
+<h2>1.10.4 Function Overloading<a class="headerlink" href="#function-overloading" title="Link to this heading">#</a></h2>
+<p>Function overloading allows multiple functions to have the same name as long as their parameter lists are different.</p>
+<p>The compiler chooses the correct function based on:</p>
+<ul class="simple">
+<li><p>Number of parameters</p></li>
+<li><p>Parameter types</p></li>
+<li><p>Parameter order</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>These functions have the same name, <code class="docutils literal notranslate"><span class="pre">max</span></code>, but different parameter types, so both are allowed.</p>
+<hr class="docutils" />
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;int overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;double overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When the function is called:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>the compiler selects:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>because both arguments are integers.</p>
+<p>If the call is:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">max</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span><span class="mf">7.2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>the compiler selects:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>because both arguments are <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="overloading-by-parameter-type-and-order">
+<h3>Overloading by Parameter Type and Order<a class="headerlink" href="#overloading-by-parameter-type-and-order" title="Link to this heading">#</a></h3>
+<p>You may also overload using different combinations and order of parameter types:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>These are different functions because their parameter order is different.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">max</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p">);</span><span class="w">   </span><span class="c1">// Calls max(int,double)</span>
+<span class="n">max</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="c1">// Calls max(double,int)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="overloading-by-number-of-parameters">
+<h3>Overloading by Number of Parameters<a class="headerlink" href="#overloading-by-number-of-parameters" title="Link to this heading">#</a></h3>
+<p>Functions may also differ in the number of parameters:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">max</span><span class="p">(</span><span class="mf">5.4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This call selects:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>because it is the only overload with three parameters.</p>
+</section>
+<hr class="docutils" />
+<section id="example-with-strings">
+<h3>Example with Strings<a class="headerlink" href="#example-with-strings" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This overload compares two strings lexicographically.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">max</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The string literals are converted to <code class="docutils literal notranslate"><span class="pre">std::string_view</span></code>, so this overload is selected.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">&quot;World&quot;</span></code> is alphabetically greater than <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code>, the function returns <code class="docutils literal notranslate"><span class="pre">&quot;World&quot;</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="complete-example">
+<h3>Complete Example<a class="headerlink" href="#complete-example" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string_view&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;int overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;double overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(int,double) overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(double,int) overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(double,int,int) overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">b</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(string_view,string_view) overload called&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">9</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mf">5.4</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mf">7.4</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">max</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Typical output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(double,int,int) overload called
+(string_view,string_view) overload called
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09_Functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.9 Functions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11_Lambda_Functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.11 Lambda Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output-parameters">1.10.1 Input and Output Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-by-value">1.10.2 Returning by Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-by-reference">1.10.3 Returning by Reference</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe-case-returning-a-reference-to-an-existing-object">Safe Case: Returning a Reference to an Existing Object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dangerous-case-returning-a-reference-to-a-local-variable">Dangerous Case: Returning a Reference to a Local Variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dangerous-case-returning-a-reference-to-parameters-passed-by-value">Dangerous Case: Returning a Reference to Parameters Passed by Value</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-overloading">1.10.4 Function Overloading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overloading-by-parameter-type-and-order">Overloading by Parameter Type and Order</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overloading-by-number-of-parameters">Overloading by Number of Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-strings">Example with Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example">Complete Example</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/Course_2024/10_Returning_from_Functions.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/c++/Course_2024/10_Returning_from_Functions.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

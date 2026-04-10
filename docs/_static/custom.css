@@ -1,0 +1,32 @@
+/* Dark theme background */
+html[data-theme="dark"] {   
+    /* --pst-color-primary: #58a6ff; */
+    /* --pst-color-secondary: #2f303; */
+    /* --pst-color-link: #58a6ff; */
+    --pst-color-background: #121212;
+    --pst-color-on-background: #121212;
+}
+/* Page background */
+html[data-theme="dark"] body {
+    background-color: #121212;
+}
+/* Code blocks background in dark mode */
+html[data-theme="dark"] div.highlight pre {
+    background-color: #232324;
+}
+
+/* container around code block */
+html[data-theme="dark"] div.highlight {
+    background-color: #232324;
+}
+/* /* Table background */ */
+/* html[data-theme="dark"] table { */
+/*     background-color: #232324; */
+/* } */
+/**/
+/* /* table header */ */
+/* html[data-theme="dark"] thead { */
+/*     background-color: #232324; */
+/* } */
+/* Increase width of main content area */
+

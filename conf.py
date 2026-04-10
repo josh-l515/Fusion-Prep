@@ -43,7 +43,9 @@ numfig = True           # Para referencias como figuras, tablas, ecuaciones, etc
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
-
+html_css_files = [
+    "custom.css",
+]
 html_baseurl = "https://josh-l515.github.io/Fusion-Prep/"
 
 
@@ -90,8 +92,13 @@ html_theme_options = {
     "show_nav_level": 2,  # Mostrar subniveles en la navegación lateral
     "collapse_navigation": True,  # Colapsar automáticamente subniveles
     "navigation_depth": 3,  # Profundidad máxima de navegación en el sidebar
-    # "secondary_sidebar_items": ["page-toc", "edit-this-page"],  # Elementos en la barra lateral
+    # "secondary_sidebar_items": ["page-toc", "edit-this-page"],  # Elementos en la barra lateral    
+    "pygments_dark_style": "github-dark",
+    "pygments_light_style": "murphy"
 }
+# monokai :
+# pygmentize -L styles
+# github-dark:
 
 html_context = {
     # "github_url": "https://github.com", # or your GitHub Enterprise site

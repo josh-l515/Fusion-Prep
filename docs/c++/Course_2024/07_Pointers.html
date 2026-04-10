@@ -1,0 +1,1845 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.7 Pointers &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'c++/Course_2024/07_Pointers';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/c%2B%2B/Course_2024/07_Pointers.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.8 References" href="08_References.html" />
+    <link rel="prev" title="1.6 Arrays" href="06_Arrays.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../numerical_methods/index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 01: C++ 2024 Course</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Diving_In.html">1.1 Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Variables_And_Data_Types.html">1.2 Variables And Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Operation_on_Data.html">1.3 Operation on data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Flow_Control.html">1.4 Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Loops.html">1.5 Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Arrays.html">1.6 Arrays</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.7 Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_References.html">1.8 References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Functions.html">1.9 Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Returning_from_Functions.html">1.10 Function Parameters, Return Types, and Overloading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Lambda_Functions.html">1.11 Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_Functions_Templates.html">1.12 Functions Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Concepts.html">1.13 Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Classes.html">1.14 Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 02: OpenGL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../OpenGL/01_Hellow_Window.html">1.1 Basic window template</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">C++ 2024 Course</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1.7 Pointers</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pointers">
+<h1>1.7 Pointers<a class="headerlink" href="#pointers" title="Link to this heading">#</a></h1>
+<section id="declaring-and-using-pointers">
+<h2>1.7.1 Declaring and using pointers<a class="headerlink" href="#declaring-and-using-pointers" title="Link to this heading">#</a></h2>
+<p>A <strong>pointer</strong> is a variable that stores the <strong>memory address of another variable</strong>.<br />
+Pointers are a fundamental concept in C++ and are widely used for <strong>memory management, efficient data manipulation, and low-level programming</strong>.</p>
+<section id="declaring-pointers">
+<h3>Declaring Pointers<a class="headerlink" href="#declaring-pointers" title="Link to this heading">#</a></h3>
+<p>Pointers are declared using the <code class="docutils literal notranslate"><span class="pre">*</span></code> symbol.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>When a pointer is declared but not explicitly initialized, it is good practice to initialize it to <strong><code class="docutils literal notranslate"><span class="pre">nullptr</span></code></strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">nullptr</span></code> represents a pointer that <strong>does not point to any valid memory location</strong>.</p>
+</section>
+<section id="pointer-size">
+<h3>Pointer Size<a class="headerlink" href="#pointer-size" title="Link to this heading">#</a></h3>
+<p>Pointers store <strong>memory addresses</strong>, not actual data values.<br />
+Because of this, the <strong>size of a pointer is the same regardless of the data type it points to</strong>.</p>
+<p>Example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="w"> </span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On most <strong>64-bit systems</strong>, pointers typically occupy <strong>8 bytes</strong>, while on <strong>32-bit systems</strong> they usually occupy <strong>4 bytes</strong>.</p>
+</section>
+<section id="pointer-declaration-style">
+<h3>Pointer Declaration Style<a class="headerlink" href="#pointer-declaration-style" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> symbol can be placed either next to the <strong>type</strong> or the <strong>variable name</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Both are valid, but consistency is recommended.</p>
+<p>However, declaring multiple variables on the same line can lead to confusion:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">h</span><span class="p">{},</span><span class="w"> </span><span class="n">i</span><span class="p">{};</span>
+</pre></div>
+</div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> is a <strong>pointer to int</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> is a <strong>regular integer</strong></p></li>
+</ul>
+<p>For clarity, it is better to declare them separately.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">l</span><span class="p">{};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">{};</span>
+</pre></div>
+</div>
+</section>
+<section id="storing-addresses-in-pointers">
+<h3>Storing Addresses in Pointers<a class="headerlink" href="#storing-addresses-in-pointers" title="Link to this heading">#</a></h3>
+<p>Pointers store the <strong>memory address of variables</strong>.<br />
+The <strong>address-of operator <code class="docutils literal notranslate"><span class="pre">&amp;</span></code></strong> is used to obtain the address.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mi">41</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="o">&amp;</span><span class="n">n</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">p</span></code> holds the memory address of <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</section>
+<section id="changing-the-address-stored-in-a-pointer">
+<h3>Changing the Address Stored in a Pointer<a class="headerlink" href="#changing-the-address-stored-in-a-pointer" title="Link to this heading">#</a></h3>
+<p>A pointer can later be reassigned to store the address of another variable.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">20</span><span class="p">};</span>
+
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="o">&amp;</span><span class="n">a</span><span class="p">};</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now the pointer points to <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+</section>
+<section id="type-safety-with-pointers">
+<h3>Type Safety with Pointers<a class="headerlink" href="#type-safety-with-pointers" title="Link to this heading">#</a></h3>
+<p>Pointers must point to <strong>variables of the same type</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">3.14</span><span class="p">};</span>
+
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w">   </span><span class="c1">// Invalid</span>
+</pre></div>
+</div>
+<p>This produces a <strong>compiler error</strong> because the types do not match.</p>
+</section>
+<section id="dereferencing-a-pointer">
+<h3>Dereferencing a Pointer<a class="headerlink" href="#dereferencing-a-pointer" title="Link to this heading">#</a></h3>
+<p>To access the value stored at the address contained in a pointer, we use the <strong>dereference operator <code class="docutils literal notranslate"><span class="pre">*</span></code></strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="o">&amp;</span><span class="n">value</span><span class="p">};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code> contains the <strong>address</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*p</span></code> accesses the <strong>value stored at that address</strong></p></li>
+</ul>
+<p>This operation is called <strong>dereferencing the pointer</strong>.</p>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">{};</span><span class="w"> </span><span class="c1">// initialized with nullptr</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">{};</span>
+
+<span class="w">  </span><span class="c1">// Explicitly initialize with nullptr</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">d</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Pointers to different variables are of the same size</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(int) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(double) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(double*) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(int*) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(a) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(b) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Pointer declaration styles</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;...................&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">e</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">f</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">g</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">h</span><span class="p">{},</span><span class="w"> </span><span class="n">i</span><span class="p">{};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">j</span><span class="p">{},</span><span class="w"> </span><span class="n">k</span><span class="p">{};</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(h) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(i) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(j) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sizeof(k) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Better practice</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;...................&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">l</span><span class="p">{};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">{};</span>
+
+<span class="w">  </span><span class="c1">// Assigning addresses to pointers</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mi">41</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">o</span><span class="p">{</span><span class="o">&amp;</span><span class="n">n</span><span class="p">};</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;int n : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;address of n : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Changing pointer address</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;...................&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="mi">26</span><span class="p">};</span>
+<span class="w">  </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;new address stored in pointer : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Can&#39;t cross assign between pointers of different types</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">{</span><span class="mi">33</span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// q = &amp;r; // Compiler error</span>
+
+<span class="w">  </span><span class="c1">// Dereferencing a pointer</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;...................&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">{</span><span class="mi">71</span><span class="p">};</span>
+
+<span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s address in memory : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t address in memory : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;s pointer value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;t int value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dynamic-memory-allocation">
+<h2>1.7.2 Dynamic Memory Allocation<a class="headerlink" href="#dynamic-memory-allocation" title="Link to this heading">#</a></h2>
+<p>A variable declared normally is stored on the <strong>stack</strong>, while memory allocated with <code class="docutils literal notranslate"><span class="pre">new</span></code> is stored on the <strong>heap</strong>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">24</span><span class="p">};</span><span class="w"> </span><span class="c1">// stack allocation</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> lives on the stack (automatic lifetime)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p_a</span></code> stores the address of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;&amp;a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_a</span></code> → address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*p_a</span></code> → value at that address</p></li>
+</ul>
+<section id="uninitialized-pointers">
+<h3>Uninitialized Pointers<a class="headerlink" href="#uninitialized-pointers" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_b</span><span class="p">;</span><span class="w"> </span><span class="c1">// uninitialized (contains garbage address)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">15</span><span class="p">};</span>
+<span class="n">p_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A pointer declared without initialization contains an <strong>indeterminate (junk) address</strong>.</p>
+<p><strong>Critical rule:</strong> Never dereference an uninitialized pointer.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55</span><span class="p">;</span><span class="w"> </span><span class="c1">// undefined behavior (very dangerous)</span>
+</pre></div>
+</div>
+<p>This may:</p>
+<ul class="simple">
+<li><p>Crash the program</p></li>
+<li><p>Corrupt memory</p></li>
+<li><p>Produce silent bugs</p></li>
+</ul>
+</section>
+<section id="null-pointers">
+<h3>Null Pointers<a class="headerlink" href="#null-pointers" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number3</span><span class="p">{};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Initialized to <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> (points to nothing)</p></li>
+</ul>
+<p>Dereferencing a null pointer is invalid:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">p_number3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span><span class="w"> </span><span class="c1">//  crash (segmentation fault)</span>
+</pre></div>
+</div>
+</section>
+<section id="dynamic-memory-allocation-heap">
+<h3>Dynamic Memory Allocation (Heap)<a class="headerlink" href="#dynamic-memory-allocation-heap" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number4</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="n">p_number4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span><span class="w"> </span><span class="c1">// allocate on heap</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span></code> reserves memory and returns its address</p></li>
+<li><p>Memory persists until explicitly released</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">p_number4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">77</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="releasing-memory">
+<h3>Releasing Memory<a class="headerlink" href="#releasing-memory" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number4</span><span class="p">;</span>
+<span class="n">p_number4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>Important:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">delete</span></code> frees heap memory</p></li>
+<li><p>Always reset pointer to <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> after deletion</p></li>
+</ul>
+<p>Otherwise, you create a <strong>dangling pointer</strong> (points to freed memory)</p>
+</section>
+<hr class="docutils" />
+<section id="initialization-at-declaration">
+<h3>Initialization at Declaration<a class="headerlink" href="#initialization-at-declaration" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number5</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">};</span><span class="w">     </span><span class="c1">// uninitialized value (junk)</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number6</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">22</span><span class="p">)};</span><span class="w"> </span><span class="c1">// direct initialization</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number7</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">23</span><span class="p">}};</span><span class="w"> </span><span class="c1">// uniform initialization</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">int</span></code> → garbage value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">int(22)</span></code> / <code class="docutils literal notranslate"><span class="pre">{23}</span></code> → properly initialized</p></li>
+</ul>
+<p>Reading uninitialized heap memory is undefined:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number5</span><span class="p">;</span><span class="w"> </span><span class="c1">// unpredictable value</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="memory-leaks">
+<h3>Memory Leaks<a class="headerlink" href="#memory-leaks" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="c1">// no delete → memory leak</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Memory is never returned</p></li>
+<li><p>Critical in long-running programs</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="reusing-pointers">
+<h3>Reusing Pointers<a class="headerlink" href="#reusing-pointers" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">81</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>Valid only if previous memory was properly deleted.</p>
+</section>
+<hr class="docutils" />
+<section id="double-deletion">
+<h3>Double Deletion<a class="headerlink" href="#double-deletion" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span>
+<span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span><span class="w"> </span><span class="c1">// double free (serious error)</span>
+</pre></div>
+</div>
+<p>Safe pattern:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span>
+<span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">24</span><span class="p">};</span><span class="w"> </span><span class="c1">// allocated on stack</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Declaring pointers and assigning address&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pointer to a (p_a):&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;&amp;a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_a:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_b</span><span class="p">;</span><span class="w"> </span><span class="c1">// Uninitialize pointer, contains junk address</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">15</span><span class="p">};</span>
+<span class="w">  </span><span class="n">p_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Uninitialized pointer&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_b:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_b:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="cm">/*</span>
+<span class="cm">  // BAD</span>
+<span class="cm">  // Writing into uninitialized pointer through dereference</span>
+<span class="cm">  std::cout &lt;&lt; std::endl;</span>
+<span class="cm">  int* p_number2; // Contains junk address : could be anything</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Writting in the 55&quot; &lt;&lt; std::endl;</span>
+<span class="cm">  *p_number2 = 55; // Writing into junk address : BAD!</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Writing into uninitialized pointer through dereference&quot;</span>
+<span class="cm">            &lt;&lt; std::endl;</span>
+<span class="cm">  std::cout &lt;&lt; &quot;p_number2 : &quot; &lt;&lt; p_number2</span>
+<span class="cm">            &lt;&lt; std::endl; // Reading from junk address.</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Dereferencing bad memory&quot; &lt;&lt; std::endl;</span>
+<span class="cm">  std::cout &lt;&lt; &quot;*p_number2 : &quot; &lt;&lt; *p_number2 &lt;&lt; std::endl;</span>
+
+<span class="cm">  // Initializing pointer to null</span>
+
+<span class="cm">  // int *p_number3{nullptr}; // Also works</span>
+<span class="cm">  int *p_number3{}; // Initialized with pointer equivalent of zero : nullptr</span>
+<span class="cm">                    // A pointer pointing nowhere</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Writting into nullptr memory&quot; &lt;&lt; std::endl;</span>
+<span class="cm">  *p_number3 = 33; // Writting into a pointer pointing nowhere : BAD, CRASH</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Done writting&quot; &lt;&lt; std::endl;</span>
+
+<span class="cm">  std::cout &lt;&lt; std::endl;</span>
+<span class="cm">  std::cout &lt;&lt; &quot;Reading and writting through nullptr : &quot; &lt;&lt; std::endl;</span>
+<span class="cm">  std::cout &lt;&lt; &quot;p_number3 : &quot; &lt;&lt; p_number3 &lt;&lt; std::endl;</span>
+<span class="cm">  std::cout &lt;&lt; &quot;*p_number3 : &quot; &lt;&lt; *p_number3</span>
+<span class="cm">            &lt;&lt; std::endl; // Reading from nullptr BAD, CRASH.</span>
+<span class="cm">  */</span>
+
+<span class="w">  </span><span class="c1">// Dynamic heap memory</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number4</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="w">  </span><span class="n">p_number4</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span><span class="w"> </span><span class="c1">// Dynamically allocate space for a single int on the heap</span>
+<span class="w">               </span><span class="c1">// This memory belongs to our program from now on. The system</span>
+<span class="w">               </span><span class="c1">// can&#39;t use it for anything else, untill we return it.</span>
+<span class="w">               </span><span class="c1">// After this line executes, we will have a valid memory location</span>
+<span class="w">               </span><span class="c1">// allocated. The size of the allocated memory will be such that</span>
+<span class="w">               </span><span class="c1">// it can store the type pointed to by the pointer</span>
+
+<span class="w">  </span><span class="o">*</span><span class="n">p_number4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">77</span><span class="p">;</span><span class="w"> </span><span class="c1">// Writting into dynamically allocated memory</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Dynamically allocating memory : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number4 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number4</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Return memory to the OS</span>
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number4</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// It is also possible to initialize the pointer with a valid</span>
+<span class="w">  </span><span class="c1">// address up on declaration. Not with a nullptr</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number5</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">};</span><span class="w">     </span><span class="c1">// Memory location contains junk value</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number6</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">22</span><span class="p">)};</span><span class="w"> </span><span class="c1">// use direct initialization</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number7</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">23</span><span class="p">}};</span><span class="w"> </span><span class="c1">// use uniform initialization</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Initialize with valid memory address at declaration : &quot;</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number5 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number5 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// Junk value</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number6 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number6</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number6 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number6</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number7 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number7</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number7 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number7</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Remember to release the memory</span>
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number6</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number7</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Reuse pointers</span>
+<span class="w">  </span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">81</span><span class="p">};</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number5 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number5</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// diferent address than before.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number5 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 81</span>
+
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Calling delete twice on a pointer : BAD!</span>
+<span class="w">  </span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*p_number5 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number5</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number5</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// delete p_number5; // error double free detected in tcache</span>
+
+<span class="w">  </span><span class="n">p_number5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Program is ending well&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dangling-pointers-and-safe-usage-patterns">
+<h2>1.7.3 Dangling Pointers and Safe Usage Patterns<a class="headerlink" href="#dangling-pointers-and-safe-usage-patterns" title="Link to this heading">#</a></h2>
+<p>This section focuses on one of the most critical sources of bugs in C++: <strong>dangling pointers</strong> and unsafe pointer usage.</p>
+<p>A <strong>dangling pointer</strong> is a pointer that:</p>
+<ul class="simple">
+<li><p>Points to <strong>invalid memory</strong></p></li>
+<li><p>Refers to <strong>memory that is no longer owned or valid</strong></p></li>
+</ul>
+<hr class="docutils" />
+<section id="case-1-uninitialized-pointer">
+<h3>Case 1: Uninitialized Pointer<a class="headerlink" href="#case-1-uninitialized-pointer" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number</span><span class="p">;</span><span class="w"> </span><span class="c1">// uninitialized (contains garbage address)</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">//  CRASH</span>
+</pre></div>
+</div>
+<p>Problem:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_number</span></code> contains an <strong>indeterminate address</strong></p></li>
+<li><p>Dereferencing leads to <strong>undefined behavior</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="case-2-deleted-pointer-dangling-after-delete">
+<h3>Case 2: Deleted Pointer (Dangling After delete)<a class="headerlink" href="#case-2-deleted-pointer-dangling-after-delete" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number1</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">67</span><span class="p">}};</span>
+
+<span class="k">delete</span><span class="w"> </span><span class="n">p_number1</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">//  undefined behavior</span>
+</pre></div>
+</div>
+<p>Problem:</p>
+<ul class="simple">
+<li><p>Memory was <strong>freed</strong>, but pointer still holds the old address</p></li>
+<li><p>This is a <strong>classic dangling pointer</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="case-3-multiple-pointers-to-same-address">
+<h3>Case 3: Multiple Pointers to Same Address<a class="headerlink" href="#case-3-multiple-pointers-to-same-address" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number3</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">83</span><span class="p">}};</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number4</span><span class="p">{</span><span class="n">p_number3</span><span class="p">};</span>
+
+<span class="k">delete</span><span class="w"> </span><span class="n">p_number3</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number4</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">//  undefined behavior</span>
+</pre></div>
+</div>
+<p>Problem:</p>
+<ul class="simple">
+<li><p>Both pointers reference the same memory</p></li>
+<li><p>After <code class="docutils literal notranslate"><span class="pre">delete</span></code>, <strong>all aliases become invalid</strong></p></li>
+</ul>
+<p>This is especially dangerous in large systems (HPC, simulations, etc.)</p>
+</section>
+<hr class="docutils" />
+<section id="solution-1-always-initialize-pointers">
+<h3>Solution 1: Always Initialize Pointers<a class="headerlink" href="#solution-1-always-initialize-pointers" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number5</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number6</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">87</span><span class="p">)};</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">p_number6</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number6</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Benefits:</p>
+<ul class="simple">
+<li><p>Avoids garbage addresses</p></li>
+<li><p>Enables safe checks before dereferencing</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="solution-2-reset-after-delete">
+<h3>Solution 2: Reset After delete<a class="headerlink" href="#solution-2-reset-after-delete" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number7</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">82</span><span class="p">}};</span>
+
+<span class="k">delete</span><span class="w"> </span><span class="n">p_number7</span><span class="p">;</span>
+<span class="n">p_number7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">p_number7</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number7</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Invalid memory access!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Key idea:</p>
+<ul class="simple">
+<li><p>After <code class="docutils literal notranslate"><span class="pre">delete</span></code>, pointer must be <strong>explicitly invalidated</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="solution-3-ownership-discipline-master-pointer">
+<h3>Solution 3: Ownership Discipline (Master Pointer)<a class="headerlink" href="#solution-3-ownership-discipline-master-pointer" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number8</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">382</span><span class="p">}};</span><span class="w"> </span><span class="c1">// master pointer</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number9</span><span class="p">{</span><span class="n">p_number8</span><span class="p">};</span><span class="w">    </span><span class="c1">// non-owning (alias)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only <strong>one pointer owns the memory</strong> (responsible for <code class="docutils literal notranslate"><span class="pre">delete</span></code>)</p></li>
+<li><p>Others are <strong>non-owning observers</strong></p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">p_number8</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>After deletion:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number8</span><span class="p">;</span>
+<span class="n">p_number8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">p_number8</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;WARNING : Trying to use an invalid pointer&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Important limitation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_number9</span></code> is still <strong>dangling</strong></p></li>
+<li><p>Checking only the master pointer is a <strong>discipline</strong>, not a guarantee</p></li>
+</ul>
+<p>C++ <strong>does NOT track ownership automatically</strong>.</p>
+<p>This means:</p>
+<ul class="simple">
+<li><p>The compiler will NOT warn you</p></li>
+<li><p>The runtime will NOT protect you</p></li>
+<li><p>Errors may appear <strong>far from the cause</strong></p></li>
+</ul>
+<p>These problems are the reason modern C++ prefers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::unique_ptr</span></code> → exclusive ownership</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::shared_ptr</span></code> → shared ownership</p></li>
+</ul>
+<p>Raw pointers (<code class="docutils literal notranslate"><span class="pre">int*</span></code>) should be treated as:</p>
+<ul class="simple">
+<li><p><strong>Non-owning references</strong>, or</p></li>
+<li><p>Used only in <strong>low-level / performance-critical code</strong></p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+
+<span class="w">	</span><span class="c1">//Case1 : Uninitialized pointer</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">	int * p_number; // Dangling uninitialized pointer</span>
+<span class="cm">   </span>
+<span class="cm">	std::cout &lt;&lt; std::endl;</span>
+<span class="cm">	std::cout &lt;&lt; &quot;Case 1 : Uninitialized pointer : .&quot; &lt;&lt; std::endl;</span>
+<span class="cm">	std::cout &lt;&lt; &quot;p_number : &quot; &lt;&lt; p_number &lt;&lt; std::endl;</span>
+<span class="cm">    std::cout &lt;&lt; &quot;*p_number : &quot; &lt;&lt; *p_number &lt;&lt; std::endl; //CRASH!</span>
+<span class="cm">    */</span>
+
+
+<span class="w">   </span><span class="c1">//Case 2 : deleted pointer</span>
+<span class="w">   </span><span class="cm">/*</span>
+<span class="cm">   std::cout &lt;&lt; std::endl;</span>
+<span class="cm">   std::cout &lt;&lt; &quot;Case 2 : Deleted pointer&quot; &lt;&lt; std::endl;</span>
+<span class="cm">   int * p_number1 {new int{67}};</span>
+<span class="cm">   </span>
+<span class="cm">   std::cout &lt;&lt; &quot;*p_number1 (before delete) : &quot; &lt;&lt; *p_number1 &lt;&lt; std::endl;</span>
+<span class="cm">   </span>
+<span class="cm">   delete p_number1;</span>
+<span class="cm">		</span>
+<span class="cm">   std::cout &lt;&lt; &quot;*p_number1(after delete) : &quot; &lt;&lt; *p_number1 &lt;&lt; std::endl;</span>
+<span class="cm">   */</span>
+
+
+<span class="w">	</span><span class="c1">//Case 3 : Multiple pointers pointing to same address</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">	std::cout &lt;&lt; std::endl;</span>
+<span class="cm">	std::cout &lt;&lt; &quot;Case 3 : Multiple pointers pointing to same address : &quot; &lt;&lt; std::endl;</span>
+<span class="cm">	</span>
+<span class="cm">    int *p_number3 {new int{83}};</span>
+<span class="cm">    int *p_number4 {p_number3};</span>
+<span class="cm">    </span>
+<span class="cm">    std::cout &lt;&lt; &quot;p_number3 - &quot; &lt;&lt; p_number3 &lt;&lt; &quot; - &quot; &lt;&lt; *p_number3 &lt;&lt; std::endl;</span>
+<span class="cm">    std::cout &lt;&lt; &quot;p_number4 - &quot; &lt;&lt; p_number4 &lt;&lt; &quot; - &quot; &lt;&lt; *p_number4 &lt;&lt; std::endl;</span>
+<span class="cm">    </span>
+<span class="cm">    //Deleting p_number3</span>
+<span class="cm">    delete p_number3;</span>
+<span class="cm">    </span>
+<span class="cm">    //p_number4 points to deleted memory. Dereferncing it will lead to</span>
+<span class="cm">	//undefined behaviour : Crash/ garbage or whatever</span>
+<span class="cm">    std::cout&lt;&lt; &quot;p_number4(after deleting p_number3) - &quot; &lt;&lt; p_number4 &lt;&lt; &quot; - &quot; &lt;&lt; *p_number4 &lt;&lt; std::endl;</span>
+<span class="cm">    */</span>
+
+
+<span class="w">    </span><span class="c1">//Solution1 : Initialize your pointers immediately upon declaration</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">	std::cout &lt;&lt; std::endl;</span>
+<span class="cm">	std::cout &lt;&lt; &quot;Solution 1 : &quot; &lt;&lt; std::endl;</span>
+<span class="cm">    int *p_number5{nullptr};</span>
+<span class="cm">    int *p_number6{new int(87)};</span>
+<span class="cm">	</span>
+<span class="cm">	//Check for nullptr before use</span>
+
+<span class="cm">	if(p_number6!= nullptr){</span>
+<span class="cm">		std::cout &lt;&lt; &quot;*p_number6 : &quot; &lt;&lt; *p_number6 &lt;&lt; std::endl;</span>
+<span class="cm">	}else{</span>
+<span class="cm">        std::cout &lt;&lt; &quot;Invalid address&quot; &lt;&lt; std::endl;</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+
+<span class="w">	</span><span class="c1">//Solution 2 : </span>
+<span class="w">    </span><span class="c1">//Right after you call delete on a pointer, remember to reset</span>
+<span class="w">	</span><span class="c1">//the pointer to nullptr to make it CLEAR it doesn&#39;t point anywere</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">	std::cout &lt;&lt; std::endl;</span>
+<span class="cm">	std::cout &lt;&lt; &quot;Solution 2 : &quot; &lt;&lt; std::endl;</span>
+<span class="cm">    int *p_number7{new int{82}};</span>
+<span class="cm">    </span>
+<span class="cm">    //Use the pointer however you want</span>
+<span class="cm">    std::cout &lt;&lt; &quot;p_number7 - &quot; &lt;&lt; p_number7 &lt;&lt; &quot; - &quot; &lt;&lt; *p_number7 &lt;&lt; std::endl;</span>
+<span class="cm">   </span>
+<span class="cm">    delete p_number7;</span>
+<span class="cm">    p_number7 = nullptr; // Reset the pointer</span>
+<span class="cm">	</span>
+<span class="cm">	//Check for nullptr before use</span>
+<span class="cm">	if(p_number7!= nullptr){</span>
+<span class="cm">		std::cout &lt;&lt; &quot;*p_number7 : &quot; &lt;&lt; *p_number7 &lt;&lt; std::endl;</span>
+<span class="cm">	}else{</span>
+<span class="cm">        std::cout &lt;&lt; &quot;Invalid memory access!&quot; &lt;&lt; std::endl;</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+
+<span class="w">	</span><span class="c1">//Solution 3 </span>
+<span class="w">	</span><span class="c1">//For multiple pointers pointing to the same address ,  Make sure there is</span>
+<span class="w">	</span><span class="c1">//one clear pointer (master pointer) that owns the memory ( responsible for releasing when</span>
+<span class="w">    </span><span class="c1">// necessary) , other pointers should only be able to dereference when the master pointer is valid</span>
+<span class="w">    </span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Solution 3 : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_number8</span><span class="w"> </span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">382</span><span class="p">}};</span><span class="c1">// Let&#39;s say p_number8 is the master pointer</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_number9</span><span class="w"> </span><span class="p">{</span><span class="n">p_number8</span><span class="p">};</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">//Dereference the pointers and use them</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number8 - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number8</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number8</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">p_number8</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)){</span><span class="w"> </span><span class="c1">// Only use slave pointers when master pointer is valid</span>
+<span class="w">           </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number9 - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number8</span><span class="p">;</span><span class="w"> </span><span class="c1">// Master releases the memory</span>
+<span class="w">    </span><span class="n">p_number8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">p_number8</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)){</span><span class="w"> </span><span class="c1">// Only use slave pointers when master pointer is valid</span>
+<span class="w">           </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;p_number9 - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">p_number9</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;WARNING : Trying to use an invalid pointer&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+
+
+
+
+
+
+
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Program is ending well&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="handling-memory-allocation-failure">
+<h2>1.7.4 Handling Memory Allocation Failure<a class="headerlink" href="#handling-memory-allocation-failure" title="Link to this heading">#</a></h2>
+<p>When using dynamic memory allocation with <code class="docutils literal notranslate"><span class="pre">new</span></code>, it is important to understand what happens when the system <strong>cannot fulfill the allocation request</strong>.</p>
+<p>This typically occurs when:</p>
+<ul class="simple">
+<li><p>The requested memory is too large</p></li>
+<li><p>The system runs out of available heap memory</p></li>
+</ul>
+<hr class="docutils" />
+<section id="allocation-failure-with-new">
+<h3>Allocation Failure with <code class="docutils literal notranslate"><span class="pre">new</span></code><a class="headerlink" href="#allocation-failure-with-new" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10000000000000000</span><span class="p">];</span><span class="w"> </span><span class="c1">//  may fail</span>
+</pre></div>
+</div>
+<p>Problem:</p>
+<ul class="simple">
+<li><p>This request is <strong>unrealistically large</strong></p></li>
+<li><p>The allocation will likely fail at runtime</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="memory-leaks-in-loops">
+<h3>Memory Leaks in Loops<a class="headerlink" href="#memory-leaks-in-loops" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">100000000</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Memory is allocated repeatedly</p></li>
+<li><p><strong>No <code class="docutils literal notranslate"><span class="pre">delete[]</span></code> is used</strong></p></li>
+<li><p>Leads to <strong>massive memory leaks</strong></p></li>
+</ul>
+<p>Even if each allocation succeeds initially, the program will eventually:</p>
+<ul class="simple">
+<li><p>Exhaust system memory</p></li>
+<li><p>Crash or slow down significantly</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="handling-exceptions-from-new">
+<h3>Handling Exceptions from <code class="docutils literal notranslate"><span class="pre">new</span></code><a class="headerlink" href="#handling-exceptions-from-new" title="Link to this heading">#</a></h3>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">new</span></code> throws an exception of type <code class="docutils literal notranslate"><span class="pre">std::bad_alloc</span></code> if allocation fails.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1000000000</span><span class="p">];</span>
+<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ex</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Something went wrong : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>If allocation fails, control jumps to <code class="docutils literal notranslate"><span class="pre">catch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ex.what()</span></code> typically returns <code class="docutils literal notranslate"><span class="pre">&quot;std::bad_alloc&quot;</span></code></p></li>
+<li><p>If not handled, the program will <strong>terminate</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="using-std-nothrow">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">std::nothrow</span></code><a class="headerlink" href="#using-std-nothrow" title="Link to this heading">#</a></h3>
+<p>An alternative is to prevent exceptions using <code class="docutils literal notranslate"><span class="pre">std::nothrow</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1000000000</span><span class="p">];</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Does <strong>NOT throw exceptions</strong></p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> if allocation fails</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="checking-allocation-success">
+<h3>Checking Allocation Success<a class="headerlink" href="#checking-allocation-success" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Data allocated&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Data allocation failed&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is mandatory when using <code class="docutils literal notranslate"><span class="pre">std::nothrow</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>On Failure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">new</span></code></p></td>
+<td><p>throws exception</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">new(nothrow)</span></code></p></td>
+<td><p>returns <code class="docutils literal notranslate"><span class="pre">nullptr</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    //int * data = new int[10000000000000000]; // </span>
+
+<span class="cm">    for(size_t i{0} ; i &lt; 10000000 ; ++i){</span>
+<span class="cm">        int * data = new int[100000000];</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+<span class="w">   </span><span class="c1">//exception</span>
+<span class="w">   </span><span class="cm">/*</span>
+<span class="cm">    for(size_t i{0} ; i &lt; 100 ; ++i){</span>
+<span class="cm">        try{</span>
+<span class="cm">            int * data = new int[1000000000];</span>
+<span class="cm">        }catch(std::exception&amp; ex){</span>
+<span class="cm">            std::cout &lt;&lt; &quot;  Something went wrong : &quot; &lt;&lt; ex.what() &lt;&lt; std::endl;</span>
+<span class="cm">        }</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+<span class="w">   </span><span class="c1">//std::nothrow</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">   </span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1000000000</span><span class="p">];</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">data</span><span class="o">!=</span><span class="k">nullptr</span><span class="p">){</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Data allocated&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Data allocation failed&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">       </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Program ending well&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="memory-leaks-and-loss-of-ownership">
+<h2>1.7.5 Memory Leaks and Loss of Ownership<a class="headerlink" href="#memory-leaks-and-loss-of-ownership" title="Link to this heading">#</a></h2>
+<p>This section focuses on <strong>memory leaks caused by losing ownership of dynamically allocated memory</strong>.</p>
+<p>A <strong>memory leak</strong> occurs when:</p>
+<ul class="simple">
+<li><p>Memory is allocated on the heap</p></li>
+<li><p>The program <strong>loses the pointer to it</strong></p></li>
+<li><p>The memory can no longer be freed</p></li>
+</ul>
+<hr class="docutils" />
+<section id="case-1-overwriting-a-pointer-lost-allocation">
+<h3>Case 1: Overwriting a Pointer (Lost Allocation)<a class="headerlink" href="#case-1-overwriting-a-pointer-lost-allocation" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">67</span><span class="p">}};</span><span class="w"> </span><span class="c1">// address1</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">{</span><span class="mi">55</span><span class="p">};</span><span class="w"> </span><span class="c1">// stack variable</span>
+
+<span class="n">p_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// address1 lost → memory leak</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_number</span></code> initially owns heap memory (address1)</p></li>
+<li><p>It is reassigned to a stack address (address2)</p></li>
+<li><p>The original heap memory is now <strong>unreachable</strong></p></li>
+<li><p>Once the pointer is overwritten, the allocated memory is <strong>impossible to delete</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="case-2-double-allocation-without-delete">
+<h3>Case 2: Double Allocation Without Delete<a class="headerlink" href="#case-2-double-allocation-without-delete" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number1</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">55</span><span class="p">}};</span>
+
+<span class="c1">// Missing delete</span>
+
+<span class="n">p_number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">44</span><span class="p">};</span><span class="w"> </span><span class="c1">// previous allocation leaked</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>First allocation (<code class="docutils literal notranslate"><span class="pre">55</span></code>) is never released</p></li>
+<li><p>Pointer is reassigned to new memory</p></li>
+<li><p>Old memory becomes <strong>orphaned</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="case-3-scope-does-not-free-heap-memory">
+<h3>Case 3: Scope Does NOT Free Heap Memory<a class="headerlink" href="#case-3-scope-does-not-free-heap-memory" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number2</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">57</span><span class="p">}};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pointer goes out of scope</p></li>
+<li><p>But heap memory <strong>remains allocated</strong></p></li>
+<li><p>Scope only affects <strong>pointer lifetime</strong>, not <strong>heap memory</strong></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="correct-handling-patterns">
+<h3>Correct Handling Patterns<a class="headerlink" href="#correct-handling-patterns" title="Link to this heading">#</a></h3>
+<section id="pattern-1-delete-before-reassignment">
+<h4>Pattern 1: Delete Before Reassignment<a class="headerlink" href="#pattern-1-delete-before-reassignment" title="Link to this heading">#</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number</span><span class="p">;</span>
+<span class="n">p_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="n">p_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// now safe</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="pattern-2-delete-before-reallocation">
+<h4>Pattern 2: Delete Before Reallocation<a class="headerlink" href="#pattern-2-delete-before-reallocation" title="Link to this heading">#</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="n">p_number1</span><span class="p">;</span>
+<span class="n">p_number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="n">p_number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">44</span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="pattern-3-always-free-before-leaving-scope">
+<h4>Pattern 3: Always Free Before Leaving Scope<a class="headerlink" href="#pattern-3-always-free-before-leaving-scope" title="Link to this heading">#</a></h4>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_number2</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">57</span><span class="p">}};</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Every <code class="docutils literal notranslate"><span class="pre">new</span></code> must have a <strong>matching <code class="docutils literal notranslate"><span class="pre">delete</span></code></strong>.</p>
+<p>If not:</p>
+<ul class="simple">
+<li><p>Memory usage grows over time</p></li>
+<li><p>Leads to instability in long-running programs</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number</span><span class="p">{</span>
+<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">67</span><span class="p">}};</span><span class="w"> </span><span class="c1">// Points to some address, let&#39;s call that address1</span>
+
+<span class="w">  </span><span class="c1">// Should delete and reset here</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">{</span><span class="mi">55</span><span class="p">};</span><span class="w"> </span><span class="c1">// stack variable</span>
+
+<span class="w">  </span><span class="n">p_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Now p_number points to address2 , but address1 is still</span>
+<span class="w">                      </span><span class="c1">// in use by our program. But our program has lost access</span>
+<span class="w">                      </span><span class="c1">// to that memory location.</span>
+<span class="w">                      </span><span class="c1">// Memory has been leaked.</span>
+
+<span class="w">  </span><span class="c1">// Double allocation</span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number1</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">55</span><span class="p">}};</span>
+
+<span class="w">  </span><span class="c1">// Use the pointer</span>
+
+<span class="w">  </span><span class="c1">// Should delete and reset here.</span>
+
+<span class="w">  </span><span class="n">p_number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">44</span><span class="p">};</span><span class="w"> </span><span class="c1">// memory with int{55} leaked.</span>
+
+<span class="w">  </span><span class="k">delete</span><span class="w"> </span><span class="n">p_number1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p_number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Nested scopes with dynamically allocated memory</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_number2</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">{</span><span class="mi">57</span><span class="p">}};</span>
+
+<span class="w">    </span><span class="c1">// Use the dynamic memory</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Memory with int{57} leaked.</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Program ending well&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="dynamic-arrays-and-initialization">
+<h2>1.7.6 Dynamic Arrays and Initialization<a class="headerlink" href="#dynamic-arrays-and-initialization" title="Link to this heading">#</a></h2>
+<p>This section covers how to allocate, initialize, and safely use <strong>dynamic arrays</strong> on the heap, and contrasts them with <strong>static arrays</strong> on the stack.</p>
+<section id="declaring-dynamic-arrays">
+<h3>Declaring Dynamic Arrays<a class="headerlink" href="#declaring-dynamic-arrays" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+
+<span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p_salaries</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">size</span><span class="p">]};</span><span class="w">              </span><span class="c1">// uninitialized (garbage values)</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_students</span><span class="p">{</span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="p">]{}};</span><span class="w">    </span><span class="c1">// all elements initialized to 0</span>
+<span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">p_scores</span><span class="p">{</span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">size</span><span class="p">]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">double[size]</span></code><br />
+→ elements contain <strong>indeterminate values</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">int[size]{}</span></code><br />
+→ <strong>value-initialized</strong>, all elements set to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">double[size]{1,2,3,4,5}</span></code><br />
+→ first elements initialized, remaining elements set to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>Checking Allocation Success<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">p_scores</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Successfully allocated memory&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Required when using <code class="docutils literal notranslate"><span class="pre">std::nothrow</span></code></p></li>
+<li><p>Prevents dereferencing <code class="docutils literal notranslate"><span class="pre">nullptr</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="accessing-array-elements">
+<h3>Accessing Array Elements<a class="headerlink" href="#accessing-array-elements" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">p_scores</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Both are equivalent:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_scores[i]</span></code> → array indexing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*(p_scores</span> <span class="pre">+</span> <span class="pre">i)</span></code> → pointer arithmetic</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="pointer-size-vs-array-size">
+<h3>Pointer Size vs Array Size<a class="headerlink" href="#pointer-size-vs-array-size" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">sizeof</span><span class="p">(</span><span class="n">p_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Returns size of the <strong>pointer</strong>, not the array</p></li>
+<li><p>Typically:</p>
+<ul>
+<li><p>8 bytes on 64-bit systems</p></li>
+<li><p>4 bytes on 32-bit systems</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="static-arrays-stack">
+<h3>Static Arrays (Stack)<a class="headerlink" href="#static-arrays-stack" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">scores</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Stored on the <strong>stack</strong></p></li>
+<li><p>Size known at compile time</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Works because the compiler knows the array size</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dynamic-arrays-heap">
+<h3>Dynamic Arrays (Heap)<a class="headerlink" href="#dynamic-arrays-heap" title="Link to this heading">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_scores1</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">}};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Stored on the <strong>heap</strong></p></li>
+<li><p>Size is <strong>not tracked automatically</strong></p></li>
+</ul>
+<p>This will NOT work:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">p_scores1</span><span class="p">);</span><span class="w"> </span><span class="c1">//  invalid</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p_scores1</span></code> is just a pointer, not an array type</p></li>
+<li><p>Dynamic arrays lose size information</p></li>
+<li><p>You must <strong>manually track the size</strong></p></li>
+<li><p>Common pattern:</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="p">]};</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p_salaries</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">size</span><span class="p">]</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p_students</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="p">]{}</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">p_scores</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">size</span><span class="p">]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">p_scores</span><span class="p">){</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;size of scores (pointer size): &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">p_scores</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Successfully allocated memory for scores.&quot;</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="p">{};</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">           </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p_scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="w">                     </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">p_scores</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">p_salaries</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_salaries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">p_students</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">p_scores</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;=====================================&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">scores</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;scores size : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">scores</span><span class="p">){</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;value : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p_scores1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">p_scores1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p_scores1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06_Arrays.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.6 Arrays</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08_References.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.8 References</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-using-pointers">1.7.1 Declaring and using pointers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-pointers">Declaring Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-size">Pointer Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-declaration-style">Pointer Declaration Style</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-addresses-in-pointers">Storing Addresses in Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-address-stored-in-a-pointer">Changing the Address Stored in a Pointer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#type-safety-with-pointers">Type Safety with Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dereferencing-a-pointer">Dereferencing a Pointer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-memory-allocation">1.7.2 Dynamic Memory Allocation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uninitialized-pointers">Uninitialized Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#null-pointers">Null Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-memory-allocation-heap">Dynamic Memory Allocation (Heap)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#releasing-memory">Releasing Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-at-declaration">Initialization at Declaration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-leaks">Memory Leaks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reusing-pointers">Reusing Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-deletion">Double Deletion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dangling-pointers-and-safe-usage-patterns">1.7.3 Dangling Pointers and Safe Usage Patterns</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-uninitialized-pointer">Case 1: Uninitialized Pointer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-deleted-pointer-dangling-after-delete">Case 2: Deleted Pointer (Dangling After delete)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-multiple-pointers-to-same-address">Case 3: Multiple Pointers to Same Address</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-1-always-initialize-pointers">Solution 1: Always Initialize Pointers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-2-reset-after-delete">Solution 2: Reset After delete</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-3-ownership-discipline-master-pointer">Solution 3: Ownership Discipline (Master Pointer)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-memory-allocation-failure">1.7.4 Handling Memory Allocation Failure</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allocation-failure-with-new">Allocation Failure with <code class="docutils literal notranslate"><span class="pre">new</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-leaks-in-loops">Memory Leaks in Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-exceptions-from-new">Handling Exceptions from <code class="docutils literal notranslate"><span class="pre">new</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-std-nothrow">Using <code class="docutils literal notranslate"><span class="pre">std::nothrow</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-allocation-success">Checking Allocation Success</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-leaks-and-loss-of-ownership">1.7.5 Memory Leaks and Loss of Ownership</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-overwriting-a-pointer-lost-allocation">Case 1: Overwriting a Pointer (Lost Allocation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-double-allocation-without-delete">Case 2: Double Allocation Without Delete</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-scope-does-not-free-heap-memory">Case 3: Scope Does NOT Free Heap Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correct-handling-patterns">Correct Handling Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-1-delete-before-reassignment">Pattern 1: Delete Before Reassignment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-2-delete-before-reallocation">Pattern 2: Delete Before Reallocation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-3-always-free-before-leaving-scope">Pattern 3: Always Free Before Leaving Scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-arrays-and-initialization">1.7.6 Dynamic Arrays and Initialization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-dynamic-arrays">Declaring Dynamic Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Checking Allocation Success</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-array-elements">Accessing Array Elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointer-size-vs-array-size">Pointer Size vs Array Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-arrays-stack">Static Arrays (Stack)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-arrays-heap">Dynamic Arrays (Heap)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/c++/Course_2024/07_Pointers.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/c++/Course_2024/07_Pointers.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

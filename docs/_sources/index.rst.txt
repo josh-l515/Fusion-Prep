@@ -22,6 +22,7 @@ Fusion-Prep documentation
    .. quamtum_mechanics/index
    python/index
    c++/index
+   numerical_methods/index
    linux/index
    android-studio/index
 
