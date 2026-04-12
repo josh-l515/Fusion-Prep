@@ -31,8 +31,13 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=36753391" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -45,9 +50,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.3_conversion_de_unidades';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.3_conversion_de_unidades.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -131,6 +137,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
   </a>
@@ -150,13 +163,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../linux/index.html">
-    Linux
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -165,6 +171,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
     Android Apps
@@ -296,6 +309,13 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
@@ -482,14 +502,14 @@
 <h1>1.3 Conversión de Unidades<a class="headerlink" href="#conversion-de-unidades" title="Link to this heading">#</a></h1>
 <p>La conversión de unidades permite expresar una magnitud medida en una unidad en términos de otra unidad del mismo tipo. Esto se logra mediante el uso de un <strong>factor de conversión</strong>, que es una fracción igual a 1 formada por dos cantidades equivalentes expresadas en distintas unidades.</p>
 <p>Por ejemplo, si sabemos que:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-0">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-0" title="Link to this equation">#</a></span>\[1 \text{ mi} = 1{,}609 \text{ km}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-0">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-0" title="Permalink to this equation">#</a></span>\[1 \text{ mi} = 1{,}609 \text{ km}\]</div>
 <p>Entonces podemos formar el siguiente factor de conversión:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-1">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-1" title="Link to this equation">#</a></span>\[\frac{1 \text{ mi}}{1{,}609 \text{ km}} = 1\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-1">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-1" title="Permalink to this equation">#</a></span>\[\frac{1 \text{ mi}}{1{,}609 \text{ km}} = 1\]</div>
 <p>Este factor se puede multiplicar por cualquier valor en kilómetros para obtener su equivalente en millas. Por ejemplo, si una distancia es de 240 km:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-2">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-2" title="Link to this equation">#</a></span>\[240 \text{ km} \times \frac{1 \text{ mi}}{1{,}609 \text{ km}} = 149 \text{ mi}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-2">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-2" title="Permalink to this equation">#</a></span>\[240 \text{ km} \times \frac{1 \text{ mi}}{1{,}609 \text{ km}} = 149 \text{ mi}\]</div>
 <p>Este método es general y puede aplicarse a cualquier conversión de unidades siempre que se conozca la relación entre ellas.</p>
 <section id="factores-de-conversion">
 <h2>1.3.1 Factores de conversión<a class="headerlink" href="#factores-de-conversion" title="Link to this heading">#</a></h2>
@@ -499,16 +519,16 @@
 <section id="problemas-propuestos">
 <h2>1.3.2 Problemas propuestos<a class="headerlink" href="#problemas-propuestos" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Si un vehículo viaja a 90 <span class="math notranslate nohighlight">\(\mathrm{km/h}\)</span>, ¿a cuánto equivale su velocidad expresada en metros por segundo y en millas por hora?</p></li>
+<li><p>Si un vehículo viaja a 90 <span class="math">\(\mathrm{km/h}\)</span>, ¿a cuánto equivale su velocidad expresada en metros por segundo y en millas por hora?</p></li>
 <li><p>El diamante tallado más grande del mundo es la Primera Estrella de África. Su volumen es de 1.84 pulgadas cúbicas. ¿Cuál será su volumen en centímetros cúbicos? ¿Y en metros cúbicos?</p></li>
 <li><p>La velocidad del sonido en el aire es 343 m/s. ¿Cuál es la velocidad de un avión supersónico que se mueve con una velocidad Mach 2? Dar la respuesta en kilómetros por hora y millas por hora. Usar la relación:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-3">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-3" title="Link to this equation">#</a></span>\[M = \frac{v}{v_s}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-3">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-3-conversion-de-unidades-3" title="Permalink to this equation">#</a></span>\[M = \frac{v}{v_s}\]</div>
 <p>Donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M\)</span>: número Mach.</p></li>
-<li><p><span class="math notranslate nohighlight">\(v\)</span>: velocidad del objeto en movimiento.</p></li>
-<li><p><span class="math notranslate nohighlight">\(v_s\)</span>: velocidad del sonido en el medio físico.</p></li>
+<li><p><span class="math">\(M\)</span>: número Mach.</p></li>
+<li><p><span class="math">\(v\)</span>: velocidad del objeto en movimiento.</p></li>
+<li><p><span class="math">\(v_s\)</span>: velocidad del sonido en el medio físico.</p></li>
 </ul>
 </li>
 <li><p>Un jugador de baloncesto tiene una altura de 6 ft y 10.5 in. ¿Cuál es su altura en centímetros?</p></li>
@@ -520,15 +540,15 @@
 <li><p>Litros</p></li>
 </ul>
 </li>
-<li><p>Según la etiqueta de un frasco de aderezo para ensalada, el volumen del contenido es 0.473 litros (L). Use sólo las conversiones <span class="math notranslate nohighlight">\(1 \,\rm L=1,000 \, \rm cm^3\)</span> y <span class="math notranslate nohighlight">\(1\, \rm in= 2.54 \, \rm cm\)</span> para expresar dicho volumen en pulgadas cúbicas.</p></li>
-<li><p>¿Cuántos años más viejo será usted dentro de 1 mil millones de segundos? (Suponga que un año tiene <span class="math notranslate nohighlight">\(365\)</span> días.)</p></li>
-<li><p>Cierto automóvil híbrido que consume poco combustible tiene un rendimiento de gasolina de <span class="math notranslate nohighlight">\(55.0 \, \rm mpg\)</span> (millas por galón).</p>
+<li><p>Según la etiqueta de un frasco de aderezo para ensalada, el volumen del contenido es 0.473 litros (L). Use sólo las conversiones <span class="math">\(1 \,\rm L=1,000 \, \rm cm^3\)</span> y <span class="math">\(1\, \rm in= 2.54 \, \rm cm\)</span> para expresar dicho volumen en pulgadas cúbicas.</p></li>
+<li><p>¿Cuántos años más viejo será usted dentro de 1 mil millones de segundos? (Suponga que un año tiene <span class="math">\(365\)</span> días.)</p></li>
+<li><p>Cierto automóvil híbrido que consume poco combustible tiene un rendimiento de gasolina de <span class="math">\(55.0 \, \rm mpg\)</span> (millas por galón).</p>
 <ul class="simple">
-<li><p>Si usted va manejando dicho auto en Europa y quiere comparar su rendimiento con el de otros automóviles europeos, exprese tal rendimiento en <span class="math notranslate nohighlight">\(\rm km/L\)</span>.</p></li>
-<li><p>¿Si el depósito de gasolina de este automóvil tiene una capacidad de <span class="math notranslate nohighlight">\(45 \, \rm L\)</span>, cuántas veces deberá llenar el depósito de gasolina para conducir <span class="math notranslate nohighlight">\(1500 \, \rm km\)</span>?</p></li>
+<li><p>Si usted va manejando dicho auto en Europa y quiere comparar su rendimiento con el de otros automóviles europeos, exprese tal rendimiento en <span class="math">\(\rm km/L\)</span>.</p></li>
+<li><p>¿Si el depósito de gasolina de este automóvil tiene una capacidad de <span class="math">\(45 \, \rm L\)</span>, cuántas veces deberá llenar el depósito de gasolina para conducir <span class="math">\(1500 \, \rm km\)</span>?</p></li>
 </ul>
 </li>
-<li><p>En el otoño de 2002, un grupo de científicos de Los Alamos National Laboratory determinó que la masa crítica del neptunio 237 es de unos <span class="math notranslate nohighlight">\(60 \, \rm kg\)</span>. La masa crítica de un material fisionable es la cantidad mínima que debe juntarse para iniciar una reacción en cadena. Este elemento tiene una densidad de <span class="math notranslate nohighlight">\(19.5 \, \rm g/cm^3\)</span>. ¿Cuál será el radio de una esfera de este material que tiene dicha masa crítica?</p></li>
+<li><p>En el otoño de 2002, un grupo de científicos de Los Alamos National Laboratory determinó que la masa crítica del neptunio 237 es de unos <span class="math">\(60 \, \rm kg\)</span>. La masa crítica de un material fisionable es la cantidad mínima que debe juntarse para iniciar una reacción en cadena. Este elemento tiene una densidad de <span class="math">\(19.5 \, \rm g/cm^3\)</span>. ¿Cuál será el radio de una esfera de este material que tiene dicha masa crítica?</p></li>
 </ol>
 </section>
 </section>

@@ -30,3 +30,74 @@ html[data-theme="dark"] div.highlight {
 /* } */
 /* Increase width of main content area */
 
+/* =============================================
+   FULL WIDTH LAYOUT - para laptops y pantallas grandes
+   ============================================= */
+
+/* 1. Expande el contenedor global de la página (los márgenes laterales vacíos) */
+.bd-page-width {
+    max-width: 108rem;  /* default es 88rem, súbelo al gusto */
+}
+
+/* 2. Expande el área del artículo (el texto central) 
+      IMPORTANTE: debe ser una regla separada, no anidada */
+.bd-main .bd-content .bd-article-container {
+    max-width: 70em;  /* default es 60em */
+}
+
+/* 3. Opcional: solo aplicar en pantallas grandes (≥1400px),
+      dejando el comportamiento original en pantallas pequeñas */
+@media (min-width: 1400px) {
+    .bd-page-width {
+        max-width: 108rem;
+    }
+
+    .bd-main .bd-content .bd-article-container {
+        max-width: 70em;
+    }
+}
+
+/* =============================================
+   MATHJAX
+   ============================================= */
+
+
+.math {
+    font-size: 1.1em;
+}
+
+
+/* =============================================
+   KATEX
+   ============================================= */
+/* Revertir el flex-direction que PyData aplica a las ecuaciones en bloque */
+/* Reducir espacio vertical de ecuaciones en bloque */
+div.math {
+    flex-direction: row !important;
+    justify-content: center !important;
+    position: relative;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.katex-display {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+/* =============================================
+   CODE-BLOCK
+   ============================================= */
+/* Bloques de código */
+.highlight pre {
+    font-size: 1.05rem;
+    padding: 1em;
+    line-height: 1.6;
+    border-radius: 6px;
+}
+
+/* Código inline dentro de texto */
+p code, li code {
+    font-size: 0.95em;
+}

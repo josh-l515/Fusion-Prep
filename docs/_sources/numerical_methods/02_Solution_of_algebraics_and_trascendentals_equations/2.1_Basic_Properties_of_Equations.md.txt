@@ -1,0 +1,45 @@
+# 2.1 Basic Properties of Equations 
+
+
+## 1.1 Existence of Roots — The Intermediate Value Theorem
+The following theorem guarantees existence:
+```{prf:theorem} Intermediate Value Theorem (Bolzano, 1817)
+:label: thm-ivt
+
+Let $f : [a, b] \to \mathbb{R}$ be **continuous**. If $f(a)\cdot f(b) < 0$, then
+
+$$
+\exists\, \xi \in (a,\, b) \quad \text{such that} \quad f(\xi) = 0.
+$$
+```
+
+This is the **existence guarantee** that underpins every bracketing method. Note that IVT gives existence but not uniqueness — multiple roots may lie in $(a,b)$.
+
+```{prf:corollary}
+:label: cor-sign
+
+The condition $f(a)\cdot f(b) < 0$ is equivalent to $\operatorname{sgn}[f(a)] \neq \operatorname{sgn}[f(b)]$, i.e., the function changes sign over the interval.
+```
+
+## 1.2 Error and Convergence — Definitions
+
+Let $\xi$ denote the **exact root** and $x_n$ the $n$-th iterate. Define the **absolute error** at step $n$:
+
+$$
+e_n \;=\; |\xi - x_n|.
+$$
+
+A sequence $\{x_n\}$ converges to $\xi$ with **order $p$** if there exists a constant $C > 0$ such that
+
+$$
+\lim_{n \to \infty} \frac{e_{n+1}}{e_n^{\,p}} = C.
+$$
+
+| Order $p$ | Name | Example method |
+|:---------:|------|----------------|
+| $p = 1$ | Linear | Bisection, Regula-Falsi |
+| $p > 1$ (approx. 1.618) | Superlinear | Secant |
+| $p = 2$ | Quadratic | Newton-Raphson |
+
+---
+

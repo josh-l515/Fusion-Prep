@@ -31,8 +31,13 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=36753391" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -45,9 +50,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.2_unidades';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.2_unidades.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -131,6 +137,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
   </a>
@@ -150,13 +163,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../linux/index.html">
-    Linux
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -165,6 +171,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
     Android Apps
@@ -296,6 +309,13 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
@@ -523,8 +543,8 @@
 <h3>Medir<a class="headerlink" href="#medir" title="Link to this heading">#</a></h3>
 <p><strong>Medir</strong> es comparar una magnitud física con otra de la misma especie que se toma como patrón y se llama <strong>unidad</strong>, con el fin de determinar cuántas veces la unidad está contenida en la magnitud medida.</p>
 <p>En forma general:</p>
-<div class="math notranslate nohighlight" id="equation-ley-coulomb">
-<span class="eqno">()<a class="headerlink" href="#equation-ley-coulomb" title="Link to this equation">#</a></span>\[\rm Medida=\underbrace{120}_{\rm\ magnitud}\overbrace{\rm Kg}^{\rm unidad}\]</div>
+<div class="math" id="equation-ley-coulomb">
+<span class="eqno">()<a class="headerlink" href="#equation-ley-coulomb" title="Permalink to this equation">#</a></span>\[\rm Medida=\underbrace{120}_{\rm\ magnitud}\overbrace{\rm Kg}^{\rm unidad}\]</div>
 </section>
 <section id="magnitudes-fisicas-fundamentales-del-si">
 <h3>Magnitudes físicas fundamentales del SI<a class="headerlink" href="#magnitudes-fisicas-fundamentales-del-si" title="Link to this heading">#</a></h3>
@@ -584,12 +604,12 @@
 <li><p><strong>Metro (m)</strong><br />
 Es la longitud del trayecto recorrido por la luz en el vacío durante un intervalo de tiempo de</p></li>
 </ul>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-2-unidades-0">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-2-unidades-0" title="Link to this equation">#</a></span>\[  \frac{1}{c}=\frac{1}{299\,792\,458} \ \text{segundos}.\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-2-unidades-0">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-2-unidades-0" title="Permalink to this equation">#</a></span>\[  \frac{1}{c}=\frac{1}{299\,792\,458} \ \text{segundos}.\]</div>
 <ul class="simple">
 <li><p><strong>Kilogramo (kg)</strong><br />
 Es la masa igual a la de un cuerpo cuya energía equivale a una frecuencia definida mediante la constante de Planck:
-$<span class="math notranslate nohighlight">\(
+$<span class="math">\(
 h = 6.626\ 070\ 15 \times 10^{-34} \ \text{J·s},
 \)</span>$
 fijando así el valor de esta constante y relacionando la unidad de masa con el segundo y el metro.</p></li>
@@ -597,31 +617,31 @@ fijando así el valor de esta constante y relacionando la unidad de masa con el 
 Es la duración de <strong>9 192 631 770</strong> periodos de la radiación correspondiente a la transición entre dos niveles hiperfinos del estado fundamental del átomo de cesio-133.</p></li>
 <li><p><strong>Amperio (A)</strong><br />
 Es la corriente eléctrica que, al mantenerse en dos conductores paralelos rectilíneos e infinitamente largos separados por un metro en el vacío, produciría una fuerza de<br />
-$<span class="math notranslate nohighlight">\(
+$<span class="math">\(
 2 \times 10^{-7} \ \text{N/m}.
-\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math">\(  
 Se define fijando el valor de la carga elemental:  
-\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math">\(
 e = 1.602\ 176\ 634 \times 10^{-19} \ \text{C}.
 \)</span>$</p></li>
 <li><p><strong>Kelvin (K)</strong><br />
 Es la unidad de temperatura termodinámica definida fijando el valor de la constante de Boltzmann:<br />
-$<span class="math notranslate nohighlight">\(
+$<span class="math">\(
 k = 1.380\ 649 \times 10^{-23} \ \text{J/K}.
 \)</span>$</p></li>
 <li><p><strong>Mol (mol)</strong><br />
 Es la cantidad de sustancia que contiene exactamente<br />
-$<span class="math notranslate nohighlight">\(
+$<span class="math">\(
 6.022\ 140\ 76 \times 10^{23}
 \)</span>$<br />
 entidades elementales (átomos, moléculas, etc.). Este número es el valor fijo del número de Avogadro.</p></li>
 <li><p><strong>Candela (cd)</strong><br />
 Es la intensidad luminosa, en una dirección dada, de una fuente que emite radiación monocromática de frecuencia<br />
-$<span class="math notranslate nohighlight">\(
+$<span class="math">\(
 540 \times 10^{12} \ \text{Hz}
-\)</span><span class="math notranslate nohighlight">\(  
+\)</span><span class="math">\(  
 y tiene una intensidad radiante en esa dirección de  
-\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math">\(
 1/683 \ \text{W/sr}.
 \)</span>$</p></li>
 </ul>

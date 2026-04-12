@@ -17,25 +17,33 @@ author = 'Josué David Huallpa Aimituma'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser", 
-              "nbsphinx", 
-              'sphinx_copybutton',]  # esta es la extensión para el botón de copiar]
+extensions = [
+              "myst_nb",
+              # "myst_parser",            
+              "sphinx_proof",
+              'sphinx_copybutton', 
+              'sphinxcontrib.katex', # Katex for latex equations  
+              "sphinx_design",
+              # "sphinx.ext.mathjax",
+              ]  
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # katex_inline = [r'$', r'$']  # Para ecuaciones en línea
 # katex_display = [r'$$', r'$$']  # Para ecuaciones en bloque
-
+#
 myst_enable_extensions = [
     "colon_fence",
+    "amsmath",
     "linkify",
     "substitution",
     "dollarmath",  # <-- esta línea permite ecuaciones en $...$ y $$...$$
     "attrs_block", # Activa el uso de metadata desde los archivos .md 
-    "deflist",            # Opcional, listas de definiciones
+    "deflist",
 ]
-
+myst_heading_anchors = 3
+nb_execution_mode = "off"  
 math_number_all = True  # Numera todas las ecuaciones con etiqueta
 numfig = True           # Para referencias como figuras, tablas, ecuaciones, etc.
 # -- Options for HTML output -------------------------------------------------
@@ -118,4 +126,26 @@ html_sidebars = {
 }
 html_show_sourcelink = True
 
-
+mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+mathjax3_config = {
+    "tex": {
+        "inlineMath": [["$", "$"], ["\\(", "\\)"]],
+        "displayMath": [["$$", "$$"], ["\\[", "\\]"]],
+        "processEscapes": True,
+        "tags": "ams",  # numeración automática estilo LaTeX
+        "macros": {
+            "RR": "\\mathbb{R}",
+            "eps": "\\varepsilon",
+            "abs": ["\\left|#1\\right|", 1],
+        }
+    },
+    "options": {
+        "skipHtmlTags": ["script", "noscript", "style", "textarea", "pre"],
+    },
+    "chtml": {
+        "displayAlign": "center",  
+    }
+}
+mathjax3_config["options"]["renderActions"] = {
+    "addMenu": [],
+}

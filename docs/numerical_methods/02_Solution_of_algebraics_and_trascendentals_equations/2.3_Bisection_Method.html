@@ -1,0 +1,1091 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.3 Bisection Method &#8212; J&#39;s PhysiXLab  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=36753391" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'numerical_methods/02_Solution_of_algebraics_and_trascendentals_equations/2.3_Bisection_Method';</script>
+    <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/numerical_methods/02_Solution_of_algebraics_and_trascendentals_equations/2.3_Bisection_Method.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.4 False Position Method" href="2.4_False_Position_Method.html" />
+    <link rel="prev" title="2.1 Basic Properties of Equations" href="2.1_Basic_Properties_of_Equations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">J's PhysiXLab  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../c%2B%2B/index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Numerical Methods
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../python/index.html">
+    Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../c%2B%2B/index.html">
+    C++ 2024 Course
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Numerical Methods
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../android-studio/index.html">
+    Android Apps
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://pydata.org">
+    PyData Website
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/">
+    NumFocus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://numfocus.org/donate">
+    Donate to NumFocus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://x.com/DHAJosh1" title="X" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-x-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">X</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/josh-l515/Fusion-Prep" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter II: Solutions of Algebraics and Trascendental Equations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2.1_Basic_Properties_of_Equations.html">2.1 Basic Properties of Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.3 Bisection Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.4_False_Position_Method.html">2.4 False Position Method</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Numerical Methods</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">2.3 Bisection Method</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bisection-method">
+<h1>2.3 Bisection Method<a class="headerlink" href="#bisection-method" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Prerequisites</p>
+<p>Intermediate Value Theorem (IVT), continuity of real functions, <span class="math">\(\varepsilon\)</span>-<span class="math">\(\delta\)</span> analysis, fixed-point theory.</p>
+</div>
+<hr class="docutils" />
+<p>The method is a systematic <strong>binary search</strong> for the zero of <span class="math">\(f\)</span>. At each step the interval <span class="math">\([a_n, b_n]\)</span> containing <span class="math">\(\xi\)</span> is halved, and only the subinterval where the sign change is preserved is retained.</p>
+<figure class="align-center" id="fig-bisection">
+<a class="reference internal image-reference" href="../../_images/02.3.1_bisection_method.png"><img alt="../../_images/02.3.1_bisection_method.png" src="../../_images/02.3.1_bisection_method.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Schematic of the bisection process. The bracket <span class="math">\([a_n, b_n]\)</span> halves at each iteration.</span><a class="headerlink" href="#fig-bisection" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="proof algorithm admonition" id="alg-bisection">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Bisection Method)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> <span class="math">\(f \in C([a_0,b_0])\)</span>, with <span class="math">\(f(a_0)\cdot f(b_0)&lt;0\)</span>, tolerance <span class="math">\(\varepsilon &gt; 0\)</span>.</p>
+<p><strong>Output:</strong> Approximation <span class="math">\(x_n \approx \xi\)</span> such that <span class="math">\(|x_n - \xi| &lt; \varepsilon\)</span>.</p>
+<p><strong>Iteration</strong> (<span class="math">\(n = 0,1,2,\dots\)</span>):</p>
+<ol class="arabic simple">
+<li><p>Compute the midpoint</p></li>
+</ol>
+<div class="math">
+\[
+x_n = \frac{a_n + b_n}{2}.
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Stopping criterion:</strong> if <span class="math">\((b_n - a_n)/2 &lt; \varepsilon\)</span>, return <span class="math">\(x_n\)</span>.</p></li>
+<li><p>Update the bracket:</p></li>
+</ol>
+<div class="math">
+\[
+[a_{n+1},\, b_{n+1}] =
+\begin{cases}
+[a_n,\; x_n] & \text{if } f(a_n)\cdot f(x_n) < 0, \\[4pt]
+[x_n,\; b_n] & \text{if } f(x_n)\cdot f(b_n) < 0, \\[4pt]
+\{x_n\} & \text{if } f(x_n) = 0.
+\end{cases}
+\]</div>
+</section>
+</div><p>In the Figure <a class="reference internal" href="#fig-bisection"><span class="std std-numref">Fig. 19</span></a> , <span class="math">\(f(x_1)&gt;0\)</span>, so that the root lies between <span class="math">\([a_0,x_1]\)</span>. Then the second approximation to the root is <span class="math">\(x_2 = \frac{1}{2} (a_0 + x_1)\)</span>. If <span class="math">\(f(x_2)&lt;0\)</span>, the root lies between <span class="math">\([x_1, x_2]\)</span>. Then the third approximation to the root is <span class="math">\(x_3 = \frac{1}{2} (x_1 + x_2)\)</span> and so on.</p>
+<section id="required-number-of-iterations">
+<h2>2.3.1 Required Number of Iterations<a class="headerlink" href="#required-number-of-iterations" title="Link to this heading">#</a></h2>
+<p>Since the new interval containing the root, is exactly half the length of the previous one, the interval width is reduced by a factor of <span class="math">\(\frac{1}{2}\)</span> at each step. At the end of the <span class="math">\(n\)</span>th step, the new interval will therefore, be of length:</p>
+<div class="math">
+\[
+b_n - a_n = \frac{b_0 - a_0}{2^n}.
+\]</div>
+<p>If on repeating this process <span class="math">\(n\)</span> times, the latest interval is as small as given <span class="math">\(\varepsilon\)</span> then to ensure <span class="math">\((b_n - a_n)/2 &lt; \varepsilon\)</span>, it suffices that:</p>
+<div class="math">
+\[
+\frac{b_0 - a_0}{2^n} \le 2\varepsilon.
+\]</div>
+<p>Neglecting constants, a standard bound is:</p>
+<div class="math">
+\[
+\frac{b_0 - a_0}{2^n} \le \varepsilon.
+\]</div>
+<p>Taking logarithms:</p>
+<div class="math">
+\[
+n \ge \frac{\ln(b_0 - a_0) - \ln \varepsilon}{\ln 2}.
+\]</div>
+<p>Equivalently using <span class="math">\(\left[\displaystyle{\log_b(x)=\frac{\log_a(x)}{\log_a(b)}}\right]\)</span>,</p>
+<div class="math">
+\[
+n \ge \left\lceil \log_2!\left(\frac{b_0 - a_0}{\varepsilon}\right) \right\rceil.
+\]</div>
+<p>This gives the number of iterations required for achieving an accuracy <span class="math">\(\varepsilon\)</span>.</p>
+<p>In particular, the minimum number of iterations required for converging to a root in the interval <span class="math">\([0, 1]\)</span> for a given <span class="math">\(\varepsilon\)</span> are as under:</p>
+<div class="tip admonition">
+<p class="admonition-title">Quick Reference Table</p>
+<p>For <span class="math">\([a_0, b_0] = [0, 1]\)</span> (unit interval):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Target accuracy <span class="math">\(\varepsilon\)</span></p></th>
+<th class="head text-center"><p>Iterations required <span class="math">\(n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math">\(10^{-2}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(7\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math">\(10^{-3}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(10\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math">\(10^{-4}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(14\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math">\(10^{-6}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(20\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math">\(10^{-9}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(30\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math">\(10^{-12}\)</span></p></td>
+<td class="text-center"><p><span class="math">\(40\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each additional decimal digit of accuracy costs roughly <span class="math">\(\log_2 10 \approx 3.32\)</span> iterations.</p>
+</div>
+</section>
+<section id="convergence-analysis">
+<h2>2.3.2 Convergence Analysis<a class="headerlink" href="#convergence-analysis" title="Link to this heading">#</a></h2>
+<p><strong>Obs.</strong> 1.
+Since <span class="math">\(\xi \in [a_n, b_n]\)</span> at every step, the error is bounded <strong>a priori</strong>:</p>
+<div class="proof proposition admonition" id="prop-error">
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span> (A Priori Error Bound)</p>
+<section class="proposition-content" id="proof-content">
+<div class="math">
+\[
+e_n \;=\; |\xi - x_n| \;\leq\; \frac{b_0 - a_0}{2^n}.
+\]</div>
+</section>
+</div><p>This is the key strength of the method: the error bound is <strong>explicit and computable before running the algorithm</strong>.</p>
+<section id="rate-of-convergence-formal-proof">
+<h3>Rate of Convergence — Formal Proof<a class="headerlink" href="#rate-of-convergence-formal-proof" title="Link to this heading">#</a></h3>
+<div class="proof theorem admonition" id="thm-convergence">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Linear Convergence of Bisection)</p>
+<section class="theorem-content" id="proof-content">
+<p>The bisection method converges <strong>linearly</strong> with asymptotic constant <span class="math">\(C = \tfrac{1}{2}\)</span>:</p>
+<div class="math">
+\[
+\frac{e_{n+1}}{e_n} \;=\; \frac{1}{2} \qquad \forall\, n \geq 0.
+\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. At step <span class="math">\(n\)</span>, the midpoint is <span class="math">\(x_{n+1} = \tfrac{a_n+b_n}{2}\)</span> and <span class="math">\(\xi \in [a_n, b_n]\)</span>, so</p>
+<div class="math">
+\[
+e_{n+1} = |\xi - x_{n+1}| \leq \frac{b_n - a_n}{2}.
+\]</div>
+<p>But also <span class="math">\(e_n \leq b_n - a_n\)</span>, and the bracket satisfies <span class="math">\(b_n - a_n = (b_0-a_0)/2^n\)</span>, giving</p>
+<div class="math">
+\[
+e_{n+1} \leq \frac{b_0 - a_0}{2^{n+1}} = \frac{1}{2}\cdot\frac{b_0 - a_0}{2^n} \leq \frac{e_n}{2}.
+\]</div>
+<p>Since the ratio <span class="math">\(e_{n+1}/e_n \to 1/2\)</span>, convergence is linear with <span class="math">\(p=1\)</span>, <span class="math">\(C = 1/2\)</span>. <span class="math">\(\blacksquare\)</span></p>
+</div>
+</section>
+</section>
+<section id="worked-examples">
+<h2>2.3.3. Worked Examples<a class="headerlink" href="#worked-examples" title="Link to this heading">#</a></h2>
+<section id="example-1-polynomial-root-grewal-2-15a">
+<h3>Example 1 — Polynomial Root (Grewal 2.15a)<a class="headerlink" href="#example-1-polynomial-root-grewal-2-15a" title="Link to this heading">#</a></h3>
+<p>Find a root of</p>
+<div class="math">
+\[
+f(x) \;=\; x^3 - 4x - 9 \;=\; 0
+\]</div>
+<p>correct to three decimal places.</p>
+<p><strong>Bracketing:</strong> <span class="math">\(f(2) = -1 &lt; 0\)</span> and <span class="math">\(f(3) = 6 &gt; 0\)</span>, so <span class="math">\(\xi \in (2, 3)\)</span> by IVT.</p>
+<p><strong>Iterations:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><span class="math">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math">\(a_n\)</span></p></th>
+<th class="head text-right"><p><span class="math">\(b_n\)</span></p></th>
+<th class="head text-center"><p><span class="math">\(x_n = \tfrac{a+b}{2}\)</span></p></th>
+<th class="head text-center"><p><span class="math">\(f(x_n)\)</span></p></th>
+<th class="head text-center"><p>New bracket</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-right"><p>2.0</p></td>
+<td class="text-right"><p>3.0</p></td>
+<td class="text-center"><p>2.5</p></td>
+<td class="text-center"><p><span class="math">\(-3.375\)</span></p></td>
+<td class="text-center"><p><span class="math">\([2.5,\; 3.0]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-right"><p>2.5</p></td>
+<td class="text-right"><p>3.0</p></td>
+<td class="text-center"><p>2.75</p></td>
+<td class="text-center"><p><span class="math">\(+0.797\)</span></p></td>
+<td class="text-center"><p><span class="math">\([2.5,\; 2.75]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-right"><p>2.5</p></td>
+<td class="text-right"><p>2.75</p></td>
+<td class="text-center"><p>2.625</p></td>
+<td class="text-center"><p><span class="math">\(-1.412\)</span></p></td>
+<td class="text-center"><p><span class="math">\([2.625,\; 2.75]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-right"><p>2.625</p></td>
+<td class="text-right"><p>2.75</p></td>
+<td class="text-center"><p>2.6875</p></td>
+<td class="text-center"><p><span class="math">\(-0.348\)</span></p></td>
+<td class="text-center"><p><span class="math">\([2.6875,\; 2.75]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-right"><p>2.6875</p></td>
+<td class="text-right"><p>2.75</p></td>
+<td class="text-center"><p>2.71875</p></td>
+<td class="text-center"><p><span class="math">\(+0.207\)</span></p></td>
+<td class="text-center"><p><span class="math">\([2.6875,\; 2.71875]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math">\(\vdots\)</span></p></td>
+<td class="text-right"><p><span class="math">\(\vdots\)</span></p></td>
+<td class="text-right"><p><span class="math">\(\vdots\)</span></p></td>
+<td class="text-center"><p><span class="math">\(\vdots\)</span></p></td>
+<td class="text-center"><p><span class="math">\(\vdots\)</span></p></td>
+<td class="text-center"><p><span class="math">\(\vdots\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>12</p></td>
+<td class="text-right"><p>2.7060</p></td>
+<td class="text-right"><p>2.7070</p></td>
+<td class="text-center"><p><strong>2.7064</strong></p></td>
+<td class="text-center"><p><span class="math">\(\approx 0\)</span></p></td>
+<td class="text-center"><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="math">
+\[
+\boxed{\xi \approx 2.7064}
+\]</div>
+<p><strong>A priori bound check:</strong> <span class="math">\(n=12\)</span>, <span class="math">\(b_0 - a_0 = 1\)</span>, so <span class="math">\(e_{12} \leq 1/2^{12} \approx 2.4 \times 10^{-4}\)</span> — consistent with 3 d.p.</p>
+<section id="implementation-in-c">
+<h4>Implementation in C++<a class="headerlink" href="#implementation-in-c" title="Link to this heading">#</a></h4>
+<div class="note admonition">
+<p class="admonition-title">C++ Implementation (Theory-aligned)</p>
+<p>The following implementation follows exactly the notation introduced in the theory:</p>
+<ul class="simple">
+<li><p>Interval: <span class="math">\([a_n, b_n]\)</span></p></li>
+<li><p>Midpoint:</p></li>
+</ul>
+<div class="math">
+\[
+x_n = \frac{a_n + b_n}{2}
+\]</div>
+<ul class="simple">
+<li><p>Stopping criterion:</p></li>
+</ul>
+<div class="math">
+\[
+\frac{b_n - a_n}{2} < \varepsilon
+\]</div>
+<ul class="simple">
+<li><p>Update rule based on sign change</p></li>
+</ul>
+<p>The code is written in <strong>verbose mode</strong> for pedagogical purposes.<br />
+To use it in production, simply comment the indicated lines.</p>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdexcept&gt;</span>
+
+<span class="c1">// ------------------------------------------------------------</span>
+<span class="c1">// Bisection Method (Verbose, Theory-consistent version)</span>
+<span class="c1">// ------------------------------------------------------------</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="nf">bisection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">f</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">double</span><span class="w"> </span><span class="n">a_0</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b_0</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">double</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-6</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">max_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Initial bracket: [a_0, b_0]</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">a_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_0</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">b_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_0</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">f_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">a_n</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">f_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">b_n</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// IVT condition: f(a_0)*f(b_0) &lt; 0</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f_a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f_b</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">invalid_argument</span><span class="p">(</span><span class="s">&quot;Invalid bracket: no sign change.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Header (COMMENT THIS BLOCK for non-verbose version)</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;n</span><span class="se">\t</span><span class="s"> a_n</span><span class="se">\t\t</span><span class="s"> b_n</span><span class="se">\t\t</span><span class="s"> x_n</span><span class="se">\t\t</span><span class="s"> f(x_n)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_iter</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Midpoint: x_n = (a_n + b_n)/2</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">a_n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_n</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">f_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x_n</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Print iteration (COMMENT THIS LINE for non-verbose version)</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a_n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t\t</span><span class="s">&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b_n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t\t</span><span class="s">&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x_n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t\t</span><span class="s">&quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f_x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Stopping criterion:</span>
+<span class="w">    </span><span class="c1">// (b_n - a_n)/2 &lt; epsilon  &lt;=&gt;  |x_n - ξ| &lt; ε (a priori bound)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">b_n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a_n</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">f_x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">epsilon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">x_n</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Update rule (preserve sign change)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f_a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">f_x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">b_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_n</span><span class="p">;</span>
+<span class="w">      </span><span class="n">f_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">a_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_n</span><span class="p">;</span>
+<span class="w">      </span><span class="n">f_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f_x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Fallback (max_iter reached)</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">a_n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// ------------------------------------------------------------</span>
+<span class="c1">// Example</span>
+<span class="c1">// ------------------------------------------------------------</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Test function: f(x) = x^3 - 4x - 9</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bisection</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-6</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Approximate root: &quot;</span>
+<span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Execution:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">❯ time ./bisecOp</span>
+<span class="go">n        a_n             b_n             x_n             f(x_n)</span>
+<span class="go">0       2               3               2.5             -3.375</span>
+<span class="go">1       2.5             3               2.75            0.796875</span>
+<span class="go">2       2.5             2.75            2.625           -1.41211</span>
+<span class="go">3       2.625           2.75            2.6875          -0.339111</span>
+<span class="go">4       2.6875          2.75            2.71875         0.220917</span>
+<span class="go">5       2.6875          2.71875         2.70312         -0.0610771</span>
+<span class="go">6       2.70312         2.71875         2.71094         0.0794234</span>
+<span class="go">7       2.70312         2.71094         2.70703         0.00904924</span>
+<span class="go">8       2.70312         2.70703         2.70508         -0.0260449</span>
+<span class="go">9       2.70508         2.70703         2.70605         -0.00850557</span>
+<span class="go">10      2.70605         2.70703         2.70654         0.000269896</span>
+<span class="go">11      2.70605         2.70654         2.7063          -0.00411832</span>
+<span class="go">12      2.7063          2.70654         2.70642         -0.00192433</span>
+<span class="go">13      2.70642         2.70654         2.70648         -0.000827249</span>
+<span class="go">14      2.70648         2.70654         2.70651         -0.000278684</span>
+<span class="go">15      2.70651         2.70654         2.70653         -4.39577e-06</span>
+<span class="go">16      2.70653         2.70654         2.70654         0.00013275</span>
+<span class="go">17      2.70653         2.70654         2.70653         6.41769e-05</span>
+<span class="go">18      2.70653         2.70653         2.70653         2.98905e-05</span>
+<span class="go">19      2.70653         2.70653         2.70653         1.27474e-05</span>
+
+<span class="go">Approximate root: 2.70653</span>
+<span class="go">./bisecOp  0.00s user 0.00s system 87% cpu 0.004 total</span>
+</pre></div>
+</div>
+<p>Using the a priori estimate:</p>
+<div class="math">
+\[
+n \;\geq\; \left\lceil \log_2\!\left(\frac{b_0 - a_0}{\varepsilon}\right) \right\rceil
+\]</div>
+<p>with <span class="math">\(b_0 - a_0 = 1\)</span> and <span class="math">\(\varepsilon = 10^{-6}\)</span>:</p>
+<div class="math">
+\[
+n \;\geq\; \left\lceil \log_2(10^6) \right\rceil
+\;=\; \left\lceil \frac{\log_{10}(10^6)}{\log_{10}(2)} \right\rceil
+\;=\; \left\lceil \frac{6}{0.3010} \right\rceil
+\;\approx\; \left\lceil 19.93 \right\rceil
+\;=\; 20.
+\]</div>
+<p>Thus, the <strong>20 iterations observed in the execution match exactly the theoretical requirement</strong>, confirming the sharpness of the bound.</p>
+</section>
+</section>
+<section id="example-2-transcendental-equation-grewal-2-17">
+<h3>Example 2 — Transcendental Equation (Grewal 2.17)<a class="headerlink" href="#example-2-transcendental-equation-grewal-2-17" title="Link to this heading">#</a></h3>
+<p>Find a root of</p>
+<div class="math">
+\[
+f(x) \;=\; \cos x - x\,e^x \;=\; 0.
+\]</div>
+<p><strong>Bracketing:</strong> <span class="math">\(f(0) = 1 &gt; 0\)</span> and <span class="math">\(f(1) = \cos 1 - e \approx -2.18 &lt; 0\)</span>, so <span class="math">\(\xi \in (0, 1)\)</span>.</p>
+<p>After 6 bisections: <span class="math">\(\xi \approx 0.5156\)</span>.</p>
+<hr class="docutils" />
+<div class="important admonition">
+<p class="admonition-title">Core Results</p>
+<div class="math">
+\[
+\text{Midpoint:} \quad x_{n+1} = \frac{a_n + b_n}{2}
+\]</div>
+<div class="math">
+\[
+\text{Error bound:} \quad e_n \leq \frac{b_0 - a_0}{2^n}
+\]</div>
+<div class="math">
+\[
+\text{Convergence rate:} \quad \frac{e_{n+1}}{e_n} = \frac{1}{2} \quad \text{(linear, } p=1 \text{)}
+\]</div>
+<div class="math">
+\[
+\text{Iterations needed:} \quad n \geq \left\lceil \log_2\!\left(\frac{b_0-a_0}{\varepsilon}\right) \right\rceil
+\]</div>
+<div class="math">
+\[
+\text{Existence:} \quad f(a)\cdot f(b) < 0 \;\wedge\; f \in C([a,b]) \;\Rightarrow\; \exists\,\xi \in (a,b): f(\xi)=0 \quad \text{(IVT)}
+\]</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Grewal, B.S. <em>Numerical Methods in Engineering and Science</em>, Section 2.8.</p></li>
+<li><p>Burden, R.L. &amp; Faires, J.D. <em>Numerical Analysis</em>, 10th ed., §2.1.</p></li>
+<li><p>Quarteroni, A., Saleri, F. &amp; Gervasio, P. <em>Scientific Computing with MATLAB and Octave</em>, Ch. 6.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.1_Basic_Properties_of_Equations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2.1 Basic Properties of Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.4_False_Position_Method.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2.4 False Position Method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-number-of-iterations">2.3.1 Required Number of Iterations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-analysis">2.3.2 Convergence Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-of-convergence-formal-proof">Rate of Convergence — Formal Proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">2.3.3. Worked Examples</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-polynomial-root-grewal-2-15a">Example 1 — Polynomial Root (Grewal 2.15a)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-in-c">Implementation in C++</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-transcendental-equation-grewal-2-17">Example 2 — Transcendental Equation (Grewal 2.17)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/josh-l515/Fusion-Prep/edit/main/numerical_methods/02_Solution_of_algebraics_and_trascendentals_equations/2.3_Bisection_Method.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/numerical_methods/02_Solution_of_algebraics_and_trascendentals_equations/2.3_Bisection_Method.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Josué David Huallpa Aimituma.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

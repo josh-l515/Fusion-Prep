@@ -13,8 +13,6 @@ These pages contain information about the community that leads, supports, and de
    01_introduction_to_electrostatics/0.1.3_gauss's_law
    01_introduction_to_electrostatics/0.1.4_differential_form_of_gauss's_law
    01_introduction_to_electrostatics/0.1.5_another_equation_of_electrostatic_and_the_scalar_potencial
-   01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python
-   01_introduction_to_electrostatics/nhanes_univariate_analyses
-   01_introduction_to_electrostatics/test
+
 
 

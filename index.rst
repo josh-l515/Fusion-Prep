@@ -14,7 +14,7 @@ Fusion-Prep documentation
 
    .. tics/index
    .. physics-i/index
-   .. physics-ii/index
+   physics-ii/index
    .. physics-iii/index
    .. classical_mechanics/index
    .. statistical_physics/index

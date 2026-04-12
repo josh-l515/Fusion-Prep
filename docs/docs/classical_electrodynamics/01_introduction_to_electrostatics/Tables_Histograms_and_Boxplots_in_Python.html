@@ -31,9 +31,13 @@
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/nbsphinx-code-cells.css?v=2aa19091" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=86e2049b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=36753391" />
   
   <!-- So that users can add custom icons -->
   <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -46,7 +50,10 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/classical_electrodynamics/01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/docs/classical_electrodynamics/01_introduction_to_electrostatics/Tables_Histograms_and_Boxplots_in_Python.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -130,6 +137,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../python/index.html">
     Python
   </a>
@@ -149,13 +163,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../../linux/index.html">
-    Linux
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -164,6 +171,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../../android-studio/index.html">
     Android Apps
@@ -297,6 +311,13 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../python/index.html">
     Python
@@ -473,49 +494,41 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="Visualizing-Data-in-Python">
-<h1>Visualizing Data in Python<a class="headerlink" href="#Visualizing-Data-in-Python" title="Link to this heading">#</a></h1>
-<section id="Tables,-Histograms,-Boxplots">
-<h2>Tables, Histograms, Boxplots<a class="headerlink" href="#Tables,-Histograms,-Boxplots" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-data-in-python">
+<h1>Visualizing Data in Python<a class="headerlink" href="#visualizing-data-in-python" title="Link to this heading">#</a></h1>
+<section id="tables-histograms-boxplots">
+<h2>Tables, Histograms, Boxplots<a class="headerlink" href="#tables-histograms-boxplots" title="Link to this heading">#</a></h2>
 <p>When working with a new dataset, one of the most useful ways to begin the analysis is to visualize the data. By using tables, histograms, box plots, and other visual tools, we can get a better idea of what the data may be able to tell us, and we can gain insights into the data that we may have not discovered otherwise.</p>
-<p>In this notebook we demonstrate some basic visualisations in Python, building our abilities to explore data from a graphical perspective. We will use the ‘tips’ dataset, whose observations contain information about restaurant bills and tipping.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first need to import the packages that we will be using</span>
+<p>In this notebook we demonstrate some basic visualisations in Python, building our abilities to explore data from a graphical perspective.  We will use the ‘tips’ dataset, whose observations contain information about restaurant bills and tipping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first need to import the packages that we will be using</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span> <span class="c1"># For plotting</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> <span class="c1"># For showing plots</span>
 </pre></div>
 </div>
 </div>
+</div>
 <p>Next we read the data from the filesytem and use it to construct a Pandas dataframe.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[85]:
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
 </div>
 </section>
-<section id="Visualizing-the-Data---Tables">
-<h2>Visualizing the Data - Tables<a class="headerlink" href="#Visualizing-the-Data---Tables" title="Link to this heading">#</a></h2>
-<p>When you begin working with a new data set, it is often useful to inspect the first few rows of data. This will show you what kind of data is in the dataset, what data types you are working with, and will serve as a reference for the other plots that we produce below.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+<section id="visualizing-the-data-tables">
+<h2>Visualizing the Data - Tables<a class="headerlink" href="#visualizing-the-data-tables" title="Link to this heading">#</a></h2>
+<p>When you begin working with a new data set,  it is often useful to inspect the first few rows of data. This will show you what kind of data is in the dataset, what data types you are working with, and will serve as a reference for the other plots that we produce below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
-</pre></div>
-</div>
-<div class="output_area rendered_html docutils container">
-<div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -595,26 +608,20 @@
     </tr>
   </tbody>
 </table>
-</div></div>
+</div></div></div>
 </div>
 </section>
-<section id="Describing-Data">
-<h2>Describing Data<a class="headerlink" href="#Describing-Data" title="Link to this heading">#</a></h2>
+<section id="describing-data">
+<h2>Describing Data<a class="headerlink" href="#describing-data" title="Link to this heading">#</a></h2>
 <p>Summary statistics, including the mean, minimum, and maximum of the data, can be useful to get a feel for the central tendency and dispersion of each variable.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
-</pre></div>
-</div>
-<div class="output_area rendered_html docutils container">
-<div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -688,216 +695,149 @@
     </tr>
   </tbody>
 </table>
-</div></div>
+</div></div></div>
 </div>
 </section>
-<section id="Creating-a-Histogram">
-<h2>Creating a Histogram<a class="headerlink" href="#Creating-a-Histogram" title="Link to this heading">#</a></h2>
+<section id="creating-a-histogram">
+<h2>Creating a Histogram<a class="headerlink" href="#creating-a-histogram" title="Link to this heading">#</a></h2>
 <p>A histogram captures the shape of the distribution of the data.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Bill&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_9_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_9_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Tip&quot;</span><span class="p">);</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Bill&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_10_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_10_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/8136b3ec9b0a87cfffbc5895431949e86c35f5663eebdc4e422fb289b4e8bb8a.png" src="../../../_images/8136b3ec9b0a87cfffbc5895431949e86c35f5663eebdc4e422fb289b4e8bb8a.png" />
 </div>
 </div>
-<p>The tips data are bivariate – each customer has both a total bill value and a tip value. This allows us to plot one of these variables against the other in a scatterplot. It is natural to expect the tip to be larger when the total bill is larger. This relationship is evident in the scatterplot below.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram of Total Tip&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_12_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_12_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/de7764bea59313763999961f92986e698149dddb276bf235cff4b01ffe5d42ba.png" src="../../../_images/de7764bea59313763999961f92986e698149dddb276bf235cff4b01ffe5d42ba.png" />
 </div>
 </div>
-<p>We may wish to stratify our data according to some factor, such as the sex of the customer. In this case, we would be able to see if there are systematic differences in tipping behavior or bill size between sexes.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[91]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
+<p>The tips data are bivariate – each customer has both a total bill value and a tip value.  This allows us to plot one of these variables against the other in a scatterplot.  It is natural to expect the tip to be larger when the total bill is larger.  This relationship is evident in the scatterplot below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="cell_output docutils container">
+<img alt="../../../_images/1eb9d6f3ba5ffb7d83ffd2ddbc84357304c52c4faf71961bc26ed05fbad7a5e7.png" src="../../../_images/1eb9d6f3ba5ffb7d83ffd2ddbc84357304c52c4faf71961bc26ed05fbad7a5e7.png" />
 </div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_14_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_14_0.png" />
+</div>
+<p>We may wish to stratify our data according to some factor, such as the sex of the customer.  In this case, we would be able to see if there are systematic differences in tipping behavior or bill size between sexes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips_data</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1b347cc1e9cb6363d04dc7606d353eef570adc2038215523ea824b3c7ea6e60e.png" src="../../../_images/1b347cc1e9cb6363d04dc7606d353eef570adc2038215523ea824b3c7ea6e60e.png" />
 </div>
 </div>
 </section>
-<section id="Creating-a-Boxplot">
-<h2>Creating a Boxplot<a class="headerlink" href="#Creating-a-Boxplot" title="Link to this heading">#</a></h2>
-<p>Histograms require a lot of data to produce accurate estimates of the population density (which is what the histogram is estimating). Boxplots show a minimal amount of information about the shape of a distribution and can be more informative with smaller datasets.</p>
-<p>Below we create a boxplot of the bill amount. The median bill is around 18 dollars, and half of the bills fall between 12 and 24 dollars (approximately). Extreme bills may be as large as 40 dollars, with a small number of bills being even larger than 40 dollars.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[92]:
+<section id="creating-a-boxplot">
+<h2>Creating a Boxplot<a class="headerlink" href="#creating-a-boxplot" title="Link to this heading">#</a></h2>
+<p>Histograms require a lot of data to produce accurate estimates of the population density (which is what the histogram is estimating).  Boxplots show a minimal amount of information about the shape of a distribution and can be more informative with smaller datasets.</p>
+<p>Below we create a boxplot of the bill amount.  The median bill is around 18 dollars, and half of the bills fall between 12 and 24 dollars (approximately).  Extreme bills may be as large as 40 dollars, with a small number of bills being even larger than 40 dollars.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Total Bill&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Total Bill&quot;</span><span class="p">);</span>
-</pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_16_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_16_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/971797ff8db92871c6bd9dd3c85ea956884b6fab52fbe6194501b59976d54783.png" src="../../../_images/971797ff8db92871c6bd9dd3c85ea956884b6fab52fbe6194501b59976d54783.png" />
 </div>
 </div>
 <p>Next we create a boxplot of the tip amounts.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[93]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Tip&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Box plot of the Tip&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_18_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_18_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/10ccb471cefb1c876568e3ea7eadac05a035a56d3dd422e80eb3016b83a6422d.png" src="../../../_images/10ccb471cefb1c876568e3ea7eadac05a035a56d3dd422e80eb3016b83a6422d.png" />
 </div>
 </div>
 </section>
-<section id="Creating-histograms-and-boxplots-stratified-by-groups">
-<h2>Creating histograms and boxplots stratified by groups<a class="headerlink" href="#Creating-histograms-and-boxplots-stratified-by-groups" title="Link to this heading">#</a></h2>
+<section id="creating-histograms-and-boxplots-stratified-by-groups">
+<h2>Creating histograms and boxplots stratified by groups<a class="headerlink" href="#creating-histograms-and-boxplots-stratified-by-groups" title="Link to this heading">#</a></h2>
 <p>While looking at a single variable is interesting, it is often useful to see how a variable changes in coordination with another. Using graphs, we can see if there is a difference between the tipping amounts of smokers vs. non-smokers, or if tipping varies according to the time of the day.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[94]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by smoking status</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by smoking status</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;smoker&quot;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_20_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_20_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/3af1e72fbc943f6feeb0b380877f051edbca1c54b22d76b40578c888d56b2c09.png" src="../../../_images/3af1e72fbc943f6feeb0b380877f051edbca1c54b22d76b40578c888d56b2c09.png" />
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[95]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by time of day</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a boxplot and histogram of the tips grouped by time of day</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[95]:
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;tip&#39;, ylabel=&#39;time&#39;&gt;
 </pre></div>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;AxesSubplot:xlabel=&#39;tip&#39;, ylabel=&#39;time&#39;&gt;
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_21_1.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_21_1.png" />
+<img alt="../../../_images/7a1437b6f1c880a8de6ebe5d1b26e6a7bf7825fa169297ee79d483b7c100f2ea.png" src="../../../_images/7a1437b6f1c880a8de6ebe5d1b26e6a7bf7825fa169297ee79d483b7c100f2ea.png" />
 </div>
 </div>
 <p>We can also compare the tip distributions based on whether the tip was paid for lunch or dinner.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[96]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">,</span> <span class="s2">&quot;tip&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_23_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_23_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/2d417616ae8dd9dc4c1d7e3e033a171a08e3e7a834d9148044e2ce90506bcad8.png" src="../../../_images/2d417616ae8dd9dc4c1d7e3e033a171a08e3e7a834d9148044e2ce90506bcad8.png" />
 </div>
 </div>
 <p>Next we look at the distribution of tips by day of week, using boxplots to show the main features of the distributions.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tips_data</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">])</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;tip&#39;, ylabel=&#39;day&#39;&gt;
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[97]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;AxesSubplot:xlabel=&#39;tip&#39;, ylabel=&#39;day&#39;&gt;
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_25_1.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_25_1.png" />
+<img alt="../../../_images/ab9641610d838efad7ff31be579446296bbf4359ed0c40fe55eb29491a0b1052.png" src="../../../_images/ab9641610d838efad7ff31be579446296bbf4359ed0c40fe55eb29491a0b1052.png" />
 </div>
 </div>
 <p>Histograms can capture more features of a distribution, but if the sample is small a histogram may be quite imprecise.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[98]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">tips_data</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">,</span> <span class="s2">&quot;tip&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_27_0.png" src="../../../_images/docs_classical_electrodynamics_01_introduction_to_electrostatics_Tables_Histograms_and_Boxplots_in_Python_27_0.png" />
+<div class="cell_output docutils container">
+<img alt="../../../_images/c269ac476017ede26818a7281a08af67618e7bb293ddc05ba66bea9c8a36c94e.png" src="../../../_images/c269ac476017ede26818a7281a08af67618e7bb293ddc05ba66bea9c8a36c94e.png" />
 </div>
 </div>
 </section>
@@ -932,12 +872,12 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Tables,-Histograms,-Boxplots">Tables, Histograms, Boxplots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Visualizing-the-Data---Tables">Visualizing the Data - Tables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Describing-Data">Describing Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Creating-a-Histogram">Creating a Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Creating-a-Boxplot">Creating a Boxplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Creating-histograms-and-boxplots-stratified-by-groups">Creating histograms and boxplots stratified by groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tables-histograms-boxplots">Tables, Histograms, Boxplots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-data-tables">Visualizing the Data - Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-data">Describing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-histogram">Creating a Histogram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-boxplot">Creating a Boxplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-histograms-and-boxplots-stratified-by-groups">Creating histograms and boxplots stratified by groups</a></li>
 </ul>
   </nav></div>
 

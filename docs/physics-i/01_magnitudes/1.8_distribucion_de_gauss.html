@@ -31,8 +31,13 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=36753391" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -45,9 +50,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'physics-i/01_magnitudes/1.8_distribucion_de_gauss';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/physics-i/01_magnitudes/1.8_distribucion_de_gauss.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -131,6 +137,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
   </a>
@@ -150,13 +163,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../linux/index.html">
-    Linux
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -165,6 +171,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
     Android Apps
@@ -296,6 +309,13 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
@@ -481,9 +501,9 @@
   <section class="tex2jax_ignore mathjax_ignore" id="distribucion-de-gauss">
 <h1>1.8 Distribución de Gauss<a class="headerlink" href="#distribucion-de-gauss" title="Link to this heading">#</a></h1>
 <p>Consideremos de nuevo la serie de resultados de medición</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0" title="Link to this equation">#</a></span>\[x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N\]</div>
-<p>estos números están distribuidos alrededor del promedio <span class="math notranslate nohighlight">\(\bar{x}\)</span>. Observaremos en <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_gauss_01</span></code> que hay valores que están cerca del promedio; otros, menores en número, estarán lejos.</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-0" title="Permalink to this equation">#</a></span>\[x_1, x_2, x_3, \dotsb, x_i, \dotsb, x_{N-1}, x_N\]</div>
+<p>estos números están distribuidos alrededor del promedio <span class="math">\(\bar{x}\)</span>. Observaremos en <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_gauss_01</span></code> que hay valores que están cerca del promedio; otros, menores en número, estarán lejos.</p>
 <figure class="align-center" id="fig-gauss-01">
 <a class="reference internal image-reference" href="../../_images/fig_gauss_01.png"><img alt="distribución de mediciones normal" src="../../_images/fig_gauss_01.png" style="width: 700px;" />
 </a>
@@ -491,11 +511,11 @@
 <p><span class="caption-text">Distribución normal de mediciones repetidas de una misma magnitud</span><a class="headerlink" href="#fig-gauss-01" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Cuando nos proponemos hacer una medición más, la <span class="math notranslate nohighlight">\((N+1)-\)</span>ésima, no podemos saber de antemano el resultado que va a salir, pero es evidente que sí podremos decir que con buena probabilidad estará cerca del promedio, y con probabilidad menor estará lejos, esto es:</p>
+<p>Cuando nos proponemos hacer una medición más, la <span class="math">\((N+1)-\)</span>ésima, no podemos saber de antemano el resultado que va a salir, pero es evidente que sí podremos decir que con buena probabilidad estará cerca del promedio, y con probabilidad menor estará lejos, esto es:</p>
 <blockquote>
 <div><p><strong>No podremos nunca predecir el valor de una medición dada, pero sí podremos decir algo sobre la probabilidad de que su valor caiga en un determinado intervalo de valores posibles</strong></p>
 </div></blockquote>
-<p>Si dividimos el eje <span class="math notranslate nohighlight">\(x\)</span> en pequeños intervalos iguales <span class="math notranslate nohighlight">\(\Delta x\)</span> , podemos contar el número de observaciones <span class="math notranslate nohighlight">\(\Delta n\)</span> que caen en cada intervalo y representarlo gráficamente.</p>
+<p>Si dividimos el eje <span class="math">\(x\)</span> en pequeños intervalos iguales <span class="math">\(\Delta x\)</span> , podemos contar el número de observaciones <span class="math">\(\Delta n\)</span> que caen en cada intervalo y representarlo gráficamente.</p>
 <figure class="align-center" id="fig-gauss-02">
 <a class="reference internal image-reference" href="../../_images/fig_gauss_02.png"><img alt="distribución de gauss mediciones fisicas" src="../../_images/fig_gauss_02.png" style="width: 600px;" />
 </a>
@@ -503,17 +523,17 @@
 <p><span class="caption-text">Esto es lo que se llama un histograma, cuando a todo un intervalo le corresponde un valor, y no a un solo punto, como sucede en una función.</span><a class="headerlink" href="#fig-gauss-02" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Cuanto más grande sea la estadística, o sea <span class="math notranslate nohighlight">\(N\)</span>, más pequeños podemos hacer los intervalos <span class="math notranslate nohighlight">\(\Delta x\)</span> sin por ello perder la chance de tener un número suficientemente grande <span class="math notranslate nohighlight">\(\Delta n\)</span> de datos en cada intervalo.</p>
-<p>Sea <span class="math notranslate nohighlight">\(\Delta n\)</span> el número de valores numéricos de nuestra serie de mediciones, que caen en un determinado intervalo, entre <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(x + \Delta x\)</span>. Se comprueba experimentalmente que ese número depende del valor de <span class="math notranslate nohighlight">\(x\)</span> y de la longitud del intervalo <span class="math notranslate nohighlight">\(\Delta x\)</span> en la forma aproximada:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1" title="Link to this equation">#</a></span>\[\Delta n \approx \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\Delta x\]</div>
-<p>La aproximación es tanto mejor cuanto mayor sea <span class="math notranslate nohighlight">\(N\)</span> y cuanto más pequeño sea <span class="math notranslate nohighlight">\(\Delta x\)</span>. La relación se transforma en igualdad para diferenciales <span class="math notranslate nohighlight">\(dn\)</span> y <span class="math notranslate nohighlight">\(dx\)</span>.</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2" title="Link to this equation">#</a></span>\[\lim_{\Delta x\to 0}\frac{\Delta n}{\Delta x} =\frac{dn}{dx}= \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\]</div>
+<p>Cuanto más grande sea la estadística, o sea <span class="math">\(N\)</span>, más pequeños podemos hacer los intervalos <span class="math">\(\Delta x\)</span> sin por ello perder la chance de tener un número suficientemente grande <span class="math">\(\Delta n\)</span> de datos en cada intervalo.</p>
+<p>Sea <span class="math">\(\Delta n\)</span> el número de valores numéricos de nuestra serie de mediciones, que caen en un determinado intervalo, entre <span class="math">\(x\)</span> y <span class="math">\(x + \Delta x\)</span>. Se comprueba experimentalmente que ese número depende del valor de <span class="math">\(x\)</span> y de la longitud del intervalo <span class="math">\(\Delta x\)</span> en la forma aproximada:</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-1" title="Permalink to this equation">#</a></span>\[\Delta n \approx \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\Delta x\]</div>
+<p>La aproximación es tanto mejor cuanto mayor sea <span class="math">\(N\)</span> y cuanto más pequeño sea <span class="math">\(\Delta x\)</span>. La relación se transforma en igualdad para diferenciales <span class="math">\(dn\)</span> y <span class="math">\(dx\)</span>.</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-2" title="Permalink to this equation">#</a></span>\[\lim_{\Delta x\to 0}\frac{\Delta n}{\Delta x} =\frac{dn}{dx}= \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\]</div>
 <p>donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\displaystyle{\frac{dn}{dx}}\)</span>: se conoce como densidad de oservaciones, es decir representa el número de observaciones cuyos valores estan comprendidos entre <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(x+dx\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span>: ubica el intervalo <span class="math notranslate nohighlight">\(dx\)</span> en el cual se tienen <span class="math notranslate nohighlight">\(dn\)</span> observaciones.</p></li>
+<li><p><span class="math">\(\displaystyle{\frac{dn}{dx}}\)</span>: se conoce como densidad de oservaciones, es decir representa el número de observaciones cuyos valores estan comprendidos entre <span class="math">\(x\)</span> y <span class="math">\(x+dx\)</span>.</p></li>
+<li><p><span class="math">\(x\)</span>: ubica el intervalo <span class="math">\(dx\)</span> en el cual se tienen <span class="math">\(dn\)</span> observaciones.</p></li>
 </ul>
 <p>La representación gráfica de la densidad de observaciones se llama curva de distribución o curva de Gauss. Tiene la forma de <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_gauss_03</span></code></p>
 <figure class="align-center" id="fig-gauss-03">
@@ -525,39 +545,39 @@
 </figure>
 <p>donde la curva:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x=\bar{x}\)</span> es un máximo</p></li>
-<li><p>Es simétrica respecto de <span class="math notranslate nohighlight">\(\bar{x}\)</span>.</p></li>
+<li><p><span class="math">\(x=\bar{x}\)</span> es un máximo</p></li>
+<li><p>Es simétrica respecto de <span class="math">\(\bar{x}\)</span>.</p></li>
 <li><p>Tiene forma de campana.</p></li>
-<li><p>Sus punto de inflexión están en <span class="math notranslate nohighlight">\(\bar{x}\pm \sigma\)</span>.</p></li>
-<li><p>Tiende a cero cuando nos alejamos de <span class="math notranslate nohighlight">\(\bar{x}\)</span>.</p></li>
+<li><p>Sus punto de inflexión están en <span class="math">\(\bar{x}\pm \sigma\)</span>.</p></li>
+<li><p>Tiende a cero cuando nos alejamos de <span class="math">\(\bar{x}\)</span>.</p></li>
 </ul>
 <section id="numero-de-observaciones">
 <h2>1.8.1 Número de observaciones<a class="headerlink" href="#numero-de-observaciones" title="Link to this heading">#</a></h2>
 <p>La superficie total subtendida por la curva de Gauss, es:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3" title="Link to this equation">#</a></span>\[\begin{split}\int_{\infty}^\infty dn&amp;=\int_{-\infty}^\infty \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
-&amp;=\frac{N}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\frac{dx}{\sigma}\\
-&amp;=\frac{N}{\sqrt{2\pi}}\sqrt{2\pi}\\
-&amp;=N\end{split}\]</div>
-<p>EL cual corresponde al número total de observaciones. Esta es precisamente la razón por la cual se coloca el factor <span class="math notranslate nohighlight">\(\sqrt{2\pi}\)</span> en el denominador.</p>
-<p>Integremos ahora sobre cierto intervalo respecto a <span class="math notranslate nohighlight">\(x\)</span>, la integral:</p>
-<div class="math notranslate nohighlight" id="equation-eq-numero-observaciones">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-numero-observaciones" title="Link to this equation">#</a></span>\[\begin{split}\int_{x_1}^{x_2} dn&amp;=\int_{x_1}^{x_2} \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
-&amp;=\int_{x_1}^{x_2} \frac{dN}{dx}dx\\
-&amp;=\Delta N\end{split}\]</div>
-<p>será el número de observaciones <span class="math notranslate nohighlight">\(\Delta N\)</span> comprendidas entre <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span>.  Esta integral no puede resolverse de forma analítica, su valor debe buscarse en tablas provenientes de un cálculo numérico.</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-3" title="Permalink to this equation">#</a></span>\[\int_{\infty}^\infty dn&=\int_{-\infty}^\infty \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
+&=\frac{N}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}\frac{dx}{\sigma}\\
+&=\frac{N}{\sqrt{2\pi}}\sqrt{2\pi}\\
+&=N\]</div>
+<p>EL cual corresponde al número total de observaciones. Esta es precisamente la razón por la cual se coloca el factor <span class="math">\(\sqrt{2\pi}\)</span> en el denominador.</p>
+<p>Integremos ahora sobre cierto intervalo respecto a <span class="math">\(x\)</span>, la integral:</p>
+<div class="math" id="equation-eq-numero-observaciones">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-numero-observaciones" title="Permalink to this equation">#</a></span>\[\int_{x_1}^{x_2} dn&=\int_{x_1}^{x_2} \frac{N}{\sigma \sqrt{2\pi}}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\\
+&=\int_{x_1}^{x_2} \frac{dN}{dx}dx\\
+&=\Delta N\]</div>
+<p>será el número de observaciones <span class="math">\(\Delta N\)</span> comprendidas entre <span class="math">\(x_1\)</span> y <span class="math">\(x_2\)</span>.  Esta integral no puede resolverse de forma analítica, su valor debe buscarse en tablas provenientes de un cálculo numérico.</p>
 </section>
 <section id="probabilidad-de-observacion">
 <h2>1.8.2 Probabilidad de observación<a class="headerlink" href="#probabilidad-de-observacion" title="Link to this heading">#</a></h2>
-<p>Si ahora dividimos <a class="reference internal" href="#equation-eq-numero-observaciones">()</a>, por el número total de observaciones <span class="math notranslate nohighlight">\(N\)</span>,</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4" title="Link to this equation">#</a></span>\[\frac{\Delta N}{N}= \frac{1}{\sigma \sqrt{2\pi}}\int_{x_1}^{x_2}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\]</div>
-<p>obtenemos lo que se llama la probabilidad de que una observación dada esté comprendida en el intervalo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, así podemos decir que:</p>
+<p>Si ahora dividimos <a class="reference internal" href="#equation-eq-numero-observaciones">()</a>, por el número total de observaciones <span class="math">\(N\)</span>,</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-4" title="Permalink to this equation">#</a></span>\[\frac{\Delta N}{N}= \frac{1}{\sigma \sqrt{2\pi}}\int_{x_1}^{x_2}e^{-\displaystyle{\frac{(\bar{x}-x)^2}{2\sigma^2}}}dx\]</div>
+<p>obtenemos lo que se llama la probabilidad de que una observación dada esté comprendida en el intervalo <span class="math">\(x_1\)</span>, <span class="math">\(x_2\)</span>, así podemos decir que:</p>
 <ul>
-<li><p>La probabilidad de encontrar un dato entre <span class="math notranslate nohighlight">\(-\infty\)</span> y <span class="math notranslate nohighlight">\(+\infty\)</span> es 1 o sea <span class="math notranslate nohighlight">\(100\%\)</span> certeza.</p></li>
-<li><p>La probabilidad de encontrar un dato fuera del intervalo <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, será</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5" title="Link to this equation">#</a></span>\[1-\frac{\Delta N}{N}\]</div>
+<li><p>La probabilidad de encontrar un dato entre <span class="math">\(-\infty\)</span> y <span class="math">\(+\infty\)</span> es 1 o sea <span class="math">\(100\%\)</span> certeza.</p></li>
+<li><p>La probabilidad de encontrar un dato fuera del intervalo <span class="math">\(x_1\)</span>, <span class="math">\(x_2\)</span>, será</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-5" title="Permalink to this equation">#</a></span>\[1-\frac{\Delta N}{N}\]</div>
 </li>
 </ul>
 <blockquote>
@@ -567,13 +587,13 @@
 <section id="tabla-de-la-distribucion-normal">
 <h2>1.8.3 Tabla de la distribución normal<a class="headerlink" href="#tabla-de-la-distribucion-normal" title="Link to this heading">#</a></h2>
 <p>Veamos las probabilidades para algunos intervalos “prototipo” dentro de las mediciones experimentalmente. La probabilidad de que el valor de una medición (no el valor verdadero) caiga entre:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6" title="Link to this equation">#</a></span>\[\begin{split}\bar{x}\pm\sigma&amp; \to  68.3\%\\
-\bar{x}\pm2\sigma&amp; \to 95.4\%\\
-\bar{x}\pm3\sigma&amp; \to 99.7\%\\
-\bar{x}\pm4\sigma&amp; \to 99.994\%\\
-\bar{x}\pm5\sigma&amp; \to 99.99994\%
-\end{split}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-6" title="Permalink to this equation">#</a></span>\[\bar{x}\pm\sigma& \to  68.3\%\\
+\bar{x}\pm2\sigma& \to 95.4\%\\
+\bar{x}\pm3\sigma& \to 99.7\%\\
+\bar{x}\pm4\sigma& \to 99.994\%\\
+\bar{x}\pm5\sigma& \to 99.99994\%
+\]</div>
 <p>Estas cifras se obtienen de tablas de la función de densidad acumulada de la distribución normal estándar</p>
 <figure class="align-center" id="fig-tabla-z">
 <a class="reference internal image-reference" href="../../_images/tablaNormal.png"><img alt="Tabla z" src="../../_images/tablaNormal.png" style="width: 800px;" />
@@ -583,43 +603,43 @@
 </figcaption>
 </figure>
 <section id="que-es-la-variable-z">
-<h3>¿Qué es la variable <span class="math notranslate nohighlight">\(z\)</span>?<a class="headerlink" href="#que-es-la-variable-z" title="Link to this heading">#</a></h3>
-<p>La variable <span class="math notranslate nohighlight">\(z\)</span> se llama <strong>variable aleatoria estándar normal</strong> y se define como:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7" title="Link to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma}\]</div>
-<p><span class="math notranslate nohighlight">\(z\)</span> es una <strong>transformación lineal</strong> que convierte cualquier variable aleatoria <span class="math notranslate nohighlight">\(x\)</span>, con distribución normal de media <span class="math notranslate nohighlight">\(\mu\)</span> y desviación estándar <span class="math notranslate nohighlight">\(\sigma\)</span>, en una variable con:</p>
+<h3>¿Qué es la variable <span class="math">\(z\)</span>?<a class="headerlink" href="#que-es-la-variable-z" title="Link to this heading">#</a></h3>
+<p>La variable <span class="math">\(z\)</span> se llama <strong>variable aleatoria estándar normal</strong> y se define como:</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-7" title="Permalink to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma}\]</div>
+<p><span class="math">\(z\)</span> es una <strong>transformación lineal</strong> que convierte cualquier variable aleatoria <span class="math">\(x\)</span>, con distribución normal de media <span class="math">\(\mu\)</span> y desviación estándar <span class="math">\(\sigma\)</span>, en una variable con:</p>
 <ul class="simple">
-<li><p>Media <span class="math notranslate nohighlight">\( \mu=0\)</span></p></li>
-<li><p>Desviación estándar <span class="math notranslate nohighlight">\(\sigma=1\)</span></p></li>
+<li><p>Media <span class="math">\( \mu=0\)</span></p></li>
+<li><p>Desviación estándar <span class="math">\(\sigma=1\)</span></p></li>
 </ul>
 <p>Esta transformación se llama <strong>normalización</strong> o <strong>estandarización</strong>. Para demostrar esto, partamos de la distribución normal definida por su función de densidad de probabilidad:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8" title="Link to this equation">#</a></span>\[f_X(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{\displaystyle{-\frac{(x-\mu)^2}{2\sigma^2}}}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-8" title="Permalink to this equation">#</a></span>\[f_X(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{\displaystyle{-\frac{(x-\mu)^2}{2\sigma^2}}}\]</div>
 <p>Cuando hacemos el cambio de variable:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9" title="Link to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma} \quad \text{es decir,} \quad x = \mu + \sigma z\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-9" title="Permalink to this equation">#</a></span>\[z = \frac{x - \mu}{\sigma} \quad \text{es decir,} \quad x = \mu + \sigma z\]</div>
 <p>Usamos la fórmula para el cambio de variable en distribuciones continuas:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10" title="Link to this equation">#</a></span>\[f_Z(z) = f_X(x) \cdot \left| \frac{dx}{dz} \right|\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-10" title="Permalink to this equation">#</a></span>\[f_Z(z) = f_X(x) \cdot \left| \frac{dx}{dz} \right|\]</div>
 <p>Dado que:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11" title="Link to this equation">#</a></span>\[\frac{dx}{dz} = \sigma\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-11" title="Permalink to this equation">#</a></span>\[\frac{dx}{dz} = \sigma\]</div>
 <p>Entonces:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12" title="Link to this equation">#</a></span>\[f_Z(z) = f_X(\mu + \sigma z) \cdot \sigma\]</div>
-<p>Sustituyendo <span class="math notranslate nohighlight">\(f_X\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13" title="Link to this equation">#</a></span>\[\begin{split}f_Z(z) &amp;= \frac{1}{\sigma \sqrt{2\pi}} e^{-\displaystyle{\frac{(\mu + \sigma z - \mu)^2}{2\sigma^2}}} \cdot \sigma\\
-&amp;= \frac{1}{\sqrt{2\pi}}e^{-\displaystyle{\frac{z^2}{2}}}\end{split}\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-12" title="Permalink to this equation">#</a></span>\[f_Z(z) = f_X(\mu + \sigma z) \cdot \sigma\]</div>
+<p>Sustituyendo <span class="math">\(f_X\)</span>:</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-13" title="Permalink to this equation">#</a></span>\[f_Z(z) &= \frac{1}{\sigma \sqrt{2\pi}} e^{-\displaystyle{\frac{(\mu + \sigma z - \mu)^2}{2\sigma^2}}} \cdot \sigma\\
+&= \frac{1}{\sqrt{2\pi}}e^{-\displaystyle{\frac{z^2}{2}}}\]</div>
 </section>
 <section id="resultado">
 <h3>Resultado:<a class="headerlink" href="#resultado" title="Link to this heading">#</a></h3>
-<p>Finalmente, los valores de la función de densidad cuya variable <span class="math notranslate nohighlight">\(z\)</span> aparece en la tabla de probabilidad acumulada, es</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14" title="Link to this equation">#</a></span>\[f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{\displaystyle{-\frac{z^2}{2}}}\]</div>
-<p>Es decir,  esta es la <strong>distribución normal estándar</strong>, con media <span class="math notranslate nohighlight">\(\mu=0\)</span> y desviación estándar <span class="math notranslate nohighlight">\(\sigma=1\)</span>.</p>
+<p>Finalmente, los valores de la función de densidad cuya variable <span class="math">\(z\)</span> aparece en la tabla de probabilidad acumulada, es</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-14" title="Permalink to this equation">#</a></span>\[f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{\displaystyle{-\frac{z^2}{2}}}\]</div>
+<p>Es decir,  esta es la <strong>distribución normal estándar</strong>, con media <span class="math">\(\mu=0\)</span> y desviación estándar <span class="math">\(\sigma=1\)</span>.</p>
 <blockquote>
-<div><p>Como existen infinitas distribuciones normales (cada una con distintos valores de <span class="math notranslate nohighlight">\(\mu\)</span> y <span class="math notranslate nohighlight">\(\sigma\)</span>), sería poco práctico tener una tabla para cada caso. La estandarización permite usar una <strong>única tabla</strong> para consultar probabilidades o percentiles, como la <strong>tabla <span class="math notranslate nohighlight">\(z\)</span></strong>. Gracias a esta transformación, cualquier valor de <span class="math notranslate nohighlight">\(x\)</span> en una normal puede expresarse como un valor de <span class="math notranslate nohighlight">\(z\)</span>. Así podemos consultar probabilidades acumuladas de forma directa.</p>
+<div><p>Como existen infinitas distribuciones normales (cada una con distintos valores de <span class="math">\(\mu\)</span> y <span class="math">\(\sigma\)</span>), sería poco práctico tener una tabla para cada caso. La estandarización permite usar una <strong>única tabla</strong> para consultar probabilidades o percentiles, como la <strong>tabla <span class="math">\(z\)</span></strong>. Gracias a esta transformación, cualquier valor de <span class="math">\(x\)</span> en una normal puede expresarse como un valor de <span class="math">\(z\)</span>. Así podemos consultar probabilidades acumuladas de forma directa.</p>
 </div></blockquote>
 </section>
 </section>
@@ -637,23 +657,23 @@
 </figure>
 <p>Calcular:</p>
 <ul>
-<li><p>La media aritmética <span class="math notranslate nohighlight">\(\bar{t}\)</span>, la desviación estándar <span class="math notranslate nohighlight">\(\sigma\)</span> de cada una de las medidas y la incertidumbre estandar o típica <span class="math notranslate nohighlight">\(\xi\)</span>.</p></li>
+<li><p>La media aritmética <span class="math">\(\bar{t}\)</span>, la desviación estándar <span class="math">\(\sigma\)</span> de cada una de las medidas y la incertidumbre estandar o típica <span class="math">\(\xi\)</span>.</p></li>
 <li><p>Reporta el resultado final en el formato (Considerando la incertidumbre tipo A):</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_A \quad [^\circ\text{C}]\]</div>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-15" title="Permalink to this equation">#</a></span>\[t=\bar{t} \pm \xi_A \quad [^\circ\text{C}]\]</div>
 </li>
-<li><p>Considera que las mediciones se realizaron con un termómetro digital cuya resolución minima fue de <span class="math notranslate nohighlight">\(\delta_t=\xi_B= 0.01\, ^\circ\rm C\)</span>, reporta el resultado final, considerando la incertidumbre tipo B (<span class="math notranslate nohighlight">\(\xi_B\)</span>)</p>
-<div class="math notranslate nohighlight" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16">
-<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16" title="Link to this equation">#</a></span>\[t=\bar{t} \pm \xi_{\rm total} \quad [^\circ\text{C}]\]</div>
+<li><p>Considera que las mediciones se realizaron con un termómetro digital cuya resolución minima fue de <span class="math">\(\delta_t=\xi_B= 0.01\, ^\circ\rm C\)</span>, reporta el resultado final, considerando la incertidumbre tipo B (<span class="math">\(\xi_B\)</span>)</p>
+<div class="math" id="equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16">
+<span class="eqno">()<a class="headerlink" href="#equation-physics-i-01-magnitudes-1-8-distribucion-de-gauss-16" title="Permalink to this equation">#</a></span>\[t=\bar{t} \pm \xi_{\rm total} \quad [^\circ\text{C}]\]</div>
 </li>
-<li><p>Elabora un <strong>histograma</strong> con los <span class="math notranslate nohighlight">\(20\)</span> valores de temperatura.</p></li>
-<li><p>Superpón (en la misma gráfica) una <strong>curva gaussiana teórica</strong> con media <span class="math notranslate nohighlight">\(\bar{t}\)</span> y desviación estándar  <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+<li><p>Elabora un <strong>histograma</strong> con los <span class="math">\(20\)</span> valores de temperatura.</p></li>
+<li><p>Superpón (en la misma gráfica) una <strong>curva gaussiana teórica</strong> con media <span class="math">\(\bar{t}\)</span> y desviación estándar  <span class="math">\(\sigma\)</span></p></li>
 <li><p>Asumiendo una <strong>distribución normal</strong>, calcula  La probabilidad de que una futura medida de temperatura:</p>
 <ul class="simple">
-<li><p>sea menor a <span class="math notranslate nohighlight">\(97.5 ^\circ\rm C \)</span></p></li>
-<li><p>sea menor a <span class="math notranslate nohighlight">\(100.0 ^\circ\rm C\)</span></p></li>
-<li><p>se encuentre entre <span class="math notranslate nohighlight">\(99.5 ^\circ\rm C\)</span> y <span class="math notranslate nohighlight">\(100.5 ^\circ\rm C\)</span></p></li>
-<li><p>sea mayor a <span class="math notranslate nohighlight">\(98.00 ^\circ\rm C\)</span></p></li>
+<li><p>sea menor a <span class="math">\(97.5 ^\circ\rm C \)</span></p></li>
+<li><p>sea menor a <span class="math">\(100.0 ^\circ\rm C\)</span></p></li>
+<li><p>se encuentre entre <span class="math">\(99.5 ^\circ\rm C\)</span> y <span class="math">\(100.5 ^\circ\rm C\)</span></p></li>
+<li><p>sea mayor a <span class="math">\(98.00 ^\circ\rm C\)</span></p></li>
 </ul>
 </li>
 </ul>
@@ -694,7 +714,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-observaciones">1.8.1 Número de observaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilidad-de-observacion">1.8.2 Probabilidad de observación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabla-de-la-distribucion-normal">1.8.3 Tabla de la distribución normal</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-variable-z">¿Qué es la variable <span class="math notranslate nohighlight">\(z\)</span>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-la-variable-z">¿Qué es la variable <span class="math">\(z\)</span>?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultado">Resultado:</a></li>
 </ul>
 </li>

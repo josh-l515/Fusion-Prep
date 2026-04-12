@@ -31,8 +31,13 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=86e2049b" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/katex-math.css?v=91adb8b6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=36753391" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -45,9 +50,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/katex.min.js?v=be8ff15f"></script>
+    <script src="../../_static/auto-render.min.js?v=ad136472"></script>
+    <script src="../../_static/katex_autorenderer.js?v=bebc588a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'classical_electrodynamics/01_introduction_to_electrostatics/test';</script>
     <link rel="canonical" href="https://josh-l515.github.io/Fusion-Prep/classical_electrodynamics/01_introduction_to_electrostatics/test.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -131,6 +137,13 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
   </a>
@@ -150,13 +163,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../linux/index.html">
-    Linux
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -165,6 +171,13 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../linux/index.html">
+    Linux
+  </a>
+</li>
+
+
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../../android-studio/index.html">
     Android Apps
@@ -280,6 +293,8 @@
       
       
       
+        
+      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -296,6 +311,13 @@
 <nav>
   <ul class="bd-navbar-elements navbar-nav">
     
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../physics-ii/index.html">
+    Física II
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../python/index.html">
     Python
@@ -418,12 +440,6 @@
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
-</nav></div>
     </div>
   
   
@@ -482,51 +498,51 @@
 <h1>Fundamentos matematicos<a class="headerlink" href="#fundamentos-matematicos" title="Link to this heading">#</a></h1>
 <section id="variedades-diferenciales">
 <h2>Variedades diferenciales<a class="headerlink" href="#variedades-diferenciales" title="Link to this heading">#</a></h2>
-<p>Una variedad diferencial <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> es una generalización matemática
+<p>Una variedad diferencial <span class="math">\(\mathcal{M}\)</span> es una generalización matemática
 del concepto de curvas y superficies suaves, como una esfera o un plano,
 extendida a espacios de dimensiones superiores. Formalmente, es un
 espacio topológico que, localmente, es homeomorfo al espacio euclidiano
-<span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, donde <span class="math notranslate nohighlight">\(m\)</span> es la dimensión de la variedad. Decir que un
-espacio es localmente homeomorfo a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, significa que, en
+<span class="math">\(\mathbb{R}^m\)</span>, donde <span class="math">\(m\)</span> es la dimensión de la variedad. Decir que un
+espacio es localmente homeomorfo a <span class="math">\(\mathbb{R}^m\)</span>, significa que, en
 regiones pequeñas, la variedad se comporta como el espacio euclidiano de
-dimensión <span class="math notranslate nohighlight">\(m\)</span>, aunque globalmente pueda tener una estructura más
-compleja y no ser homeomorfa a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, en su totalidad.</p>
-<p>Este homeomorfismo local permite asignar a cada punto de <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>
-un conjunto de <span class="math notranslate nohighlight">\(m\)</span> números, llamados coordenadas locales. Si
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> no es globalmente homeomorfa a <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, es
+dimensión <span class="math">\(m\)</span>, aunque globalmente pueda tener una estructura más
+compleja y no ser homeomorfa a <span class="math">\(\mathbb{R}^m\)</span>, en su totalidad.</p>
+<p>Este homeomorfismo local permite asignar a cada punto de <span class="math">\(\mathcal{M}\)</span>
+un conjunto de <span class="math">\(m\)</span> números, llamados coordenadas locales. Si
+<span class="math">\(\mathcal{M}\)</span> no es globalmente homeomorfa a <span class="math">\(\mathbb{R}^m\)</span>, es
 necesario introducir múltiples sistemas de coordenadas locales para
 cubrirla completamente. Para que la variedad sea ademas diferencial, se
 requiere que las transiciones entre estos sistemas de coordenadas sean
 suaves (diferenciables). Esta condición es crucial, ya que permite
 extender las herramientas del cálculo diferencial e integral a estos
 espacios más generales. Estrictamente la <strong>variedad diferencial</strong>
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span> de dimensión <span class="math notranslate nohighlight">\(m\)</span> se define mediante las siguientes
+<span class="math">\(\mathcal{M}\)</span> de dimensión <span class="math">\(m\)</span> se define mediante las siguientes
 condiciones [&#64;Nakahara2003]:</p>
 <ol class="arabic">
-<li><p><strong>Espacio topológico</strong>: <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> es un espacio topológico.</p></li>
-<li><p><strong>Atlas y cartas</strong>: <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> está equipado con una familia de
-pares <span class="math notranslate nohighlight">\(\{(U_i, \phi_i)\}\)</span>, donde:</p>
+<li><p><strong>Espacio topológico</strong>: <span class="math">\(\mathcal{M}\)</span> es un espacio topológico.</p></li>
+<li><p><strong>Atlas y cartas</strong>: <span class="math">\(\mathcal{M}\)</span> está equipado con una familia de
+pares <span class="math">\(\{(U_i, \phi_i)\}\)</span>, donde:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\{U_i\}\)</span> es una familia de conjuntos abiertos que cubren
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, es decir, <span class="math notranslate nohighlight">\(\bigcup_i U_i = \mathcal{M}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi_i\)</span> es un <strong>homeomorfismo</strong> que mapea cada <span class="math notranslate nohighlight">\(U_i\)</span> a un
-subconjunto abierto <span class="math notranslate nohighlight">\(\tilde{U}_i\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>. Esto
-significa que <span class="math notranslate nohighlight">\(\phi_i: U_i \to \tilde{U}_i \subset \mathbb{R}^m\)</span>.</p></li>
+<li><p><span class="math">\(\{U_i\}\)</span> es una familia de conjuntos abiertos que cubren
+<span class="math">\(\mathcal{M}\)</span>, es decir, <span class="math">\(\bigcup_i U_i = \mathcal{M}\)</span>.</p></li>
+<li><p><span class="math">\(\phi_i\)</span> es un <strong>homeomorfismo</strong> que mapea cada <span class="math">\(U_i\)</span> a un
+subconjunto abierto <span class="math">\(\tilde{U}_i\)</span> de <span class="math">\(\mathbb{R}^m\)</span>. Esto
+significa que <span class="math">\(\phi_i: U_i \to \tilde{U}_i \subset \mathbb{R}^m\)</span>.</p></li>
 </ul>
-<p>Cada par <span class="math notranslate nohighlight">\((U_i, \phi_i)\)</span> se llama una <strong>carta</strong>, y la colección
-completa <span class="math notranslate nohighlight">\(\{(U_i, \phi_i)\}\)</span> se denomina un <strong>atlas</strong>.</p>
+<p>Cada par <span class="math">\((U_i, \phi_i)\)</span> se llama una <strong>carta</strong>, y la colección
+completa <span class="math">\(\{(U_i, \phi_i)\}\)</span> se denomina un <strong>atlas</strong>.</p>
 </li>
-<li><p><strong>Coordenadas locales</strong>: Para cada punto <span class="math notranslate nohighlight">\(p \in U_i\)</span>, el
-homeomorfismo <span class="math notranslate nohighlight">\(\phi_i\)</span> asigna <span class="math notranslate nohighlight">\(m\)</span> números reales
-<span class="math notranslate nohighlight">\(\{x^1(p), \dots, x^m(p)\}\)</span>, que se conocen como las <strong>coordenadas
-locales</strong> de <span class="math notranslate nohighlight">\(p\)</span>. Estas coordenadas permiten describir localmente la
-variedad como un subconjunto abierto de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p></li>
-<li><p><strong>Transiciones suaves</strong>: Si dos conjuntos abiertos <span class="math notranslate nohighlight">\(U_i\)</span> y <span class="math notranslate nohighlight">\(U_j\)</span> se
-solapan, es decir, <span class="math notranslate nohighlight">\(U_i \cap U_j \neq \emptyset\)</span>, entonces la
-función de transición <span class="math notranslate nohighlight">\(\psi_{ij} = \phi_i \circ \phi_j^{-1}\)</span> debe
+<li><p><strong>Coordenadas locales</strong>: Para cada punto <span class="math">\(p \in U_i\)</span>, el
+homeomorfismo <span class="math">\(\phi_i\)</span> asigna <span class="math">\(m\)</span> números reales
+<span class="math">\(\{x^1(p), \dots, x^m(p)\}\)</span>, que se conocen como las <strong>coordenadas
+locales</strong> de <span class="math">\(p\)</span>. Estas coordenadas permiten describir localmente la
+variedad como un subconjunto abierto de <span class="math">\(\mathbb{R}^m\)</span>.</p></li>
+<li><p><strong>Transiciones suaves</strong>: Si dos conjuntos abiertos <span class="math">\(U_i\)</span> y <span class="math">\(U_j\)</span> se
+solapan, es decir, <span class="math">\(U_i \cap U_j \neq \emptyset\)</span>, entonces la
+función de transición <span class="math">\(\psi_{ij} = \phi_i \circ \phi_j^{-1}\)</span> debe
 ser <strong>infinitamente diferenciable</strong> (suave). Esta función mapea las
-coordenadas de <span class="math notranslate nohighlight">\(\phi_j(U_i \cap U_j)\)</span> a las coordenadas de
-<span class="math notranslate nohighlight">\(\phi_i(U_i \cap U_j)\)</span>, asegurando que los cambios entre sistemas de
+coordenadas de <span class="math">\(\phi_j(U_i \cap U_j)\)</span> a las coordenadas de
+<span class="math">\(\phi_i(U_i \cap U_j)\)</span>, asegurando que los cambios entre sistemas de
 coordenadas sean suaves.</p></li>
 </ol>
 <p>En el contexto de esta tesis, estas estructuras permiten describir de
@@ -537,21 +553,21 @@ relatividad general al incluir términos de curvatura de orden superior,
 requieren un entendimiento minucioso de la geometría diferencial para
 derivar y analizar las ecuaciones de campo.</p>
 <ul>
-<li><p><strong>Rama “menos”</strong> (<span class="math notranslate nohighlight">\(f(r)_-\)</span>): Al tomar el signo negativo se obtiene la
-rama que, en el límite <span class="math notranslate nohighlight">\(\alpha\to0\)</span>, se reduce a la solución clásica
+<li><p><strong>Rama “menos”</strong> (<span class="math">\(f(r)_-\)</span>): Al tomar el signo negativo se obtiene la
+rama que, en el límite <span class="math">\(\alpha\to0\)</span>, se reduce a la solución clásica
 de Schwarzschild–AdS en 5D. Es decir, al expandir en series de
-<span class="math notranslate nohighlight">\(\alpha\)</span> se tiene</p>
-<div class="math notranslate nohighlight">
+<span class="math">\(\alpha\)</span> se tiene</p>
+<div class="math">
 \[
   f(r)_- = k + \frac{r^2}{l^2} - \frac{c_1}{r^2l^2} + \mathcal{O}(\alpha)
   \]</div>
 <p>lo cual permite identificar la constante de integración con el
 parámetro de masa del agujero negro (redefiniendo, si conviene,
-<span class="math notranslate nohighlight">\(M=c_1/l^2\)</span>).</p>
+<span class="math">\(M=c_1/l^2\)</span>).</p>
 </li>
-<li><p><strong>Rama “más”</strong> (<span class="math notranslate nohighlight">\(f(r)_+\)</span>): La otra posibilidad corresponde a la
+<li><p><strong>Rama “más”</strong> (<span class="math">\(f(r)_+\)</span>): La otra posibilidad corresponde a la
 solución con el signo positivo. Esta rama no posee el límite de
-Einstein (<span class="math notranslate nohighlight">\(\alpha\to0\)</span>) y se conoce como la solución exótica. Dado que
+Einstein (<span class="math">\(\alpha\to0\)</span>) y se conoce como la solución exótica. Dado que
 no se recupera la gravedad clásica en este límite, generalmente se
 descarta por razones de consistencia física y estabilidad.</p></li>
 </ul>
